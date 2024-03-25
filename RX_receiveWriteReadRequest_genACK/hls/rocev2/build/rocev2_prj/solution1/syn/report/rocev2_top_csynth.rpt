@@ -1,0 +1,460 @@
+
+
+================================================================
+== Vivado HLS Report for 'rocev2_top'
+================================================================
+* Date:           Mon Mar  1 13:04:36 2021
+
+* Version:        2019.1 (Build 2552052 on Fri May 24 15:28:33 MDT 2019)
+* Project:        rocev2_prj
+* Solution:       solution1
+* Product family: zynquplus
+* Target device:  xczu7eg-ffvc1156-2-i
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |   8.00|    41.577|        1.00|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+----------+
+    |  Latency  |  Interval | Pipeline |
+    | min | max | min | max |   Type   |
+    +-----+-----+-----+-----+----------+
+    |   35|   35|    6|    6| dataflow |
+    +-----+-----+-----+-----+----------+
+
+    + Detail: 
+        * Instance: 
+        +-------------------------+----------------------+-----+-----+-----+-----+----------+
+        |                         |                      |  Latency  |  Interval | Pipeline |
+        |         Instance        |        Module        | min | max | min | max |   Type   |
+        +-------------------------+----------------------+-----+-----+-----+-----+----------+
+        |compute_crc32_U0         |compute_crc32         |    6|    6|    6|    6| function |
+        |insert_icrc_512_U0       |insert_icrc_512_s     |    2|    2|    1|    1| function |
+        |append_payload_512_U0    |append_payload_512_s  |    1|    1|    1|    1| function |
+        |rx_process_exh_512_U0    |rx_process_exh_512_s  |    1|    1|    1|    1| function |
+        |rx_exh_fsm_512_U0        |rx_exh_fsm_512_s      |    2|    2|    1|    1| function |
+        |prepend_ibh_header_U0    |prepend_ibh_header    |    1|    1|    1|    1| function |
+        |process_ipv4_512_U0      |process_ipv4_512_s    |    1|    1|    1|    1| function |
+        |merge_rx_pkgs_512_U0     |merge_rx_pkgs_512_s   |    2|    2|    1|    1| function |
+        |mask_header_fields_U0    |mask_header_fields    |    1|    1|    1|    1| function |
+        |ipv4_generate_ipv421_U0  |ipv4_generate_ipv421  |    1|    1|    1|    1| function |
+        |ipv4_drop_optional_i_U0  |ipv4_drop_optional_i  |    1|    1|    1|    1| function |
+        |compute_ipv4_checksu_U0  |compute_ipv4_checksu  |    1|    1|    1|    1| function |
+        |tx_pkg_arbiter_512_U0    |tx_pkg_arbiter_512_s  |    1|    1|    1|    1| function |
+        |rx_process_ibh_512_U0    |rx_process_ibh_512_s  |    1|    1|    1|    1| function |
+        |generate_exh_512_U0      |generate_exh_512_s    |    1|    1|    1|    1| function |
+        |ipv4_lshiftWordByOct_U0  |ipv4_lshiftWordByOct  |    1|    1|    1|    1| function |
+        |lshiftWordByOctet_U0     |lshiftWordByOctet     |    1|    1|    1|    1| function |
+        |generate_udp_512_U0      |generate_udp_512_s    |    1|    1|    1|    1| function |
+        |lshiftWordByOctet_2_U0   |lshiftWordByOctet_2   |    1|    1|    1|    1| function |
+        |udp_lshiftWordByOcte_U0  |udp_lshiftWordByOcte  |    1|    1|    1|    1| function |
+        |process_udp_512_2150_U0  |process_udp_512_2150  |    2|    2|    1|    1| function |
+        |lshiftWordByOctet_1_U0   |lshiftWordByOctet_1   |    1|    1|    1|    1| function |
+        |local_req_handler_U0     |local_req_handler     |    1|    1|    1|    1| function |
+        |rx_exh_payload_512_U0    |rx_exh_payload_512_s  |    1|    1|    1|    1| function |
+        |handle_read_requests_U0  |handle_read_requests  |    1|    1|    1|    1| function |
+        |rx_ibh_fsm_U0            |rx_ibh_fsm            |    1|    1|    1|    1| function |
+        |extract_icrc_512_U0      |extract_icrc_512_s    |    1|    1|    1|    1| function |
+        |meta_merger_U0           |meta_merger           |    3|    3|    1|    1| function |
+        |rshiftWordByOctet_U0     |rshiftWordByOctet     |    1|    1|    1|    1| function |
+        |udp_rshiftWordByOcte_U0  |udp_rshiftWordByOcte  |    1|    1|    1|    1| function |
+        |rshiftWordByOctet_2_U0   |rshiftWordByOctet_2   |    1|    1|    1|    1| function |
+        |rshiftWordByOctet_1_U0   |rshiftWordByOctet_1   |    1|    1|    1|    1| function |
+        |state_table_U0           |state_table           |    3|    3|    1|    1| function |
+        |drop_ooo_ibh_512_U0      |drop_ooo_ibh_512_s    |    1|    1|    1|    1| function |
+        |generate_ibh_512_U0      |generate_ibh_512_s    |    1|    1|    1|    1| function |
+        |mem_cmd_merger_512_U0    |mem_cmd_merger_512_s  |    3|    3|    1|    1| function |
+        |mq_process_requests_U0   |mq_process_requests   |    1|    1|    1|    1| function |
+        |msn_table_U0             |msn_table             |    3|    3|    1|    1| function |
+        |ipUdpMetaHandler_U0      |ipUdpMetaHandler      |    1|    1|    1|    1| function |
+        |mq_pointer_table_U0      |mq_pointer_table      |    2|    2|    1|    1| function |
+        |tx_ipUdpMetaMerger_U0    |tx_ipUdpMetaMerger    |    1|    1|    1|    1| function |
+        |mq_meta_table_U0         |mq_meta_table         |    1|    1|    1|    1| function |
+        |stream_merger_U0         |stream_merger         |    2|    2|    1|    1| function |
+        |split_tx_meta_U0         |split_tx_meta         |    1|    1|    1|    1| function |
+        |merge_rx_meta_U0         |merge_rx_meta         |    1|    1|    1|    1| function |
+        |conn_table_U0            |conn_table            |    1|    1|    1|    1| function |
+        |mq_freelist_handler_U0   |mq_freelist_handler   |    1|    1|    1|    1| function |
+        |qp_interface_U0          |qp_interface          |    1|    1|    1|    1| function |
+        |read_req_table_U0        |read_req_table        |    1|    1|    1|    1| function |
+        |rocev2_top_entry3_U0     |rocev2_top_entry3     |    0|    0|    0|    0|   none   |
+        |rocev2_top_entry2153_U0  |rocev2_top_entry2153  |    0|    0|    0|    0|   none   |
+        |Block_proc_U0            |Block_proc            |    0|    0|    0|    0|   none   |
+        +-------------------------+----------------------+-----+-----+-----+-----+----------+
+
+        * Loop: 
+        N/A
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-------+--------+--------+-----+
+|       Name      | BRAM_18K| DSP48E|   FF   |   LUT  | URAM|
++-----------------+---------+-------+--------+--------+-----+
+|DSP              |        -|      -|       -|       -|    -|
+|Expression       |        -|      -|       -|       -|    -|
+|FIFO             |      958|      -|   19386|   24246|    -|
+|Instance         |       37|      -|   42326|   64516|    0|
+|Memory           |        -|      -|       -|       -|    -|
+|Multiplexer      |        -|      -|       -|       -|    -|
+|Register         |        -|      -|       -|       -|    -|
++-----------------+---------+-------+--------+--------+-----+
+|Total            |      995|      0|   61712|   88762|    0|
++-----------------+---------+-------+--------+--------+-----+
+|Available        |      624|   1728|  460800|  230400|   96|
++-----------------+---------+-------+--------+--------+-----+
+|Utilization (%)  |      159|      0|      13|      38|    0|
++-----------------+---------+-------+--------+--------+-----+
+
++ Detail: 
+    * Instance: 
+    +-------------------------+----------------------+---------+-------+------+-------+-----+
+    |         Instance        |        Module        | BRAM_18K| DSP48E|  FF  |  LUT  | URAM|
+    +-------------------------+----------------------+---------+-------+------+-------+-----+
+    |Block_proc_U0            |Block_proc            |        0|      0|     2|     11|    0|
+    |append_payload_512_U0    |append_payload_512_s  |        0|      0|  2837|    343|    0|
+    |compute_crc32_U0         |compute_crc32         |        0|      0|  3147|  37309|    0|
+    |compute_ipv4_checksu_U0  |compute_ipv4_checksu  |        0|      0|   598|    977|    0|
+    |conn_table_U0            |conn_table            |        6|      0|     4|     97|    0|
+    |drop_ooo_ibh_512_U0      |drop_ooo_ibh_512_s    |        0|      0|   585|    106|    0|
+    |extract_icrc_512_U0      |extract_icrc_512_s    |        0|      0|  1227|    315|    0|
+    |generate_exh_512_U0      |generate_exh_512_s    |        0|      0|   393|   1419|    0|
+    |generate_ibh_512_U0      |generate_ibh_512_s    |        0|      0|   397|    268|    0|
+    |generate_udp_512_U0      |generate_udp_512_s    |        0|      0|   668|    905|    0|
+    |handle_read_requests_U0  |handle_read_requests  |        0|      0|   349|    523|    0|
+    |insert_icrc_512_U0       |insert_icrc_512_s     |        0|      0|  1819|    473|    0|
+    |ipUdpMetaHandler_U0      |ipUdpMetaHandler      |        0|      0|   265|     99|    0|
+    |ipv4_drop_optional_i_U0  |ipv4_drop_optional_i  |        0|      0|  1963|    289|    0|
+    |ipv4_generate_ipv421_U0  |ipv4_generate_ipv421  |        0|      0|   764|   1184|    0|
+    |ipv4_lshiftWordByOct_U0  |ipv4_lshiftWordByOct  |        0|      0|  1340|    747|    0|
+    |local_req_handler_U0     |local_req_handler     |        0|      0|   422|    848|    0|
+    |lshiftWordByOctet_U0     |lshiftWordByOctet     |        0|      0|  1304|    740|    0|
+    |lshiftWordByOctet_1_U0   |lshiftWordByOctet_1   |        0|      0|  1196|    736|    0|
+    |lshiftWordByOctet_2_U0   |lshiftWordByOctet_2   |        0|      0|  1268|    740|    0|
+    |mask_header_fields_U0    |mask_header_fields    |        0|      0|  1101|    907|    0|
+    |mem_cmd_merger_512_U0    |mem_cmd_merger_512_s  |        3|      0|   621|    462|    0|
+    |merge_rx_meta_U0         |merge_rx_meta         |        0|      0|    86|     90|    0|
+    |merge_rx_pkgs_512_U0     |merge_rx_pkgs_512_s   |        0|      0|  2921|    430|    0|
+    |meta_merger_U0           |meta_merger           |        0|      0|  1045|    637|    0|
+    |mq_freelist_handler_U0   |mq_freelist_handler   |        0|      0|    36|     90|    0|
+    |mq_meta_table_U0         |mq_meta_table         |       12|      0|     6|    211|    0|
+    |mq_pointer_table_U0      |mq_pointer_table      |        3|      0|    93|    215|    0|
+    |mq_process_requests_U0   |mq_process_requests   |        0|      0|   443|    756|    0|
+    |msn_table_U0             |msn_table             |        5|      0|   425|    264|    0|
+    |prepend_ibh_header_U0    |prepend_ibh_header    |        0|      0|  1211|   1063|    0|
+    |process_ipv4_512_U0      |process_ipv4_512_s    |        0|      0|   761|   1435|    0|
+    |process_udp_512_2150_U0  |process_udp_512_2150  |        0|      0|  1296|    757|    0|
+    |qp_interface_U0          |qp_interface          |        0|      0|   114|     84|    0|
+    |read_req_table_U0        |read_req_table        |        2|      0|     4|     41|    0|
+    |rocev2_top_entry2153_U0  |rocev2_top_entry2153  |        0|      0|     2|     29|    0|
+    |rocev2_top_entry3_U0     |rocev2_top_entry3     |        0|      0|     2|     20|    0|
+    |rshiftWordByOctet_U0     |rshiftWordByOctet     |        0|      0|  1162|    219|    0|
+    |rshiftWordByOctet_1_U0   |rshiftWordByOctet_1   |        0|      0|  1161|    191|    0|
+    |rshiftWordByOctet_2_U0   |rshiftWordByOctet_2   |        0|      0|  1161|    191|    0|
+    |rx_exh_fsm_512_U0        |rx_exh_fsm_512_s      |        0|      0|  1213|   1193|    0|
+    |rx_exh_payload_512_U0    |rx_exh_payload_512_s  |        0|      0|   593|    366|    0|
+    |rx_ibh_fsm_U0            |rx_ibh_fsm            |        0|      0|   305|    742|    0|
+    |rx_process_exh_512_U0    |rx_process_exh_512_s  |        0|      0|   953|   2355|    0|
+    |rx_process_ibh_512_U0    |rx_process_ibh_512_s  |        0|      0|   697|    974|    0|
+    |split_tx_meta_U0         |split_tx_meta         |        0|      0|    84|    136|    0|
+    |state_table_U0           |state_table           |        6|      0|   332|    495|    0|
+    |stream_merger_U0         |stream_merger         |        0|      0|   157|     69|    0|
+    |tx_ipUdpMetaMerger_U0    |tx_ipUdpMetaMerger    |        0|      0|   189|     90|    0|
+    |tx_pkg_arbiter_512_U0    |tx_pkg_arbiter_512_s  |        0|      0|  1211|    946|    0|
+    |udp_lshiftWordByOcte_U0  |udp_lshiftWordByOcte  |        0|      0|  1232|    738|    0|
+    |udp_rshiftWordByOcte_U0  |udp_rshiftWordByOcte  |        0|      0|  1161|    191|    0|
+    +-------------------------+----------------------+---------+-------+------+-------+-----+
+    |Total                    |                      |       37|      0| 42326|  64516|    0|
+    +-------------------------+----------------------+---------+-------+------+-------+-----+
+
+    * DSP48E: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    +----------------------------+---------+-----+----+-----+------+-----+---------+
+    |            Name            | BRAM_18K|  FF | LUT| URAM| Depth| Bits| Size:D*B|
+    +----------------------------+---------+-----+----+-----+------+-----+---------+
+    |crcFifo1_V_V_U              |        0|    5|   0|    -|     2|   32|       64|
+    |exh_lengthFifo_V_V_U        |        0|    5|   0|    -|     4|   16|       64|
+    |if2msnTable_init_V_U        |        0|    5|   0|    -|     2|   48|       96|
+    |ip2checksum_V_data_V_U      |       29|  524|   0|    -|     8|  512|     4096|
+    |ip2checksum_V_keep_V_U      |        0|    6|   0|    -|     8|   64|      512|
+    |ip2checksum_V_last_V_U      |        0|    6|   0|    -|     8|    1|        8|
+    |local_ip_address_V_c_1_U    |        0|    5|   0|    -|     2|  128|      256|
+    |local_ip_address_V_c_U      |        0|    5|   0|    -|     3|  128|      384|
+    |mq_freeListFifo_V_V_U       |        2|   64|   0|    -|  2048|   16|    32768|
+    |mq_metaReqFifo_V_app_U      |        0|    5|   0|    -|     2|    1|        2|
+    |mq_metaReqFifo_V_ent_1_U    |        0|    5|   0|    -|     2|    1|        2|
+    |mq_metaReqFifo_V_ent_3_U    |        0|    5|   0|    -|     2|   16|       32|
+    |mq_metaReqFifo_V_ent_4_U    |        0|    5|   0|    -|     2|    1|        2|
+    |mq_metaReqFifo_V_ent_U      |        0|    5|   0|    -|     2|   64|      128|
+    |mq_metaReqFifo_V_idx_U      |        0|    5|   0|    -|     2|   16|       32|
+    |mq_metaReqFifo_V_wri_U      |        0|    5|   0|    -|     2|    1|        2|
+    |mq_metaRspFifo_V_isT_U      |        0|    5|   0|    -|     2|    1|        2|
+    |mq_metaRspFifo_V_nex_U      |        0|    5|   0|    -|     2|   16|       32|
+    |mq_metaRspFifo_V_val_1_U    |        0|    5|   0|    -|     2|    1|        2|
+    |mq_metaRspFifo_V_val_U      |        0|    5|   0|    -|     2|   64|      128|
+    |mq_pointerReqFifo_V_1_U     |        0|    5|   0|    -|     2|   16|       32|
+    |mq_pointerReqFifo_V_s_U     |        0|    5|   0|    -|     2|    1|        2|
+    |mq_pointerRspFifo_V_1_U     |        0|    5|   0|    -|     2|   16|       32|
+    |mq_pointerRspFifo_V_2_U     |        0|    5|   0|    -|     2|   16|       32|
+    |mq_pointerRspFifo_V_s_U     |        0|    5|   0|    -|     2|    1|        2|
+    |mq_pointerUpdFifo_V_1_U     |        0|    5|   0|    -|     2|   16|       32|
+    |mq_pointerUpdFifo_V_3_U     |        0|    5|   0|    -|     2|   16|       32|
+    |mq_pointerUpdFifo_V_4_U     |        0|    5|   0|    -|     2|    1|        2|
+    |mq_pointerUpdFifo_V_s_U     |        0|    5|   0|    -|     2|   16|       32|
+    |mq_releaseFifo_V_V_U        |        0|    5|   0|    -|     2|   16|       32|
+    |msnTable2rxExh_rsp_V_U      |        0|    5|   0|    -|     2|  152|      304|
+    |msnTable2txExh_rsp_V_U      |        0|    5|   0|    -|     2|   56|      112|
+    |qpi2stateTable_upd_r_1_U    |        0|    5|   0|    -|     2|   68|      136|
+    |rxExh2msnTable_upd_r_1_U    |        0|    5|   0|    -|     2|  137|      274|
+    |rxIbh2stateTable_upd_1_U    |        0|    5|   0|    -|     2|   45|       90|
+    |rx_ackEventFifo_V_U         |        0|    5|   0|    -|     4|   50|      200|
+    |rx_aethSift2mergerFi_3_U    |       29|  522|   0|    -|     4|  512|     2048|
+    |rx_aethSift2mergerFi_5_U    |        0|    5|   0|    -|     4|   64|      256|
+    |rx_aethSift2mergerFi_6_U    |        0|    5|   0|    -|     4|    1|        4|
+    |rx_crc2ipFifo_V_data_U      |       29|  522|   0|    -|     2|  512|     1024|
+    |rx_crc2ipFifo_V_keep_U      |        0|    5|   0|    -|     2|   64|      128|
+    |rx_crc2ipFifo_V_last_U      |        0|    5|   0|    -|     2|    1|        2|
+    |rx_drop2exhFsm_MetaF_1_U    |        0|    5|   0|    -|     2|  241|      482|
+    |rx_exh2aethShiftFifo_3_U    |       29|  522|   0|    -|     4|  512|     2048|
+    |rx_exh2aethShiftFifo_5_U    |        0|    5|   0|    -|     4|   64|      256|
+    |rx_exh2aethShiftFifo_6_U    |        0|    5|   0|    -|     4|    1|        4|
+    |rx_exh2dropFifo_V_da_U      |       29|  529|   0|    -|    32|  512|    16384|
+    |rx_exh2dropFifo_V_ke_U      |        4|   81|   0|    -|    32|   64|     2048|
+    |rx_exh2dropFifo_V_la_U      |        0|   50|   0|    -|    32|    1|       32|
+    |rx_exh2drop_MetaFifo_1_U    |       14|  253|   0|    -|     8|  241|     1928|
+    |rx_exh2rethShiftFifo_4_U    |        0|    5|   0|    -|     4|    1|        4|
+    |rx_exh2rethShiftFifo_6_U    |        0|    5|   0|    -|     4|   64|      256|
+    |rx_exh2rethShiftFifo_7_U    |        0|    5|   0|    -|     4|    1|        4|
+    |rx_exh2rethShiftFifo_8_U    |       29|  522|   0|    -|     4|  512|     2048|
+    |rx_exhEventMetaFifo_s_12_U  |        0|    5|   0|    -|     2|   50|      100|
+    |rx_exhMetaFifo_V_U          |        0|    5|   0|    -|     2|   23|       46|
+    |rx_exhNoShiftFifo_V_1_U     |       29|  522|   0|    -|     4|  512|     2048|
+    |rx_exhNoShiftFifo_V_3_U     |        0|    5|   0|    -|     4|    1|        4|
+    |rx_exhNoShiftFifo_V_4_U     |        0|    5|   0|    -|     4|   64|      256|
+    |rx_exhNoShiftFifo_V_s_U     |        0|    5|   0|    -|     4|    1|        4|
+    |rx_fsm2exh_MetaFifo_s_11_U  |        0|    5|   0|    -|     2|   92|      184|
+    |rx_ibh2exh_MetaFifo_s_10_U  |        0|    5|   0|    -|     2|    5|       10|
+    |rx_ibh2fsm_MetaFifo_s_9_U   |        0|    5|   0|    -|     2|   92|      184|
+    |rx_ibh2shiftFifo_V_d_U      |       29|  522|   0|    -|     2|  512|     1024|
+    |rx_ibh2shiftFifo_V_k_U      |        0|    5|   0|    -|     2|   64|      128|
+    |rx_ibh2shiftFifo_V_l_U      |        0|    5|   0|    -|     2|    1|        2|
+    |rx_ibhDrop2exhFifo_V_1_U    |       29|  529|   0|    -|    32|  512|    16384|
+    |rx_ibhDrop2exhFifo_V_2_U    |        4|   81|   0|    -|    32|   64|     2048|
+    |rx_ibhDrop2exhFifo_V_U      |        0|   50|   0|    -|    32|    1|       32|
+    |rx_ibhDropFifo_V_U          |        0|    5|   0|    -|     2|    1|        2|
+    |rx_ibhDropMetaFifo_V_U      |        0|    5|   0|    -|     2|    2|        4|
+    |rx_ibhEventFifo_V_U         |        0|    5|   0|    -|     2|   50|      100|
+    |rx_ip2udpFifo_V_data_U      |       29|  522|   0|    -|     2|  512|     1024|
+    |rx_ip2udpFifo_V_keep_U      |        0|    5|   0|    -|     2|   64|      128|
+    |rx_ip2udpFifo_V_last_U      |        0|    5|   0|    -|     2|    1|        2|
+    |rx_ip2udpMetaFifo_V_1_U     |        0|    5|   0|    -|     2|   16|       32|
+    |rx_ip2udpMetaFifo_V_s_U     |        0|    5|   0|    -|     2|   32|       64|
+    |rx_ipUdpMetaFifo_V_l_U      |        0|    6|   0|    -|     8|   16|      128|
+    |rx_ipUdpMetaFifo_V_m_U      |        0|    6|   0|    -|     8|   16|      128|
+    |rx_ipUdpMetaFifo_V_t_1_U    |        8|  140|   0|    -|     8|  128|     1024|
+    |rx_ipUdpMetaFifo_V_t_U      |        0|    6|   0|    -|     8|   16|      128|
+    |rx_pkgShiftTypeFifo_s_8_U   |        0|    5|   0|    -|     2|    2|        4|
+    |rx_pkgSplitTypeFifo_s_7_U   |        0|    5|   0|    -|     2|    6|       12|
+    |rx_process2dropFifo_1_5_U   |       29|  524|   0|    -|     8|  512|     4096|
+    |rx_process2dropFifo_2_4_U   |        0|    6|   0|    -|     8|   64|      512|
+    |rx_process2dropFifo_s_6_U   |        0|    6|   0|    -|     8|    1|        8|
+    |rx_process2dropLengt_1_U    |        0|    5|   0|    -|     2|    4|        8|
+    |rx_readEvenFifo_V_U         |        8|  165|   0|    -|   512|  135|    69120|
+    |rx_readReqAddr_pop_r_1_U    |        0|    5|   0|    -|     2|   64|      128|
+    |rx_readReqAddr_pop_r_4_U    |        0|    5|   0|    -|     2|   17|       34|
+    |rx_readReqTable_upd_1_U     |        0|    5|   0|    -|     2|   41|       82|
+    |rx_readRequestFifo_V_U      |        8|  141|   0|    -|     8|  129|     1032|
+    |rx_remoteMemCmd_V_U         |        7|  143|   0|    -|   512|  113|    57856|
+    |rx_rethSift2mergerFi_4_U    |        0|    5|   0|    -|     4|    1|        4|
+    |rx_rethSift2mergerFi_6_U    |        0|    5|   0|    -|     4|   64|      256|
+    |rx_rethSift2mergerFi_7_U    |        0|    5|   0|    -|     4|    1|        4|
+    |rx_rethSift2mergerFi_8_U    |       29|  522|   0|    -|     4|  512|     2048|
+    |rx_shift2exhFifo_V_d_U      |       29|  522|   0|    -|     2|  512|     1024|
+    |rx_shift2exhFifo_V_k_U      |        0|    5|   0|    -|     2|   64|      128|
+    |rx_shift2exhFifo_V_l_U      |        0|    5|   0|    -|     2|    1|        2|
+    |rx_udp2ibFifo_V_data_U      |       29|  522|   0|    -|     2|  512|     1024|
+    |rx_udp2ibFifo_V_keep_U      |        0|    5|   0|    -|     2|   64|      128|
+    |rx_udp2ibFifo_V_last_U      |        0|    5|   0|    -|     2|    1|        2|
+    |rx_udp2shiftFifo_V_d_U      |       29|  522|   0|    -|     2|  512|     1024|
+    |rx_udp2shiftFifo_V_k_U      |        0|    5|   0|    -|     2|   64|      128|
+    |rx_udp2shiftFifo_V_l_U      |        0|    5|   0|    -|     2|    1|        2|
+    |rx_udpMetaFifo_V_U          |        0|    5|   0|    -|     2|   49|       98|
+    |stateTable2qpi_rsp_V_U      |        0|    5|   0|    -|     2|  123|      246|
+    |stateTable2rxIbh_rsp_1_U    |        0|    5|   0|    -|     2|   75|      150|
+    |stateTable2txIbh_rsp_1_U    |        0|    5|   0|    -|     2|  123|      246|
+    |txExh2msnTable_req_V_U      |        0|    5|   0|    -|     2|   16|       32|
+    |txIbh2stateTable_upd_1_U    |        0|    5|   0|    -|     2|   41|       82|
+    |tx_aethShift2payFifo_3_U    |       29|  522|   0|    -|     2|  512|     1024|
+    |tx_aethShift2payFifo_5_U    |        0|    5|   0|    -|     2|   64|      128|
+    |tx_aethShift2payFifo_6_U    |        0|    5|   0|    -|     2|    1|        2|
+    |tx_appMetaFifo_V_add_U      |        3|   65|   0|    -|    32|   48|     1536|
+    |tx_appMetaFifo_V_isN_U      |        0|   50|   0|    -|    32|    1|       32|
+    |tx_appMetaFifo_V_len_U      |        2|   49|   0|    -|    32|   32|     1024|
+    |tx_appMetaFifo_V_op_s_U     |        0|   61|   0|    -|    32|    5|      160|
+    |tx_appMetaFifo_V_psn_U      |        2|   41|   0|    -|    32|   24|      768|
+    |tx_appMetaFifo_V_qpn_U      |        2|   41|   0|    -|    32|   24|      768|
+    |tx_appMetaFifo_V_val_U      |        0|   50|   0|    -|    32|    1|       32|
+    |tx_connTable2ibh_rsp_1_U    |       10|  180|   0|    -|     8|  168|     1344|
+    |tx_crcDataFifo_V_dat_U      |       29|  551|   0|    -|   384|  512|   196608|
+    |tx_crcDataFifo_V_kee_U      |        4|   91|   0|    -|   384|   64|    24576|
+    |tx_crcDataFifo_V_las_U      |        0|  437|   0|    -|   384|    1|      384|
+    |tx_dstQpFifo_V_V_U          |        0|    5|   0|    -|     2|   24|       48|
+    |tx_exh2payFifo_V_dat_U      |       29|  522|   0|    -|     4|  512|     2048|
+    |tx_exh2payFifo_V_kee_U      |        0|    5|   0|    -|     4|   64|      256|
+    |tx_exh2payFifo_V_las_U      |        0|    5|   0|    -|     4|    1|        4|
+    |tx_exh2shiftFifo_V_d_U      |       29|  522|   0|    -|     2|  512|     1024|
+    |tx_exh2shiftFifo_V_k_U      |        0|    5|   0|    -|     2|   64|      128|
+    |tx_exh2shiftFifo_V_l_U      |        0|    5|   0|    -|     2|    1|        2|
+    |tx_exhMetaFifo_V_U          |        8|  145|   0|    -|     4|  135|      540|
+    |tx_ib2udpFifo_V_data_U      |       29|  522|   0|    -|     2|  512|     1024|
+    |tx_ib2udpFifo_V_keep_U      |        0|    5|   0|    -|     2|   64|      128|
+    |tx_ib2udpFifo_V_last_U      |        0|    5|   0|    -|     2|    1|        2|
+    |tx_ibhHeaderFifo_V_U        |        0|    5|   0|    -|     2|  113|      226|
+    |tx_ibhMetaFifo_V_des_U      |        0|    6|   0|    -|     8|   24|      192|
+    |tx_ibhMetaFifo_V_num_U      |        0|    6|   0|    -|     8|   22|      176|
+    |tx_ibhMetaFifo_V_op_s_U     |        0|    6|   0|    -|     8|    5|       40|
+    |tx_ibhMetaFifo_V_par_U      |        0|    6|   0|    -|     8|   16|      128|
+    |tx_ibhMetaFifo_V_psn_U      |        0|    6|   0|    -|     8|   24|      192|
+    |tx_ibhMetaFifo_V_val_U      |        0|    6|   0|    -|     8|    1|        8|
+    |tx_ibhconnTable_req_s_3_U   |        0|    5|   0|    -|     2|   16|       32|
+    |tx_ip2crcFifo_V_data_U      |       29|  522|   0|    -|     2|  512|     1024|
+    |tx_ip2crcFifo_V_keep_U      |        0|    5|   0|    -|     2|   64|      128|
+    |tx_ip2crcFifo_V_last_U      |        0|    5|   0|    -|     2|    1|        2|
+    |tx_ipUdpMetaFifo_V_l_U      |        0|    5|   0|    -|     2|   16|       32|
+    |tx_ipUdpMetaFifo_V_m_U      |        0|    5|   0|    -|     2|   16|       32|
+    |tx_ipUdpMetaFifo_V_t_1_U    |        0|    5|   0|    -|     2|  128|      256|
+    |tx_ipUdpMetaFifo_V_t_U      |        0|    5|   0|    -|     2|   16|       32|
+    |tx_lengthFifo_V_V_U         |        0|    5|   0|    -|     4|   16|       64|
+    |tx_localMemCmdFifo_V_U      |        0|    5|   0|    -|     2|  113|      226|
+    |tx_maskedDataFifo_V_1_U     |       29|  522|   0|    -|     4|  512|     2048|
+    |tx_maskedDataFifo_V_2_U     |        0|    5|   0|    -|     4|   64|      256|
+    |tx_maskedDataFifo_V_s_U     |        0|    5|   0|    -|     4|    1|        4|
+    |tx_packetInfoFifo_V_U       |        0|    5|   0|    -|     2|    3|        6|
+    |tx_pkgInfoFifo_V_sou_U      |        0|  265|   0|    -|   128|    1|      128|
+    |tx_pkgInfoFifo_V_typ_U      |        0|  265|   0|    -|   128|    1|      128|
+    |tx_pkgInfoFifo_V_wor_U      |        2|   50|   0|    -|   128|   29|     3712|
+    |tx_rawPayFifo_V_data_U      |       29|  522|   0|    -|     4|  512|     2048|
+    |tx_rawPayFifo_V_keep_U      |        0|    5|   0|    -|     4|   64|      256|
+    |tx_rawPayFifo_V_last_U      |        0|    5|   0|    -|     4|    1|        4|
+    |tx_readReqAddr_push_1_1_U   |        0|    5|   0|    -|     2|   16|       32|
+    |tx_readReqAddr_push_s_2_U   |        0|    5|   0|    -|     2|   64|      128|
+    |tx_readReqTable_upd_s_0_U   |        0|    5|   0|    -|     2|   40|       80|
+    |tx_rethMerge2rethShi_3_U    |       29|  522|   0|    -|     4|  512|     2048|
+    |tx_rethMerge2rethShi_5_U    |        0|    5|   0|    -|     4|   64|      256|
+    |tx_rethMerge2rethShi_6_U    |        0|    5|   0|    -|     4|    1|        4|
+    |tx_rethShift2payFifo_3_U    |       29|  522|   0|    -|     2|  512|     1024|
+    |tx_rethShift2payFifo_5_U    |        0|    5|   0|    -|     2|   64|      128|
+    |tx_rethShift2payFifo_6_U    |        0|    5|   0|    -|     2|    1|        2|
+    |tx_shift2ibhFifo_V_d_U      |       29|  524|   0|    -|     8|  512|     4096|
+    |tx_shift2ibhFifo_V_k_U      |        0|    6|   0|    -|     8|   64|      512|
+    |tx_shift2ibhFifo_V_l_U      |        0|    6|   0|    -|     8|    1|        8|
+    |tx_shift2ipv4Fifo_V_1_U     |       29|  524|   0|    -|     8|  512|     4096|
+    |tx_shift2ipv4Fifo_V_2_U     |        0|    6|   0|    -|     8|   64|      512|
+    |tx_shift2ipv4Fifo_V_s_U     |        0|    6|   0|    -|     8|    1|        8|
+    |tx_shift2udpFifo_V_d_U      |       29|  522|   0|    -|     2|  512|     1024|
+    |tx_shift2udpFifo_V_k_U      |        0|    5|   0|    -|     2|   64|      128|
+    |tx_shift2udpFifo_V_l_U      |        0|    5|   0|    -|     2|    1|        2|
+    |tx_split2aethShift_V_1_U    |       29|  522|   0|    -|     4|  512|     2048|
+    |tx_split2aethShift_V_2_U    |        0|    5|   0|    -|     4|   64|      256|
+    |tx_split2aethShift_V_U      |        0|    5|   0|    -|     4|    1|        4|
+    |tx_udp2ipFifo_V_data_U      |       29|  522|   0|    -|     2|  512|     1024|
+    |tx_udp2ipFifo_V_keep_U      |        0|    5|   0|    -|     2|   64|      128|
+    |tx_udp2ipFifo_V_last_U      |        0|    5|   0|    -|     2|    1|        2|
+    |tx_udp2ipMetaFifo_V_1_U     |        0|    5|   0|    -|     2|   16|       32|
+    |tx_udp2ipMetaFifo_V_s_U     |        0|    5|   0|    -|     2|   32|       64|
+    |tx_udpMetaFifo_V_len_U      |        0|    5|   0|    -|     2|   16|       32|
+    |tx_udpMetaFifo_V_my_s_U     |        0|    5|   0|    -|     2|   16|       32|
+    |tx_udpMetaFifo_V_the_U      |        0|    5|   0|    -|     2|   16|       32|
+    |tx_udpMetaFifo_V_val_U      |        0|    5|   0|    -|     2|    1|        2|
+    +----------------------------+---------+-----+----+-----+------+-----+---------+
+    |Total                       |      958|19386|   0|    0|  5593|21684|   496366|
+    +----------------------------+---------+-----+----+-----+------+-----+---------+
+
+    * Expression: 
+    N/A
+
+    * Multiplexer: 
+    N/A
+
+    * Register: 
+    N/A
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++-----------------------------------+-----+-----+--------------+--------------------------------+--------------+
+|             RTL Ports             | Dir | Bits|   Protocol   |          Source Object         |    C Type    |
++-----------------------------------+-----+-----+--------------+--------------------------------+--------------+
+|s_axis_rx_data_TDATA               |  in |  512|     axis     |     s_axis_rx_data_V_data_V    |    pointer   |
+|s_axis_rx_data_TKEEP               |  in |   64|     axis     |     s_axis_rx_data_V_keep_V    |    pointer   |
+|s_axis_rx_data_TLAST               |  in |    1|     axis     |     s_axis_rx_data_V_last_V    |    pointer   |
+|s_axis_rx_data_TVALID              |  in |    1|     axis     |     s_axis_rx_data_V_last_V    |    pointer   |
+|s_axis_rx_data_TREADY              | out |    1|     axis     |     s_axis_rx_data_V_last_V    |    pointer   |
+|s_axis_tx_meta_V_TDATA             |  in |  160|     axis     |        s_axis_tx_meta_V        |    pointer   |
+|s_axis_tx_meta_V_TVALID            |  in |    1|     axis     |        s_axis_tx_meta_V        |    pointer   |
+|s_axis_tx_meta_V_TREADY            | out |    1|     axis     |        s_axis_tx_meta_V        |    pointer   |
+|s_axis_tx_data_TDATA               |  in |  512|     axis     |     s_axis_tx_data_V_data_V    |    pointer   |
+|s_axis_tx_data_TKEEP               |  in |   64|     axis     |     s_axis_tx_data_V_keep_V    |    pointer   |
+|s_axis_tx_data_TLAST               |  in |    1|     axis     |     s_axis_tx_data_V_last_V    |    pointer   |
+|s_axis_tx_data_TVALID              |  in |    1|     axis     |     s_axis_tx_data_V_last_V    |    pointer   |
+|s_axis_tx_data_TREADY              | out |    1|     axis     |     s_axis_tx_data_V_last_V    |    pointer   |
+|m_axis_tx_data_TDATA               | out |  512|     axis     |     m_axis_tx_data_V_data_V    |    pointer   |
+|m_axis_tx_data_TKEEP               | out |   64|     axis     |     m_axis_tx_data_V_keep_V    |    pointer   |
+|m_axis_tx_data_TLAST               | out |    1|     axis     |     m_axis_tx_data_V_last_V    |    pointer   |
+|m_axis_tx_data_TVALID              | out |    1|     axis     |     m_axis_tx_data_V_last_V    |    pointer   |
+|m_axis_tx_data_TREADY              |  in |    1|     axis     |     m_axis_tx_data_V_last_V    |    pointer   |
+|m_axis_mem_write_cmd_TDATA         | out |   96|     axis     |   m_axis_mem_write_cmd_V_data  |    pointer   |
+|m_axis_mem_write_cmd_TDEST         | out |    1|     axis     |  m_axis_mem_write_cmd_V_dest_V |    pointer   |
+|m_axis_mem_write_cmd_TVALID        | out |    1|     axis     |  m_axis_mem_write_cmd_V_dest_V |    pointer   |
+|m_axis_mem_write_cmd_TREADY        |  in |    1|     axis     |  m_axis_mem_write_cmd_V_dest_V |    pointer   |
+|m_axis_mem_read_cmd_TDATA          | out |   96|     axis     |   m_axis_mem_read_cmd_V_data   |    pointer   |
+|m_axis_mem_read_cmd_TDEST          | out |    1|     axis     |  m_axis_mem_read_cmd_V_dest_V  |    pointer   |
+|m_axis_mem_read_cmd_TVALID         | out |    1|     axis     |  m_axis_mem_read_cmd_V_dest_V  |    pointer   |
+|m_axis_mem_read_cmd_TREADY         |  in |    1|     axis     |  m_axis_mem_read_cmd_V_dest_V  |    pointer   |
+|m_axis_mem_write_data_TDATA        | out |  512|     axis     | m_axis_mem_write_data_V_data_V |    pointer   |
+|m_axis_mem_write_data_TKEEP        | out |   64|     axis     | m_axis_mem_write_data_V_keep_V |    pointer   |
+|m_axis_mem_write_data_TLAST        | out |    1|     axis     | m_axis_mem_write_data_V_last_V |    pointer   |
+|m_axis_mem_write_data_TDEST        | out |    1|     axis     | m_axis_mem_write_data_V_dest_V |    pointer   |
+|m_axis_mem_write_data_TVALID       | out |    1|     axis     | m_axis_mem_write_data_V_dest_V |    pointer   |
+|m_axis_mem_write_data_TREADY       |  in |    1|     axis     | m_axis_mem_write_data_V_dest_V |    pointer   |
+|s_axis_mem_read_data_TDATA         |  in |  512|     axis     |  s_axis_mem_read_data_V_data_V |    pointer   |
+|s_axis_mem_read_data_TKEEP         |  in |   64|     axis     |  s_axis_mem_read_data_V_keep_V |    pointer   |
+|s_axis_mem_read_data_TLAST         |  in |    1|     axis     |  s_axis_mem_read_data_V_last_V |    pointer   |
+|s_axis_mem_read_data_TVALID        |  in |    1|     axis     |  s_axis_mem_read_data_V_last_V |    pointer   |
+|s_axis_mem_read_data_TREADY        | out |    1|     axis     |  s_axis_mem_read_data_V_last_V |    pointer   |
+|s_axis_qp_interface_V_TDATA        |  in |  144|     axis     |      s_axis_qp_interface_V     |    pointer   |
+|s_axis_qp_interface_V_TVALID       |  in |    1|     axis     |      s_axis_qp_interface_V     |    pointer   |
+|s_axis_qp_interface_V_TREADY       | out |    1|     axis     |      s_axis_qp_interface_V     |    pointer   |
+|s_axis_qp_conn_interface_V_TDATA   |  in |  184|     axis     |   s_axis_qp_conn_interface_V   |    pointer   |
+|s_axis_qp_conn_interface_V_TVALID  |  in |    1|     axis     |   s_axis_qp_conn_interface_V   |    pointer   |
+|s_axis_qp_conn_interface_V_TREADY  | out |    1|     axis     |   s_axis_qp_conn_interface_V   |    pointer   |
+|local_ip_address_V                 |  in |  128|    ap_none   |       local_ip_address_V       |    scalar    |
+|regCrcDropPkgCount_V               | out |   32|    ap_vld    |      regCrcDropPkgCount_V      |    pointer   |
+|regCrcDropPkgCount_V_ap_vld        | out |    1|    ap_vld    |      regCrcDropPkgCount_V      |    pointer   |
+|regInvalidPsnDropCount_V           | out |   32|    ap_vld    |    regInvalidPsnDropCount_V    |    pointer   |
+|regInvalidPsnDropCount_V_ap_vld    | out |    1|    ap_vld    |    regInvalidPsnDropCount_V    |    pointer   |
+|ap_clk                             |  in |    1| ap_ctrl_none |           rocev2_top           | return value |
+|ap_rst_n                           |  in |    1| ap_ctrl_none |           rocev2_top           | return value |
++-----------------------------------+-----+-----+--------------+--------------------------------+--------------+
+

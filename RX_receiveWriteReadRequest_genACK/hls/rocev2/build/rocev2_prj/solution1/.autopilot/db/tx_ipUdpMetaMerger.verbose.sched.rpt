@@ -1,0 +1,137 @@
+
+
+================================================================
+== Vivado HLS Report for 'tx_ipUdpMetaMerger'
+================================================================
+* Date:           Mon Mar  1 13:03:40 2021
+
+* Version:        2019.1 (Build 2552052 on Fri May 24 15:28:33 MDT 2019)
+* Project:        rocev2_prj
+* Solution:       solution1
+* Product family: zynquplus
+* Target device:  xczu7eg-ffvc1156-2-i
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |   8.00|     1.838|        1.00|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+----------+
+    |  Latency  |  Interval | Pipeline |
+    | min | max | min | max |   Type   |
+    +-----+-----+-----+-----+----------+
+    |    1|    1|    1|    1| function |
+    +-----+-----+-----+-----+----------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 2
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 2
+HasVarLatency: 0
+IsPipeline: 1
+IsRtlPipelined: 1
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
++ Individual pipeline summary: 
+  * Pipeline-0: initiation interval (II) = 1, depth = 2
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 2
+* Pipeline : 1
+  Pipeline-0 : II = 1, D = 2, States = { 1 2 }
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 1.83>
+ST_1 : Operation 3 [1/1] (0.00ns)   --->   "%tmp = call i1 @_ssdm_op_NbReadReq.ap_fifo.i168P(i168* @tx_connTable2ibh_rsp_1, i32 1) nounwind" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ib_transport_protocol/ib_transport_protocol.cpp:2174]   --->   Operation 3 'nbreadreq' 'tmp' <Predicate = true> <Delay = 0.00> <Core = "FIFO">   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 1.83> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 24> <Depth = 2> <FIFO>
+ST_1 : Operation 4 [1/1] (0.00ns)   --->   "br i1 %tmp, label %0, label %tx_ipUdpMetaMerger.exit" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ib_transport_protocol/ib_transport_protocol.cpp:2174]   --->   Operation 4 'br' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 5 [1/1] (0.00ns)   --->   "%tmp_7 = call i1 @_ssdm_op_NbReadReq.ap_fifo.i16P(i16* @tx_lengthFifo_V_V, i32 1) nounwind" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ib_transport_protocol/ib_transport_protocol.cpp:2174]   --->   Operation 5 'nbreadreq' 'tmp_7' <Predicate = (tmp)> <Delay = 0.00> <Core = "FIFO">   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 1.83> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 24> <Depth = 2> <FIFO>
+ST_1 : Operation 6 [1/1] (0.00ns)   --->   "br i1 %tmp_7, label %1, label %tx_ipUdpMetaMerger.exit" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ib_transport_protocol/ib_transport_protocol.cpp:2174]   --->   Operation 6 'br' <Predicate = (tmp)> <Delay = 0.00>
+ST_1 : Operation 7 [1/1] (1.83ns)   --->   "%tmp28 = call i168 @_ssdm_op_Read.ap_fifo.volatile.i168P(i168* @tx_connTable2ibh_rsp_1) nounwind" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ib_transport_protocol/ib_transport_protocol.cpp:2176]   --->   Operation 7 'read' 'tmp28' <Predicate = (tmp & tmp_7)> <Delay = 1.83> <Core = "FIFO">   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 1.83> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 24> <Depth = 2> <FIFO>
+ST_1 : Operation 8 [1/1] (0.00ns)   --->   "%tmp_V = trunc i168 %tmp28 to i24" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ib_transport_protocol/conn_table.hpp:34->/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ib_transport_protocol/ib_transport_protocol.cpp:2176]   --->   Operation 8 'trunc' 'tmp_V' <Predicate = (tmp & tmp_7)> <Delay = 0.00>
+ST_1 : Operation 9 [1/1] (0.00ns)   --->   "%tmp_their_address_V = call i128 @_ssdm_op_PartSelect.i128.i168.i32.i32(i168 %tmp28, i32 24, i32 151) nounwind" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ib_transport_protocol/conn_table.hpp:34->/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ib_transport_protocol/ib_transport_protocol.cpp:2176]   --->   Operation 9 'partselect' 'tmp_their_address_V' <Predicate = (tmp & tmp_7)> <Delay = 0.00>
+ST_1 : Operation 10 [1/1] (0.00ns)   --->   "%tmp_their_port_V = call i16 @_ssdm_op_PartSelect.i16.i168.i32.i32(i168 %tmp28, i32 152, i32 167) nounwind" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ib_transport_protocol/conn_table.hpp:34->/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ib_transport_protocol/ib_transport_protocol.cpp:2176]   --->   Operation 10 'partselect' 'tmp_their_port_V' <Predicate = (tmp & tmp_7)> <Delay = 0.00>
+ST_1 : Operation 11 [1/1] (1.83ns)   --->   "%tmp_V_1 = call i16 @_ssdm_op_Read.ap_fifo.volatile.i16P(i16* @tx_lengthFifo_V_V) nounwind" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ib_transport_protocol/ib_transport_protocol.cpp:2177]   --->   Operation 11 'read' 'tmp_V_1' <Predicate = (tmp & tmp_7)> <Delay = 1.83> <Core = "FIFO">   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 1.83> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 24> <Depth = 2> <FIFO>
+
+State 2 <SV = 1> <Delay = 1.83>
+ST_2 : Operation 12 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i168* @tx_connTable2ibh_rsp_1, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str, [1 x i8]* @p_str)"   --->   Operation 12 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 13 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i24* @tx_dstQpFifo_V_V, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str, [1 x i8]* @p_str)"   --->   Operation 13 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 14 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i16* @tx_ipUdpMetaFifo_V_l, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str, [1 x i8]* @p_str)"   --->   Operation 14 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 15 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i16* @tx_ipUdpMetaFifo_V_m, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str, [1 x i8]* @p_str)"   --->   Operation 15 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 16 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i128* @tx_ipUdpMetaFifo_V_t_1, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str, [1 x i8]* @p_str)"   --->   Operation 16 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 17 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i16* @tx_ipUdpMetaFifo_V_t, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str, [1 x i8]* @p_str)"   --->   Operation 17 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 18 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i16* @tx_lengthFifo_V_V, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str, [1 x i8]* @p_str)"   --->   Operation 18 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 19 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecPipeline(i32 1, i32 1, i32 1, i32 0, [1 x i8]* @p_str112) nounwind" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ib_transport_protocol/ib_transport_protocol.cpp:2169]   --->   Operation 19 'specpipeline' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 20 [1/1] (1.83ns)   --->   "call void @_ssdm_op_Write.ap_fifo.volatile.i128P.i16P.i16P.i16P(i128* @tx_ipUdpMetaFifo_V_t_1, i16* @tx_ipUdpMetaFifo_V_t, i16* @tx_ipUdpMetaFifo_V_m, i16* @tx_ipUdpMetaFifo_V_l, i128 %tmp_their_address_V, i16 %tmp_their_port_V, i16 4791, i16 %tmp_V_1) nounwind" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ib_transport_protocol/ib_transport_protocol.cpp:2179]   --->   Operation 20 'write' <Predicate = (tmp & tmp_7)> <Delay = 1.83> <Core = "FIFO">   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 1.83> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 24> <Depth = 2> <FIFO>
+ST_2 : Operation 21 [1/1] (1.83ns)   --->   "call void @_ssdm_op_Write.ap_fifo.volatile.i24P(i24* @tx_dstQpFifo_V_V, i24 %tmp_V) nounwind" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ib_transport_protocol/ib_transport_protocol.cpp:2180]   --->   Operation 21 'write' <Predicate = (tmp & tmp_7)> <Delay = 1.83> <Core = "FIFO">   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 1.83> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 24> <Depth = 2> <FIFO>
+ST_2 : Operation 22 [1/1] (0.00ns)   --->   "br label %tx_ipUdpMetaMerger.exit" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ib_transport_protocol/ib_transport_protocol.cpp:2181]   --->   Operation 22 'br' <Predicate = (tmp & tmp_7)> <Delay = 0.00>
+ST_2 : Operation 23 [1/1] (0.00ns)   --->   "ret void"   --->   Operation 23 'ret' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 8ns, clock uncertainty: 1ns.
+
+ <State 1>: 1.84ns
+The critical path consists of the following:
+	fifo read on port 'tx_connTable2ibh_rsp_1' (/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ib_transport_protocol/ib_transport_protocol.cpp:2176) [22]  (1.84 ns)
+
+ <State 2>: 1.84ns
+The critical path consists of the following:
+	fifo write on port 'tx_ipUdpMetaFifo_V_t_1' (/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ib_transport_protocol/ib_transport_protocol.cpp:2179) [27]  (1.84 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

@@ -1,0 +1,167 @@
+
+
+================================================================
+== Vivado HLS Report for 'tx_ipUdpMetaMerger'
+================================================================
+* Date:           Mon Mar  1 13:04:20 2021
+
+* Version:        2019.1 (Build 2552052 on Fri May 24 15:28:33 MDT 2019)
+* Project:        rocev2_prj
+* Solution:       solution1
+* Product family: zynquplus
+* Target device:  xczu7eg-ffvc1156-2-i
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |   8.00|     1.838|        1.00|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+----------+
+    |  Latency  |  Interval | Pipeline |
+    | min | max | min | max |   Type   |
+    +-----+-----+-----+-----+----------+
+    |    1|    1|    1|    1| function |
+    +-----+-----+-----+-----+----------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-------+--------+--------+-----+
+|       Name      | BRAM_18K| DSP48E|   FF   |   LUT  | URAM|
++-----------------+---------+-------+--------+--------+-----+
+|DSP              |        -|      -|       -|       -|    -|
+|Expression       |        -|      -|       0|      18|    -|
+|FIFO             |        -|      -|       -|       -|    -|
+|Instance         |        -|      -|       -|       -|    -|
+|Memory           |        -|      -|       -|       -|    -|
+|Multiplexer      |        -|      -|       -|      72|    -|
+|Register         |        -|      -|     189|       -|    -|
++-----------------+---------+-------+--------+--------+-----+
+|Total            |        0|      0|     189|      90|    0|
++-----------------+---------+-------+--------+--------+-----+
+|Available        |      624|   1728|  460800|  230400|   96|
++-----------------+---------+-------+--------+--------+-----+
+|Utilization (%)  |        0|      0|   ~0   |   ~0   |    0|
++-----------------+---------+-------+--------+--------+-----+
+
++ Detail: 
+    * Instance: 
+    N/A
+
+    * DSP48E: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +----------------------------------+----------+-------+---+----+------------+------------+
+    |           Variable Name          | Operation| DSP48E| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +----------------------------------+----------+-------+---+----+------------+------------+
+    |ap_predicate_op11_read_state1     |    and   |      0|  0|   2|           1|           1|
+    |ap_predicate_op20_write_state2    |    and   |      0|  0|   2|           1|           1|
+    |io_acc_block_signal_op20          |    and   |      0|  0|   2|           1|           1|
+    |tmp_7_nbreadreq_fu_66_p3          |    and   |      0|  0|   2|           1|           0|
+    |tmp_nbreadreq_fu_58_p3            |    and   |      0|  0|   2|           1|           0|
+    |ap_block_pp0_stage0_01001         |    or    |      0|  0|   2|           1|           1|
+    |ap_block_state1_pp0_stage0_iter0  |    or    |      0|  0|   2|           1|           1|
+    |ap_block_state2_pp0_stage0_iter1  |    or    |      0|  0|   2|           1|           1|
+    |ap_enable_pp0                     |    xor   |      0|  0|   2|           1|           2|
+    +----------------------------------+----------+-------+---+----+------------+------------+
+    |Total                             |          |      0|  0|  18|           9|           8|
+    +----------------------------------+----------+-------+---+----+------------+------------+
+
+    * Multiplexer: 
+    +------------------------------+----+-----------+-----+-----------+
+    |             Name             | LUT| Input Size| Bits| Total Bits|
+    +------------------------------+----+-----------+-----+-----------+
+    |ap_done                       |   9|          2|    1|          2|
+    |tx_connTable2ibh_rsp_1_blk_n  |   9|          2|    1|          2|
+    |tx_dstQpFifo_V_V_blk_n        |   9|          2|    1|          2|
+    |tx_ipUdpMetaFifo_V_l_blk_n    |   9|          2|    1|          2|
+    |tx_ipUdpMetaFifo_V_m_blk_n    |   9|          2|    1|          2|
+    |tx_ipUdpMetaFifo_V_t_1_blk_n  |   9|          2|    1|          2|
+    |tx_ipUdpMetaFifo_V_t_blk_n    |   9|          2|    1|          2|
+    |tx_lengthFifo_V_V_blk_n       |   9|          2|    1|          2|
+    +------------------------------+----+-----------+-----+-----------+
+    |Total                         |  72|         16|    8|         16|
+    +------------------------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +-----------------------------+-----+----+-----+-----------+
+    |             Name            |  FF | LUT| Bits| Const Bits|
+    +-----------------------------+-----+----+-----+-----------+
+    |ap_CS_fsm                    |    1|   0|    1|          0|
+    |ap_done_reg                  |    1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter1      |    1|   0|    1|          0|
+    |tmp_7_reg_138                |    1|   0|    1|          0|
+    |tmp_V_1_reg_157              |   16|   0|   16|          0|
+    |tmp_V_reg_142                |   24|   0|   24|          0|
+    |tmp_reg_134                  |    1|   0|    1|          0|
+    |tmp_their_address_V_reg_147  |  128|   0|  128|          0|
+    |tmp_their_port_V_reg_152     |   16|   0|   16|          0|
+    +-----------------------------+-----+----+-----+-----------+
+    |Total                        |  189|   0|  189|          0|
+    +-----------------------------+-----+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++--------------------------------+-----+-----+------------+------------------------+--------------+
+|            RTL Ports           | Dir | Bits|  Protocol  |      Source Object     |    C Type    |
++--------------------------------+-----+-----+------------+------------------------+--------------+
+|ap_clk                          |  in |    1| ap_ctrl_hs |   tx_ipUdpMetaMerger   | return value |
+|ap_rst                          |  in |    1| ap_ctrl_hs |   tx_ipUdpMetaMerger   | return value |
+|ap_start                        |  in |    1| ap_ctrl_hs |   tx_ipUdpMetaMerger   | return value |
+|ap_done                         | out |    1| ap_ctrl_hs |   tx_ipUdpMetaMerger   | return value |
+|ap_continue                     |  in |    1| ap_ctrl_hs |   tx_ipUdpMetaMerger   | return value |
+|ap_idle                         | out |    1| ap_ctrl_hs |   tx_ipUdpMetaMerger   | return value |
+|ap_ready                        | out |    1| ap_ctrl_hs |   tx_ipUdpMetaMerger   | return value |
+|tx_connTable2ibh_rsp_1_dout     |  in |  168|   ap_fifo  | tx_connTable2ibh_rsp_1 |    pointer   |
+|tx_connTable2ibh_rsp_1_empty_n  |  in |    1|   ap_fifo  | tx_connTable2ibh_rsp_1 |    pointer   |
+|tx_connTable2ibh_rsp_1_read     | out |    1|   ap_fifo  | tx_connTable2ibh_rsp_1 |    pointer   |
+|tx_lengthFifo_V_V_dout          |  in |   16|   ap_fifo  |    tx_lengthFifo_V_V   |    pointer   |
+|tx_lengthFifo_V_V_empty_n       |  in |    1|   ap_fifo  |    tx_lengthFifo_V_V   |    pointer   |
+|tx_lengthFifo_V_V_read          | out |    1|   ap_fifo  |    tx_lengthFifo_V_V   |    pointer   |
+|tx_ipUdpMetaFifo_V_t_1_din      | out |  128|   ap_fifo  | tx_ipUdpMetaFifo_V_t_1 |    pointer   |
+|tx_ipUdpMetaFifo_V_t_1_full_n   |  in |    1|   ap_fifo  | tx_ipUdpMetaFifo_V_t_1 |    pointer   |
+|tx_ipUdpMetaFifo_V_t_1_write    | out |    1|   ap_fifo  | tx_ipUdpMetaFifo_V_t_1 |    pointer   |
+|tx_ipUdpMetaFifo_V_t_din        | out |   16|   ap_fifo  |  tx_ipUdpMetaFifo_V_t  |    pointer   |
+|tx_ipUdpMetaFifo_V_t_full_n     |  in |    1|   ap_fifo  |  tx_ipUdpMetaFifo_V_t  |    pointer   |
+|tx_ipUdpMetaFifo_V_t_write      | out |    1|   ap_fifo  |  tx_ipUdpMetaFifo_V_t  |    pointer   |
+|tx_ipUdpMetaFifo_V_m_din        | out |   16|   ap_fifo  |  tx_ipUdpMetaFifo_V_m  |    pointer   |
+|tx_ipUdpMetaFifo_V_m_full_n     |  in |    1|   ap_fifo  |  tx_ipUdpMetaFifo_V_m  |    pointer   |
+|tx_ipUdpMetaFifo_V_m_write      | out |    1|   ap_fifo  |  tx_ipUdpMetaFifo_V_m  |    pointer   |
+|tx_ipUdpMetaFifo_V_l_din        | out |   16|   ap_fifo  |  tx_ipUdpMetaFifo_V_l  |    pointer   |
+|tx_ipUdpMetaFifo_V_l_full_n     |  in |    1|   ap_fifo  |  tx_ipUdpMetaFifo_V_l  |    pointer   |
+|tx_ipUdpMetaFifo_V_l_write      | out |    1|   ap_fifo  |  tx_ipUdpMetaFifo_V_l  |    pointer   |
+|tx_dstQpFifo_V_V_din            | out |   24|   ap_fifo  |    tx_dstQpFifo_V_V    |    pointer   |
+|tx_dstQpFifo_V_V_full_n         |  in |    1|   ap_fifo  |    tx_dstQpFifo_V_V    |    pointer   |
+|tx_dstQpFifo_V_V_write          | out |    1|   ap_fifo  |    tx_dstQpFifo_V_V    |    pointer   |
++--------------------------------+-----+-----+------------+------------------------+--------------+
+

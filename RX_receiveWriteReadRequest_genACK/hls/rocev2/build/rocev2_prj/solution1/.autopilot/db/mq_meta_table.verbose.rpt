@@ -1,0 +1,1394 @@
+
+
+================================================================
+== Vivado HLS Report for 'mq_meta_table'
+================================================================
+* Date:           Mon Mar  1 13:04:23 2021
+
+* Version:        2019.1 (Build 2552052 on Fri May 24 15:28:33 MDT 2019)
+* Project:        rocev2_prj
+* Solution:       solution1
+* Product family: zynquplus
+* Target device:  xczu7eg-ffvc1156-2-i
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |   8.00|     3.075|        1.00|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+----------+
+    |  Latency  |  Interval | Pipeline |
+    | min | max | min | max |   Type   |
+    +-----+-----+-----+-----+----------+
+    |    1|    1|    1|    1| function |
+    +-----+-----+-----+-----+----------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-------+--------+--------+-----+
+|       Name      | BRAM_18K| DSP48E|   FF   |   LUT  | URAM|
++-----------------+---------+-------+--------+--------+-----+
+|DSP              |        -|      -|       -|       -|    -|
+|Expression       |        -|      -|       0|      16|    -|
+|FIFO             |        -|      -|       -|       -|    -|
+|Instance         |        -|      -|       -|       -|    -|
+|Memory           |       12|      -|       0|       0|    0|
+|Multiplexer      |        -|      -|       -|     195|    -|
+|Register         |        -|      -|       6|       -|    -|
++-----------------+---------+-------+--------+--------+-----+
+|Total            |       12|      0|       6|     211|    0|
++-----------------+---------+-------+--------+--------+-----+
+|Available        |      624|   1728|  460800|  230400|   96|
++-----------------+---------+-------+--------+--------+-----+
+|Utilization (%)  |        1|      0|   ~0   |   ~0   |    0|
++-----------------+---------+-------+--------+--------+-----+
+
++ Detail: 
+    * Instance: 
+    N/A
+
+    * DSP48E: 
+    N/A
+
+    * Memory: 
+    +----------------------+----------------------------------+---------+---+----+-----+------+-----+------+-------------+
+    |        Memory        |              Module              | BRAM_18K| FF| LUT| URAM| Words| Bits| Banks| W*Bits*Banks|
+    +----------------------+----------------------------------+---------+---+----+-----+------+-----+------+-------------+
+    |meta_table_next_V_U   |mq_meta_table_meta_table_next_V   |        2|  0|   0|    0|  2048|   16|     1|        32768|
+    |meta_table_valid_U    |mq_meta_table_meta_table_valid    |        1|  0|   0|    0|  2048|    1|     1|         2048|
+    |meta_table_isTail_U   |mq_meta_table_meta_table_valid    |        1|  0|   0|    0|  2048|    1|     1|         2048|
+    |meta_table_value_V_U  |mq_meta_table_meta_table_value_V  |        8|  0|   0|    0|  2048|   64|     1|       131072|
+    +----------------------+----------------------------------+---------+---+----+-----+------+-----+------+-------------+
+    |Total                 |                                  |       12|  0|   0|    0|  8192|   82|     4|       167936|
+    +----------------------+----------------------------------+---------+---+----+-----+------+-----+------+-------------+
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +----------------------------------+----------+-------+---+----+------------+------------+
+    |           Variable Name          | Operation| DSP48E| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +----------------------------------+----------+-------+---+----+------------+------------+
+    |ap_block_state2_pp0_stage0_iter1  |    and   |      0|  0|   2|           1|           1|
+    |ap_condition_159                  |    and   |      0|  0|   2|           1|           1|
+    |ap_predicate_op53_write_state2    |    and   |      0|  0|   2|           1|           1|
+    |io_acc_block_signal_op5           |    and   |      0|  0|   2|           1|           1|
+    |io_acc_block_signal_op53          |    and   |      0|  0|   2|           1|           1|
+    |ap_block_pp0_stage0_01001         |    or    |      0|  0|   2|           1|           1|
+    |ap_block_state1_pp0_stage0_iter0  |    or    |      0|  0|   2|           1|           1|
+    |ap_enable_pp0                     |    xor   |      0|  0|   2|           1|           2|
+    +----------------------------------+----------+-------+---+----+------------+------------+
+    |Total                             |          |      0|  0|  16|           8|           9|
+    +----------------------------------+----------+-------+---+----+------------+------------+
+
+    * Multiplexer: 
+    +------------------------------+----+-----------+-----+-----------+
+    |             Name             | LUT| Input Size| Bits| Total Bits|
+    +------------------------------+----+-----------+-----+-----------+
+    |ap_done                       |   9|          2|    1|          2|
+    |meta_table_isTail_address0    |  21|          4|   11|         44|
+    |meta_table_isTail_d0          |  15|          3|    1|          3|
+    |meta_table_next_V_address0    |  21|          4|   11|         44|
+    |meta_table_valid_address0     |  15|          3|   11|         33|
+    |meta_table_value_V_address0   |  15|          3|   11|         33|
+    |mq_metaReqFifo_V_app_blk_n    |   9|          2|    1|          2|
+    |mq_metaReqFifo_V_ent_1_blk_n  |   9|          2|    1|          2|
+    |mq_metaReqFifo_V_ent_3_blk_n  |   9|          2|    1|          2|
+    |mq_metaReqFifo_V_ent_4_blk_n  |   9|          2|    1|          2|
+    |mq_metaReqFifo_V_ent_blk_n    |   9|          2|    1|          2|
+    |mq_metaReqFifo_V_idx_blk_n    |   9|          2|    1|          2|
+    |mq_metaReqFifo_V_wri_blk_n    |   9|          2|    1|          2|
+    |mq_metaRspFifo_V_isT_blk_n    |   9|          2|    1|          2|
+    |mq_metaRspFifo_V_nex_blk_n    |   9|          2|    1|          2|
+    |mq_metaRspFifo_V_val_1_blk_n  |   9|          2|    1|          2|
+    |mq_metaRspFifo_V_val_blk_n    |   9|          2|    1|          2|
+    +------------------------------+----+-----------+-----+-----------+
+    |Total                         | 195|         41|   57|        181|
+    +------------------------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +-------------------------+---+----+-----+-----------+
+    |           Name          | FF| LUT| Bits| Const Bits|
+    +-------------------------+---+----+-----+-----------+
+    |ap_CS_fsm                |  1|   0|    1|          0|
+    |ap_done_reg              |  1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter1  |  1|   0|    1|          0|
+    |tmp_append_reg_277       |  1|   0|    1|          0|
+    |tmp_reg_269              |  1|   0|    1|          0|
+    |tmp_write_reg_273        |  1|   0|    1|          0|
+    +-------------------------+---+----+-----+-----------+
+    |Total                    |  6|   0|    6|          0|
+    +-------------------------+---+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++--------------------------------+-----+-----+------------+------------------------+--------------+
+|            RTL Ports           | Dir | Bits|  Protocol  |      Source Object     |    C Type    |
++--------------------------------+-----+-----+------------+------------------------+--------------+
+|ap_clk                          |  in |    1| ap_ctrl_hs |      mq_meta_table     | return value |
+|ap_rst                          |  in |    1| ap_ctrl_hs |      mq_meta_table     | return value |
+|ap_start                        |  in |    1| ap_ctrl_hs |      mq_meta_table     | return value |
+|ap_done                         | out |    1| ap_ctrl_hs |      mq_meta_table     | return value |
+|ap_continue                     |  in |    1| ap_ctrl_hs |      mq_meta_table     | return value |
+|ap_idle                         | out |    1| ap_ctrl_hs |      mq_meta_table     | return value |
+|ap_ready                        | out |    1| ap_ctrl_hs |      mq_meta_table     | return value |
+|mq_metaReqFifo_V_idx_dout       |  in |   16|   ap_fifo  |  mq_metaReqFifo_V_idx  |    pointer   |
+|mq_metaReqFifo_V_idx_empty_n    |  in |    1|   ap_fifo  |  mq_metaReqFifo_V_idx  |    pointer   |
+|mq_metaReqFifo_V_idx_read       | out |    1|   ap_fifo  |  mq_metaReqFifo_V_idx  |    pointer   |
+|mq_metaReqFifo_V_ent_dout       |  in |   64|   ap_fifo  |  mq_metaReqFifo_V_ent  |    pointer   |
+|mq_metaReqFifo_V_ent_empty_n    |  in |    1|   ap_fifo  |  mq_metaReqFifo_V_ent  |    pointer   |
+|mq_metaReqFifo_V_ent_read       | out |    1|   ap_fifo  |  mq_metaReqFifo_V_ent  |    pointer   |
+|mq_metaReqFifo_V_ent_3_dout     |  in |   16|   ap_fifo  | mq_metaReqFifo_V_ent_3 |    pointer   |
+|mq_metaReqFifo_V_ent_3_empty_n  |  in |    1|   ap_fifo  | mq_metaReqFifo_V_ent_3 |    pointer   |
+|mq_metaReqFifo_V_ent_3_read     | out |    1|   ap_fifo  | mq_metaReqFifo_V_ent_3 |    pointer   |
+|mq_metaReqFifo_V_ent_4_dout     |  in |    1|   ap_fifo  | mq_metaReqFifo_V_ent_4 |    pointer   |
+|mq_metaReqFifo_V_ent_4_empty_n  |  in |    1|   ap_fifo  | mq_metaReqFifo_V_ent_4 |    pointer   |
+|mq_metaReqFifo_V_ent_4_read     | out |    1|   ap_fifo  | mq_metaReqFifo_V_ent_4 |    pointer   |
+|mq_metaReqFifo_V_ent_1_dout     |  in |    1|   ap_fifo  | mq_metaReqFifo_V_ent_1 |    pointer   |
+|mq_metaReqFifo_V_ent_1_empty_n  |  in |    1|   ap_fifo  | mq_metaReqFifo_V_ent_1 |    pointer   |
+|mq_metaReqFifo_V_ent_1_read     | out |    1|   ap_fifo  | mq_metaReqFifo_V_ent_1 |    pointer   |
+|mq_metaReqFifo_V_wri_dout       |  in |    1|   ap_fifo  |  mq_metaReqFifo_V_wri  |    pointer   |
+|mq_metaReqFifo_V_wri_empty_n    |  in |    1|   ap_fifo  |  mq_metaReqFifo_V_wri  |    pointer   |
+|mq_metaReqFifo_V_wri_read       | out |    1|   ap_fifo  |  mq_metaReqFifo_V_wri  |    pointer   |
+|mq_metaReqFifo_V_app_dout       |  in |    1|   ap_fifo  |  mq_metaReqFifo_V_app  |    pointer   |
+|mq_metaReqFifo_V_app_empty_n    |  in |    1|   ap_fifo  |  mq_metaReqFifo_V_app  |    pointer   |
+|mq_metaReqFifo_V_app_read       | out |    1|   ap_fifo  |  mq_metaReqFifo_V_app  |    pointer   |
+|mq_metaRspFifo_V_val_din        | out |   64|   ap_fifo  |  mq_metaRspFifo_V_val  |    pointer   |
+|mq_metaRspFifo_V_val_full_n     |  in |    1|   ap_fifo  |  mq_metaRspFifo_V_val  |    pointer   |
+|mq_metaRspFifo_V_val_write      | out |    1|   ap_fifo  |  mq_metaRspFifo_V_val  |    pointer   |
+|mq_metaRspFifo_V_nex_din        | out |   16|   ap_fifo  |  mq_metaRspFifo_V_nex  |    pointer   |
+|mq_metaRspFifo_V_nex_full_n     |  in |    1|   ap_fifo  |  mq_metaRspFifo_V_nex  |    pointer   |
+|mq_metaRspFifo_V_nex_write      | out |    1|   ap_fifo  |  mq_metaRspFifo_V_nex  |    pointer   |
+|mq_metaRspFifo_V_val_1_din      | out |    1|   ap_fifo  | mq_metaRspFifo_V_val_1 |    pointer   |
+|mq_metaRspFifo_V_val_1_full_n   |  in |    1|   ap_fifo  | mq_metaRspFifo_V_val_1 |    pointer   |
+|mq_metaRspFifo_V_val_1_write    | out |    1|   ap_fifo  | mq_metaRspFifo_V_val_1 |    pointer   |
+|mq_metaRspFifo_V_isT_din        | out |    1|   ap_fifo  |  mq_metaRspFifo_V_isT  |    pointer   |
+|mq_metaRspFifo_V_isT_full_n     |  in |    1|   ap_fifo  |  mq_metaRspFifo_V_isT  |    pointer   |
+|mq_metaRspFifo_V_isT_write      | out |    1|   ap_fifo  |  mq_metaRspFifo_V_isT  |    pointer   |
++--------------------------------+-----+-----+------------+------------------------+--------------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 2
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 2
+HasVarLatency: 0
+IsPipeline: 1
+IsRtlPipelined: 1
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
++ Individual pipeline summary: 
+  * Pipeline-0: initiation interval (II) = 1, depth = 2
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 2
+* Pipeline : 1
+  Pipeline-0 : II = 1, D = 2, States = { 1 2 }
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 3.07>
+ST_1 : Operation 3 [1/1] (0.00ns)   --->   "%tmp = call i1 @_ssdm_op_NbReadReq.ap_fifo.i16P.i64P.i16P.i1P.i1P.i1P.i1P(i16* @mq_metaReqFifo_V_idx, i64* @mq_metaReqFifo_V_ent, i16* @mq_metaReqFifo_V_ent_3, i1* @mq_metaReqFifo_V_ent_4, i1* @mq_metaReqFifo_V_ent_1, i1* @mq_metaReqFifo_V_wri, i1* @mq_metaReqFifo_V_app, i32 1) nounwind" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ib_transport_protocol/multi_queue/multi_queue.hpp:208]   --->   Operation 3 'nbreadreq' 'tmp' <Predicate = true> <Delay = 0.00> <Core = "FIFO">   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 1.83> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 2> <FIFO>
+ST_1 : Operation 4 [1/1] (0.00ns)   --->   "br i1 %tmp, label %0, label %"mq_meta_table<ap_uint<64>, 2048>.exit"" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ib_transport_protocol/multi_queue/multi_queue.hpp:208]   --->   Operation 4 'br' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 5 [1/1] (1.83ns)   --->   "%empty = call { i16, i64, i16, i1, i1, i1, i1 } @_ssdm_op_Read.ap_fifo.volatile.i16P.i64P.i16P.i1P.i1P.i1P.i1P(i16* @mq_metaReqFifo_V_idx, i64* @mq_metaReqFifo_V_ent, i16* @mq_metaReqFifo_V_ent_3, i1* @mq_metaReqFifo_V_ent_4, i1* @mq_metaReqFifo_V_ent_1, i1* @mq_metaReqFifo_V_wri, i1* @mq_metaReqFifo_V_app) nounwind" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ib_transport_protocol/multi_queue/multi_queue.hpp:210]   --->   Operation 5 'read' 'empty' <Predicate = (tmp)> <Delay = 1.83> <Core = "FIFO">   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 1.83> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 2> <FIFO>
+ST_1 : Operation 6 [1/1] (0.00ns)   --->   "%tmp_idx_V = extractvalue { i16, i64, i16, i1, i1, i1, i1 } %empty, 0" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ib_transport_protocol/multi_queue/multi_queue.hpp:210]   --->   Operation 6 'extractvalue' 'tmp_idx_V' <Predicate = (tmp)> <Delay = 0.00>
+ST_1 : Operation 7 [1/1] (0.00ns)   --->   "%tmp_entry_value_V = extractvalue { i16, i64, i16, i1, i1, i1, i1 } %empty, 1" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ib_transport_protocol/multi_queue/multi_queue.hpp:210]   --->   Operation 7 'extractvalue' 'tmp_entry_value_V' <Predicate = (tmp)> <Delay = 0.00>
+ST_1 : Operation 8 [1/1] (0.00ns)   --->   "%tmp_entry_next_V = extractvalue { i16, i64, i16, i1, i1, i1, i1 } %empty, 2" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ib_transport_protocol/multi_queue/multi_queue.hpp:210]   --->   Operation 8 'extractvalue' 'tmp_entry_next_V' <Predicate = (tmp)> <Delay = 0.00>
+ST_1 : Operation 9 [1/1] (0.00ns)   --->   "%tmp_entry_valid = extractvalue { i16, i64, i16, i1, i1, i1, i1 } %empty, 3" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ib_transport_protocol/multi_queue/multi_queue.hpp:210]   --->   Operation 9 'extractvalue' 'tmp_entry_valid' <Predicate = (tmp)> <Delay = 0.00>
+ST_1 : Operation 10 [1/1] (0.00ns)   --->   "%tmp_entry_isTail = extractvalue { i16, i64, i16, i1, i1, i1, i1 } %empty, 4" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ib_transport_protocol/multi_queue/multi_queue.hpp:210]   --->   Operation 10 'extractvalue' 'tmp_entry_isTail' <Predicate = (tmp)> <Delay = 0.00>
+ST_1 : Operation 11 [1/1] (0.00ns)   --->   "%tmp_write = extractvalue { i16, i64, i16, i1, i1, i1, i1 } %empty, 5" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ib_transport_protocol/multi_queue/multi_queue.hpp:210]   --->   Operation 11 'extractvalue' 'tmp_write' <Predicate = (tmp)> <Delay = 0.00>
+ST_1 : Operation 12 [1/1] (0.00ns)   --->   "%tmp_append = extractvalue { i16, i64, i16, i1, i1, i1, i1 } %empty, 6" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ib_transport_protocol/multi_queue/multi_queue.hpp:210]   --->   Operation 12 'extractvalue' 'tmp_append' <Predicate = (tmp)> <Delay = 0.00>
+ST_1 : Operation 13 [1/1] (0.00ns)   --->   "%zext_ln544 = zext i16 %tmp_idx_V to i64" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ib_transport_protocol/multi_queue/multi_queue.hpp:213]   --->   Operation 13 'zext' 'zext_ln544' <Predicate = (tmp)> <Delay = 0.00>
+ST_1 : Operation 14 [1/1] (0.00ns)   --->   "br i1 %tmp_write, label %1, label %2" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ib_transport_protocol/multi_queue/multi_queue.hpp:211]   --->   Operation 14 'br' <Predicate = (tmp)> <Delay = 0.00>
+ST_1 : Operation 15 [1/1] (0.00ns)   --->   "br i1 %tmp_append, label %3, label %4" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ib_transport_protocol/multi_queue/multi_queue.hpp:215]   --->   Operation 15 'br' <Predicate = (tmp & !tmp_write)> <Delay = 0.00>
+ST_1 : Operation 16 [1/1] (0.00ns)   --->   "%meta_table_value_V_a_1 = getelementptr [2048 x i64]* @meta_table_value_V, i64 0, i64 %zext_ln544" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ib_transport_protocol/multi_queue/multi_queue.hpp:223]   --->   Operation 16 'getelementptr' 'meta_table_value_V_a_1' <Predicate = (tmp & !tmp_write & !tmp_append)> <Delay = 0.00>
+ST_1 : Operation 17 [2/2] (1.23ns)   --->   "%tmp_value_V = load i64* %meta_table_value_V_a_1, align 16" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ib_transport_protocol/multi_queue/multi_queue.hpp:223]   --->   Operation 17 'load' 'tmp_value_V' <Predicate = (tmp & !tmp_write & !tmp_append)> <Delay = 1.23> <Core = "RAM_T2P_BRAM">   --->   Core 38 'RAM_T2P_BRAM' <Latency = 1> <II = 1> <Delay = 1.23> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 1> <Depth = 2048> <RAM>
+ST_1 : Operation 18 [1/1] (0.00ns)   --->   "%meta_table_next_V_ad_2 = getelementptr [2048 x i16]* @meta_table_next_V, i64 0, i64 %zext_ln544" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ib_transport_protocol/multi_queue/multi_queue.hpp:223]   --->   Operation 18 'getelementptr' 'meta_table_next_V_ad_2' <Predicate = (tmp & !tmp_write & !tmp_append)> <Delay = 0.00>
+ST_1 : Operation 19 [2/2] (1.23ns)   --->   "%tmp_next_V = load i16* %meta_table_next_V_ad_2, align 8" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ib_transport_protocol/multi_queue/multi_queue.hpp:223]   --->   Operation 19 'load' 'tmp_next_V' <Predicate = (tmp & !tmp_write & !tmp_append)> <Delay = 1.23> <Core = "RAM_T2P_BRAM">   --->   Core 38 'RAM_T2P_BRAM' <Latency = 1> <II = 1> <Delay = 1.23> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 1> <Depth = 2048> <RAM>
+ST_1 : Operation 20 [1/1] (0.00ns)   --->   "%meta_table_valid_add_1 = getelementptr [2048 x i1]* @meta_table_valid, i64 0, i64 %zext_ln544" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ib_transport_protocol/multi_queue/multi_queue.hpp:223]   --->   Operation 20 'getelementptr' 'meta_table_valid_add_1' <Predicate = (tmp & !tmp_write & !tmp_append)> <Delay = 0.00>
+ST_1 : Operation 21 [2/2] (1.23ns)   --->   "%tmp_valid = load i1* %meta_table_valid_add_1, align 2" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ib_transport_protocol/multi_queue/multi_queue.hpp:223]   --->   Operation 21 'load' 'tmp_valid' <Predicate = (tmp & !tmp_write & !tmp_append)> <Delay = 1.23> <Core = "RAM_T2P_BRAM">   --->   Core 38 'RAM_T2P_BRAM' <Latency = 1> <II = 1> <Delay = 1.23> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 1> <Depth = 2048> <RAM>
+ST_1 : Operation 22 [1/1] (0.00ns)   --->   "%meta_table_isTail_ad_2 = getelementptr [2048 x i1]* @meta_table_isTail, i64 0, i64 %zext_ln544" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ib_transport_protocol/multi_queue/multi_queue.hpp:223]   --->   Operation 22 'getelementptr' 'meta_table_isTail_ad_2' <Predicate = (tmp & !tmp_write & !tmp_append)> <Delay = 0.00>
+ST_1 : Operation 23 [2/2] (1.23ns)   --->   "%tmp_isTail = load i1* %meta_table_isTail_ad_2, align 1" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ib_transport_protocol/multi_queue/multi_queue.hpp:223]   --->   Operation 23 'load' 'tmp_isTail' <Predicate = (tmp & !tmp_write & !tmp_append)> <Delay = 1.23> <Core = "RAM_T2P_BRAM">   --->   Core 38 'RAM_T2P_BRAM' <Latency = 1> <II = 1> <Delay = 1.23> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 1> <Depth = 2048> <RAM>
+ST_1 : Operation 24 [1/1] (0.00ns)   --->   "%meta_table_next_V_ad_1 = getelementptr [2048 x i16]* @meta_table_next_V, i64 0, i64 %zext_ln544" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ib_transport_protocol/multi_queue/multi_queue.hpp:217]   --->   Operation 24 'getelementptr' 'meta_table_next_V_ad_1' <Predicate = (tmp & !tmp_write & tmp_append)> <Delay = 0.00>
+ST_1 : Operation 25 [1/1] (1.23ns)   --->   "store i16 %tmp_entry_next_V, i16* %meta_table_next_V_ad_1, align 8" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ib_transport_protocol/multi_queue/multi_queue.hpp:217]   --->   Operation 25 'store' <Predicate = (tmp & !tmp_write & tmp_append)> <Delay = 1.23> <Core = "RAM_T2P_BRAM">   --->   Core 38 'RAM_T2P_BRAM' <Latency = 1> <II = 1> <Delay = 1.23> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 1> <Depth = 2048> <RAM>
+ST_1 : Operation 26 [1/1] (0.00ns)   --->   "%meta_table_isTail_ad_1 = getelementptr [2048 x i1]* @meta_table_isTail, i64 0, i64 %zext_ln544" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ib_transport_protocol/multi_queue/multi_queue.hpp:218]   --->   Operation 26 'getelementptr' 'meta_table_isTail_ad_1' <Predicate = (tmp & !tmp_write & tmp_append)> <Delay = 0.00>
+ST_1 : Operation 27 [1/1] (1.23ns)   --->   "store i1 false, i1* %meta_table_isTail_ad_1, align 1" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ib_transport_protocol/multi_queue/multi_queue.hpp:218]   --->   Operation 27 'store' <Predicate = (tmp & !tmp_write & tmp_append)> <Delay = 1.23> <Core = "RAM_T2P_BRAM">   --->   Core 38 'RAM_T2P_BRAM' <Latency = 1> <II = 1> <Delay = 1.23> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 1> <Depth = 2048> <RAM>
+ST_1 : Operation 28 [1/1] (0.00ns)   --->   "%meta_table_value_V_a = getelementptr [2048 x i64]* @meta_table_value_V, i64 0, i64 %zext_ln544" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ib_transport_protocol/multi_queue/multi_queue.hpp:64->/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ib_transport_protocol/multi_queue/multi_queue.hpp:213]   --->   Operation 28 'getelementptr' 'meta_table_value_V_a' <Predicate = (tmp & tmp_write)> <Delay = 0.00>
+ST_1 : Operation 29 [1/1] (1.23ns)   --->   "store i64 %tmp_entry_value_V, i64* %meta_table_value_V_a, align 16" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ib_transport_protocol/multi_queue/multi_queue.hpp:64->/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ib_transport_protocol/multi_queue/multi_queue.hpp:213]   --->   Operation 29 'store' <Predicate = (tmp & tmp_write)> <Delay = 1.23> <Core = "RAM_T2P_BRAM">   --->   Core 38 'RAM_T2P_BRAM' <Latency = 1> <II = 1> <Delay = 1.23> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 1> <Depth = 2048> <RAM>
+ST_1 : Operation 30 [1/1] (0.00ns)   --->   "%meta_table_next_V_ad = getelementptr [2048 x i16]* @meta_table_next_V, i64 0, i64 %zext_ln544" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ib_transport_protocol/multi_queue/multi_queue.hpp:64->/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ib_transport_protocol/multi_queue/multi_queue.hpp:213]   --->   Operation 30 'getelementptr' 'meta_table_next_V_ad' <Predicate = (tmp & tmp_write)> <Delay = 0.00>
+ST_1 : Operation 31 [1/1] (1.23ns)   --->   "store i16 %tmp_entry_next_V, i16* %meta_table_next_V_ad, align 8" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ib_transport_protocol/multi_queue/multi_queue.hpp:64->/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ib_transport_protocol/multi_queue/multi_queue.hpp:213]   --->   Operation 31 'store' <Predicate = (tmp & tmp_write)> <Delay = 1.23> <Core = "RAM_T2P_BRAM">   --->   Core 38 'RAM_T2P_BRAM' <Latency = 1> <II = 1> <Delay = 1.23> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 1> <Depth = 2048> <RAM>
+ST_1 : Operation 32 [1/1] (0.00ns)   --->   "%meta_table_valid_add = getelementptr [2048 x i1]* @meta_table_valid, i64 0, i64 %zext_ln544" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ib_transport_protocol/multi_queue/multi_queue.hpp:64->/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ib_transport_protocol/multi_queue/multi_queue.hpp:213]   --->   Operation 32 'getelementptr' 'meta_table_valid_add' <Predicate = (tmp & tmp_write)> <Delay = 0.00>
+ST_1 : Operation 33 [1/1] (1.23ns)   --->   "store i1 %tmp_entry_valid, i1* %meta_table_valid_add, align 2" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ib_transport_protocol/multi_queue/multi_queue.hpp:64->/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ib_transport_protocol/multi_queue/multi_queue.hpp:213]   --->   Operation 33 'store' <Predicate = (tmp & tmp_write)> <Delay = 1.23> <Core = "RAM_T2P_BRAM">   --->   Core 38 'RAM_T2P_BRAM' <Latency = 1> <II = 1> <Delay = 1.23> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 1> <Depth = 2048> <RAM>
+ST_1 : Operation 34 [1/1] (0.00ns)   --->   "%meta_table_isTail_ad = getelementptr [2048 x i1]* @meta_table_isTail, i64 0, i64 %zext_ln544" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ib_transport_protocol/multi_queue/multi_queue.hpp:64->/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ib_transport_protocol/multi_queue/multi_queue.hpp:213]   --->   Operation 34 'getelementptr' 'meta_table_isTail_ad' <Predicate = (tmp & tmp_write)> <Delay = 0.00>
+ST_1 : Operation 35 [1/1] (1.23ns)   --->   "store i1 %tmp_entry_isTail, i1* %meta_table_isTail_ad, align 1" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ib_transport_protocol/multi_queue/multi_queue.hpp:64->/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ib_transport_protocol/multi_queue/multi_queue.hpp:213]   --->   Operation 35 'store' <Predicate = (tmp & tmp_write)> <Delay = 1.23> <Core = "RAM_T2P_BRAM">   --->   Core 38 'RAM_T2P_BRAM' <Latency = 1> <II = 1> <Delay = 1.23> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 1> <Depth = 2048> <RAM>
+
+State 2 <SV = 1> <Delay = 3.07>
+ST_2 : Operation 36 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i1* @mq_metaReqFifo_V_app, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str, [1 x i8]* @p_str)"   --->   Operation 36 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 37 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i1* @mq_metaReqFifo_V_ent_1, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str, [1 x i8]* @p_str)"   --->   Operation 37 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 38 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i16* @mq_metaReqFifo_V_ent_3, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str, [1 x i8]* @p_str)"   --->   Operation 38 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 39 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i1* @mq_metaReqFifo_V_ent_4, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str, [1 x i8]* @p_str)"   --->   Operation 39 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 40 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i64* @mq_metaReqFifo_V_ent, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str, [1 x i8]* @p_str)"   --->   Operation 40 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 41 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i16* @mq_metaReqFifo_V_idx, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str, [1 x i8]* @p_str)"   --->   Operation 41 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 42 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i1* @mq_metaReqFifo_V_wri, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str, [1 x i8]* @p_str)"   --->   Operation 42 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 43 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i1* @mq_metaRspFifo_V_isT, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str, [1 x i8]* @p_str)"   --->   Operation 43 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 44 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i16* @mq_metaRspFifo_V_nex, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str, [1 x i8]* @p_str)"   --->   Operation 44 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 45 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i1* @mq_metaRspFifo_V_val_1, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str, [1 x i8]* @p_str)"   --->   Operation 45 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 46 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i64* @mq_metaRspFifo_V_val, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str, [1 x i8]* @p_str)"   --->   Operation 46 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 47 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecPipeline(i32 1, i32 1, i32 1, i32 0, [1 x i8]* @p_str112) nounwind" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ib_transport_protocol/multi_queue/multi_queue.hpp:200]   --->   Operation 47 'specpipeline' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 48 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecMemCore([2048 x i64]* @meta_table_value_V, [2048 x i16]* @meta_table_next_V, [2048 x i1]* @meta_table_valid, [2048 x i1]* @meta_table_isTail, [1 x i8]* @p_str112, [13 x i8]* @p_str87, [1 x i8]* @p_str112, i32 -1, [1 x i8]* @p_str112, [1 x i8]* @p_str112, [1 x i8]* @p_str112, [1 x i8]* @p_str112, [1 x i8]* @p_str112) nounwind" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ib_transport_protocol/multi_queue/multi_queue.hpp:204]   --->   Operation 48 'specmemcore' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 49 [1/2] (1.23ns)   --->   "%tmp_value_V = load i64* %meta_table_value_V_a_1, align 16" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ib_transport_protocol/multi_queue/multi_queue.hpp:223]   --->   Operation 49 'load' 'tmp_value_V' <Predicate = (tmp & !tmp_write & !tmp_append)> <Delay = 1.23> <Core = "RAM_T2P_BRAM">   --->   Core 38 'RAM_T2P_BRAM' <Latency = 1> <II = 1> <Delay = 1.23> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 1> <Depth = 2048> <RAM>
+ST_2 : Operation 50 [1/2] (1.23ns)   --->   "%tmp_next_V = load i16* %meta_table_next_V_ad_2, align 8" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ib_transport_protocol/multi_queue/multi_queue.hpp:223]   --->   Operation 50 'load' 'tmp_next_V' <Predicate = (tmp & !tmp_write & !tmp_append)> <Delay = 1.23> <Core = "RAM_T2P_BRAM">   --->   Core 38 'RAM_T2P_BRAM' <Latency = 1> <II = 1> <Delay = 1.23> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 1> <Depth = 2048> <RAM>
+ST_2 : Operation 51 [1/2] (1.23ns)   --->   "%tmp_valid = load i1* %meta_table_valid_add_1, align 2" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ib_transport_protocol/multi_queue/multi_queue.hpp:223]   --->   Operation 51 'load' 'tmp_valid' <Predicate = (tmp & !tmp_write & !tmp_append)> <Delay = 1.23> <Core = "RAM_T2P_BRAM">   --->   Core 38 'RAM_T2P_BRAM' <Latency = 1> <II = 1> <Delay = 1.23> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 1> <Depth = 2048> <RAM>
+ST_2 : Operation 52 [1/2] (1.23ns)   --->   "%tmp_isTail = load i1* %meta_table_isTail_ad_2, align 1" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ib_transport_protocol/multi_queue/multi_queue.hpp:223]   --->   Operation 52 'load' 'tmp_isTail' <Predicate = (tmp & !tmp_write & !tmp_append)> <Delay = 1.23> <Core = "RAM_T2P_BRAM">   --->   Core 38 'RAM_T2P_BRAM' <Latency = 1> <II = 1> <Delay = 1.23> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 1> <Depth = 2048> <RAM>
+ST_2 : Operation 53 [1/1] (1.83ns)   --->   "call void @_ssdm_op_Write.ap_fifo.volatile.i64P.i16P.i1P.i1P(i64* @mq_metaRspFifo_V_val, i16* @mq_metaRspFifo_V_nex, i1* @mq_metaRspFifo_V_val_1, i1* @mq_metaRspFifo_V_isT, i64 %tmp_value_V, i16 %tmp_next_V, i1 %tmp_valid, i1 %tmp_isTail) nounwind" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ib_transport_protocol/multi_queue/multi_queue.hpp:223]   --->   Operation 53 'write' <Predicate = (tmp & !tmp_write & !tmp_append)> <Delay = 1.83> <Core = "FIFO">   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 1.83> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 2> <FIFO>
+ST_2 : Operation 54 [1/1] (0.00ns)   --->   "br label %5"   --->   Operation 54 'br' <Predicate = (tmp & !tmp_write & !tmp_append)> <Delay = 0.00>
+ST_2 : Operation 55 [1/1] (0.00ns)   --->   "br label %5" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ib_transport_protocol/multi_queue/multi_queue.hpp:219]   --->   Operation 55 'br' <Predicate = (tmp & !tmp_write & tmp_append)> <Delay = 0.00>
+ST_2 : Operation 56 [1/1] (0.00ns)   --->   "br label %6"   --->   Operation 56 'br' <Predicate = (tmp & !tmp_write)> <Delay = 0.00>
+ST_2 : Operation 57 [1/1] (0.00ns)   --->   "br label %6" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ib_transport_protocol/multi_queue/multi_queue.hpp:214]   --->   Operation 57 'br' <Predicate = (tmp & tmp_write)> <Delay = 0.00>
+ST_2 : Operation 58 [1/1] (0.00ns)   --->   "br label %"mq_meta_table<ap_uint<64>, 2048>.exit"" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ib_transport_protocol/multi_queue/multi_queue.hpp:225]   --->   Operation 58 'br' <Predicate = (tmp)> <Delay = 0.00>
+ST_2 : Operation 59 [1/1] (0.00ns)   --->   "ret void"   --->   Operation 59 'ret' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+STG Binding: 
+---------------- STG Properties BEGIN ----------------
+- Is combinational: 0
+- Is one-state seq: 0
+- Is datapath-only: 0
+- Is pipelined: 1
+- Is top level: 0
+Port [ Return ] is wired: 1; IO mode=ap_ctrl_hs:ce=0
+Port [ mq_metaReqFifo_V_idx]:  wired=1; compound=1; hidden=0; nouse=0; global=1; static=1; extern=0; dir=0; type=3; pingpong=0; private_global=0; linkage=7; visibility=0; IO mode=ap_fifo:ce=0
+Port [ mq_metaReqFifo_V_ent]:  wired=1; compound=1; hidden=0; nouse=0; global=1; static=1; extern=0; dir=0; type=3; pingpong=0; private_global=0; linkage=7; visibility=0; IO mode=ap_fifo:ce=0
+Port [ mq_metaReqFifo_V_ent_3]:  wired=1; compound=1; hidden=0; nouse=0; global=1; static=1; extern=0; dir=0; type=3; pingpong=0; private_global=0; linkage=7; visibility=0; IO mode=ap_fifo:ce=0
+Port [ mq_metaReqFifo_V_ent_4]:  wired=1; compound=1; hidden=0; nouse=0; global=1; static=1; extern=0; dir=0; type=3; pingpong=0; private_global=0; linkage=7; visibility=0; IO mode=ap_fifo:ce=0
+Port [ mq_metaReqFifo_V_ent_1]:  wired=1; compound=1; hidden=0; nouse=0; global=1; static=1; extern=0; dir=0; type=3; pingpong=0; private_global=0; linkage=7; visibility=0; IO mode=ap_fifo:ce=0
+Port [ mq_metaReqFifo_V_wri]:  wired=1; compound=1; hidden=0; nouse=0; global=1; static=1; extern=0; dir=0; type=3; pingpong=0; private_global=0; linkage=7; visibility=0; IO mode=ap_fifo:ce=0
+Port [ mq_metaReqFifo_V_app]:  wired=1; compound=1; hidden=0; nouse=0; global=1; static=1; extern=0; dir=0; type=3; pingpong=0; private_global=0; linkage=7; visibility=0; IO mode=ap_fifo:ce=0
+Port [ meta_table_value_V]:  wired=0; compound=1; hidden=1; nouse=0; global=1; static=1; extern=0; dir=2; type=1; pingpong=0; private_global=1; linkage=7; visibility=0; MemPort=[23]; IO mode=ap_memory:ce=0
+Port [ meta_table_next_V]:  wired=0; compound=1; hidden=1; nouse=0; global=1; static=1; extern=0; dir=2; type=1; pingpong=0; private_global=1; linkage=7; visibility=0; MemPort=[23]; IO mode=ap_memory:ce=0
+Port [ meta_table_valid]:  wired=0; compound=1; hidden=1; nouse=0; global=1; static=1; extern=0; dir=2; type=1; pingpong=0; private_global=1; linkage=7; visibility=0; MemPort=[23]; IO mode=ap_memory:ce=0
+Port [ meta_table_isTail]:  wired=0; compound=1; hidden=1; nouse=0; global=1; static=1; extern=0; dir=2; type=1; pingpong=0; private_global=1; linkage=7; visibility=0; MemPort=[23]; IO mode=ap_memory:ce=0
+Port [ mq_metaRspFifo_V_val]:  wired=1; compound=1; hidden=0; nouse=0; global=1; static=1; extern=0; dir=1; type=3; pingpong=0; private_global=0; linkage=7; visibility=0; IO mode=ap_fifo:ce=0
+Port [ mq_metaRspFifo_V_nex]:  wired=1; compound=1; hidden=0; nouse=0; global=1; static=1; extern=0; dir=1; type=3; pingpong=0; private_global=0; linkage=7; visibility=0; IO mode=ap_fifo:ce=0
+Port [ mq_metaRspFifo_V_val_1]:  wired=1; compound=1; hidden=0; nouse=0; global=1; static=1; extern=0; dir=1; type=3; pingpong=0; private_global=0; linkage=7; visibility=0; IO mode=ap_fifo:ce=0
+Port [ mq_metaRspFifo_V_isT]:  wired=1; compound=1; hidden=0; nouse=0; global=1; static=1; extern=0; dir=1; type=3; pingpong=0; private_global=0; linkage=7; visibility=0; IO mode=ap_fifo:ce=0
+---------------- STG Properties END ------------------
+
+---------------- Datapath Model BEGIN ----------------
+
+<LifeTime>
+<method=bitvector/>
+tmp                    (nbreadreq    ) [ 011]
+br_ln208               (br           ) [ 000]
+empty                  (read         ) [ 000]
+tmp_idx_V              (extractvalue ) [ 000]
+tmp_entry_value_V      (extractvalue ) [ 000]
+tmp_entry_next_V       (extractvalue ) [ 000]
+tmp_entry_valid        (extractvalue ) [ 000]
+tmp_entry_isTail       (extractvalue ) [ 000]
+tmp_write              (extractvalue ) [ 011]
+tmp_append             (extractvalue ) [ 011]
+zext_ln544             (zext         ) [ 000]
+br_ln211               (br           ) [ 000]
+br_ln215               (br           ) [ 000]
+meta_table_value_V_a_1 (getelementptr) [ 011]
+meta_table_next_V_ad_2 (getelementptr) [ 011]
+meta_table_valid_add_1 (getelementptr) [ 011]
+meta_table_isTail_ad_2 (getelementptr) [ 011]
+meta_table_next_V_ad_1 (getelementptr) [ 000]
+store_ln217            (store        ) [ 000]
+meta_table_isTail_ad_1 (getelementptr) [ 000]
+store_ln218            (store        ) [ 000]
+meta_table_value_V_a   (getelementptr) [ 000]
+store_ln64             (store        ) [ 000]
+meta_table_next_V_ad   (getelementptr) [ 000]
+store_ln64             (store        ) [ 000]
+meta_table_valid_add   (getelementptr) [ 000]
+store_ln64             (store        ) [ 000]
+meta_table_isTail_ad   (getelementptr) [ 000]
+store_ln64             (store        ) [ 000]
+specinterface_ln0      (specinterface) [ 000]
+specinterface_ln0      (specinterface) [ 000]
+specinterface_ln0      (specinterface) [ 000]
+specinterface_ln0      (specinterface) [ 000]
+specinterface_ln0      (specinterface) [ 000]
+specinterface_ln0      (specinterface) [ 000]
+specinterface_ln0      (specinterface) [ 000]
+specinterface_ln0      (specinterface) [ 000]
+specinterface_ln0      (specinterface) [ 000]
+specinterface_ln0      (specinterface) [ 000]
+specinterface_ln0      (specinterface) [ 000]
+specpipeline_ln200     (specpipeline ) [ 000]
+specmemcore_ln204      (specmemcore  ) [ 000]
+tmp_value_V            (load         ) [ 000]
+tmp_next_V             (load         ) [ 000]
+tmp_valid              (load         ) [ 000]
+tmp_isTail             (load         ) [ 000]
+write_ln223            (write        ) [ 000]
+br_ln0                 (br           ) [ 000]
+br_ln219               (br           ) [ 000]
+br_ln0                 (br           ) [ 000]
+br_ln214               (br           ) [ 000]
+br_ln225               (br           ) [ 000]
+ret_ln0                (ret          ) [ 000]
+</LifeTime>
+
+<model>
+
+<comp_list>
+<comp id="0" class="1000" name="mq_metaReqFifo_V_idx">
+<pin_list>
+<pin id="1" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="mq_metaReqFifo_V_idx"/></StgValue>
+</bind>
+</comp>
+
+<comp id="2" class="1000" name="mq_metaReqFifo_V_ent">
+<pin_list>
+<pin id="3" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="mq_metaReqFifo_V_ent"/></StgValue>
+</bind>
+</comp>
+
+<comp id="4" class="1000" name="mq_metaReqFifo_V_ent_3">
+<pin_list>
+<pin id="5" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="mq_metaReqFifo_V_ent_3"/></StgValue>
+</bind>
+</comp>
+
+<comp id="6" class="1000" name="mq_metaReqFifo_V_ent_4">
+<pin_list>
+<pin id="7" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="mq_metaReqFifo_V_ent_4"/></StgValue>
+</bind>
+</comp>
+
+<comp id="8" class="1000" name="mq_metaReqFifo_V_ent_1">
+<pin_list>
+<pin id="9" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="mq_metaReqFifo_V_ent_1"/></StgValue>
+</bind>
+</comp>
+
+<comp id="10" class="1000" name="mq_metaReqFifo_V_wri">
+<pin_list>
+<pin id="11" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="mq_metaReqFifo_V_wri"/></StgValue>
+</bind>
+</comp>
+
+<comp id="12" class="1000" name="mq_metaReqFifo_V_app">
+<pin_list>
+<pin id="13" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="mq_metaReqFifo_V_app"/></StgValue>
+</bind>
+</comp>
+
+<comp id="14" class="1000" name="meta_table_value_V">
+<pin_list>
+<pin id="15" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="meta_table_value_V"/><MemPortTyVec>2 3 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="16" class="1000" name="meta_table_next_V">
+<pin_list>
+<pin id="17" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="meta_table_next_V"/><MemPortTyVec>2 3 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="18" class="1000" name="meta_table_valid">
+<pin_list>
+<pin id="19" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="meta_table_valid"/><MemPortTyVec>2 3 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="20" class="1000" name="meta_table_isTail">
+<pin_list>
+<pin id="21" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="meta_table_isTail"/><MemPortTyVec>2 3 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="22" class="1000" name="mq_metaRspFifo_V_val">
+<pin_list>
+<pin id="23" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="mq_metaRspFifo_V_val"/></StgValue>
+</bind>
+</comp>
+
+<comp id="24" class="1000" name="mq_metaRspFifo_V_nex">
+<pin_list>
+<pin id="25" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="mq_metaRspFifo_V_nex"/></StgValue>
+</bind>
+</comp>
+
+<comp id="26" class="1000" name="mq_metaRspFifo_V_val_1">
+<pin_list>
+<pin id="27" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="mq_metaRspFifo_V_val_1"/></StgValue>
+</bind>
+</comp>
+
+<comp id="28" class="1000" name="mq_metaRspFifo_V_isT">
+<pin_list>
+<pin id="29" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="mq_metaRspFifo_V_isT"/></StgValue>
+</bind>
+</comp>
+
+<comp id="30" class="1001" name="const_30">
+<pin_list>
+<pin id="31" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="_ssdm_op_NbReadReq.ap_fifo.i16P.i64P.i16P.i1P.i1P.i1P.i1P"/></StgValue>
+</bind>
+</comp>
+
+<comp id="32" class="1001" name="const_32">
+<pin_list>
+<pin id="33" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="34" class="1001" name="const_34">
+<pin_list>
+<pin id="35" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="_ssdm_op_Read.ap_fifo.volatile.i16P.i64P.i16P.i1P.i1P.i1P.i1P"/></StgValue>
+</bind>
+</comp>
+
+<comp id="36" class="1001" name="const_36">
+<pin_list>
+<pin id="37" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="38" class="1001" name="const_38">
+<pin_list>
+<pin id="39" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="40" class="1001" name="const_40">
+<pin_list>
+<pin id="41" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="_ssdm_op_SpecInterface"/></StgValue>
+</bind>
+</comp>
+
+<comp id="42" class="1001" name="const_42">
+<pin_list>
+<pin id="43" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="ap_fifo_str"/></StgValue>
+</bind>
+</comp>
+
+<comp id="44" class="1001" name="const_44">
+<pin_list>
+<pin id="45" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="46" class="1001" name="const_46">
+<pin_list>
+<pin id="47" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="p_str"/></StgValue>
+</bind>
+</comp>
+
+<comp id="48" class="1001" name="const_48">
+<pin_list>
+<pin id="49" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="50" class="1001" name="const_50">
+<pin_list>
+<pin id="51" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="52" class="1001" name="const_52">
+<pin_list>
+<pin id="53" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="_ssdm_op_SpecPipeline"/></StgValue>
+</bind>
+</comp>
+
+<comp id="54" class="1001" name="const_54">
+<pin_list>
+<pin id="55" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="p_str112"/></StgValue>
+</bind>
+</comp>
+
+<comp id="56" class="1001" name="const_56">
+<pin_list>
+<pin id="57" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="_ssdm_op_SpecMemCore"/></StgValue>
+</bind>
+</comp>
+
+<comp id="58" class="1001" name="const_58">
+<pin_list>
+<pin id="59" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="p_str87"/></StgValue>
+</bind>
+</comp>
+
+<comp id="60" class="1001" name="const_60">
+<pin_list>
+<pin id="61" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="62" class="1001" name="const_62">
+<pin_list>
+<pin id="63" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="_ssdm_op_Write.ap_fifo.volatile.i64P.i16P.i1P.i1P"/></StgValue>
+</bind>
+</comp>
+
+<comp id="64" class="1004" name="tmp_nbreadreq_fu_64">
+<pin_list>
+<pin id="65" dir="0" index="0" bw="1" slack="0"/>
+<pin id="66" dir="0" index="1" bw="16" slack="0"/>
+<pin id="67" dir="0" index="2" bw="64" slack="0"/>
+<pin id="68" dir="0" index="3" bw="16" slack="0"/>
+<pin id="69" dir="0" index="4" bw="1" slack="0"/>
+<pin id="70" dir="0" index="5" bw="1" slack="0"/>
+<pin id="71" dir="0" index="6" bw="1" slack="0"/>
+<pin id="72" dir="0" index="7" bw="1" slack="0"/>
+<pin id="73" dir="0" index="8" bw="1" slack="0"/>
+<pin id="74" dir="1" index="9" bw="1" slack="1"/>
+</pin_list>
+<bind>
+<opcode="nbreadreq(1156) " fcode="nbreadreq"/>
+<opset="tmp/1 "/>
+</bind>
+</comp>
+
+<comp id="84" class="1004" name="empty_read_fu_84">
+<pin_list>
+<pin id="85" dir="0" index="0" bw="100" slack="0"/>
+<pin id="86" dir="0" index="1" bw="16" slack="0"/>
+<pin id="87" dir="0" index="2" bw="64" slack="0"/>
+<pin id="88" dir="0" index="3" bw="16" slack="0"/>
+<pin id="89" dir="0" index="4" bw="1" slack="0"/>
+<pin id="90" dir="0" index="5" bw="1" slack="0"/>
+<pin id="91" dir="0" index="6" bw="1" slack="0"/>
+<pin id="92" dir="0" index="7" bw="1" slack="0"/>
+<pin id="93" dir="1" index="8" bw="100" slack="0"/>
+</pin_list>
+<bind>
+<opcode="read(1150) " fcode="read"/>
+<opset="empty/1 "/>
+</bind>
+</comp>
+
+<comp id="102" class="1004" name="write_ln223_write_fu_102">
+<pin_list>
+<pin id="103" dir="0" index="0" bw="0" slack="0"/>
+<pin id="104" dir="0" index="1" bw="64" slack="0"/>
+<pin id="105" dir="0" index="2" bw="16" slack="0"/>
+<pin id="106" dir="0" index="3" bw="1" slack="0"/>
+<pin id="107" dir="0" index="4" bw="1" slack="0"/>
+<pin id="108" dir="0" index="5" bw="64" slack="0"/>
+<pin id="109" dir="0" index="6" bw="16" slack="0"/>
+<pin id="110" dir="0" index="7" bw="1" slack="0"/>
+<pin id="111" dir="0" index="8" bw="1" slack="0"/>
+<pin id="112" dir="1" index="9" bw="0" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="write(1151) " fcode="write"/>
+<opset="write_ln223/2 "/>
+</bind>
+</comp>
+
+<comp id="118" class="1004" name="meta_table_value_V_a_1_gep_fu_118">
+<pin_list>
+<pin id="119" dir="0" index="0" bw="64" slack="0"/>
+<pin id="120" dir="0" index="1" bw="1" slack="0"/>
+<pin id="121" dir="0" index="2" bw="16" slack="0"/>
+<pin id="122" dir="1" index="3" bw="11" slack="0"/>
+</pin_list>
+<bind>
+<opcode="getelementptr(29) " fcode="getelementptr"/>
+<opset="meta_table_value_V_a_1/1 "/>
+</bind>
+</comp>
+
+<comp id="125" class="1004" name="grp_access_fu_125">
+<pin_list>
+<pin id="126" dir="0" index="0" bw="11" slack="0"/>
+<pin id="127" dir="0" index="1" bw="64" slack="0"/>
+<pin id="128" dir="0" index="2" bw="0" slack="2147483647"/>
+<pin id="129" dir="1" index="3" bw="64" slack="0"/>
+</pin_list>
+<bind>
+<opcode="load(27) store(28) " fcode="store"/>
+<opset="tmp_value_V/1 store_ln64/1 "/>
+</bind>
+</comp>
+
+<comp id="132" class="1004" name="meta_table_next_V_ad_2_gep_fu_132">
+<pin_list>
+<pin id="133" dir="0" index="0" bw="16" slack="0"/>
+<pin id="134" dir="0" index="1" bw="1" slack="0"/>
+<pin id="135" dir="0" index="2" bw="16" slack="0"/>
+<pin id="136" dir="1" index="3" bw="11" slack="0"/>
+</pin_list>
+<bind>
+<opcode="getelementptr(29) " fcode="getelementptr"/>
+<opset="meta_table_next_V_ad_2/1 "/>
+</bind>
+</comp>
+
+<comp id="139" class="1004" name="grp_access_fu_139">
+<pin_list>
+<pin id="140" dir="0" index="0" bw="11" slack="0"/>
+<pin id="141" dir="0" index="1" bw="16" slack="0"/>
+<pin id="142" dir="0" index="2" bw="0" slack="2147483647"/>
+<pin id="143" dir="1" index="3" bw="16" slack="0"/>
+</pin_list>
+<bind>
+<opcode="load(27) store(28) " fcode="store"/>
+<opset="tmp_next_V/1 store_ln217/1 store_ln64/1 "/>
+</bind>
+</comp>
+
+<comp id="146" class="1004" name="meta_table_valid_add_1_gep_fu_146">
+<pin_list>
+<pin id="147" dir="0" index="0" bw="1" slack="0"/>
+<pin id="148" dir="0" index="1" bw="1" slack="0"/>
+<pin id="149" dir="0" index="2" bw="16" slack="0"/>
+<pin id="150" dir="1" index="3" bw="11" slack="0"/>
+</pin_list>
+<bind>
+<opcode="getelementptr(29) " fcode="getelementptr"/>
+<opset="meta_table_valid_add_1/1 "/>
+</bind>
+</comp>
+
+<comp id="153" class="1004" name="grp_access_fu_153">
+<pin_list>
+<pin id="154" dir="0" index="0" bw="11" slack="0"/>
+<pin id="155" dir="0" index="1" bw="1" slack="0"/>
+<pin id="156" dir="0" index="2" bw="0" slack="2147483647"/>
+<pin id="157" dir="1" index="3" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<opcode="load(27) store(28) " fcode="store"/>
+<opset="tmp_valid/1 store_ln64/1 "/>
+</bind>
+</comp>
+
+<comp id="160" class="1004" name="meta_table_isTail_ad_2_gep_fu_160">
+<pin_list>
+<pin id="161" dir="0" index="0" bw="1" slack="0"/>
+<pin id="162" dir="0" index="1" bw="1" slack="0"/>
+<pin id="163" dir="0" index="2" bw="16" slack="0"/>
+<pin id="164" dir="1" index="3" bw="11" slack="0"/>
+</pin_list>
+<bind>
+<opcode="getelementptr(29) " fcode="getelementptr"/>
+<opset="meta_table_isTail_ad_2/1 "/>
+</bind>
+</comp>
+
+<comp id="167" class="1004" name="grp_access_fu_167">
+<pin_list>
+<pin id="168" dir="0" index="0" bw="11" slack="0"/>
+<pin id="169" dir="0" index="1" bw="1" slack="0"/>
+<pin id="170" dir="0" index="2" bw="0" slack="2147483647"/>
+<pin id="171" dir="1" index="3" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<opcode="load(27) store(28) " fcode="store"/>
+<opset="tmp_isTail/1 store_ln218/1 store_ln64/1 "/>
+</bind>
+</comp>
+
+<comp id="174" class="1004" name="meta_table_next_V_ad_1_gep_fu_174">
+<pin_list>
+<pin id="175" dir="0" index="0" bw="16" slack="0"/>
+<pin id="176" dir="0" index="1" bw="1" slack="0"/>
+<pin id="177" dir="0" index="2" bw="16" slack="0"/>
+<pin id="178" dir="1" index="3" bw="11" slack="0"/>
+</pin_list>
+<bind>
+<opcode="getelementptr(29) " fcode="getelementptr"/>
+<opset="meta_table_next_V_ad_1/1 "/>
+</bind>
+</comp>
+
+<comp id="182" class="1004" name="meta_table_isTail_ad_1_gep_fu_182">
+<pin_list>
+<pin id="183" dir="0" index="0" bw="1" slack="0"/>
+<pin id="184" dir="0" index="1" bw="1" slack="0"/>
+<pin id="185" dir="0" index="2" bw="16" slack="0"/>
+<pin id="186" dir="1" index="3" bw="11" slack="0"/>
+</pin_list>
+<bind>
+<opcode="getelementptr(29) " fcode="getelementptr"/>
+<opset="meta_table_isTail_ad_1/1 "/>
+</bind>
+</comp>
+
+<comp id="191" class="1004" name="meta_table_value_V_a_gep_fu_191">
+<pin_list>
+<pin id="192" dir="0" index="0" bw="64" slack="0"/>
+<pin id="193" dir="0" index="1" bw="1" slack="0"/>
+<pin id="194" dir="0" index="2" bw="16" slack="0"/>
+<pin id="195" dir="1" index="3" bw="11" slack="0"/>
+</pin_list>
+<bind>
+<opcode="getelementptr(29) " fcode="getelementptr"/>
+<opset="meta_table_value_V_a/1 "/>
+</bind>
+</comp>
+
+<comp id="199" class="1004" name="meta_table_next_V_ad_gep_fu_199">
+<pin_list>
+<pin id="200" dir="0" index="0" bw="16" slack="0"/>
+<pin id="201" dir="0" index="1" bw="1" slack="0"/>
+<pin id="202" dir="0" index="2" bw="16" slack="0"/>
+<pin id="203" dir="1" index="3" bw="11" slack="0"/>
+</pin_list>
+<bind>
+<opcode="getelementptr(29) " fcode="getelementptr"/>
+<opset="meta_table_next_V_ad/1 "/>
+</bind>
+</comp>
+
+<comp id="207" class="1004" name="meta_table_valid_add_gep_fu_207">
+<pin_list>
+<pin id="208" dir="0" index="0" bw="1" slack="0"/>
+<pin id="209" dir="0" index="1" bw="1" slack="0"/>
+<pin id="210" dir="0" index="2" bw="16" slack="0"/>
+<pin id="211" dir="1" index="3" bw="11" slack="0"/>
+</pin_list>
+<bind>
+<opcode="getelementptr(29) " fcode="getelementptr"/>
+<opset="meta_table_valid_add/1 "/>
+</bind>
+</comp>
+
+<comp id="215" class="1004" name="meta_table_isTail_ad_gep_fu_215">
+<pin_list>
+<pin id="216" dir="0" index="0" bw="1" slack="0"/>
+<pin id="217" dir="0" index="1" bw="1" slack="0"/>
+<pin id="218" dir="0" index="2" bw="16" slack="0"/>
+<pin id="219" dir="1" index="3" bw="11" slack="0"/>
+</pin_list>
+<bind>
+<opcode="getelementptr(29) " fcode="getelementptr"/>
+<opset="meta_table_isTail_ad/1 "/>
+</bind>
+</comp>
+
+<comp id="223" class="1004" name="tmp_idx_V_fu_223">
+<pin_list>
+<pin id="224" dir="0" index="0" bw="100" slack="0"/>
+<pin id="225" dir="1" index="1" bw="16" slack="0"/>
+</pin_list>
+<bind>
+<opcode="extractvalue(56) " fcode="extractvalue"/>
+<opset="tmp_idx_V/1 "/>
+</bind>
+</comp>
+
+<comp id="227" class="1004" name="tmp_entry_value_V_fu_227">
+<pin_list>
+<pin id="228" dir="0" index="0" bw="100" slack="0"/>
+<pin id="229" dir="1" index="1" bw="64" slack="0"/>
+</pin_list>
+<bind>
+<opcode="extractvalue(56) " fcode="extractvalue"/>
+<opset="tmp_entry_value_V/1 "/>
+</bind>
+</comp>
+
+<comp id="232" class="1004" name="tmp_entry_next_V_fu_232">
+<pin_list>
+<pin id="233" dir="0" index="0" bw="100" slack="0"/>
+<pin id="234" dir="1" index="1" bw="16" slack="0"/>
+</pin_list>
+<bind>
+<opcode="extractvalue(56) " fcode="extractvalue"/>
+<opset="tmp_entry_next_V/1 "/>
+</bind>
+</comp>
+
+<comp id="237" class="1004" name="tmp_entry_valid_fu_237">
+<pin_list>
+<pin id="238" dir="0" index="0" bw="100" slack="0"/>
+<pin id="239" dir="1" index="1" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<opcode="extractvalue(56) " fcode="extractvalue"/>
+<opset="tmp_entry_valid/1 "/>
+</bind>
+</comp>
+
+<comp id="242" class="1004" name="tmp_entry_isTail_fu_242">
+<pin_list>
+<pin id="243" dir="0" index="0" bw="100" slack="0"/>
+<pin id="244" dir="1" index="1" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<opcode="extractvalue(56) " fcode="extractvalue"/>
+<opset="tmp_entry_isTail/1 "/>
+</bind>
+</comp>
+
+<comp id="247" class="1004" name="tmp_write_fu_247">
+<pin_list>
+<pin id="248" dir="0" index="0" bw="100" slack="0"/>
+<pin id="249" dir="1" index="1" bw="1" slack="1"/>
+</pin_list>
+<bind>
+<opcode="extractvalue(56) " fcode="extractvalue"/>
+<opset="tmp_write/1 "/>
+</bind>
+</comp>
+
+<comp id="251" class="1004" name="tmp_append_fu_251">
+<pin_list>
+<pin id="252" dir="0" index="0" bw="100" slack="0"/>
+<pin id="253" dir="1" index="1" bw="1" slack="1"/>
+</pin_list>
+<bind>
+<opcode="extractvalue(56) " fcode="extractvalue"/>
+<opset="tmp_append/1 "/>
+</bind>
+</comp>
+
+<comp id="255" class="1004" name="zext_ln544_fu_255">
+<pin_list>
+<pin id="256" dir="0" index="0" bw="16" slack="0"/>
+<pin id="257" dir="1" index="1" bw="64" slack="0"/>
+</pin_list>
+<bind>
+<opcode="zext(34) " fcode="zext"/>
+<opset="zext_ln544/1 "/>
+</bind>
+</comp>
+
+<comp id="269" class="1005" name="tmp_reg_269">
+<pin_list>
+<pin id="270" dir="0" index="0" bw="1" slack="1"/>
+<pin id="271" dir="1" index="1" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<opset="tmp "/>
+</bind>
+</comp>
+
+<comp id="273" class="1005" name="tmp_write_reg_273">
+<pin_list>
+<pin id="274" dir="0" index="0" bw="1" slack="1"/>
+<pin id="275" dir="1" index="1" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<opset="tmp_write "/>
+</bind>
+</comp>
+
+<comp id="277" class="1005" name="tmp_append_reg_277">
+<pin_list>
+<pin id="278" dir="0" index="0" bw="1" slack="1"/>
+<pin id="279" dir="1" index="1" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<opset="tmp_append "/>
+</bind>
+</comp>
+
+<comp id="281" class="1005" name="meta_table_value_V_a_1_reg_281">
+<pin_list>
+<pin id="282" dir="0" index="0" bw="11" slack="1"/>
+<pin id="283" dir="1" index="1" bw="11" slack="1"/>
+</pin_list>
+<bind>
+<opset="meta_table_value_V_a_1 "/>
+</bind>
+</comp>
+
+<comp id="286" class="1005" name="meta_table_next_V_ad_2_reg_286">
+<pin_list>
+<pin id="287" dir="0" index="0" bw="11" slack="1"/>
+<pin id="288" dir="1" index="1" bw="11" slack="1"/>
+</pin_list>
+<bind>
+<opset="meta_table_next_V_ad_2 "/>
+</bind>
+</comp>
+
+<comp id="291" class="1005" name="meta_table_valid_add_1_reg_291">
+<pin_list>
+<pin id="292" dir="0" index="0" bw="11" slack="1"/>
+<pin id="293" dir="1" index="1" bw="11" slack="1"/>
+</pin_list>
+<bind>
+<opset="meta_table_valid_add_1 "/>
+</bind>
+</comp>
+
+<comp id="296" class="1005" name="meta_table_isTail_ad_2_reg_296">
+<pin_list>
+<pin id="297" dir="0" index="0" bw="11" slack="1"/>
+<pin id="298" dir="1" index="1" bw="11" slack="1"/>
+</pin_list>
+<bind>
+<opset="meta_table_isTail_ad_2 "/>
+</bind>
+</comp>
+
+</comp_list>
+
+<net_list>
+<net id="75"><net_src comp="30" pin="0"/><net_sink comp="64" pin=0"/></net>
+
+<net id="76"><net_src comp="0" pin="0"/><net_sink comp="64" pin=1"/></net>
+
+<net id="77"><net_src comp="2" pin="0"/><net_sink comp="64" pin=2"/></net>
+
+<net id="78"><net_src comp="4" pin="0"/><net_sink comp="64" pin=3"/></net>
+
+<net id="79"><net_src comp="6" pin="0"/><net_sink comp="64" pin=4"/></net>
+
+<net id="80"><net_src comp="8" pin="0"/><net_sink comp="64" pin=5"/></net>
+
+<net id="81"><net_src comp="10" pin="0"/><net_sink comp="64" pin=6"/></net>
+
+<net id="82"><net_src comp="12" pin="0"/><net_sink comp="64" pin=7"/></net>
+
+<net id="83"><net_src comp="32" pin="0"/><net_sink comp="64" pin=8"/></net>
+
+<net id="94"><net_src comp="34" pin="0"/><net_sink comp="84" pin=0"/></net>
+
+<net id="95"><net_src comp="0" pin="0"/><net_sink comp="84" pin=1"/></net>
+
+<net id="96"><net_src comp="2" pin="0"/><net_sink comp="84" pin=2"/></net>
+
+<net id="97"><net_src comp="4" pin="0"/><net_sink comp="84" pin=3"/></net>
+
+<net id="98"><net_src comp="6" pin="0"/><net_sink comp="84" pin=4"/></net>
+
+<net id="99"><net_src comp="8" pin="0"/><net_sink comp="84" pin=5"/></net>
+
+<net id="100"><net_src comp="10" pin="0"/><net_sink comp="84" pin=6"/></net>
+
+<net id="101"><net_src comp="12" pin="0"/><net_sink comp="84" pin=7"/></net>
+
+<net id="113"><net_src comp="62" pin="0"/><net_sink comp="102" pin=0"/></net>
+
+<net id="114"><net_src comp="22" pin="0"/><net_sink comp="102" pin=1"/></net>
+
+<net id="115"><net_src comp="24" pin="0"/><net_sink comp="102" pin=2"/></net>
+
+<net id="116"><net_src comp="26" pin="0"/><net_sink comp="102" pin=3"/></net>
+
+<net id="117"><net_src comp="28" pin="0"/><net_sink comp="102" pin=4"/></net>
+
+<net id="123"><net_src comp="14" pin="0"/><net_sink comp="118" pin=0"/></net>
+
+<net id="124"><net_src comp="36" pin="0"/><net_sink comp="118" pin=1"/></net>
+
+<net id="130"><net_src comp="125" pin="3"/><net_sink comp="102" pin=5"/></net>
+
+<net id="131"><net_src comp="118" pin="3"/><net_sink comp="125" pin=0"/></net>
+
+<net id="137"><net_src comp="16" pin="0"/><net_sink comp="132" pin=0"/></net>
+
+<net id="138"><net_src comp="36" pin="0"/><net_sink comp="132" pin=1"/></net>
+
+<net id="144"><net_src comp="139" pin="3"/><net_sink comp="102" pin=6"/></net>
+
+<net id="145"><net_src comp="132" pin="3"/><net_sink comp="139" pin=0"/></net>
+
+<net id="151"><net_src comp="18" pin="0"/><net_sink comp="146" pin=0"/></net>
+
+<net id="152"><net_src comp="36" pin="0"/><net_sink comp="146" pin=1"/></net>
+
+<net id="158"><net_src comp="153" pin="3"/><net_sink comp="102" pin=7"/></net>
+
+<net id="159"><net_src comp="146" pin="3"/><net_sink comp="153" pin=0"/></net>
+
+<net id="165"><net_src comp="20" pin="0"/><net_sink comp="160" pin=0"/></net>
+
+<net id="166"><net_src comp="36" pin="0"/><net_sink comp="160" pin=1"/></net>
+
+<net id="172"><net_src comp="167" pin="3"/><net_sink comp="102" pin=8"/></net>
+
+<net id="173"><net_src comp="160" pin="3"/><net_sink comp="167" pin=0"/></net>
+
+<net id="179"><net_src comp="16" pin="0"/><net_sink comp="174" pin=0"/></net>
+
+<net id="180"><net_src comp="36" pin="0"/><net_sink comp="174" pin=1"/></net>
+
+<net id="181"><net_src comp="174" pin="3"/><net_sink comp="139" pin=0"/></net>
+
+<net id="187"><net_src comp="20" pin="0"/><net_sink comp="182" pin=0"/></net>
+
+<net id="188"><net_src comp="36" pin="0"/><net_sink comp="182" pin=1"/></net>
+
+<net id="189"><net_src comp="38" pin="0"/><net_sink comp="167" pin=1"/></net>
+
+<net id="190"><net_src comp="182" pin="3"/><net_sink comp="167" pin=0"/></net>
+
+<net id="196"><net_src comp="14" pin="0"/><net_sink comp="191" pin=0"/></net>
+
+<net id="197"><net_src comp="36" pin="0"/><net_sink comp="191" pin=1"/></net>
+
+<net id="198"><net_src comp="191" pin="3"/><net_sink comp="125" pin=0"/></net>
+
+<net id="204"><net_src comp="16" pin="0"/><net_sink comp="199" pin=0"/></net>
+
+<net id="205"><net_src comp="36" pin="0"/><net_sink comp="199" pin=1"/></net>
+
+<net id="206"><net_src comp="199" pin="3"/><net_sink comp="139" pin=0"/></net>
+
+<net id="212"><net_src comp="18" pin="0"/><net_sink comp="207" pin=0"/></net>
+
+<net id="213"><net_src comp="36" pin="0"/><net_sink comp="207" pin=1"/></net>
+
+<net id="214"><net_src comp="207" pin="3"/><net_sink comp="153" pin=0"/></net>
+
+<net id="220"><net_src comp="20" pin="0"/><net_sink comp="215" pin=0"/></net>
+
+<net id="221"><net_src comp="36" pin="0"/><net_sink comp="215" pin=1"/></net>
+
+<net id="222"><net_src comp="215" pin="3"/><net_sink comp="167" pin=0"/></net>
+
+<net id="226"><net_src comp="84" pin="8"/><net_sink comp="223" pin=0"/></net>
+
+<net id="230"><net_src comp="84" pin="8"/><net_sink comp="227" pin=0"/></net>
+
+<net id="231"><net_src comp="227" pin="1"/><net_sink comp="125" pin=1"/></net>
+
+<net id="235"><net_src comp="84" pin="8"/><net_sink comp="232" pin=0"/></net>
+
+<net id="236"><net_src comp="232" pin="1"/><net_sink comp="139" pin=1"/></net>
+
+<net id="240"><net_src comp="84" pin="8"/><net_sink comp="237" pin=0"/></net>
+
+<net id="241"><net_src comp="237" pin="1"/><net_sink comp="153" pin=1"/></net>
+
+<net id="245"><net_src comp="84" pin="8"/><net_sink comp="242" pin=0"/></net>
+
+<net id="246"><net_src comp="242" pin="1"/><net_sink comp="167" pin=1"/></net>
+
+<net id="250"><net_src comp="84" pin="8"/><net_sink comp="247" pin=0"/></net>
+
+<net id="254"><net_src comp="84" pin="8"/><net_sink comp="251" pin=0"/></net>
+
+<net id="258"><net_src comp="223" pin="1"/><net_sink comp="255" pin=0"/></net>
+
+<net id="259"><net_src comp="255" pin="1"/><net_sink comp="118" pin=2"/></net>
+
+<net id="260"><net_src comp="255" pin="1"/><net_sink comp="132" pin=2"/></net>
+
+<net id="261"><net_src comp="255" pin="1"/><net_sink comp="146" pin=2"/></net>
+
+<net id="262"><net_src comp="255" pin="1"/><net_sink comp="160" pin=2"/></net>
+
+<net id="263"><net_src comp="255" pin="1"/><net_sink comp="174" pin=2"/></net>
+
+<net id="264"><net_src comp="255" pin="1"/><net_sink comp="182" pin=2"/></net>
+
+<net id="265"><net_src comp="255" pin="1"/><net_sink comp="191" pin=2"/></net>
+
+<net id="266"><net_src comp="255" pin="1"/><net_sink comp="199" pin=2"/></net>
+
+<net id="267"><net_src comp="255" pin="1"/><net_sink comp="207" pin=2"/></net>
+
+<net id="268"><net_src comp="255" pin="1"/><net_sink comp="215" pin=2"/></net>
+
+<net id="272"><net_src comp="64" pin="9"/><net_sink comp="269" pin=0"/></net>
+
+<net id="276"><net_src comp="247" pin="1"/><net_sink comp="273" pin=0"/></net>
+
+<net id="280"><net_src comp="251" pin="1"/><net_sink comp="277" pin=0"/></net>
+
+<net id="284"><net_src comp="118" pin="3"/><net_sink comp="281" pin=0"/></net>
+
+<net id="285"><net_src comp="281" pin="1"/><net_sink comp="125" pin=0"/></net>
+
+<net id="289"><net_src comp="132" pin="3"/><net_sink comp="286" pin=0"/></net>
+
+<net id="290"><net_src comp="286" pin="1"/><net_sink comp="139" pin=0"/></net>
+
+<net id="294"><net_src comp="146" pin="3"/><net_sink comp="291" pin=0"/></net>
+
+<net id="295"><net_src comp="291" pin="1"/><net_sink comp="153" pin=0"/></net>
+
+<net id="299"><net_src comp="160" pin="3"/><net_sink comp="296" pin=0"/></net>
+
+<net id="300"><net_src comp="296" pin="1"/><net_sink comp="167" pin=0"/></net>
+
+</net_list>
+
+</model> 
+---------------- Datapath Model END ------------------
+
+* FSMD analyzer results:
+  - Output states:
+	Port: mq_metaReqFifo_V_idx | {}
+	Port: mq_metaReqFifo_V_ent | {}
+	Port: mq_metaReqFifo_V_ent_3 | {}
+	Port: mq_metaReqFifo_V_ent_4 | {}
+	Port: mq_metaReqFifo_V_ent_1 | {}
+	Port: mq_metaReqFifo_V_wri | {}
+	Port: mq_metaReqFifo_V_app | {}
+	Port: meta_table_value_V | {1 }
+	Port: meta_table_next_V | {1 }
+	Port: meta_table_valid | {1 }
+	Port: meta_table_isTail | {1 }
+	Port: mq_metaRspFifo_V_val | {2 }
+	Port: mq_metaRspFifo_V_nex | {2 }
+	Port: mq_metaRspFifo_V_val_1 | {2 }
+	Port: mq_metaRspFifo_V_isT | {2 }
+ - Input state : 
+	Port: mq_meta_table : mq_metaReqFifo_V_idx | {1 }
+	Port: mq_meta_table : mq_metaReqFifo_V_ent | {1 }
+	Port: mq_meta_table : mq_metaReqFifo_V_ent_3 | {1 }
+	Port: mq_meta_table : mq_metaReqFifo_V_ent_4 | {1 }
+	Port: mq_meta_table : mq_metaReqFifo_V_ent_1 | {1 }
+	Port: mq_meta_table : mq_metaReqFifo_V_wri | {1 }
+	Port: mq_meta_table : mq_metaReqFifo_V_app | {1 }
+	Port: mq_meta_table : meta_table_value_V | {1 2 }
+	Port: mq_meta_table : meta_table_next_V | {1 2 }
+	Port: mq_meta_table : meta_table_valid | {1 2 }
+	Port: mq_meta_table : meta_table_isTail | {1 2 }
+	Port: mq_meta_table : mq_metaRspFifo_V_val | {}
+	Port: mq_meta_table : mq_metaRspFifo_V_nex | {}
+	Port: mq_meta_table : mq_metaRspFifo_V_val_1 | {}
+	Port: mq_meta_table : mq_metaRspFifo_V_isT | {}
+  - Chain level:
+	State 1
+		zext_ln544 : 1
+		br_ln211 : 1
+		br_ln215 : 1
+		meta_table_value_V_a_1 : 2
+		tmp_value_V : 3
+		meta_table_next_V_ad_2 : 2
+		tmp_next_V : 3
+		meta_table_valid_add_1 : 2
+		tmp_valid : 3
+		meta_table_isTail_ad_2 : 2
+		tmp_isTail : 3
+		meta_table_next_V_ad_1 : 2
+		store_ln217 : 3
+		meta_table_isTail_ad_1 : 2
+		store_ln218 : 3
+		meta_table_value_V_a : 2
+		store_ln64 : 3
+		meta_table_next_V_ad : 2
+		store_ln64 : 3
+		meta_table_valid_add : 2
+		store_ln64 : 3
+		meta_table_isTail_ad : 2
+		store_ln64 : 3
+	State 2
+		write_ln223 : 1
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+
+* Functional unit list:
+|----------|--------------------------|
+| Operation|      Functional Unit     |
+|----------|--------------------------|
+| nbreadreq|    tmp_nbreadreq_fu_64   |
+|----------|--------------------------|
+|   read   |     empty_read_fu_84     |
+|----------|--------------------------|
+|   write  | write_ln223_write_fu_102 |
+|----------|--------------------------|
+|          |     tmp_idx_V_fu_223     |
+|          | tmp_entry_value_V_fu_227 |
+|          |  tmp_entry_next_V_fu_232 |
+|extractvalue|  tmp_entry_valid_fu_237  |
+|          |  tmp_entry_isTail_fu_242 |
+|          |     tmp_write_fu_247     |
+|          |     tmp_append_fu_251    |
+|----------|--------------------------|
+|   zext   |     zext_ln544_fu_255    |
+|----------|--------------------------|
+|   Total  |                          |
+|----------|--------------------------|
+
+Memories:
+N/A
+
+* Register list:
++------------------------------+--------+
+|                              |   FF   |
++------------------------------+--------+
+|meta_table_isTail_ad_2_reg_296|   11   |
+|meta_table_next_V_ad_2_reg_286|   11   |
+|meta_table_valid_add_1_reg_291|   11   |
+|meta_table_value_V_a_1_reg_281|   11   |
+|      tmp_append_reg_277      |    1   |
+|          tmp_reg_269         |    1   |
+|       tmp_write_reg_273      |    1   |
++------------------------------+--------+
+|             Total            |   47   |
++------------------------------+--------+
+
+* Multiplexer (MUX) list: 
+|-------------------|------|------|------|--------||---------||---------|
+|        Comp       |  Pin | Size |  BW  | S x BW ||  Delay  ||   LUT   |
+|-------------------|------|------|------|--------||---------||---------|
+| grp_access_fu_125 |  p0  |   3  |  11  |   33   ||    15   |
+| grp_access_fu_139 |  p0  |   4  |  11  |   44   ||    21   |
+| grp_access_fu_153 |  p0  |   3  |  11  |   33   ||    15   |
+| grp_access_fu_167 |  p0  |   4  |  11  |   44   ||    21   |
+| grp_access_fu_167 |  p1  |   2  |   1  |    2   ||    9    |
+|-------------------|------|------|------|--------||---------||---------|
+|       Total       |      |      |      |   156  ||  3.3925 ||    81   |
+|-------------------|------|------|------|--------||---------||---------|
+
+
+
+* Summary:
++-----------+--------+--------+--------+
+|           |  Delay |   FF   |   LUT  |
++-----------+--------+--------+--------+
+|  Function |    -   |    -   |    -   |
+|   Memory  |    -   |    -   |    -   |
+|Multiplexer|    3   |    -   |   81   |
+|  Register |    -   |   47   |    -   |
++-----------+--------+--------+--------+
+|   Total   |    3   |   47   |   81   |
++-----------+--------+--------+--------+

@@ -1,0 +1,259 @@
+<profile>
+
+<section name = "Vivado HLS Report for 'merge_rx_pkgs_512_s'" level="0">
+<item name = "Date">Mon Mar  1 13:04:15 2021
+</item>
+<item name = "Version">2019.1 (Build 2552052 on Fri May 24 15:28:33 MDT 2019)</item>
+<item name = "Project">rocev2_prj</item>
+<item name = "Solution">solution1</item>
+<item name = "Product family">zynquplus</item>
+<item name = "Target device">xczu7eg-ffvc1156-2-i</item>
+</section>
+
+<section name = "Performance Estimates" level="0">
+<item name = "Timing (ns)">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="4">Clock, Target, Estimated, Uncertainty</keys>
+<column name="ap_clk">8.00, 3.227, 1.00</column>
+</table>
+</item>
+</section>
+</item>
+<item name = "Latency (clock cycles)">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="6">, min, max, min, max, Type</keys>
+<column name="">2, 2, 1, 1, function</column>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="0">
+<keys size="7">Instance, Module, min, max, min, max, Type</keys>
+</table>
+</item>
+<item name = "Loop"><table name="" hasTotal="0">
+<keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
+</table>
+</item>
+</section>
+</item>
+</section>
+</item>
+</section>
+
+<section name = "Utilization Estimates" level="0">
+<item name = "Summary"><table name="" hasTotal="1">
+<keys size="6">Name, BRAM_18K, DSP48E, FF, LUT, URAM</keys>
+<column name="DSP">-, -, -, -, -</column>
+<column name="Expression">-, -, 0, 115, -</column>
+<column name="FIFO">-, -, -, -, -</column>
+<column name="Instance">-, -, -, -, -</column>
+<column name="Memory">-, -, -, -, -</column>
+<column name="Multiplexer">-, -, -, 315, -</column>
+<column name="Register">-, -, 2921, -, -</column>
+<specialColumn name="Available">624, 1728, 460800, 230400, 96</specialColumn>
+<specialColumn name="Utilization (%)">0, 0, ~0, ~0, 0</specialColumn>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="1">
+<keys size="7">Instance, Module, BRAM_18K, DSP48E, FF, LUT, URAM</keys>
+</table>
+</item>
+<item name = "DSP48E"><table name="" hasTotal="0">
+<keys size="3">Instance, Module, Expression</keys>
+</table>
+</item>
+<item name = "Memory"><table name="" hasTotal="1">
+<keys size="10">Memory, Module, BRAM_18K, FF, LUT, URAM, Words, Bits, Banks, W*Bits*Banks</keys>
+</table>
+</item>
+<item name = "FIFO"><table name="" hasTotal="1">
+<keys size="8">Name, BRAM_18K, FF, LUT, URAM, Depth, Bits, Size:D*B</keys>
+</table>
+</item>
+<item name = "Expression"><table name="" hasTotal="1">
+<keys size="7">Variable Name, Operation, DSP48E, FF, LUT, Bitwidth P0, Bitwidth P1</keys>
+<column name="ap_condition_591">and, 0, 0, 2, 1, 1</column>
+<column name="ap_predicate_op16_read_state1">and, 0, 0, 2, 1, 1</column>
+<column name="ap_predicate_op24_read_state1">and, 0, 0, 2, 1, 1</column>
+<column name="ap_predicate_op31_read_state1">and, 0, 0, 2, 1, 1</column>
+<column name="ap_predicate_op38_write_state2">and, 0, 0, 2, 1, 1</column>
+<column name="ap_predicate_op40_write_state2">and, 0, 0, 2, 1, 1</column>
+<column name="ap_predicate_op42_write_state2">and, 0, 0, 2, 1, 1</column>
+<column name="ap_predicate_op58_write_state3">and, 0, 0, 2, 1, 1</column>
+<column name="ap_predicate_op62_write_state3">and, 0, 0, 2, 1, 1</column>
+<column name="ap_predicate_op66_write_state3">and, 0, 0, 2, 1, 1</column>
+<column name="ap_predicate_op8_read_state1">and, 0, 0, 2, 1, 1</column>
+<column name="io_acc_block_signal_op16">and, 0, 0, 2, 1, 1</column>
+<column name="io_acc_block_signal_op24">and, 0, 0, 2, 1, 1</column>
+<column name="io_acc_block_signal_op8">and, 0, 0, 2, 1, 1</column>
+<column name="m_axis_mem_write_data_V_data_V_1_load_A">and, 0, 0, 2, 1, 1</column>
+<column name="m_axis_mem_write_data_V_data_V_1_load_B">and, 0, 0, 2, 1, 1</column>
+<column name="m_axis_mem_write_data_V_dest_V_1_load_A">and, 0, 0, 2, 1, 1</column>
+<column name="m_axis_mem_write_data_V_dest_V_1_load_B">and, 0, 0, 2, 1, 1</column>
+<column name="m_axis_mem_write_data_V_keep_V_1_load_A">and, 0, 0, 2, 1, 1</column>
+<column name="m_axis_mem_write_data_V_keep_V_1_load_B">and, 0, 0, 2, 1, 1</column>
+<column name="m_axis_mem_write_data_V_last_V_1_load_A">and, 0, 0, 2, 1, 1</column>
+<column name="m_axis_mem_write_data_V_last_V_1_load_B">and, 0, 0, 2, 1, 1</column>
+<column name="tmp_nbreadreq_fu_156_p3">and, 0, 0, 2, 1, 0</column>
+<column name="icmp_ln2346_fu_241_p2">icmp, 0, 0, 8, 2, 1</column>
+<column name="icmp_ln2350_fu_247_p2">icmp, 0, 0, 8, 2, 1</column>
+<column name="m_axis_mem_write_data_V_data_V_1_state_cmp_full">icmp, 0, 0, 8, 2, 1</column>
+<column name="m_axis_mem_write_data_V_dest_V_1_state_cmp_full">icmp, 0, 0, 8, 2, 1</column>
+<column name="m_axis_mem_write_data_V_keep_V_1_state_cmp_full">icmp, 0, 0, 8, 2, 1</column>
+<column name="m_axis_mem_write_data_V_last_V_1_state_cmp_full">icmp, 0, 0, 8, 2, 1</column>
+<column name="ap_block_pp0_stage0_01001">or, 0, 0, 2, 1, 1</column>
+<column name="ap_block_pp0_stage0_11001">or, 0, 0, 2, 1, 1</column>
+<column name="ap_block_state1_pp0_stage0_iter0">or, 0, 0, 2, 1, 1</column>
+<column name="ap_block_state2_io">or, 0, 0, 2, 1, 1</column>
+<column name="ap_block_state3_io">or, 0, 0, 2, 1, 1</column>
+<column name="ap_block_state3_pp0_stage0_iter2">or, 0, 0, 2, 1, 1</column>
+<column name="or_ln2346_fu_261_p2">or, 0, 0, 2, 1, 1</column>
+<column name="select_ln2346_1_fu_267_p3">select, 0, 0, 2, 1, 2</column>
+<column name="select_ln2346_fu_253_p3">select, 0, 0, 3, 1, 1</column>
+<column name="ap_enable_pp0">xor, 0, 0, 2, 1, 2</column>
+</table>
+</item>
+<item name = "Multiplexer"><table name="" hasTotal="1">
+<keys size="5">Name, LUT, Input Size, Bits, Total Bits</keys>
+<column name="ap_done">9, 2, 1, 2</column>
+<column name="m_axis_mem_write_data_TDATA_blk_n">9, 2, 1, 2</column>
+<column name="m_axis_mem_write_data_V_data_V_1_data_in">21, 4, 512, 2048</column>
+<column name="m_axis_mem_write_data_V_data_V_1_data_out">9, 2, 512, 1024</column>
+<column name="m_axis_mem_write_data_V_data_V_1_state">15, 3, 2, 6</column>
+<column name="m_axis_mem_write_data_V_dest_V_1_data_in">21, 4, 1, 4</column>
+<column name="m_axis_mem_write_data_V_dest_V_1_data_out">9, 2, 1, 2</column>
+<column name="m_axis_mem_write_data_V_dest_V_1_state">15, 3, 2, 6</column>
+<column name="m_axis_mem_write_data_V_keep_V_1_data_in">21, 4, 64, 256</column>
+<column name="m_axis_mem_write_data_V_keep_V_1_data_out">9, 2, 64, 128</column>
+<column name="m_axis_mem_write_data_V_keep_V_1_state">15, 3, 2, 6</column>
+<column name="m_axis_mem_write_data_V_last_V_1_data_in">21, 4, 1, 4</column>
+<column name="m_axis_mem_write_data_V_last_V_1_data_out">9, 2, 1, 2</column>
+<column name="m_axis_mem_write_data_V_last_V_1_state">15, 3, 2, 6</column>
+<column name="rx_aethSift2mergerFi_3_blk_n">9, 2, 1, 2</column>
+<column name="rx_aethSift2mergerFi_5_blk_n">9, 2, 1, 2</column>
+<column name="rx_aethSift2mergerFi_6_blk_n">9, 2, 1, 2</column>
+<column name="rx_exhNoShiftFifo_V_1_blk_n">9, 2, 1, 2</column>
+<column name="rx_exhNoShiftFifo_V_3_blk_n">9, 2, 1, 2</column>
+<column name="rx_exhNoShiftFifo_V_4_blk_n">9, 2, 1, 2</column>
+<column name="rx_exhNoShiftFifo_V_s_blk_n">9, 2, 1, 2</column>
+<column name="rx_pkgShiftTypeFifo_s_8_blk_n">9, 2, 1, 2</column>
+<column name="rx_rethSift2mergerFi_4_blk_n">9, 2, 1, 2</column>
+<column name="rx_rethSift2mergerFi_6_blk_n">9, 2, 1, 2</column>
+<column name="rx_rethSift2mergerFi_7_blk_n">9, 2, 1, 2</column>
+<column name="rx_rethSift2mergerFi_8_blk_n">9, 2, 1, 2</column>
+<column name="state_3">9, 2, 2, 4</column>
+</table>
+</item>
+<item name = "Register"><table name="" hasTotal="1">
+<keys size="5">Name, FF, LUT, Bits, Const Bits</keys>
+<column name="ap_CS_fsm">1, 0, 1, 0</column>
+<column name="ap_done_reg">1, 0, 1, 0</column>
+<column name="ap_enable_reg_pp0_iter1">1, 0, 1, 0</column>
+<column name="ap_enable_reg_pp0_iter2">1, 0, 1, 0</column>
+<column name="m_axis_mem_write_data_V_data_V_1_payload_A">512, 0, 512, 0</column>
+<column name="m_axis_mem_write_data_V_data_V_1_payload_B">512, 0, 512, 0</column>
+<column name="m_axis_mem_write_data_V_data_V_1_sel_rd">1, 0, 1, 0</column>
+<column name="m_axis_mem_write_data_V_data_V_1_sel_wr">1, 0, 1, 0</column>
+<column name="m_axis_mem_write_data_V_data_V_1_state">2, 0, 2, 0</column>
+<column name="m_axis_mem_write_data_V_dest_V_1_payload_A">1, 0, 1, 0</column>
+<column name="m_axis_mem_write_data_V_dest_V_1_payload_B">1, 0, 1, 0</column>
+<column name="m_axis_mem_write_data_V_dest_V_1_sel_rd">1, 0, 1, 0</column>
+<column name="m_axis_mem_write_data_V_dest_V_1_sel_wr">1, 0, 1, 0</column>
+<column name="m_axis_mem_write_data_V_dest_V_1_state">2, 0, 2, 0</column>
+<column name="m_axis_mem_write_data_V_keep_V_1_payload_A">64, 0, 64, 0</column>
+<column name="m_axis_mem_write_data_V_keep_V_1_payload_B">64, 0, 64, 0</column>
+<column name="m_axis_mem_write_data_V_keep_V_1_sel_rd">1, 0, 1, 0</column>
+<column name="m_axis_mem_write_data_V_keep_V_1_sel_wr">1, 0, 1, 0</column>
+<column name="m_axis_mem_write_data_V_keep_V_1_state">2, 0, 2, 0</column>
+<column name="m_axis_mem_write_data_V_last_V_1_payload_A">1, 0, 1, 0</column>
+<column name="m_axis_mem_write_data_V_last_V_1_payload_B">1, 0, 1, 0</column>
+<column name="m_axis_mem_write_data_V_last_V_1_sel_rd">1, 0, 1, 0</column>
+<column name="m_axis_mem_write_data_V_last_V_1_sel_wr">1, 0, 1, 0</column>
+<column name="m_axis_mem_write_data_V_last_V_1_state">2, 0, 2, 0</column>
+<column name="state_3">2, 0, 2, 0</column>
+<column name="state_3_load_reg_281">2, 0, 2, 0</column>
+<column name="state_3_load_reg_281_pp0_iter1_reg">2, 0, 2, 0</column>
+<column name="tmp_59_reg_333">1, 0, 1, 0</column>
+<column name="tmp_59_reg_333_pp0_iter1_reg">1, 0, 1, 0</column>
+<column name="tmp_60_reg_309">1, 0, 1, 0</column>
+<column name="tmp_60_reg_309_pp0_iter1_reg">1, 0, 1, 0</column>
+<column name="tmp_61_reg_285">1, 0, 1, 0</column>
+<column name="tmp_61_reg_285_pp0_iter1_reg">1, 0, 1, 0</column>
+<column name="tmp_data_V_29_reg_313">512, 0, 512, 0</column>
+<column name="tmp_data_V_30_reg_289">512, 0, 512, 0</column>
+<column name="tmp_data_V_reg_337">512, 0, 512, 0</column>
+<column name="tmp_dest_V_2_reg_304">1, 0, 1, 0</column>
+<column name="tmp_dest_V_reg_328">1, 0, 1, 0</column>
+<column name="tmp_keep_V_28_reg_318">64, 0, 64, 0</column>
+<column name="tmp_keep_V_29_reg_294">64, 0, 64, 0</column>
+<column name="tmp_keep_V_reg_342">64, 0, 64, 0</column>
+<column name="tmp_last_V_24_reg_323">1, 0, 1, 0</column>
+<column name="tmp_last_V_25_reg_299">1, 0, 1, 0</column>
+<column name="tmp_last_V_reg_347">1, 0, 1, 0</column>
+</table>
+</item>
+</section>
+</item>
+</section>
+
+<section name = "Interface" level="0">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="6">RTL Ports, Dir, Bits, Protocol, Source Object, C Type</keys>
+<column name="ap_clk">in, 1, ap_ctrl_hs, merge_rx_pkgs&lt;512&gt;, return value</column>
+<column name="ap_rst">in, 1, ap_ctrl_hs, merge_rx_pkgs&lt;512&gt;, return value</column>
+<column name="ap_start">in, 1, ap_ctrl_hs, merge_rx_pkgs&lt;512&gt;, return value</column>
+<column name="ap_done">out, 1, ap_ctrl_hs, merge_rx_pkgs&lt;512&gt;, return value</column>
+<column name="ap_continue">in, 1, ap_ctrl_hs, merge_rx_pkgs&lt;512&gt;, return value</column>
+<column name="ap_idle">out, 1, ap_ctrl_hs, merge_rx_pkgs&lt;512&gt;, return value</column>
+<column name="ap_ready">out, 1, ap_ctrl_hs, merge_rx_pkgs&lt;512&gt;, return value</column>
+<column name="rx_exhNoShiftFifo_V_1_dout">in, 512, ap_fifo, rx_exhNoShiftFifo_V_1, pointer</column>
+<column name="rx_exhNoShiftFifo_V_1_empty_n">in, 1, ap_fifo, rx_exhNoShiftFifo_V_1, pointer</column>
+<column name="rx_exhNoShiftFifo_V_1_read">out, 1, ap_fifo, rx_exhNoShiftFifo_V_1, pointer</column>
+<column name="rx_exhNoShiftFifo_V_4_dout">in, 64, ap_fifo, rx_exhNoShiftFifo_V_4, pointer</column>
+<column name="rx_exhNoShiftFifo_V_4_empty_n">in, 1, ap_fifo, rx_exhNoShiftFifo_V_4, pointer</column>
+<column name="rx_exhNoShiftFifo_V_4_read">out, 1, ap_fifo, rx_exhNoShiftFifo_V_4, pointer</column>
+<column name="rx_exhNoShiftFifo_V_s_dout">in, 1, ap_fifo, rx_exhNoShiftFifo_V_s, pointer</column>
+<column name="rx_exhNoShiftFifo_V_s_empty_n">in, 1, ap_fifo, rx_exhNoShiftFifo_V_s, pointer</column>
+<column name="rx_exhNoShiftFifo_V_s_read">out, 1, ap_fifo, rx_exhNoShiftFifo_V_s, pointer</column>
+<column name="rx_exhNoShiftFifo_V_3_dout">in, 1, ap_fifo, rx_exhNoShiftFifo_V_3, pointer</column>
+<column name="rx_exhNoShiftFifo_V_3_empty_n">in, 1, ap_fifo, rx_exhNoShiftFifo_V_3, pointer</column>
+<column name="rx_exhNoShiftFifo_V_3_read">out, 1, ap_fifo, rx_exhNoShiftFifo_V_3, pointer</column>
+<column name="rx_rethSift2mergerFi_8_dout">in, 512, ap_fifo, rx_rethSift2mergerFi_8, pointer</column>
+<column name="rx_rethSift2mergerFi_8_empty_n">in, 1, ap_fifo, rx_rethSift2mergerFi_8, pointer</column>
+<column name="rx_rethSift2mergerFi_8_read">out, 1, ap_fifo, rx_rethSift2mergerFi_8, pointer</column>
+<column name="rx_rethSift2mergerFi_6_dout">in, 64, ap_fifo, rx_rethSift2mergerFi_6, pointer</column>
+<column name="rx_rethSift2mergerFi_6_empty_n">in, 1, ap_fifo, rx_rethSift2mergerFi_6, pointer</column>
+<column name="rx_rethSift2mergerFi_6_read">out, 1, ap_fifo, rx_rethSift2mergerFi_6, pointer</column>
+<column name="rx_rethSift2mergerFi_7_dout">in, 1, ap_fifo, rx_rethSift2mergerFi_7, pointer</column>
+<column name="rx_rethSift2mergerFi_7_empty_n">in, 1, ap_fifo, rx_rethSift2mergerFi_7, pointer</column>
+<column name="rx_rethSift2mergerFi_7_read">out, 1, ap_fifo, rx_rethSift2mergerFi_7, pointer</column>
+<column name="rx_rethSift2mergerFi_4_dout">in, 1, ap_fifo, rx_rethSift2mergerFi_4, pointer</column>
+<column name="rx_rethSift2mergerFi_4_empty_n">in, 1, ap_fifo, rx_rethSift2mergerFi_4, pointer</column>
+<column name="rx_rethSift2mergerFi_4_read">out, 1, ap_fifo, rx_rethSift2mergerFi_4, pointer</column>
+<column name="rx_aethSift2mergerFi_3_dout">in, 512, ap_fifo, rx_aethSift2mergerFi_3, pointer</column>
+<column name="rx_aethSift2mergerFi_3_empty_n">in, 1, ap_fifo, rx_aethSift2mergerFi_3, pointer</column>
+<column name="rx_aethSift2mergerFi_3_read">out, 1, ap_fifo, rx_aethSift2mergerFi_3, pointer</column>
+<column name="rx_aethSift2mergerFi_5_dout">in, 64, ap_fifo, rx_aethSift2mergerFi_5, pointer</column>
+<column name="rx_aethSift2mergerFi_5_empty_n">in, 1, ap_fifo, rx_aethSift2mergerFi_5, pointer</column>
+<column name="rx_aethSift2mergerFi_5_read">out, 1, ap_fifo, rx_aethSift2mergerFi_5, pointer</column>
+<column name="rx_aethSift2mergerFi_6_dout">in, 1, ap_fifo, rx_aethSift2mergerFi_6, pointer</column>
+<column name="rx_aethSift2mergerFi_6_empty_n">in, 1, ap_fifo, rx_aethSift2mergerFi_6, pointer</column>
+<column name="rx_aethSift2mergerFi_6_read">out, 1, ap_fifo, rx_aethSift2mergerFi_6, pointer</column>
+<column name="rx_pkgShiftTypeFifo_s_8_dout">in, 2, ap_fifo, rx_pkgShiftTypeFifo_s_8, pointer</column>
+<column name="rx_pkgShiftTypeFifo_s_8_empty_n">in, 1, ap_fifo, rx_pkgShiftTypeFifo_s_8, pointer</column>
+<column name="rx_pkgShiftTypeFifo_s_8_read">out, 1, ap_fifo, rx_pkgShiftTypeFifo_s_8, pointer</column>
+<column name="m_axis_mem_write_data_TREADY">in, 1, axis, m_axis_mem_write_data_V_dest_V, pointer</column>
+<column name="m_axis_mem_write_data_TVALID">out, 1, axis, m_axis_mem_write_data_V_dest_V, pointer</column>
+<column name="m_axis_mem_write_data_TDEST">out, 1, axis, m_axis_mem_write_data_V_dest_V, pointer</column>
+<column name="m_axis_mem_write_data_TDATA">out, 512, axis, m_axis_mem_write_data_V_data_V, pointer</column>
+<column name="m_axis_mem_write_data_TKEEP">out, 64, axis, m_axis_mem_write_data_V_keep_V, pointer</column>
+<column name="m_axis_mem_write_data_TLAST">out, 1, axis, m_axis_mem_write_data_V_last_V, pointer</column>
+</table>
+</item>
+</section>
+</profile>

@@ -1,0 +1,248 @@
+<profile>
+
+<section name = "Vivado HLS Report for 'rx_ibh_fsm'" level="0">
+<item name = "Date">Mon Mar  1 13:04:12 2021
+</item>
+<item name = "Version">2019.1 (Build 2552052 on Fri May 24 15:28:33 MDT 2019)</item>
+<item name = "Project">rocev2_prj</item>
+<item name = "Solution">solution1</item>
+<item name = "Product family">zynquplus</item>
+<item name = "Target device">xczu7eg-ffvc1156-2-i</item>
+</section>
+
+<section name = "Performance Estimates" level="0">
+<item name = "Timing (ns)">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="4">Clock, Target, Estimated, Uncertainty</keys>
+<column name="ap_clk">8.00, 4.032, 1.00</column>
+</table>
+</item>
+</section>
+</item>
+<item name = "Latency (clock cycles)">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="6">, min, max, min, max, Type</keys>
+<column name="">1, 1, 1, 1, function</column>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="0">
+<keys size="7">Instance, Module, min, max, min, max, Type</keys>
+</table>
+</item>
+<item name = "Loop"><table name="" hasTotal="0">
+<keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
+</table>
+</item>
+</section>
+</item>
+</section>
+</item>
+</section>
+
+<section name = "Utilization Estimates" level="0">
+<item name = "Summary"><table name="" hasTotal="1">
+<keys size="6">Name, BRAM_18K, DSP48E, FF, LUT, URAM</keys>
+<column name="DSP">-, -, -, -, -</column>
+<column name="Expression">-, -, 0, 400, -</column>
+<column name="FIFO">-, -, -, -, -</column>
+<column name="Instance">-, -, 0, 153, -</column>
+<column name="Memory">-, -, -, -, -</column>
+<column name="Multiplexer">-, -, -, 189, -</column>
+<column name="Register">-, -, 305, -, -</column>
+<specialColumn name="Available">624, 1728, 460800, 230400, 96</specialColumn>
+<specialColumn name="Utilization (%)">0, 0, ~0, ~0, 0</specialColumn>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="1">
+<keys size="7">Instance, Module, BRAM_18K, DSP48E, FF, LUT, URAM</keys>
+<column name="rocev2_top_mux_325_1_1_1_U121">rocev2_top_mux_325_1_1_1, 0, 0, 0, 153, 0</column>
+</table>
+</item>
+<item name = "DSP48E"><table name="" hasTotal="0">
+<keys size="3">Instance, Module, Expression</keys>
+</table>
+</item>
+<item name = "Memory"><table name="" hasTotal="1">
+<keys size="10">Memory, Module, BRAM_18K, FF, LUT, URAM, Words, Bits, Banks, W*Bits*Banks</keys>
+</table>
+</item>
+<item name = "FIFO"><table name="" hasTotal="1">
+<keys size="8">Name, BRAM_18K, FF, LUT, URAM, Depth, Bits, Size:D*B</keys>
+</table>
+</item>
+<item name = "Expression"><table name="" hasTotal="1">
+<keys size="7">Variable Name, Operation, DSP48E, FF, LUT, Bitwidth P0, Bitwidth P1</keys>
+<column name="add_ln34_fu_422_p2">+, 0, 0, 15, 5, 5</column>
+<column name="grp_fu_297_p2">+, 0, 0, 39, 32, 1</column>
+<column name="tmp_epsn_V_fu_882_p2">+, 0, 0, 31, 24, 24</column>
+<column name="and_ln430_fu_532_p2">and, 0, 0, 2, 1, 1</column>
+<column name="and_ln489_fu_592_p2">and, 0, 0, 2, 1, 1</column>
+<column name="ap_condition_312">and, 0, 0, 2, 1, 1</column>
+<column name="ap_condition_47">and, 0, 0, 2, 1, 1</column>
+<column name="ap_condition_504">and, 0, 0, 2, 1, 1</column>
+<column name="ap_condition_508">and, 0, 0, 2, 1, 1</column>
+<column name="ap_condition_555">and, 0, 0, 2, 1, 1</column>
+<column name="ap_predicate_op108_write_state2">and, 0, 0, 2, 1, 1</column>
+<column name="ap_predicate_op135_write_state2">and, 0, 0, 2, 1, 1</column>
+<column name="ap_predicate_op138_write_state2">and, 0, 0, 2, 1, 1</column>
+<column name="ap_predicate_op141_write_state2">and, 0, 0, 2, 1, 1</column>
+<column name="ap_predicate_op34_read_state1">and, 0, 0, 2, 1, 1</column>
+<column name="tmp_26_nbreadreq_fu_182_p3">and, 0, 0, 2, 1, 0</column>
+<column name="tmp_27_nbreadreq_fu_190_p3">and, 0, 0, 2, 1, 0</column>
+<column name="tmp_nbreadreq_fu_210_p3">and, 0, 0, 2, 1, 0</column>
+<column name="empty_212_fu_698_p2">icmp, 0, 0, 11, 5, 5</column>
+<column name="grp_fu_282_p2">icmp, 0, 0, 11, 5, 3</column>
+<column name="grp_fu_287_p2">icmp, 0, 0, 11, 5, 4</column>
+<column name="grp_fu_292_p2">icmp, 0, 0, 11, 5, 4</column>
+<column name="icmp_ln429_fu_496_p2">icmp, 0, 0, 11, 5, 5</column>
+<column name="icmp_ln430_fu_508_p2">icmp, 0, 0, 20, 24, 24</column>
+<column name="icmp_ln488_1_fu_550_p2">icmp, 0, 0, 20, 24, 24</column>
+<column name="icmp_ln488_fu_538_p2">icmp, 0, 0, 20, 24, 24</column>
+<column name="icmp_ln489_fu_580_p2">icmp, 0, 0, 20, 24, 24</column>
+<column name="icmp_ln879_6_fu_686_p2">icmp, 0, 0, 9, 3, 2</column>
+<column name="icmp_ln879_fu_490_p2">icmp, 0, 0, 20, 24, 24</column>
+<column name="icmp_ln887_fu_520_p2">icmp, 0, 0, 20, 24, 24</column>
+<column name="icmp_ln891_fu_562_p2">icmp, 0, 0, 20, 24, 24</column>
+<column name="icmp_ln899_fu_502_p2">icmp, 0, 0, 20, 24, 24</column>
+<column name="tmp_isResponse_fu_428_p2">icmp, 0, 0, 11, 5, 3</column>
+<column name="ap_block_pp0_stage0_01001">or, 0, 0, 2, 1, 1</column>
+<column name="ap_block_state1_pp0_stage0_iter0">or, 0, 0, 2, 1, 1</column>
+<column name="ap_block_state2_pp0_stage0_iter1">or, 0, 0, 2, 1, 1</column>
+<column name="ap_predicate_op112_write_state2">or, 0, 0, 2, 1, 1</column>
+<column name="ap_predicate_op114_write_state2">or, 0, 0, 2, 1, 1</column>
+<column name="ap_predicate_op117_write_state2">or, 0, 0, 2, 1, 1</column>
+<column name="ap_predicate_op125_write_state2">or, 0, 0, 2, 1, 1</column>
+<column name="ap_predicate_op134_write_state2">or, 0, 0, 2, 1, 1</column>
+<column name="ap_predicate_op150_write_state2">or, 0, 0, 2, 1, 1</column>
+<column name="ap_predicate_op152_write_state2">or, 0, 0, 2, 1, 1</column>
+<column name="ap_predicate_op160_write_state2">or, 0, 0, 2, 1, 1</column>
+<column name="empty_211_fu_692_p2">or, 0, 0, 2, 1, 1</column>
+<column name="empty_213_fu_704_p2">or, 0, 0, 2, 1, 1</column>
+<column name="empty_215_fu_710_p2">or, 0, 0, 2, 1, 1</column>
+<column name="empty_218_fu_604_p2">or, 0, 0, 2, 1, 1</column>
+<column name="empty_220_fu_610_p2">or, 0, 0, 2, 1, 1</column>
+<column name="or_ln430_fu_526_p2">or, 0, 0, 2, 1, 1</column>
+<column name="or_ln488_1_fu_574_p2">or, 0, 0, 2, 1, 1</column>
+<column name="or_ln488_fu_568_p2">or, 0, 0, 2, 1, 1</column>
+<column name="or_ln489_fu_598_p2">or, 0, 0, 2, 1, 1</column>
+<column name="ap_enable_pp0">xor, 0, 0, 2, 1, 2</column>
+<column name="xor_ln430_fu_514_p2">xor, 0, 0, 2, 1, 2</column>
+<column name="xor_ln488_1_fu_556_p2">xor, 0, 0, 2, 1, 2</column>
+<column name="xor_ln488_fu_544_p2">xor, 0, 0, 2, 1, 2</column>
+<column name="xor_ln489_fu_586_p2">xor, 0, 0, 2, 1, 2</column>
+</table>
+</item>
+<item name = "Multiplexer"><table name="" hasTotal="1">
+<keys size="5">Name, LUT, Input Size, Bits, Total Bits</keys>
+<column name="ap_done">9, 2, 1, 2</column>
+<column name="ap_phi_reg_pp0_iter1_tmp_retryCounter_V_reg_271">15, 3, 3, 9</column>
+<column name="rxIbh2stateTable_upd_1_blk_n">9, 2, 1, 2</column>
+<column name="rxIbh2stateTable_upd_1_din">21, 4, 45, 180</column>
+<column name="rx_exhMetaFifo_V_blk_n">9, 2, 1, 2</column>
+<column name="rx_fsm2exh_MetaFifo_s_11_blk_n">9, 2, 1, 2</column>
+<column name="rx_fsm2exh_MetaFifo_s_11_din">15, 3, 92, 276</column>
+<column name="rx_ibh2fsm_MetaFifo_s_9_blk_n">9, 2, 1, 2</column>
+<column name="rx_ibhDropFifo_V_blk_n">9, 2, 1, 2</column>
+<column name="rx_ibhDropFifo_V_din">15, 3, 1, 3</column>
+<column name="rx_ibhDropMetaFifo_V_blk_n">9, 2, 1, 2</column>
+<column name="rx_ibhDropMetaFifo_V_din">21, 4, 2, 8</column>
+<column name="rx_ibhEventFifo_V_blk_n">9, 2, 1, 2</column>
+<column name="rx_ibhEventFifo_V_din">21, 4, 50, 200</column>
+<column name="stateTable2rxIbh_rsp_1_blk_n">9, 2, 1, 2</column>
+</table>
+</item>
+<item name = "Register"><table name="" hasTotal="1">
+<keys size="5">Name, FF, LUT, Bits, Const Bits</keys>
+<column name="and_ln430_reg_998">1, 0, 1, 0</column>
+<column name="ap_CS_fsm">1, 0, 1, 0</column>
+<column name="ap_done_reg">1, 0, 1, 0</column>
+<column name="ap_enable_reg_pp0_iter1">1, 0, 1, 0</column>
+<column name="ap_phi_reg_pp0_iter1_tmp_retryCounter_V_reg_271">3, 0, 3, 0</column>
+<column name="droppedPackets_V">32, 0, 32, 0</column>
+<column name="emeta_isNak">1, 0, 1, 0</column>
+<column name="emeta_isNak_load_reg_919">1, 0, 1, 0</column>
+<column name="emeta_numPkg_V">22, 0, 22, 0</column>
+<column name="empty_215_reg_1022">1, 0, 1, 0</column>
+<column name="empty_220_reg_1010">1, 0, 1, 0</column>
+<column name="fsmState_4">1, 0, 1, 0</column>
+<column name="fsmState_4_load_reg_901">1, 0, 1, 0</column>
+<column name="icmp_ln429_reg_986">1, 0, 1, 0</column>
+<column name="icmp_ln879_6_reg_1018">1, 0, 1, 0</column>
+<column name="icmp_ln879_reg_982">1, 0, 1, 0</column>
+<column name="icmp_ln899_reg_990">1, 0, 1, 0</column>
+<column name="isResponse">1, 0, 1, 0</column>
+<column name="meta_dest_qp_V">24, 0, 24, 0</column>
+<column name="meta_numPkg_V">22, 0, 22, 0</column>
+<column name="meta_op_code_9">5, 0, 5, 0</column>
+<column name="meta_partition_key_V">16, 0, 16, 0</column>
+<column name="meta_psn_V">24, 0, 24, 0</column>
+<column name="meta_validPSN">1, 0, 1, 0</column>
+<column name="or_ln430_reg_994">1, 0, 1, 0</column>
+<column name="or_ln488_1_reg_1002">1, 0, 1, 0</column>
+<column name="or_ln489_reg_1006">1, 0, 1, 0</column>
+<column name="tmp_26_reg_929">1, 0, 1, 0</column>
+<column name="tmp_27_reg_933">1, 0, 1, 0</column>
+<column name="tmp_28_reg_947">1, 0, 1, 0</column>
+<column name="tmp_dest_qp_V_load_n_reg_942">24, 0, 24, 0</column>
+<column name="tmp_i_i_reg_1014">1, 0, 1, 0</column>
+<column name="tmp_isResponse_1_reg_923">1, 0, 1, 0</column>
+<column name="tmp_isResponse_reg_957">1, 0, 1, 0</column>
+<column name="tmp_numPkg_V_load_ne_reg_952">22, 0, 22, 0</column>
+<column name="tmp_op_code_reg_905">5, 0, 5, 0</column>
+<column name="tmp_partition_key_V_s_reg_937">16, 0, 16, 0</column>
+<column name="tmp_psn_V_2_reg_971">24, 0, 24, 0</column>
+<column name="tmp_psn_V_reg_911">24, 0, 24, 0</column>
+<column name="tmp_qpn_V_reg_962">16, 0, 16, 0</column>
+<column name="tmp_reg_967">1, 0, 1, 0</column>
+</table>
+</item>
+</section>
+</item>
+</section>
+
+<section name = "Interface" level="0">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="6">RTL Ports, Dir, Bits, Protocol, Source Object, C Type</keys>
+<column name="ap_clk">in, 1, ap_ctrl_hs, rx_ibh_fsm, return value</column>
+<column name="ap_rst">in, 1, ap_ctrl_hs, rx_ibh_fsm, return value</column>
+<column name="ap_start">in, 1, ap_ctrl_hs, rx_ibh_fsm, return value</column>
+<column name="ap_done">out, 1, ap_ctrl_hs, rx_ibh_fsm, return value</column>
+<column name="ap_continue">in, 1, ap_ctrl_hs, rx_ibh_fsm, return value</column>
+<column name="ap_idle">out, 1, ap_ctrl_hs, rx_ibh_fsm, return value</column>
+<column name="ap_ready">out, 1, ap_ctrl_hs, rx_ibh_fsm, return value</column>
+<column name="rx_ibh2fsm_MetaFifo_s_9_dout">in, 92, ap_fifo, rx_ibh2fsm_MetaFifo_s_9, pointer</column>
+<column name="rx_ibh2fsm_MetaFifo_s_9_empty_n">in, 1, ap_fifo, rx_ibh2fsm_MetaFifo_s_9, pointer</column>
+<column name="rx_ibh2fsm_MetaFifo_s_9_read">out, 1, ap_fifo, rx_ibh2fsm_MetaFifo_s_9, pointer</column>
+<column name="rx_exhMetaFifo_V_dout">in, 23, ap_fifo, rx_exhMetaFifo_V, pointer</column>
+<column name="rx_exhMetaFifo_V_empty_n">in, 1, ap_fifo, rx_exhMetaFifo_V, pointer</column>
+<column name="rx_exhMetaFifo_V_read">out, 1, ap_fifo, rx_exhMetaFifo_V, pointer</column>
+<column name="stateTable2rxIbh_rsp_1_dout">in, 75, ap_fifo, stateTable2rxIbh_rsp_1, pointer</column>
+<column name="stateTable2rxIbh_rsp_1_empty_n">in, 1, ap_fifo, stateTable2rxIbh_rsp_1, pointer</column>
+<column name="stateTable2rxIbh_rsp_1_read">out, 1, ap_fifo, stateTable2rxIbh_rsp_1, pointer</column>
+<column name="rxIbh2stateTable_upd_1_din">out, 45, ap_fifo, rxIbh2stateTable_upd_1, pointer</column>
+<column name="rxIbh2stateTable_upd_1_full_n">in, 1, ap_fifo, rxIbh2stateTable_upd_1, pointer</column>
+<column name="rxIbh2stateTable_upd_1_write">out, 1, ap_fifo, rxIbh2stateTable_upd_1, pointer</column>
+<column name="rx_ibhDropFifo_V_din">out, 1, ap_fifo, rx_ibhDropFifo_V, pointer</column>
+<column name="rx_ibhDropFifo_V_full_n">in, 1, ap_fifo, rx_ibhDropFifo_V, pointer</column>
+<column name="rx_ibhDropFifo_V_write">out, 1, ap_fifo, rx_ibhDropFifo_V, pointer</column>
+<column name="rx_ibhDropMetaFifo_V_din">out, 2, ap_fifo, rx_ibhDropMetaFifo_V, pointer</column>
+<column name="rx_ibhDropMetaFifo_V_full_n">in, 1, ap_fifo, rx_ibhDropMetaFifo_V, pointer</column>
+<column name="rx_ibhDropMetaFifo_V_write">out, 1, ap_fifo, rx_ibhDropMetaFifo_V, pointer</column>
+<column name="rx_ibhEventFifo_V_din">out, 50, ap_fifo, rx_ibhEventFifo_V, pointer</column>
+<column name="rx_ibhEventFifo_V_full_n">in, 1, ap_fifo, rx_ibhEventFifo_V, pointer</column>
+<column name="rx_ibhEventFifo_V_write">out, 1, ap_fifo, rx_ibhEventFifo_V, pointer</column>
+<column name="rx_fsm2exh_MetaFifo_s_11_din">out, 92, ap_fifo, rx_fsm2exh_MetaFifo_s_11, pointer</column>
+<column name="rx_fsm2exh_MetaFifo_s_11_full_n">in, 1, ap_fifo, rx_fsm2exh_MetaFifo_s_11, pointer</column>
+<column name="rx_fsm2exh_MetaFifo_s_11_write">out, 1, ap_fifo, rx_fsm2exh_MetaFifo_s_11, pointer</column>
+<column name="regInvalidPsnDropCount_V">out, 32, ap_vld, regInvalidPsnDropCount_V, pointer</column>
+<column name="regInvalidPsnDropCount_V_ap_vld">out, 1, ap_vld, regInvalidPsnDropCount_V, pointer</column>
+</table>
+</item>
+</section>
+</profile>

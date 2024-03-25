@@ -1,0 +1,168 @@
+
+
+================================================================
+== Vivado HLS Report for 'merge_rx_meta'
+================================================================
+* Date:           Mon Mar  1 13:04:09 2021
+
+* Version:        2019.1 (Build 2552052 on Fri May 24 15:28:33 MDT 2019)
+* Project:        rocev2_prj
+* Solution:       solution1
+* Product family: zynquplus
+* Target device:  xczu7eg-ffvc1156-2-i
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |   8.00|     1.838|        1.00|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+----------+
+    |  Latency  |  Interval | Pipeline |
+    | min | max | min | max |   Type   |
+    +-----+-----+-----+-----+----------+
+    |    1|    1|    1|    1| function |
+    +-----+-----+-----+-----+----------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-------+--------+--------+-----+
+|       Name      | BRAM_18K| DSP48E|   FF   |   LUT  | URAM|
++-----------------+---------+-------+--------+--------+-----+
+|DSP              |        -|      -|       -|       -|    -|
+|Expression       |        -|      -|       0|      18|    -|
+|FIFO             |        -|      -|       -|       -|    -|
+|Instance         |        -|      -|       -|       -|    -|
+|Memory           |        -|      -|       -|       -|    -|
+|Multiplexer      |        -|      -|       -|      72|    -|
+|Register         |        -|      -|      86|       -|    -|
++-----------------+---------+-------+--------+--------+-----+
+|Total            |        0|      0|      86|      90|    0|
++-----------------+---------+-------+--------+--------+-----+
+|Available        |      624|   1728|  460800|  230400|   96|
++-----------------+---------+-------+--------+--------+-----+
+|Utilization (%)  |        0|      0|   ~0   |   ~0   |    0|
++-----------------+---------+-------+--------+--------+-----+
+
++ Detail: 
+    * Instance: 
+    N/A
+
+    * DSP48E: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +----------------------------------+----------+-------+---+----+------------+------------+
+    |           Variable Name          | Operation| DSP48E| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +----------------------------------+----------+-------+---+----+------------+------------+
+    |ap_block_state2_pp0_stage0_iter1  |    and   |      0|  0|   2|           1|           1|
+    |ap_predicate_op24_write_state2    |    and   |      0|  0|   2|           1|           1|
+    |ap_predicate_op7_read_state1      |    and   |      0|  0|   2|           1|           1|
+    |io_acc_block_signal_op24          |    and   |      0|  0|   2|           1|           1|
+    |io_acc_block_signal_op7           |    and   |      0|  0|   2|           1|           1|
+    |tmp_64_nbreadreq_fu_64_p3         |    and   |      0|  0|   2|           1|           0|
+    |ap_block_pp0_stage0_01001         |    or    |      0|  0|   2|           1|           1|
+    |ap_block_state1_pp0_stage0_iter0  |    or    |      0|  0|   2|           1|           1|
+    |ap_enable_pp0                     |    xor   |      0|  0|   2|           1|           2|
+    +----------------------------------+----------+-------+---+----+------------+------------+
+    |Total                             |          |      0|  0|  18|           9|           9|
+    +----------------------------------+----------+-------+---+----+------------+------------+
+
+    * Multiplexer: 
+    +------------------------------+----+-----------+-----+-----------+
+    |             Name             | LUT| Input Size| Bits| Total Bits|
+    +------------------------------+----+-----------+-----+-----------+
+    |ap_done                       |   9|          2|    1|          2|
+    |rx_ip2udpMetaFifo_V_1_blk_n   |   9|          2|    1|          2|
+    |rx_ip2udpMetaFifo_V_s_blk_n   |   9|          2|    1|          2|
+    |rx_ipUdpMetaFifo_V_l_blk_n    |   9|          2|    1|          2|
+    |rx_ipUdpMetaFifo_V_m_blk_n    |   9|          2|    1|          2|
+    |rx_ipUdpMetaFifo_V_t_1_blk_n  |   9|          2|    1|          2|
+    |rx_ipUdpMetaFifo_V_t_blk_n    |   9|          2|    1|          2|
+    |rx_udpMetaFifo_V_blk_n        |   9|          2|    1|          2|
+    +------------------------------+----+-----------+-----+-----------+
+    |Total                         |  72|         16|    8|         16|
+    +------------------------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +-----------------------------+----+----+-----+-----------+
+    |             Name            | FF | LUT| Bits| Const Bits|
+    +-----------------------------+----+----+-----+-----------+
+    |ap_CS_fsm                    |   1|   0|    1|          0|
+    |ap_done_reg                  |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter1      |   1|   0|    1|          0|
+    |tmp_64_reg_146               |   1|   0|    1|          0|
+    |tmp_65_reg_170               |   1|   0|    1|          0|
+    |tmp_length_V_reg_165         |  16|   0|   16|          0|
+    |tmp_my_port_V_reg_160        |  16|   0|   16|          0|
+    |tmp_reg_142                  |   1|   0|    1|          0|
+    |tmp_their_address_V_reg_150  |  32|   0|   32|          0|
+    |tmp_their_port_V_reg_155     |  16|   0|   16|          0|
+    +-----------------------------+----+----+-----+-----------+
+    |Total                        |  86|   0|   86|          0|
+    +-----------------------------+----+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++-------------------------------+-----+-----+------------+------------------------+--------------+
+|           RTL Ports           | Dir | Bits|  Protocol  |      Source Object     |    C Type    |
++-------------------------------+-----+-----+------------+------------------------+--------------+
+|ap_clk                         |  in |    1| ap_ctrl_hs |      merge_rx_meta     | return value |
+|ap_rst                         |  in |    1| ap_ctrl_hs |      merge_rx_meta     | return value |
+|ap_start                       |  in |    1| ap_ctrl_hs |      merge_rx_meta     | return value |
+|ap_done                        | out |    1| ap_ctrl_hs |      merge_rx_meta     | return value |
+|ap_continue                    |  in |    1| ap_ctrl_hs |      merge_rx_meta     | return value |
+|ap_idle                        | out |    1| ap_ctrl_hs |      merge_rx_meta     | return value |
+|ap_ready                       | out |    1| ap_ctrl_hs |      merge_rx_meta     | return value |
+|rx_ip2udpMetaFifo_V_s_dout     |  in |   32|   ap_fifo  |  rx_ip2udpMetaFifo_V_s |    pointer   |
+|rx_ip2udpMetaFifo_V_s_empty_n  |  in |    1|   ap_fifo  |  rx_ip2udpMetaFifo_V_s |    pointer   |
+|rx_ip2udpMetaFifo_V_s_read     | out |    1|   ap_fifo  |  rx_ip2udpMetaFifo_V_s |    pointer   |
+|rx_ip2udpMetaFifo_V_1_dout     |  in |   16|   ap_fifo  |  rx_ip2udpMetaFifo_V_1 |    pointer   |
+|rx_ip2udpMetaFifo_V_1_empty_n  |  in |    1|   ap_fifo  |  rx_ip2udpMetaFifo_V_1 |    pointer   |
+|rx_ip2udpMetaFifo_V_1_read     | out |    1|   ap_fifo  |  rx_ip2udpMetaFifo_V_1 |    pointer   |
+|rx_udpMetaFifo_V_dout          |  in |   49|   ap_fifo  |    rx_udpMetaFifo_V    |    pointer   |
+|rx_udpMetaFifo_V_empty_n       |  in |    1|   ap_fifo  |    rx_udpMetaFifo_V    |    pointer   |
+|rx_udpMetaFifo_V_read          | out |    1|   ap_fifo  |    rx_udpMetaFifo_V    |    pointer   |
+|rx_ipUdpMetaFifo_V_t_1_din     | out |  128|   ap_fifo  | rx_ipUdpMetaFifo_V_t_1 |    pointer   |
+|rx_ipUdpMetaFifo_V_t_1_full_n  |  in |    1|   ap_fifo  | rx_ipUdpMetaFifo_V_t_1 |    pointer   |
+|rx_ipUdpMetaFifo_V_t_1_write   | out |    1|   ap_fifo  | rx_ipUdpMetaFifo_V_t_1 |    pointer   |
+|rx_ipUdpMetaFifo_V_t_din       | out |   16|   ap_fifo  |  rx_ipUdpMetaFifo_V_t  |    pointer   |
+|rx_ipUdpMetaFifo_V_t_full_n    |  in |    1|   ap_fifo  |  rx_ipUdpMetaFifo_V_t  |    pointer   |
+|rx_ipUdpMetaFifo_V_t_write     | out |    1|   ap_fifo  |  rx_ipUdpMetaFifo_V_t  |    pointer   |
+|rx_ipUdpMetaFifo_V_m_din       | out |   16|   ap_fifo  |  rx_ipUdpMetaFifo_V_m  |    pointer   |
+|rx_ipUdpMetaFifo_V_m_full_n    |  in |    1|   ap_fifo  |  rx_ipUdpMetaFifo_V_m  |    pointer   |
+|rx_ipUdpMetaFifo_V_m_write     | out |    1|   ap_fifo  |  rx_ipUdpMetaFifo_V_m  |    pointer   |
+|rx_ipUdpMetaFifo_V_l_din       | out |   16|   ap_fifo  |  rx_ipUdpMetaFifo_V_l  |    pointer   |
+|rx_ipUdpMetaFifo_V_l_full_n    |  in |    1|   ap_fifo  |  rx_ipUdpMetaFifo_V_l  |    pointer   |
+|rx_ipUdpMetaFifo_V_l_write     | out |    1|   ap_fifo  |  rx_ipUdpMetaFifo_V_l  |    pointer   |
++-------------------------------+-----+-----+------------+------------------------+--------------+
+

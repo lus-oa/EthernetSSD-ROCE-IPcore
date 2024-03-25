@@ -1,0 +1,145 @@
+
+
+================================================================
+== Vivado HLS Report for 'mq_freelist_handler'
+================================================================
+* Date:           Mon Mar  1 13:04:22 2021
+
+* Version:        2019.1 (Build 2552052 on Fri May 24 15:28:33 MDT 2019)
+* Project:        rocev2_prj
+* Solution:       solution1
+* Product family: zynquplus
+* Target device:  xczu7eg-ffvc1156-2-i
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |   8.00|     1.838|        1.00|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+----------+
+    |  Latency  |  Interval | Pipeline |
+    | min | max | min | max |   Type   |
+    +-----+-----+-----+-----+----------+
+    |    1|    1|    1|    1| function |
+    +-----+-----+-----+-----+----------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-------+--------+--------+-----+
+|       Name      | BRAM_18K| DSP48E|   FF   |   LUT  | URAM|
++-----------------+---------+-------+--------+--------+-----+
+|DSP              |        -|      -|       -|       -|    -|
+|Expression       |        -|      -|       0|      48|    -|
+|FIFO             |        -|      -|       -|       -|    -|
+|Instance         |        -|      -|       -|       -|    -|
+|Memory           |        -|      -|       -|       -|    -|
+|Multiplexer      |        -|      -|       -|      42|    -|
+|Register         |        -|      -|      36|       -|    -|
++-----------------+---------+-------+--------+--------+-----+
+|Total            |        0|      0|      36|      90|    0|
++-----------------+---------+-------+--------+--------+-----+
+|Available        |      624|   1728|  460800|  230400|   96|
++-----------------+---------+-------+--------+--------+-----+
+|Utilization (%)  |        0|      0|   ~0   |   ~0   |    0|
++-----------------+---------+-------+--------+--------+-----+
+
++ Detail: 
+    * Instance: 
+    N/A
+
+    * DSP48E: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +----------------------------------+----------+-------+---+----+------------+------------+
+    |           Variable Name          | Operation| DSP48E| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +----------------------------------+----------+-------+---+----+------------+------------+
+    |add_ln700_fu_94_p2                |     +    |      0|  0|  23|          16|           1|
+    |ap_condition_112                  |    and   |      0|  0|   2|           1|           1|
+    |ap_predicate_op16_write_state2    |    and   |      0|  0|   2|           1|           1|
+    |tmp_nbreadreq_fu_44_p3            |    and   |      0|  0|   2|           1|           0|
+    |icmp_ln887_fu_88_p2               |   icmp   |      0|  0|  11|           5|           1|
+    |ap_block_pp0_stage0_01001         |    or    |      0|  0|   2|           1|           1|
+    |ap_block_state1_pp0_stage0_iter0  |    or    |      0|  0|   2|           1|           1|
+    |ap_block_state2_pp0_stage0_iter1  |    or    |      0|  0|   2|           1|           1|
+    |ap_enable_pp0                     |    xor   |      0|  0|   2|           1|           2|
+    +----------------------------------+----------+-------+---+----+------------+------------+
+    |Total                             |          |      0|  0|  48|          28|           9|
+    +----------------------------------+----------+-------+---+----+------------+------------+
+
+    * Multiplexer: 
+    +---------------------------+----+-----------+-----+-----------+
+    |            Name           | LUT| Input Size| Bits| Total Bits|
+    +---------------------------+----+-----------+-----+-----------+
+    |ap_done                    |   9|          2|    1|          2|
+    |mq_freeListFifo_V_V_blk_n  |   9|          2|    1|          2|
+    |mq_freeListFifo_V_V_din    |  15|          3|   16|         48|
+    |mq_releaseFifo_V_V_blk_n   |   9|          2|    1|          2|
+    +---------------------------+----+-----------+-----+-----------+
+    |Total                      |  42|          9|   19|         54|
+    +---------------------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +-------------------------+----+----+-----+-----------+
+    |           Name          | FF | LUT| Bits| Const Bits|
+    +-------------------------+----+----+-----+-----------+
+    |ap_CS_fsm                |   1|   0|    1|          0|
+    |ap_done_reg              |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter1  |   1|   0|    1|          0|
+    |freeListCounter_V        |  16|   0|   16|          0|
+    |tmp_V_reg_110            |  16|   0|   16|          0|
+    |tmp_reg_106              |   1|   0|    1|          0|
+    +-------------------------+----+----+-----+-----------+
+    |Total                    |  36|   0|   36|          0|
+    +-------------------------+----+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++----------------------------+-----+-----+------------+---------------------+--------------+
+|          RTL Ports         | Dir | Bits|  Protocol  |    Source Object    |    C Type    |
++----------------------------+-----+-----+------------+---------------------+--------------+
+|ap_clk                      |  in |    1| ap_ctrl_hs | mq_freelist_handler | return value |
+|ap_rst                      |  in |    1| ap_ctrl_hs | mq_freelist_handler | return value |
+|ap_start                    |  in |    1| ap_ctrl_hs | mq_freelist_handler | return value |
+|ap_done                     | out |    1| ap_ctrl_hs | mq_freelist_handler | return value |
+|ap_continue                 |  in |    1| ap_ctrl_hs | mq_freelist_handler | return value |
+|ap_idle                     | out |    1| ap_ctrl_hs | mq_freelist_handler | return value |
+|ap_ready                    | out |    1| ap_ctrl_hs | mq_freelist_handler | return value |
+|mq_releaseFifo_V_V_dout     |  in |   16|   ap_fifo  |  mq_releaseFifo_V_V |    pointer   |
+|mq_releaseFifo_V_V_empty_n  |  in |    1|   ap_fifo  |  mq_releaseFifo_V_V |    pointer   |
+|mq_releaseFifo_V_V_read     | out |    1|   ap_fifo  |  mq_releaseFifo_V_V |    pointer   |
+|mq_freeListFifo_V_V_din     | out |   16|   ap_fifo  | mq_freeListFifo_V_V |    pointer   |
+|mq_freeListFifo_V_V_full_n  |  in |    1|   ap_fifo  | mq_freeListFifo_V_V |    pointer   |
+|mq_freeListFifo_V_V_write   | out |    1|   ap_fifo  | mq_freeListFifo_V_V |    pointer   |
++----------------------------+-----+-----+------------+---------------------+--------------+
+

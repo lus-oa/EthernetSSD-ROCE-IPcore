@@ -1,0 +1,208 @@
+
+
+================================================================
+== Vivado HLS Report for 'mq_pointer_table'
+================================================================
+* Date:           Mon Mar  1 13:04:23 2021
+
+* Version:        2019.1 (Build 2552052 on Fri May 24 15:28:33 MDT 2019)
+* Project:        rocev2_prj
+* Solution:       solution1
+* Product family: zynquplus
+* Target device:  xczu7eg-ffvc1156-2-i
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |   8.00|     3.075|        1.00|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+----------+
+    |  Latency  |  Interval | Pipeline |
+    | min | max | min | max |   Type   |
+    +-----+-----+-----+-----+----------+
+    |    2|    2|    1|    1| function |
+    +-----+-----+-----+-----+----------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-------+--------+--------+-----+
+|       Name      | BRAM_18K| DSP48E|   FF   |   LUT  | URAM|
++-----------------+---------+-------+--------+--------+-----+
+|DSP              |        -|      -|       -|       -|    -|
+|Expression       |        -|      -|       0|      53|    -|
+|FIFO             |        -|      -|       -|       -|    -|
+|Instance         |        -|      -|       -|       -|    -|
+|Memory           |        3|      -|       0|       0|    0|
+|Multiplexer      |        -|      -|       -|     162|    -|
+|Register         |        -|      -|      93|       -|    -|
++-----------------+---------+-------+--------+--------+-----+
+|Total            |        3|      0|      93|     215|    0|
++-----------------+---------+-------+--------+--------+-----+
+|Available        |      624|   1728|  460800|  230400|   96|
++-----------------+---------+-------+--------+--------+-----+
+|Utilization (%)  |    ~0   |      0|   ~0   |   ~0   |    0|
++-----------------+---------+-------+--------+--------+-----+
+
++ Detail: 
+    * Instance: 
+    N/A
+
+    * DSP48E: 
+    N/A
+
+    * Memory: 
+    +--------------------+----------------------------------+---------+---+----+-----+------+-----+------+-------------+
+    |       Memory       |              Module              | BRAM_18K| FF| LUT| URAM| Words| Bits| Banks| W*Bits*Banks|
+    +--------------------+----------------------------------+---------+---+----+-----+------+-----+------+-------------+
+    |ptr_table_head_V_U  |conn_table_conn_table_remote_ud   |        1|  0|   0|    0|   500|   16|     1|         8000|
+    |ptr_table_tail_V_U  |conn_table_conn_table_remote_ud   |        1|  0|   0|    0|   500|   16|     1|         8000|
+    |ptr_table_valid_U   |mq_pointer_table_ptr_table_valid  |        1|  0|   0|    0|   500|    1|     1|          500|
+    +--------------------+----------------------------------+---------+---+----+-----+------+-----+------+-------------+
+    |Total               |                                  |        3|  0|   0|    0|  1500|   33|     3|        16500|
+    +--------------------+----------------------------------+---------+---+----+-----+------+-----+------+-------------+
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +----------------------------------+----------+-------+---+----+------------+------------+
+    |           Variable Name          | Operation| DSP48E| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +----------------------------------+----------+-------+---+----+------------+------------+
+    |and_ln149_fu_283_p2               |    and   |      0|  0|   2|           1|           1|
+    |ap_block_state2_pp0_stage0_iter1  |    and   |      0|  0|   2|           1|           1|
+    |ap_condition_185                  |    and   |      0|  0|   2|           1|           1|
+    |ap_condition_216                  |    and   |      0|  0|   2|           1|           1|
+    |ap_condition_229                  |    and   |      0|  0|   2|           1|           1|
+    |ap_condition_369                  |    and   |      0|  0|   2|           1|           1|
+    |ap_condition_371                  |    and   |      0|  0|   2|           1|           1|
+    |ap_condition_375                  |    and   |      0|  0|   2|           1|           1|
+    |ap_predicate_op19_read_state2     |    and   |      0|  0|   2|           1|           1|
+    |ap_predicate_op72_write_state3    |    and   |      0|  0|   2|           1|           1|
+    |ap_predicate_op80_write_state3    |    and   |      0|  0|   2|           1|           1|
+    |io_acc_block_signal_op19          |    and   |      0|  0|   2|           1|           1|
+    |io_acc_block_signal_op6           |    and   |      0|  0|   2|           1|           1|
+    |io_acc_block_signal_op72          |    and   |      0|  0|   2|           1|           1|
+    |icmp_ln879_fu_333_p2              |   icmp   |      0|  0|  13|          16|          16|
+    |ap_block_pp0_stage0_01001         |    or    |      0|  0|   2|           1|           1|
+    |ap_block_state1_pp0_stage0_iter0  |    or    |      0|  0|   2|           1|           1|
+    |ap_block_state3_pp0_stage0_iter2  |    or    |      0|  0|   2|           1|           1|
+    |or_ln146_fu_263_p2                |    or    |      0|  0|   2|           1|           1|
+    |ap_enable_pp0                     |    xor   |      0|  0|   2|           1|           2|
+    |xor_ln146_fu_257_p2               |    xor   |      0|  0|   2|           1|           2|
+    +----------------------------------+----------+-------+---+----+------------+------------+
+    |Total                             |          |      0|  0|  53|          36|          38|
+    +----------------------------------+----------+-------+---+----+------------+------------+
+
+    * Multiplexer: 
+    +-----------------------------+----+-----------+-----+-----------+
+    |             Name            | LUT| Input Size| Bits| Total Bits|
+    +-----------------------------+----+-----------+-----+-----------+
+    |ap_done                      |   9|          2|    1|          2|
+    |mq_lockedKey_V               |   9|          2|   16|         32|
+    |mq_pointerReqFifo_V_1_blk_n  |   9|          2|    1|          2|
+    |mq_pointerReqFifo_V_s_blk_n  |   9|          2|    1|          2|
+    |mq_pointerRspFifo_V_1_blk_n  |   9|          2|    1|          2|
+    |mq_pointerRspFifo_V_2_blk_n  |   9|          2|    1|          2|
+    |mq_pointerRspFifo_V_s_blk_n  |   9|          2|    1|          2|
+    |mq_pointerUpdFifo_V_1_blk_n  |   9|          2|    1|          2|
+    |mq_pointerUpdFifo_V_3_blk_n  |   9|          2|    1|          2|
+    |mq_pointerUpdFifo_V_4_blk_n  |   9|          2|    1|          2|
+    |mq_pointerUpdFifo_V_s_blk_n  |   9|          2|    1|          2|
+    |ptr_table_head_V_address0    |  21|          4|    9|         36|
+    |ptr_table_tail_V_address0    |  21|          4|    9|         36|
+    |ptr_table_valid_address0     |  21|          4|    9|         36|
+    +-----------------------------+----+-----------+-----+-----------+
+    |Total                        | 162|         34|   53|        160|
+    +-----------------------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +---------------------------+----+----+-----+-----------+
+    |            Name           | FF | LUT| Bits| Const Bits|
+    +---------------------------+----+----+-----+-----------+
+    |and_ln149_reg_385          |   1|   0|    1|          0|
+    |ap_CS_fsm                  |   1|   0|    1|          0|
+    |ap_done_reg                |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter1    |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter2    |   1|   0|    1|          0|
+    |mq_isLocked                |   1|   0|    1|          0|
+    |mq_isLocked_load_reg_369   |   1|   0|    1|          0|
+    |mq_lockedKey_V             |  16|   0|   16|          0|
+    |mq_request_key_V           |  16|   0|   16|          0|
+    |mq_wait                    |   1|   0|    1|          0|
+    |mq_wait_load_reg_373       |   1|   0|    1|          0|
+    |or_ln146_reg_377           |   1|   0|    1|          0|
+    |tmp_entry_head_V_reg_354   |  16|   0|   16|          0|
+    |tmp_entry_tail_V_reg_359   |  16|   0|   16|          0|
+    |tmp_entry_valid_reg_364    |   1|   0|    1|          0|
+    |tmp_key_V_reg_348          |  16|   0|   16|          0|
+    |tmp_reg_344                |   1|   0|    1|          0|
+    |tmp_reg_344_pp0_iter1_reg  |   1|   0|    1|          0|
+    +---------------------------+----+----+-----+-----------+
+    |Total                      |  93|   0|   93|          0|
+    +---------------------------+----+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++-------------------------------+-----+-----+------------+-----------------------+--------------+
+|           RTL Ports           | Dir | Bits|  Protocol  |     Source Object     |    C Type    |
++-------------------------------+-----+-----+------------+-----------------------+--------------+
+|ap_clk                         |  in |    1| ap_ctrl_hs |    mq_pointer_table   | return value |
+|ap_rst                         |  in |    1| ap_ctrl_hs |    mq_pointer_table   | return value |
+|ap_start                       |  in |    1| ap_ctrl_hs |    mq_pointer_table   | return value |
+|ap_done                        | out |    1| ap_ctrl_hs |    mq_pointer_table   | return value |
+|ap_continue                    |  in |    1| ap_ctrl_hs |    mq_pointer_table   | return value |
+|ap_idle                        | out |    1| ap_ctrl_hs |    mq_pointer_table   | return value |
+|ap_ready                       | out |    1| ap_ctrl_hs |    mq_pointer_table   | return value |
+|mq_pointerUpdFifo_V_s_dout     |  in |   16|   ap_fifo  | mq_pointerUpdFifo_V_s |    pointer   |
+|mq_pointerUpdFifo_V_s_empty_n  |  in |    1|   ap_fifo  | mq_pointerUpdFifo_V_s |    pointer   |
+|mq_pointerUpdFifo_V_s_read     | out |    1|   ap_fifo  | mq_pointerUpdFifo_V_s |    pointer   |
+|mq_pointerUpdFifo_V_1_dout     |  in |   16|   ap_fifo  | mq_pointerUpdFifo_V_1 |    pointer   |
+|mq_pointerUpdFifo_V_1_empty_n  |  in |    1|   ap_fifo  | mq_pointerUpdFifo_V_1 |    pointer   |
+|mq_pointerUpdFifo_V_1_read     | out |    1|   ap_fifo  | mq_pointerUpdFifo_V_1 |    pointer   |
+|mq_pointerUpdFifo_V_3_dout     |  in |   16|   ap_fifo  | mq_pointerUpdFifo_V_3 |    pointer   |
+|mq_pointerUpdFifo_V_3_empty_n  |  in |    1|   ap_fifo  | mq_pointerUpdFifo_V_3 |    pointer   |
+|mq_pointerUpdFifo_V_3_read     | out |    1|   ap_fifo  | mq_pointerUpdFifo_V_3 |    pointer   |
+|mq_pointerUpdFifo_V_4_dout     |  in |    1|   ap_fifo  | mq_pointerUpdFifo_V_4 |    pointer   |
+|mq_pointerUpdFifo_V_4_empty_n  |  in |    1|   ap_fifo  | mq_pointerUpdFifo_V_4 |    pointer   |
+|mq_pointerUpdFifo_V_4_read     | out |    1|   ap_fifo  | mq_pointerUpdFifo_V_4 |    pointer   |
+|mq_pointerReqFifo_V_1_dout     |  in |   16|   ap_fifo  | mq_pointerReqFifo_V_1 |    pointer   |
+|mq_pointerReqFifo_V_1_empty_n  |  in |    1|   ap_fifo  | mq_pointerReqFifo_V_1 |    pointer   |
+|mq_pointerReqFifo_V_1_read     | out |    1|   ap_fifo  | mq_pointerReqFifo_V_1 |    pointer   |
+|mq_pointerReqFifo_V_s_dout     |  in |    1|   ap_fifo  | mq_pointerReqFifo_V_s |    pointer   |
+|mq_pointerReqFifo_V_s_empty_n  |  in |    1|   ap_fifo  | mq_pointerReqFifo_V_s |    pointer   |
+|mq_pointerReqFifo_V_s_read     | out |    1|   ap_fifo  | mq_pointerReqFifo_V_s |    pointer   |
+|mq_pointerRspFifo_V_1_din      | out |   16|   ap_fifo  | mq_pointerRspFifo_V_1 |    pointer   |
+|mq_pointerRspFifo_V_1_full_n   |  in |    1|   ap_fifo  | mq_pointerRspFifo_V_1 |    pointer   |
+|mq_pointerRspFifo_V_1_write    | out |    1|   ap_fifo  | mq_pointerRspFifo_V_1 |    pointer   |
+|mq_pointerRspFifo_V_2_din      | out |   16|   ap_fifo  | mq_pointerRspFifo_V_2 |    pointer   |
+|mq_pointerRspFifo_V_2_full_n   |  in |    1|   ap_fifo  | mq_pointerRspFifo_V_2 |    pointer   |
+|mq_pointerRspFifo_V_2_write    | out |    1|   ap_fifo  | mq_pointerRspFifo_V_2 |    pointer   |
+|mq_pointerRspFifo_V_s_din      | out |    1|   ap_fifo  | mq_pointerRspFifo_V_s |    pointer   |
+|mq_pointerRspFifo_V_s_full_n   |  in |    1|   ap_fifo  | mq_pointerRspFifo_V_s |    pointer   |
+|mq_pointerRspFifo_V_s_write    | out |    1|   ap_fifo  | mq_pointerRspFifo_V_s |    pointer   |
++-------------------------------+-----+-----+------------+-----------------------+--------------+
+

@@ -1,0 +1,165 @@
+<profile>
+
+<section name = "Vivado HLS Report for 'extract_icrc_512_s'" level="0">
+<item name = "Date">Mon Mar  1 13:04:24 2021
+</item>
+<item name = "Version">2019.1 (Build 2552052 on Fri May 24 15:28:33 MDT 2019)</item>
+<item name = "Project">rocev2_prj</item>
+<item name = "Solution">solution1</item>
+<item name = "Product family">zynquplus</item>
+<item name = "Target device">xczu7eg-ffvc1156-2-i</item>
+</section>
+
+<section name = "Performance Estimates" level="0">
+<item name = "Timing (ns)">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="4">Clock, Target, Estimated, Uncertainty</keys>
+<column name="ap_clk">8.00, 1.838, 1.00</column>
+</table>
+</item>
+</section>
+</item>
+<item name = "Latency (clock cycles)">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="6">, min, max, min, max, Type</keys>
+<column name="">1, 1, 1, 1, function</column>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="0">
+<keys size="7">Instance, Module, min, max, min, max, Type</keys>
+</table>
+</item>
+<item name = "Loop"><table name="" hasTotal="0">
+<keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
+</table>
+</item>
+</section>
+</item>
+</section>
+</item>
+</section>
+
+<section name = "Utilization Estimates" level="0">
+<item name = "Summary"><table name="" hasTotal="1">
+<keys size="6">Name, BRAM_18K, DSP48E, FF, LUT, URAM</keys>
+<column name="DSP">-, -, -, -, -</column>
+<column name="Expression">-, -, 0, 36, -</column>
+<column name="FIFO">-, -, -, -, -</column>
+<column name="Instance">-, -, -, -, -</column>
+<column name="Memory">-, -, -, -, -</column>
+<column name="Multiplexer">-, -, -, 279, -</column>
+<column name="Register">-, -, 1227, -, -</column>
+<specialColumn name="Available">624, 1728, 460800, 230400, 96</specialColumn>
+<specialColumn name="Utilization (%)">0, 0, ~0, ~0, 0</specialColumn>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="1">
+<keys size="7">Instance, Module, BRAM_18K, DSP48E, FF, LUT, URAM</keys>
+</table>
+</item>
+<item name = "DSP48E"><table name="" hasTotal="0">
+<keys size="3">Instance, Module, Expression</keys>
+</table>
+</item>
+<item name = "Memory"><table name="" hasTotal="1">
+<keys size="10">Memory, Module, BRAM_18K, FF, LUT, URAM, Words, Bits, Banks, W*Bits*Banks</keys>
+</table>
+</item>
+<item name = "FIFO"><table name="" hasTotal="1">
+<keys size="8">Name, BRAM_18K, FF, LUT, URAM, Depth, Bits, Size:D*B</keys>
+</table>
+</item>
+<item name = "Expression"><table name="" hasTotal="1">
+<keys size="7">Variable Name, Operation, DSP48E, FF, LUT, Bitwidth P0, Bitwidth P1</keys>
+<column name="ap_condition_146">and, 0, 0, 2, 1, 1</column>
+<column name="ap_condition_289">and, 0, 0, 2, 1, 1</column>
+<column name="ap_condition_312">and, 0, 0, 2, 1, 1</column>
+<column name="ap_condition_95">and, 0, 0, 2, 1, 1</column>
+<column name="ap_predicate_op44_read_state1">and, 0, 0, 2, 1, 1</column>
+<column name="ap_predicate_op60_read_state1">and, 0, 0, 2, 1, 1</column>
+<column name="ap_predicate_op81_write_state2">and, 0, 0, 2, 1, 1</column>
+<column name="grp_nbreadreq_fu_96_p5">and, 0, 0, 2, 1, 0</column>
+<column name="io_acc_block_signal_op79">and, 0, 0, 2, 1, 1</column>
+<column name="ap_block_pp0_stage0_01001">or, 0, 0, 2, 1, 1</column>
+<column name="ap_block_state1_pp0_stage0_iter0">or, 0, 0, 2, 1, 1</column>
+<column name="ap_block_state2_pp0_stage0_iter1">or, 0, 0, 2, 1, 1</column>
+<column name="or_ln91_fu_409_p2">or, 0, 0, 2, 1, 1</column>
+<column name="select_ln79_fu_429_p3">select, 0, 0, 3, 1, 3</column>
+<column name="select_ln91_fu_415_p3">select, 0, 0, 3, 1, 3</column>
+<column name="ap_enable_pp0">xor, 0, 0, 2, 1, 2</column>
+<column name="xor_ln1054_fu_403_p2">xor, 0, 0, 2, 1, 2</column>
+</table>
+</item>
+<item name = "Multiplexer"><table name="" hasTotal="1">
+<keys size="5">Name, LUT, Input Size, Bits, Total Bits</keys>
+<column name="ap_done">9, 2, 1, 2</column>
+<column name="ap_phi_mux_ei_prevWord_last_V_f_phi_fu_134_p12">15, 3, 1, 3</column>
+<column name="ap_phi_mux_ei_prevWord_last_V_n_phi_fu_158_p12">9, 2, 1, 2</column>
+<column name="ap_phi_reg_pp0_iter1_tmp_keep_V_56_reg_176">85, 17, 64, 1088</column>
+<column name="ap_phi_reg_pp0_iter1_tmp_last_V_43_reg_247">15, 3, 1, 3</column>
+<column name="ei_prevWord_keep_V">65, 16, 64, 1024</column>
+<column name="ei_state">15, 3, 2, 6</column>
+<column name="rx_crc2ipFifo_V_data_blk_n">9, 2, 1, 2</column>
+<column name="rx_crc2ipFifo_V_keep_blk_n">9, 2, 1, 2</column>
+<column name="rx_crc2ipFifo_V_keep_din">15, 3, 64, 192</column>
+<column name="rx_crc2ipFifo_V_last_blk_n">9, 2, 1, 2</column>
+<column name="rx_crc2ipFifo_V_last_din">15, 3, 1, 3</column>
+<column name="s_axis_rx_data_TDATA_blk_n">9, 2, 1, 2</column>
+</table>
+</item>
+<item name = "Register"><table name="" hasTotal="1">
+<keys size="5">Name, FF, LUT, Bits, Const Bits</keys>
+<column name="ap_CS_fsm">1, 0, 1, 0</column>
+<column name="ap_done_reg">1, 0, 1, 0</column>
+<column name="ap_enable_reg_pp0_iter1">1, 0, 1, 0</column>
+<column name="ap_phi_reg_pp0_iter1_tmp_keep_V_56_reg_176">64, 0, 64, 0</column>
+<column name="ap_phi_reg_pp0_iter1_tmp_last_V_43_reg_247">1, 0, 1, 0</column>
+<column name="ei_prevWord_data_V">512, 0, 512, 0</column>
+<column name="ei_prevWord_keep_V">64, 0, 64, 0</column>
+<column name="ei_prevWord_last_V">1, 0, 1, 0</column>
+<column name="ei_state">2, 0, 2, 0</column>
+<column name="ei_state_load_reg_449">2, 0, 2, 0</column>
+<column name="tmp_105_reg_470">1, 0, 1, 0</column>
+<column name="tmp_data_V_64_reg_453">512, 0, 512, 0</column>
+<column name="tmp_keep_V_55_reg_458">64, 0, 64, 0</column>
+<column name="tmp_last_V_44_reg_464">1, 0, 1, 0</column>
+</table>
+</item>
+</section>
+</item>
+</section>
+
+<section name = "Interface" level="0">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="6">RTL Ports, Dir, Bits, Protocol, Source Object, C Type</keys>
+<column name="ap_clk">in, 1, ap_ctrl_hs, extract_icrc&lt;512&gt;, return value</column>
+<column name="ap_rst">in, 1, ap_ctrl_hs, extract_icrc&lt;512&gt;, return value</column>
+<column name="ap_start">in, 1, ap_ctrl_hs, extract_icrc&lt;512&gt;, return value</column>
+<column name="ap_done">out, 1, ap_ctrl_hs, extract_icrc&lt;512&gt;, return value</column>
+<column name="ap_continue">in, 1, ap_ctrl_hs, extract_icrc&lt;512&gt;, return value</column>
+<column name="ap_idle">out, 1, ap_ctrl_hs, extract_icrc&lt;512&gt;, return value</column>
+<column name="ap_ready">out, 1, ap_ctrl_hs, extract_icrc&lt;512&gt;, return value</column>
+<column name="s_axis_rx_data_TVALID">in, 1, axis, input_V_data_V, pointer</column>
+<column name="s_axis_rx_data_TDATA">in, 512, axis, input_V_data_V, pointer</column>
+<column name="rx_crc2ipFifo_V_data_din">out, 512, ap_fifo, rx_crc2ipFifo_V_data, pointer</column>
+<column name="rx_crc2ipFifo_V_data_full_n">in, 1, ap_fifo, rx_crc2ipFifo_V_data, pointer</column>
+<column name="rx_crc2ipFifo_V_data_write">out, 1, ap_fifo, rx_crc2ipFifo_V_data, pointer</column>
+<column name="rx_crc2ipFifo_V_keep_din">out, 64, ap_fifo, rx_crc2ipFifo_V_keep, pointer</column>
+<column name="rx_crc2ipFifo_V_keep_full_n">in, 1, ap_fifo, rx_crc2ipFifo_V_keep, pointer</column>
+<column name="rx_crc2ipFifo_V_keep_write">out, 1, ap_fifo, rx_crc2ipFifo_V_keep, pointer</column>
+<column name="rx_crc2ipFifo_V_last_din">out, 1, ap_fifo, rx_crc2ipFifo_V_last, pointer</column>
+<column name="rx_crc2ipFifo_V_last_full_n">in, 1, ap_fifo, rx_crc2ipFifo_V_last, pointer</column>
+<column name="rx_crc2ipFifo_V_last_write">out, 1, ap_fifo, rx_crc2ipFifo_V_last, pointer</column>
+<column name="s_axis_rx_data_TREADY">out, 1, axis, input_V_last_V, pointer</column>
+<column name="s_axis_rx_data_TLAST">in, 1, axis, input_V_last_V, pointer</column>
+<column name="s_axis_rx_data_TKEEP">in, 64, axis, input_V_keep_V, pointer</column>
+</table>
+</item>
+</section>
+</profile>

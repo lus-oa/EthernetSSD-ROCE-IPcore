@@ -1,0 +1,167 @@
+<profile>
+
+<section name = "Vivado HLS Report for 'lshiftWordByOctet_2'" level="0">
+<item name = "Date">Mon Mar  1 13:04:19 2021
+</item>
+<item name = "Version">2019.1 (Build 2552052 on Fri May 24 15:28:33 MDT 2019)</item>
+<item name = "Project">rocev2_prj</item>
+<item name = "Solution">solution1</item>
+<item name = "Product family">zynquplus</item>
+<item name = "Target device">xczu7eg-ffvc1156-2-i</item>
+</section>
+
+<section name = "Performance Estimates" level="0">
+<item name = "Timing (ns)">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="4">Clock, Target, Estimated, Uncertainty</keys>
+<column name="ap_clk">8.00, 3.757, 1.00</column>
+</table>
+</item>
+</section>
+</item>
+<item name = "Latency (clock cycles)">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="6">, min, max, min, max, Type</keys>
+<column name="">1, 1, 1, 1, function</column>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="0">
+<keys size="7">Instance, Module, min, max, min, max, Type</keys>
+</table>
+</item>
+<item name = "Loop"><table name="" hasTotal="0">
+<keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
+</table>
+</item>
+</section>
+</item>
+</section>
+</item>
+</section>
+
+<section name = "Utilization Estimates" level="0">
+<item name = "Summary"><table name="" hasTotal="1">
+<keys size="6">Name, BRAM_18K, DSP48E, FF, LUT, URAM</keys>
+<column name="DSP">-, -, -, -, -</column>
+<column name="Expression">-, -, 0, 608, -</column>
+<column name="FIFO">-, -, -, -, -</column>
+<column name="Instance">-, -, -, -, -</column>
+<column name="Memory">-, -, -, -, -</column>
+<column name="Multiplexer">-, -, -, 132, -</column>
+<column name="Register">-, -, 1268, -, -</column>
+<specialColumn name="Available">624, 1728, 460800, 230400, 96</specialColumn>
+<specialColumn name="Utilization (%)">0, 0, ~0, ~0, 0</specialColumn>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="1">
+<keys size="7">Instance, Module, BRAM_18K, DSP48E, FF, LUT, URAM</keys>
+</table>
+</item>
+<item name = "DSP48E"><table name="" hasTotal="0">
+<keys size="3">Instance, Module, Expression</keys>
+</table>
+</item>
+<item name = "Memory"><table name="" hasTotal="1">
+<keys size="10">Memory, Module, BRAM_18K, FF, LUT, URAM, Words, Bits, Banks, W*Bits*Banks</keys>
+</table>
+</item>
+<item name = "FIFO"><table name="" hasTotal="1">
+<keys size="8">Name, BRAM_18K, FF, LUT, URAM, Depth, Bits, Size:D*B</keys>
+</table>
+</item>
+<item name = "Expression"><table name="" hasTotal="1">
+<keys size="7">Variable Name, Operation, DSP48E, FF, LUT, Bitwidth P0, Bitwidth P1</keys>
+<column name="ap_condition_100">and, 0, 0, 2, 1, 1</column>
+<column name="ap_condition_151">and, 0, 0, 2, 1, 1</column>
+<column name="ap_condition_169">and, 0, 0, 2, 1, 1</column>
+<column name="ap_condition_178">and, 0, 0, 2, 1, 1</column>
+<column name="ap_predicate_op44_write_state2">and, 0, 0, 2, 1, 1</column>
+<column name="ap_predicate_op9_read_state1">and, 0, 0, 2, 1, 1</column>
+<column name="io_acc_block_signal_op44">and, 0, 0, 2, 1, 1</column>
+<column name="io_acc_block_signal_op9">and, 0, 0, 2, 1, 1</column>
+<column name="sendWord_last_V_fu_233_p2">icmp, 0, 0, 13, 12, 1</column>
+<column name="ap_block_pp0_stage0_01001">or, 0, 0, 2, 1, 1</column>
+<column name="ap_block_state1_pp0_stage0_iter0">or, 0, 0, 2, 1, 1</column>
+<column name="ap_block_state2_pp0_stage0_iter1">or, 0, 0, 2, 1, 1</column>
+<column name="sendWord_data_V_fu_225_p3">select, 0, 0, 505, 1, 512</column>
+<column name="sendWord_keep_V_fu_217_p3">select, 0, 0, 64, 1, 64</column>
+<column name="ap_enable_pp0">xor, 0, 0, 2, 1, 2</column>
+<column name="xor_ln761_fu_251_p2">xor, 0, 0, 2, 1, 2</column>
+</table>
+</item>
+<item name = "Multiplexer"><table name="" hasTotal="1">
+<keys size="5">Name, LUT, Input Size, Bits, Total Bits</keys>
+<column name="ap_done">9, 2, 1, 2</column>
+<column name="ap_phi_mux_ls_firstWord_5_new_0_phi_fu_113_p4">15, 3, 1, 3</column>
+<column name="ls_writeRemainder_3">9, 2, 1, 2</column>
+<column name="tx_exh2shiftFifo_V_d_blk_n">9, 2, 1, 2</column>
+<column name="tx_exh2shiftFifo_V_k_blk_n">9, 2, 1, 2</column>
+<column name="tx_exh2shiftFifo_V_l_blk_n">9, 2, 1, 2</column>
+<column name="tx_shift2ibhFifo_V_d_blk_n">9, 2, 1, 2</column>
+<column name="tx_shift2ibhFifo_V_d_din">15, 3, 512, 1536</column>
+<column name="tx_shift2ibhFifo_V_k_blk_n">9, 2, 1, 2</column>
+<column name="tx_shift2ibhFifo_V_k_din">15, 3, 64, 192</column>
+<column name="tx_shift2ibhFifo_V_l_blk_n">9, 2, 1, 2</column>
+<column name="tx_shift2ibhFifo_V_l_din">15, 3, 1, 3</column>
+</table>
+</item>
+<item name = "Register"><table name="" hasTotal="1">
+<keys size="5">Name, FF, LUT, Bits, Const Bits</keys>
+<column name="ap_CS_fsm">1, 0, 1, 0</column>
+<column name="ap_done_reg">1, 0, 1, 0</column>
+<column name="ap_enable_reg_pp0_iter1">1, 0, 1, 0</column>
+<column name="ls_firstWord_3">1, 0, 1, 0</column>
+<column name="ls_writeRemainder_3">1, 0, 1, 0</column>
+<column name="ls_writeRemainder_3_s_reg_301">1, 0, 1, 0</column>
+<column name="p_Result_i_433_reg_332">12, 0, 12, 0</column>
+<column name="p_Result_i_reg_327">96, 0, 96, 0</column>
+<column name="prevWord_data_V_13">512, 0, 512, 0</column>
+<column name="prevWord_keep_V_12">64, 0, 64, 0</column>
+<column name="sendWord_data_V_reg_317">512, 0, 512, 0</column>
+<column name="sendWord_keep_V_reg_312">64, 0, 64, 0</column>
+<column name="sendWord_last_V_reg_322">1, 0, 1, 0</column>
+<column name="tmp_reg_305">1, 0, 1, 0</column>
+</table>
+</item>
+</section>
+</item>
+</section>
+
+<section name = "Interface" level="0">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="6">RTL Ports, Dir, Bits, Protocol, Source Object, C Type</keys>
+<column name="ap_clk">in, 1, ap_ctrl_hs, lshiftWordByOctet.2, return value</column>
+<column name="ap_rst">in, 1, ap_ctrl_hs, lshiftWordByOctet.2, return value</column>
+<column name="ap_start">in, 1, ap_ctrl_hs, lshiftWordByOctet.2, return value</column>
+<column name="ap_done">out, 1, ap_ctrl_hs, lshiftWordByOctet.2, return value</column>
+<column name="ap_continue">in, 1, ap_ctrl_hs, lshiftWordByOctet.2, return value</column>
+<column name="ap_idle">out, 1, ap_ctrl_hs, lshiftWordByOctet.2, return value</column>
+<column name="ap_ready">out, 1, ap_ctrl_hs, lshiftWordByOctet.2, return value</column>
+<column name="tx_exh2shiftFifo_V_d_dout">in, 512, ap_fifo, tx_exh2shiftFifo_V_d, pointer</column>
+<column name="tx_exh2shiftFifo_V_d_empty_n">in, 1, ap_fifo, tx_exh2shiftFifo_V_d, pointer</column>
+<column name="tx_exh2shiftFifo_V_d_read">out, 1, ap_fifo, tx_exh2shiftFifo_V_d, pointer</column>
+<column name="tx_exh2shiftFifo_V_k_dout">in, 64, ap_fifo, tx_exh2shiftFifo_V_k, pointer</column>
+<column name="tx_exh2shiftFifo_V_k_empty_n">in, 1, ap_fifo, tx_exh2shiftFifo_V_k, pointer</column>
+<column name="tx_exh2shiftFifo_V_k_read">out, 1, ap_fifo, tx_exh2shiftFifo_V_k, pointer</column>
+<column name="tx_exh2shiftFifo_V_l_dout">in, 1, ap_fifo, tx_exh2shiftFifo_V_l, pointer</column>
+<column name="tx_exh2shiftFifo_V_l_empty_n">in, 1, ap_fifo, tx_exh2shiftFifo_V_l, pointer</column>
+<column name="tx_exh2shiftFifo_V_l_read">out, 1, ap_fifo, tx_exh2shiftFifo_V_l, pointer</column>
+<column name="tx_shift2ibhFifo_V_d_din">out, 512, ap_fifo, tx_shift2ibhFifo_V_d, pointer</column>
+<column name="tx_shift2ibhFifo_V_d_full_n">in, 1, ap_fifo, tx_shift2ibhFifo_V_d, pointer</column>
+<column name="tx_shift2ibhFifo_V_d_write">out, 1, ap_fifo, tx_shift2ibhFifo_V_d, pointer</column>
+<column name="tx_shift2ibhFifo_V_k_din">out, 64, ap_fifo, tx_shift2ibhFifo_V_k, pointer</column>
+<column name="tx_shift2ibhFifo_V_k_full_n">in, 1, ap_fifo, tx_shift2ibhFifo_V_k, pointer</column>
+<column name="tx_shift2ibhFifo_V_k_write">out, 1, ap_fifo, tx_shift2ibhFifo_V_k, pointer</column>
+<column name="tx_shift2ibhFifo_V_l_din">out, 1, ap_fifo, tx_shift2ibhFifo_V_l, pointer</column>
+<column name="tx_shift2ibhFifo_V_l_full_n">in, 1, ap_fifo, tx_shift2ibhFifo_V_l, pointer</column>
+<column name="tx_shift2ibhFifo_V_l_write">out, 1, ap_fifo, tx_shift2ibhFifo_V_l, pointer</column>
+</table>
+</item>
+</section>
+</profile>

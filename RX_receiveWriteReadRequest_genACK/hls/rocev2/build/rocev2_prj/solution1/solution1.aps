@@ -1,0 +1,27 @@
+<AutoPilot:solution xmlns:AutoPilot="com.autoesl.autopilot.solution">
+    <config>
+        <config_rtl disable_start_propagation="1" module_prefix="rocev2_"/>
+        <schedule model="rocev2_top"/>
+        <config_export description="-display_name=RoCEv2 Endpoint" format="ip_catalog" ipname="rocev2" vendor="ethz.systems.fpga" version="0.82"/>
+    </config>
+    <ExportDesign askAgain="true" evaluate="false" rtl="verilog" formatName="ip_catalog">
+        <Format formatName="ip_catalog" description="" vendor="ethz.systems.fpga" library="" ipname="rocev2" version="0.82" driver_input_dir="" display_name="RoCEv2 Endpoint" taxonomy=""/>
+    </ExportDesign>
+    <name>
+        <value string="solution1"/>
+    </name>
+    <project>
+        <value string="rocev2_prj"/>
+    </project>
+    <targetInfo>
+        <TargetInfo value="xczu7eg:-ffvc1156:-2-i"/>
+    </targetInfo>
+    <libraryList>
+        <library value="xilinx/zynquplus/zynquplus" name="DefaultPlatform"/>
+        <library value="xilinx/zynquplus/zynquplus_fpv7" name="DefaultPlatform"/>
+    </libraryList>
+    <clockList>
+        <clock default="false" name="default" period="8"/>
+    </clockList>
+</AutoPilot:solution>
+

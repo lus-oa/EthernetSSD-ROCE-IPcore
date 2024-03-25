@@ -1,0 +1,210 @@
+
+
+================================================================
+== Vivado HLS Report for 'meta_merger'
+================================================================
+* Date:           Mon Mar  1 13:03:36 2021
+
+* Version:        2019.1 (Build 2552052 on Fri May 24 15:28:33 MDT 2019)
+* Project:        rocev2_prj
+* Solution:       solution1
+* Product family: zynquplus
+* Target device:  xczu7eg-ffvc1156-2-i
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |   8.00|     3.196|        1.00|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+----------+
+    |  Latency  |  Interval | Pipeline |
+    | min | max | min | max |   Type   |
+    +-----+-----+-----+-----+----------+
+    |    3|    3|    1|    1| function |
+    +-----+-----+-----+-----+----------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 2
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 2
+HasVarLatency: 0
+IsPipeline: 1
+IsRtlPipelined: 1
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
++ Individual pipeline summary: 
+  * Pipeline-0: initiation interval (II) = 1, depth = 4
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 4
+* Pipeline : 1
+  Pipeline-0 : II = 1, D = 4, States = { 1 2 3 4 }
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 3 
+3 --> 4 
+4 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 1.83>
+ST_1 : Operation 5 [1/1] (0.00ns)   --->   "%tmp = call i1 @_ssdm_op_NbReadReq.ap_fifo.i50P(i50* @rx_ackEventFifo_V, i32 1) nounwind" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ib_transport_protocol/ib_transport_protocol.cpp:2054]   --->   Operation 5 'nbreadreq' 'tmp' <Predicate = true> <Delay = 0.00> <Core = "FIFO">   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 1.83> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 135> <Depth = 2> <FIFO>
+ST_1 : Operation 6 [1/1] (0.00ns)   --->   "br i1 %tmp, label %0, label %1" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ib_transport_protocol/ib_transport_protocol.cpp:2054]   --->   Operation 6 'br' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 7 [1/1] (1.83ns)   --->   "%tmp238 = call i50 @_ssdm_op_Read.ap_fifo.volatile.i50P(i50* @rx_ackEventFifo_V) nounwind" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ib_transport_protocol/ib_transport_protocol.cpp:2056]   --->   Operation 7 'read' 'tmp238' <Predicate = (tmp)> <Delay = 1.83> <Core = "FIFO">   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 1.83> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 135> <Depth = 2> <FIFO>
+ST_1 : Operation 8 [1/1] (0.00ns)   --->   "%p_Val2_s = trunc i50 %tmp238 to i24" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ib_transport_protocol/ib_transport_protocol.hpp:194->/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ib_transport_protocol/ib_transport_protocol.cpp:2056]   --->   Operation 8 'trunc' 'p_Val2_s' <Predicate = (tmp)> <Delay = 0.00>
+ST_1 : Operation 9 [1/1] (0.00ns)   --->   "%tmp_psn_V = call i24 @_ssdm_op_PartSelect.i24.i50.i32.i32(i50 %tmp238, i32 24, i32 47) nounwind" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ib_transport_protocol/ib_transport_protocol.hpp:194->/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ib_transport_protocol/ib_transport_protocol.cpp:2056]   --->   Operation 9 'partselect' 'tmp_psn_V' <Predicate = (tmp)> <Delay = 0.00>
+ST_1 : Operation 10 [1/1] (0.00ns)   --->   "%tmp_validPsn = call i1 @_ssdm_op_BitSelect.i1.i50.i32(i50 %tmp238, i32 48)" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ib_transport_protocol/ib_transport_protocol.hpp:194->/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ib_transport_protocol/ib_transport_protocol.cpp:2056]   --->   Operation 10 'bitselect' 'tmp_validPsn' <Predicate = (tmp)> <Delay = 0.00>
+ST_1 : Operation 11 [1/1] (0.00ns)   --->   "%tmp_V = trunc i50 %tmp238 to i16" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ib_transport_protocol/ib_transport_protocol.cpp:2058]   --->   Operation 11 'trunc' 'tmp_V' <Predicate = (tmp)> <Delay = 0.00>
+ST_1 : Operation 12 [1/1] (0.00ns)   --->   "%tmp_43_i = call i26 @_ssdm_op_PartSelect.i26.i50.i32.i32(i50 %tmp238, i32 24, i32 49) nounwind" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ib_transport_protocol/ib_transport_protocol.cpp:2061]   --->   Operation 12 'partselect' 'tmp_43_i' <Predicate = (tmp)> <Delay = 0.00>
+
+State 2 <SV = 1> <Delay = 1.83>
+ST_2 : Operation 13 [1/1] (0.00ns)   --->   "%tmp_56 = call i1 @_ssdm_op_NbReadReq.ap_fifo.i135P(i135* @rx_readEvenFifo_V, i32 1) nounwind" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ib_transport_protocol/ib_transport_protocol.cpp:2063]   --->   Operation 13 'nbreadreq' 'tmp_56' <Predicate = (!tmp)> <Delay = 0.00> <Core = "FIFO">   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 1.83> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 135> <Depth = 2> <FIFO>
+ST_2 : Operation 14 [1/1] (0.00ns)   --->   "br i1 %tmp_56, label %2, label %3" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ib_transport_protocol/ib_transport_protocol.cpp:2063]   --->   Operation 14 'br' <Predicate = (!tmp)> <Delay = 0.00>
+ST_2 : Operation 15 [1/1] (1.83ns)   --->   "%tmp_2 = call i135 @_ssdm_op_Read.ap_fifo.volatile.i135P(i135* @rx_readEvenFifo_V) nounwind" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ib_transport_protocol/ib_transport_protocol.cpp:2065]   --->   Operation 15 'read' 'tmp_2' <Predicate = (!tmp & tmp_56)> <Delay = 1.83> <Core = "FIFO">   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 1.83> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 135> <Depth = 2> <FIFO>
+ST_2 : Operation 16 [1/1] (0.00ns)   --->   "%ev_op_code = trunc i135 %tmp_2 to i5" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ib_transport_protocol/ib_transport_protocol.hpp:211->/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ib_transport_protocol/ib_transport_protocol.cpp:2065]   --->   Operation 16 'trunc' 'ev_op_code' <Predicate = (!tmp & tmp_56)> <Delay = 0.00>
+ST_2 : Operation 17 [1/1] (0.00ns)   --->   "%ev_qpn_V = call i24 @_ssdm_op_PartSelect.i24.i135.i32.i32(i135 %tmp_2, i32 5, i32 28) nounwind" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ib_transport_protocol/ib_transport_protocol.hpp:211->/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ib_transport_protocol/ib_transport_protocol.cpp:2065]   --->   Operation 17 'partselect' 'ev_qpn_V' <Predicate = (!tmp & tmp_56)> <Delay = 0.00>
+ST_2 : Operation 18 [1/1] (0.00ns)   --->   "%ev_psn_V = call i24 @_ssdm_op_PartSelect.i24.i135.i32.i32(i135 %tmp_2, i32 109, i32 132) nounwind" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ib_transport_protocol/ib_transport_protocol.hpp:211->/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ib_transport_protocol/ib_transport_protocol.cpp:2065]   --->   Operation 18 'partselect' 'ev_psn_V' <Predicate = (!tmp & tmp_56)> <Delay = 0.00>
+ST_2 : Operation 19 [1/1] (0.00ns)   --->   "%ev_validPsn = call i1 @_ssdm_op_BitSelect.i1.i135.i32(i135 %tmp_2, i32 133)" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ib_transport_protocol/ib_transport_protocol.hpp:211->/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ib_transport_protocol/ib_transport_protocol.cpp:2065]   --->   Operation 19 'bitselect' 'ev_validPsn' <Predicate = (!tmp & tmp_56)> <Delay = 0.00>
+ST_2 : Operation 20 [1/1] (0.00ns)   --->   "%tmp_V_9 = call i16 @_ssdm_op_PartSelect.i16.i135.i32.i32(i135 %tmp_2, i32 5, i32 20) nounwind" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ib_transport_protocol/ib_transport_protocol.cpp:2066]   --->   Operation 20 'partselect' 'tmp_V_9' <Predicate = (!tmp & tmp_56)> <Delay = 0.00>
+
+State 3 <SV = 2> <Delay = 1.83>
+ST_3 : Operation 21 [1/1] (0.00ns)   --->   "%tmp_58 = call i1 @_ssdm_op_NbReadReq.ap_fifo.i5P.i24P.i48P.i32P.i24P.i1P.i1P(i5* @tx_appMetaFifo_V_op_s, i24* @tx_appMetaFifo_V_qpn, i48* @tx_appMetaFifo_V_add, i32* @tx_appMetaFifo_V_len, i24* @tx_appMetaFifo_V_psn, i1* @tx_appMetaFifo_V_val, i1* @tx_appMetaFifo_V_isN, i32 1) nounwind" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ib_transport_protocol/ib_transport_protocol.cpp:2071]   --->   Operation 21 'nbreadreq' 'tmp_58' <Predicate = (!tmp & !tmp_56)> <Delay = 0.00> <Core = "FIFO">   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 1.83> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 135> <Depth = 2> <FIFO>
+ST_3 : Operation 22 [1/1] (0.00ns)   --->   "br i1 %tmp_58, label %_ifconv, label %._crit_edge.i" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ib_transport_protocol/ib_transport_protocol.cpp:2071]   --->   Operation 22 'br' <Predicate = (!tmp & !tmp_56)> <Delay = 0.00>
+ST_3 : Operation 23 [1/1] (1.83ns)   --->   "%empty = call { i5, i24, i48, i32, i24, i1, i1 } @_ssdm_op_Read.ap_fifo.volatile.i5P.i24P.i48P.i32P.i24P.i1P.i1P(i5* @tx_appMetaFifo_V_op_s, i24* @tx_appMetaFifo_V_qpn, i48* @tx_appMetaFifo_V_add, i32* @tx_appMetaFifo_V_len, i24* @tx_appMetaFifo_V_psn, i1* @tx_appMetaFifo_V_val, i1* @tx_appMetaFifo_V_isN) nounwind" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ib_transport_protocol/ib_transport_protocol.cpp:2073]   --->   Operation 23 'read' 'empty' <Predicate = (!tmp & !tmp_56 & tmp_58)> <Delay = 1.83> <Core = "FIFO">   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 1.83> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 135> <Depth = 2> <FIFO>
+ST_3 : Operation 24 [1/1] (0.00ns)   --->   "%tmp_op_code_2 = extractvalue { i5, i24, i48, i32, i24, i1, i1 } %empty, 0" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ib_transport_protocol/ib_transport_protocol.cpp:2073]   --->   Operation 24 'extractvalue' 'tmp_op_code_2' <Predicate = (!tmp & !tmp_56 & tmp_58)> <Delay = 0.00>
+ST_3 : Operation 25 [1/1] (0.00ns)   --->   "%tmp_qpn_V_15 = extractvalue { i5, i24, i48, i32, i24, i1, i1 } %empty, 1" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ib_transport_protocol/ib_transport_protocol.cpp:2073]   --->   Operation 25 'extractvalue' 'tmp_qpn_V_15' <Predicate = (!tmp & !tmp_56 & tmp_58)> <Delay = 0.00>
+ST_3 : Operation 26 [1/1] (0.00ns)   --->   "%tmp_addr_V = extractvalue { i5, i24, i48, i32, i24, i1, i1 } %empty, 2" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ib_transport_protocol/ib_transport_protocol.cpp:2073]   --->   Operation 26 'extractvalue' 'tmp_addr_V' <Predicate = (!tmp & !tmp_56 & tmp_58)> <Delay = 0.00>
+ST_3 : Operation 27 [1/1] (0.00ns)   --->   "%tmp_length_V = extractvalue { i5, i24, i48, i32, i24, i1, i1 } %empty, 3" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ib_transport_protocol/ib_transport_protocol.cpp:2073]   --->   Operation 27 'extractvalue' 'tmp_length_V' <Predicate = (!tmp & !tmp_56 & tmp_58)> <Delay = 0.00>
+ST_3 : Operation 28 [1/1] (0.00ns)   --->   "%tmp_psn_V_5 = extractvalue { i5, i24, i48, i32, i24, i1, i1 } %empty, 4" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ib_transport_protocol/ib_transport_protocol.cpp:2073]   --->   Operation 28 'extractvalue' 'tmp_psn_V_5' <Predicate = (!tmp & !tmp_56 & tmp_58)> <Delay = 0.00>
+ST_3 : Operation 29 [1/1] (0.00ns)   --->   "%tmp_validPsn_3 = extractvalue { i5, i24, i48, i32, i24, i1, i1 } %empty, 5" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ib_transport_protocol/ib_transport_protocol.cpp:2073]   --->   Operation 29 'extractvalue' 'tmp_validPsn_3' <Predicate = (!tmp & !tmp_56 & tmp_58)> <Delay = 0.00>
+ST_3 : Operation 30 [1/1] (0.00ns)   --->   "%tmp_isNak = extractvalue { i5, i24, i48, i32, i24, i1, i1 } %empty, 6" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ib_transport_protocol/ib_transport_protocol.cpp:2073]   --->   Operation 30 'extractvalue' 'tmp_isNak' <Predicate = (!tmp & !tmp_56 & tmp_58)> <Delay = 0.00>
+ST_3 : Operation 31 [1/1] (0.00ns)   --->   "%tmp_V_10 = trunc i24 %tmp_qpn_V_15 to i16" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ib_transport_protocol/ib_transport_protocol.cpp:2081]   --->   Operation 31 'trunc' 'tmp_V_10' <Predicate = (!tmp & !tmp_56 & tmp_58)> <Delay = 0.00>
+
+State 4 <SV = 3> <Delay = 3.19>
+ST_4 : Operation 32 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i50* @rx_ackEventFifo_V, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str, [1 x i8]* @p_str)"   --->   Operation 32 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 33 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i135* @rx_readEvenFifo_V, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str, [1 x i8]* @p_str)"   --->   Operation 33 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 34 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i48* @tx_appMetaFifo_V_add, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str, [1 x i8]* @p_str)"   --->   Operation 34 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 35 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i1* @tx_appMetaFifo_V_isN, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str, [1 x i8]* @p_str)"   --->   Operation 35 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 36 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32* @tx_appMetaFifo_V_len, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str, [1 x i8]* @p_str)"   --->   Operation 36 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 37 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i5* @tx_appMetaFifo_V_op_s, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str, [1 x i8]* @p_str)"   --->   Operation 37 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 38 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i24* @tx_appMetaFifo_V_psn, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str, [1 x i8]* @p_str)"   --->   Operation 38 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 39 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i24* @tx_appMetaFifo_V_qpn, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str, [1 x i8]* @p_str)"   --->   Operation 39 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 40 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i1* @tx_appMetaFifo_V_val, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str, [1 x i8]* @p_str)"   --->   Operation 40 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 41 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i135* @tx_exhMetaFifo_V, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str, [1 x i8]* @p_str)"   --->   Operation 41 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 42 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i24* @tx_ibhMetaFifo_V_des, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str, [1 x i8]* @p_str)"   --->   Operation 42 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 43 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i22* @tx_ibhMetaFifo_V_num, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str, [1 x i8]* @p_str)"   --->   Operation 43 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 44 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i5* @tx_ibhMetaFifo_V_op_s, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str, [1 x i8]* @p_str)"   --->   Operation 44 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 45 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i16* @tx_ibhMetaFifo_V_par, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str, [1 x i8]* @p_str)"   --->   Operation 45 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 46 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i24* @tx_ibhMetaFifo_V_psn, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str, [1 x i8]* @p_str)"   --->   Operation 46 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 47 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i1* @tx_ibhMetaFifo_V_val, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str, [1 x i8]* @p_str)"   --->   Operation 47 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 48 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i16* @tx_ibhconnTable_req_s_3, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str, [1 x i8]* @p_str)"   --->   Operation 48 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 49 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecPipeline(i32 1, i32 1, i32 1, i32 0, [1 x i8]* @p_str112) nounwind" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ib_transport_protocol/ib_transport_protocol.cpp:2048]   --->   Operation 49 'specpipeline' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 50 [1/1] (1.01ns)   --->   "%ret_V = add i32 1023, %tmp_length_V" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ib_transport_protocol/ib_transport_protocol.cpp:2078]   --->   Operation 50 'add' 'ret_V' <Predicate = (!tmp & !tmp_56 & tmp_58)> <Delay = 1.01> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.01> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 51 [1/1] (0.00ns) (grouped into LUT with out node tmp_numPkg_V)   --->   "%numPkg_V = call i22 @_ssdm_op_PartSelect.i22.i32.i32.i32(i32 %ret_V, i32 10, i32 31)" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ib_transport_protocol/ib_transport_protocol.cpp:2078]   --->   Operation 51 'partselect' 'numPkg_V' <Predicate = (!tmp & !tmp_56 & tmp_58)> <Delay = 0.00>
+ST_4 : Operation 52 [1/1] (0.75ns)   --->   "%icmp_ln2076 = icmp eq i5 %tmp_op_code_2, -3" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ib_transport_protocol/ib_transport_protocol.cpp:2076]   --->   Operation 52 'icmp' 'icmp_ln2076' <Predicate = (!tmp & !tmp_56 & tmp_58)> <Delay = 0.75> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 0.75> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 53 [1/1] (0.75ns)   --->   "%icmp_ln2076_1 = icmp eq i5 %tmp_op_code_2, -4" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ib_transport_protocol/ib_transport_protocol.cpp:2076]   --->   Operation 53 'icmp' 'icmp_ln2076_1' <Predicate = (!tmp & !tmp_56 & tmp_58)> <Delay = 0.75> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 0.75> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 54 [1/1] (0.75ns)   --->   "%icmp_ln2076_2 = icmp eq i5 %tmp_op_code_2, 12" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ib_transport_protocol/ib_transport_protocol.cpp:2076]   --->   Operation 54 'icmp' 'icmp_ln2076_2' <Predicate = (!tmp & !tmp_56 & tmp_58)> <Delay = 0.75> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 0.75> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 55 [1/1] (0.00ns) (grouped into LUT with out node tmp_numPkg_V)   --->   "%or_ln2076 = or i1 %icmp_ln2076_1, %icmp_ln2076_2" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ib_transport_protocol/ib_transport_protocol.cpp:2076]   --->   Operation 55 'or' 'or_ln2076' <Predicate = (!tmp & !tmp_56 & tmp_58)> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.28> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 56 [1/1] (0.00ns) (grouped into LUT with out node tmp_numPkg_V)   --->   "%or_ln2076_1 = or i1 %or_ln2076, %icmp_ln2076" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ib_transport_protocol/ib_transport_protocol.cpp:2076]   --->   Operation 56 'or' 'or_ln2076_1' <Predicate = (!tmp & !tmp_56 & tmp_58)> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.28> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 57 [1/1] (0.34ns) (out node of the LUT)   --->   "%tmp_numPkg_V = select i1 %or_ln2076_1, i22 %numPkg_V, i22 1" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ib_transport_protocol/ib_transport_protocol.cpp:2076]   --->   Operation 57 'select' 'tmp_numPkg_V' <Predicate = (!tmp & !tmp_56 & tmp_58)> <Delay = 0.34> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.34> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_4 : Operation 58 [1/1] (1.83ns)   --->   "call void @_ssdm_op_Write.ap_fifo.volatile.i16P(i16* @tx_ibhconnTable_req_s_3, i16 %tmp_V_10) nounwind" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ib_transport_protocol/ib_transport_protocol.cpp:2081]   --->   Operation 58 'write' <Predicate = (!tmp & !tmp_56 & tmp_58)> <Delay = 1.83> <Core = "FIFO">   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 1.83> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 135> <Depth = 2> <FIFO>
+ST_4 : Operation 59 [1/1] (0.00ns)   --->   "br i1 %tmp_validPsn_3, label %4, label %5" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ib_transport_protocol/ib_transport_protocol.cpp:2082]   --->   Operation 59 'br' <Predicate = (!tmp & !tmp_56 & tmp_58)> <Delay = 0.00>
+ST_4 : Operation 60 [1/1] (1.83ns)   --->   "call void @_ssdm_op_Write.ap_fifo.volatile.i5P.i16P.i24P.i24P.i1P.i22P(i5* @tx_ibhMetaFifo_V_op_s, i16* @tx_ibhMetaFifo_V_par, i24* @tx_ibhMetaFifo_V_des, i24* @tx_ibhMetaFifo_V_psn, i1* @tx_ibhMetaFifo_V_val, i22* @tx_ibhMetaFifo_V_num, i5 %tmp_op_code_2, i16 0, i24 %tmp_qpn_V_15, i24 0, i1 false, i22 %tmp_numPkg_V) nounwind" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ib_transport_protocol/ib_transport_protocol.cpp:2088]   --->   Operation 60 'write' <Predicate = (!tmp & !tmp_56 & tmp_58 & !tmp_validPsn_3)> <Delay = 1.83> <Core = "FIFO">   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 1.83> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 135> <Depth = 2> <FIFO>
+ST_4 : Operation 61 [1/1] (0.00ns)   --->   "br label %6"   --->   Operation 61 'br' <Predicate = (!tmp & !tmp_56 & tmp_58 & !tmp_validPsn_3)> <Delay = 0.00>
+ST_4 : Operation 62 [1/1] (1.83ns)   --->   "call void @_ssdm_op_Write.ap_fifo.volatile.i5P.i16P.i24P.i24P.i1P.i22P(i5* @tx_ibhMetaFifo_V_op_s, i16* @tx_ibhMetaFifo_V_par, i24* @tx_ibhMetaFifo_V_des, i24* @tx_ibhMetaFifo_V_psn, i1* @tx_ibhMetaFifo_V_val, i22* @tx_ibhMetaFifo_V_num, i5 %tmp_op_code_2, i16 0, i24 %tmp_qpn_V_15, i24 %tmp_psn_V_5, i1 true, i22 1) nounwind" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ib_transport_protocol/ib_transport_protocol.cpp:2084]   --->   Operation 62 'write' <Predicate = (!tmp & !tmp_56 & tmp_58 & tmp_validPsn_3)> <Delay = 1.83> <Core = "FIFO">   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 1.83> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 135> <Depth = 2> <FIFO>
+ST_4 : Operation 63 [1/1] (0.00ns)   --->   "br label %6" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ib_transport_protocol/ib_transport_protocol.cpp:2085]   --->   Operation 63 'br' <Predicate = (!tmp & !tmp_56 & tmp_58 & tmp_validPsn_3)> <Delay = 0.00>
+ST_4 : Operation 64 [1/1] (0.00ns)   --->   "%tmp_4 = call i135 @_ssdm_op_BitConcatenate.i135.i1.i1.i24.i32.i48.i24.i5(i1 %tmp_isNak, i1 %tmp_validPsn_3, i24 %tmp_psn_V_5, i32 %tmp_length_V, i48 %tmp_addr_V, i24 %tmp_qpn_V_15, i5 %tmp_op_code_2) nounwind" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ib_transport_protocol/ib_transport_protocol.cpp:2090]   --->   Operation 64 'bitconcatenate' 'tmp_4' <Predicate = (!tmp & !tmp_56 & tmp_58)> <Delay = 0.00>
+ST_4 : Operation 65 [1/1] (1.83ns)   --->   "call void @_ssdm_op_Write.ap_fifo.volatile.i135P(i135* @tx_exhMetaFifo_V, i135 %tmp_4) nounwind" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ib_transport_protocol/ib_transport_protocol.cpp:2090]   --->   Operation 65 'write' <Predicate = (!tmp & !tmp_56 & tmp_58)> <Delay = 1.83> <Core = "FIFO">   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 1.83> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 135> <Depth = 2> <FIFO>
+ST_4 : Operation 66 [1/1] (0.00ns)   --->   "br label %._crit_edge.i" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ib_transport_protocol/ib_transport_protocol.cpp:2091]   --->   Operation 66 'br' <Predicate = (!tmp & !tmp_56 & tmp_58)> <Delay = 0.00>
+ST_4 : Operation 67 [1/1] (0.00ns)   --->   "br label %7"   --->   Operation 67 'br' <Predicate = (!tmp & !tmp_56)> <Delay = 0.00>
+ST_4 : Operation 68 [1/1] (1.83ns)   --->   "call void @_ssdm_op_Write.ap_fifo.volatile.i16P(i16* @tx_ibhconnTable_req_s_3, i16 %tmp_V_9) nounwind" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ib_transport_protocol/ib_transport_protocol.cpp:2066]   --->   Operation 68 'write' <Predicate = (!tmp & tmp_56)> <Delay = 1.83> <Core = "FIFO">   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 1.83> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 135> <Depth = 2> <FIFO>
+ST_4 : Operation 69 [1/1] (1.83ns)   --->   "call void @_ssdm_op_Write.ap_fifo.volatile.i5P.i16P.i24P.i24P.i1P.i22P(i5* @tx_ibhMetaFifo_V_op_s, i16* @tx_ibhMetaFifo_V_par, i24* @tx_ibhMetaFifo_V_des, i24* @tx_ibhMetaFifo_V_psn, i1* @tx_ibhMetaFifo_V_val, i22* @tx_ibhMetaFifo_V_num, i5 %ev_op_code, i16 0, i24 %ev_qpn_V, i24 %ev_psn_V, i1 %ev_validPsn, i22 1) nounwind" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ib_transport_protocol/ib_transport_protocol.cpp:2068]   --->   Operation 69 'write' <Predicate = (!tmp & tmp_56)> <Delay = 1.83> <Core = "FIFO">   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 1.83> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 135> <Depth = 2> <FIFO>
+ST_4 : Operation 70 [1/1] (1.83ns)   --->   "call void @_ssdm_op_Write.ap_fifo.volatile.i135P(i135* @tx_exhMetaFifo_V, i135 %tmp_2) nounwind" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ib_transport_protocol/ib_transport_protocol.cpp:2069]   --->   Operation 70 'write' <Predicate = (!tmp & tmp_56)> <Delay = 1.83> <Core = "FIFO">   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 1.83> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 135> <Depth = 2> <FIFO>
+ST_4 : Operation 71 [1/1] (0.00ns)   --->   "br label %7" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ib_transport_protocol/ib_transport_protocol.cpp:2070]   --->   Operation 71 'br' <Predicate = (!tmp & tmp_56)> <Delay = 0.00>
+ST_4 : Operation 72 [1/1] (0.00ns)   --->   "br label %meta_merger.exit"   --->   Operation 72 'br' <Predicate = (!tmp)> <Delay = 0.00>
+ST_4 : Operation 73 [1/1] (1.83ns)   --->   "call void @_ssdm_op_Write.ap_fifo.volatile.i16P(i16* @tx_ibhconnTable_req_s_3, i16 %tmp_V) nounwind" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ib_transport_protocol/ib_transport_protocol.cpp:2058]   --->   Operation 73 'write' <Predicate = (tmp)> <Delay = 1.83> <Core = "FIFO">   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 1.83> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 135> <Depth = 2> <FIFO>
+ST_4 : Operation 74 [1/1] (1.83ns)   --->   "call void @_ssdm_op_Write.ap_fifo.volatile.i5P.i16P.i24P.i24P.i1P.i22P(i5* @tx_ibhMetaFifo_V_op_s, i16* @tx_ibhMetaFifo_V_par, i24* @tx_ibhMetaFifo_V_des, i24* @tx_ibhMetaFifo_V_psn, i1* @tx_ibhMetaFifo_V_val, i22* @tx_ibhMetaFifo_V_num, i5 -15, i16 0, i24 %p_Val2_s, i24 %tmp_psn_V, i1 %tmp_validPsn, i22 1) nounwind" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ib_transport_protocol/ib_transport_protocol.cpp:2060]   --->   Operation 74 'write' <Predicate = (tmp)> <Delay = 1.83> <Core = "FIFO">   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 1.83> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 135> <Depth = 2> <FIFO>
+ST_4 : Operation 75 [1/1] (0.00ns)   --->   "%tmp_1 = call i135 @llvm.part.set.i135.i5(i135 undef, i5 -15, i32 0, i32 4) nounwind" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ib_transport_protocol/ib_transport_protocol.cpp:2061]   --->   Operation 75 'partset' 'tmp_1' <Predicate = (tmp)> <Delay = 0.00>
+ST_4 : Operation 76 [1/1] (0.00ns)   --->   "%tmp_1_3 = call i135 @llvm.part.set.i135.i24(i135 %tmp_1, i24 %p_Val2_s, i32 5, i32 28) nounwind" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ib_transport_protocol/ib_transport_protocol.cpp:2061]   --->   Operation 76 'partset' 'tmp_1_3' <Predicate = (tmp)> <Delay = 0.00>
+ST_4 : Operation 77 [1/1] (0.00ns)   --->   "%tmp_1_5 = call i135 @_ssdm_op_PartSet.i135.i135.i26.i32.i32(i135 %tmp_1_3, i26 %tmp_43_i, i32 109, i32 134) nounwind" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ib_transport_protocol/ib_transport_protocol.cpp:2061]   --->   Operation 77 'partset' 'tmp_1_5' <Predicate = (tmp)> <Delay = 0.00>
+ST_4 : Operation 78 [1/1] (1.83ns)   --->   "call void @_ssdm_op_Write.ap_fifo.volatile.i135P(i135* @tx_exhMetaFifo_V, i135 %tmp_1_5) nounwind" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ib_transport_protocol/ib_transport_protocol.cpp:2061]   --->   Operation 78 'write' <Predicate = (tmp)> <Delay = 1.83> <Core = "FIFO">   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 1.83> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 135> <Depth = 2> <FIFO>
+ST_4 : Operation 79 [1/1] (0.00ns)   --->   "br label %meta_merger.exit" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ib_transport_protocol/ib_transport_protocol.cpp:2062]   --->   Operation 79 'br' <Predicate = (tmp)> <Delay = 0.00>
+ST_4 : Operation 80 [1/1] (0.00ns)   --->   "ret void"   --->   Operation 80 'ret' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 8ns, clock uncertainty: 1ns.
+
+ <State 1>: 1.84ns
+The critical path consists of the following:
+	fifo read on port 'rx_ackEventFifo_V' (/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ib_transport_protocol/ib_transport_protocol.cpp:2056) [90]  (1.84 ns)
+
+ <State 2>: 1.84ns
+The critical path consists of the following:
+	fifo read on port 'rx_readEvenFifo_V' (/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ib_transport_protocol/ib_transport_protocol.cpp:2065) [77]  (1.84 ns)
+
+ <State 3>: 1.84ns
+The critical path consists of the following:
+	fifo read on port 'tx_appMetaFifo_V_op_s' (/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ib_transport_protocol/ib_transport_protocol.cpp:2073) [45]  (1.84 ns)
+
+ <State 4>: 3.2ns
+The critical path consists of the following:
+	'add' operation ('ret.V', /home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ib_transport_protocol/ib_transport_protocol.cpp:2078) [53]  (1.02 ns)
+	'select' operation ('tmp.numPkg.V', /home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ib_transport_protocol/ib_transport_protocol.cpp:2076) [60]  (0.342 ns)
+	fifo write on port 'tx_ibhMetaFifo_V_op_s' (/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ib_transport_protocol/ib_transport_protocol.cpp:2088) [65]  (1.84 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

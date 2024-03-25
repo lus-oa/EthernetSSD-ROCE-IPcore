@@ -1,0 +1,902 @@
+<stg><name>conn_table</name>
+
+
+<trans_list>
+
+<trans id="45" from="1" to="2">
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+</trans_list>
+
+
+
+<state_list>
+
+<state id="1" st_id="1">
+
+<operation id="3" st_id="1" stage="1" lat="1">
+<core>FIFO</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="11" bw="1" op_0_bw="1" op_1_bw="16" op_2_bw="32">
+<![CDATA[
+entry:4  %tmp = call i1 @_ssdm_op_NbReadReq.ap_fifo.i16P(i16* @tx_ibhconnTable_req_s_3, i32 1)
+
+]]></Node>
+<StgValue><ssdm name="tmp"/></StgValue>
+</operation>
+
+<operation id="4" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="12" bw="0" op_0_bw="1" op_1_bw="0" op_2_bw="0">
+<![CDATA[
+entry:5  br i1 %tmp, label %0, label %1
+
+]]></Node>
+<StgValue><ssdm name="br_ln45"/></StgValue>
+</operation>
+
+<operation id="5" st_id="1" stage="1" lat="1">
+<core>AXI4Stream</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="tmp" val="0"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="14" bw="1" op_0_bw="1" op_1_bw="184" op_2_bw="32">
+<![CDATA[
+:0  %tmp_111 = call i1 @_ssdm_op_NbReadReq.axis.i184P(i184* %qpi2connTable_req_V, i32 1)
+
+]]></Node>
+<StgValue><ssdm name="tmp_111"/></StgValue>
+</operation>
+
+<operation id="6" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="tmp" val="0"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="15" bw="0" op_0_bw="1" op_1_bw="0" op_2_bw="0">
+<![CDATA[
+:1  br i1 %tmp_111, label %2, label %._crit_edge1.i
+
+]]></Node>
+<StgValue><ssdm name="br_ln51"/></StgValue>
+</operation>
+
+<operation id="7" st_id="1" stage="1" lat="1">
+<core>AXI4Stream</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="tmp" val="0"/>
+<literal name="tmp_111" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="17" bw="184" op_0_bw="184" op_1_bw="184" op_2_bw="1">
+<![CDATA[
+:0  %tmp_1 = call i184 @_ssdm_op_Read.axis.volatile.i184P(i184* %qpi2connTable_req_V)
+
+]]></Node>
+<StgValue><ssdm name="tmp_1"/></StgValue>
+</operation>
+
+<operation id="8" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="tmp" val="0"/>
+<literal name="tmp_111" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="18" bw="16" op_0_bw="184">
+<![CDATA[
+:1  %trunc_ln321 = trunc i184 %tmp_1 to i16
+
+]]></Node>
+<StgValue><ssdm name="trunc_ln321"/></StgValue>
+</operation>
+
+<operation id="9" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="tmp" val="0"/>
+<literal name="tmp_111" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="19" bw="24" op_0_bw="24" op_1_bw="184" op_2_bw="32" op_3_bw="32">
+<![CDATA[
+:2  %tmp_remote_qpn_V_1_l = call i24 @_ssdm_op_PartSelect.i24.i184.i32.i32(i184 %tmp_1, i32 16, i32 39)
+
+]]></Node>
+<StgValue><ssdm name="tmp_remote_qpn_V_1_l"/></StgValue>
+</operation>
+
+<operation id="10" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="tmp" val="0"/>
+<literal name="tmp_111" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="20" bw="128" op_0_bw="128" op_1_bw="184" op_2_bw="32" op_3_bw="32">
+<![CDATA[
+:3  %tmp_remote_ip_addres_1 = call i128 @_ssdm_op_PartSelect.i128.i184.i32.i32(i184 %tmp_1, i32 40, i32 167)
+
+]]></Node>
+<StgValue><ssdm name="tmp_remote_ip_addres_1"/></StgValue>
+</operation>
+
+<operation id="11" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="tmp" val="0"/>
+<literal name="tmp_111" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="21" bw="16" op_0_bw="16" op_1_bw="184" op_2_bw="32" op_3_bw="32">
+<![CDATA[
+:4  %tmp_remote_udp_port_1 = call i16 @_ssdm_op_PartSelect.i16.i184.i32.i32(i184 %tmp_1, i32 168, i32 183)
+
+]]></Node>
+<StgValue><ssdm name="tmp_remote_udp_port_1"/></StgValue>
+</operation>
+
+<operation id="12" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="tmp" val="0"/>
+<literal name="tmp_111" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="22" bw="64" op_0_bw="16">
+<![CDATA[
+:5  %zext_ln544_8 = zext i16 %trunc_ln321 to i64
+
+]]></Node>
+<StgValue><ssdm name="zext_ln544_8"/></StgValue>
+</operation>
+
+<operation id="13" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="tmp" val="0"/>
+<literal name="tmp_111" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="23" bw="9" op_0_bw="24" op_1_bw="64" op_2_bw="64">
+<![CDATA[
+:6  %conn_table_remote_qp_2 = getelementptr [500 x i24]* @conn_table_remote_qp, i64 0, i64 %zext_ln544_8
+
+]]></Node>
+<StgValue><ssdm name="conn_table_remote_qp_2"/></StgValue>
+</operation>
+
+<operation id="14" st_id="1" stage="1" lat="1">
+<core>RAM</core>
+<MemPortIdVec>0 </MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="tmp" val="0"/>
+<literal name="tmp_111" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="24" bw="0" op_0_bw="24" op_1_bw="9">
+<![CDATA[
+:7  store i24 %tmp_remote_qpn_V_1_l, i24* %conn_table_remote_qp_2, align 16
+
+]]></Node>
+<StgValue><ssdm name="store_ln55"/></StgValue>
+</operation>
+
+<operation id="15" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="tmp" val="0"/>
+<literal name="tmp_111" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="25" bw="9" op_0_bw="128" op_1_bw="64" op_2_bw="64">
+<![CDATA[
+:8  %conn_table_remote_ip_2 = getelementptr [500 x i128]* @conn_table_remote_ip, i64 0, i64 %zext_ln544_8
+
+]]></Node>
+<StgValue><ssdm name="conn_table_remote_ip_2"/></StgValue>
+</operation>
+
+<operation id="16" st_id="1" stage="1" lat="1">
+<core>RAM</core>
+<MemPortIdVec>0 </MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="tmp" val="0"/>
+<literal name="tmp_111" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="26" bw="0" op_0_bw="128" op_1_bw="9">
+<![CDATA[
+:9  store i128 %tmp_remote_ip_addres_1, i128* %conn_table_remote_ip_2, align 16
+
+]]></Node>
+<StgValue><ssdm name="store_ln56"/></StgValue>
+</operation>
+
+<operation id="17" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="tmp" val="0"/>
+<literal name="tmp_111" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="27" bw="9" op_0_bw="16" op_1_bw="64" op_2_bw="64">
+<![CDATA[
+:10  %conn_table_remote_ud_2 = getelementptr [500 x i16]* @conn_table_remote_ud, i64 0, i64 %zext_ln544_8
+
+]]></Node>
+<StgValue><ssdm name="conn_table_remote_ud_2"/></StgValue>
+</operation>
+
+<operation id="18" st_id="1" stage="1" lat="1">
+<core>RAM</core>
+<MemPortIdVec>0 </MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="tmp" val="0"/>
+<literal name="tmp_111" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="28" bw="0" op_0_bw="16" op_1_bw="9">
+<![CDATA[
+:11  store i16 %tmp_remote_udp_port_1, i16* %conn_table_remote_ud_2, align 8
+
+]]></Node>
+<StgValue><ssdm name="store_ln57"/></StgValue>
+</operation>
+
+<operation id="19" st_id="1" stage="1" lat="1">
+<core>FIFO</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="tmp" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="33" bw="16" op_0_bw="16" op_1_bw="16" op_2_bw="1">
+<![CDATA[
+:0  %tmp_V = call i16 @_ssdm_op_Read.ap_fifo.volatile.i16P(i16* @tx_ibhconnTable_req_s_3)
+
+]]></Node>
+<StgValue><ssdm name="tmp_V"/></StgValue>
+</operation>
+
+<operation id="20" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="tmp" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="34" bw="64" op_0_bw="16">
+<![CDATA[
+:1  %zext_ln544 = zext i16 %tmp_V to i64
+
+]]></Node>
+<StgValue><ssdm name="zext_ln544"/></StgValue>
+</operation>
+
+<operation id="21" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="tmp" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="35" bw="9" op_0_bw="24" op_1_bw="64" op_2_bw="64">
+<![CDATA[
+:2  %conn_table_remote_qp_1 = getelementptr [500 x i24]* @conn_table_remote_qp, i64 0, i64 %zext_ln544
+
+]]></Node>
+<StgValue><ssdm name="conn_table_remote_qp_1"/></StgValue>
+</operation>
+
+<operation id="22" st_id="1" stage="2" lat="2">
+<core>RAM</core>
+<MemPortIdVec>0 </MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="tmp" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="36" bw="24" op_0_bw="9">
+<![CDATA[
+:3  %tmp_remote_qpn_V = load i24* %conn_table_remote_qp_1, align 16
+
+]]></Node>
+<StgValue><ssdm name="tmp_remote_qpn_V"/></StgValue>
+</operation>
+
+<operation id="23" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="tmp" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="37" bw="9" op_0_bw="128" op_1_bw="64" op_2_bw="64">
+<![CDATA[
+:4  %conn_table_remote_ip_1 = getelementptr [500 x i128]* @conn_table_remote_ip, i64 0, i64 %zext_ln544
+
+]]></Node>
+<StgValue><ssdm name="conn_table_remote_ip_1"/></StgValue>
+</operation>
+
+<operation id="24" st_id="1" stage="2" lat="2">
+<core>RAM</core>
+<MemPortIdVec>0 </MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="tmp" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="38" bw="128" op_0_bw="9">
+<![CDATA[
+:5  %tmp_remote_ip_addres = load i128* %conn_table_remote_ip_1, align 16
+
+]]></Node>
+<StgValue><ssdm name="tmp_remote_ip_addres"/></StgValue>
+</operation>
+
+<operation id="25" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="tmp" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="39" bw="9" op_0_bw="16" op_1_bw="64" op_2_bw="64">
+<![CDATA[
+:6  %conn_table_remote_ud_1 = getelementptr [500 x i16]* @conn_table_remote_ud, i64 0, i64 %zext_ln544
+
+]]></Node>
+<StgValue><ssdm name="conn_table_remote_ud_1"/></StgValue>
+</operation>
+
+<operation id="26" st_id="1" stage="2" lat="2">
+<core>RAM</core>
+<MemPortIdVec>0 </MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="tmp" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="40" bw="16" op_0_bw="9">
+<![CDATA[
+:7  %tmp_remote_udp_port_s = load i16* %conn_table_remote_ud_1, align 8
+
+]]></Node>
+<StgValue><ssdm name="tmp_remote_udp_port_s"/></StgValue>
+</operation>
+</state>
+
+<state id="2" st_id="2">
+
+<operation id="27" st_id="2" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="7" bw="0" op_0_bw="0" op_1_bw="168" op_2_bw="0" op_3_bw="32" op_4_bw="32" op_5_bw="0" op_6_bw="32" op_7_bw="32" op_8_bw="0" op_9_bw="0" op_10_bw="0" op_11_bw="32" op_12_bw="32" op_13_bw="32" op_14_bw="32" op_15_bw="0" op_16_bw="0">
+<![CDATA[
+entry:0  call void (...)* @_ssdm_op_SpecInterface(i168* @tx_connTable2ibh_rsp_1, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str, [1 x i8]* @p_str)
+
+]]></Node>
+<StgValue><ssdm name="specinterface_ln0"/></StgValue>
+</operation>
+
+<operation id="28" st_id="2" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="8" bw="0" op_0_bw="0" op_1_bw="16" op_2_bw="0" op_3_bw="32" op_4_bw="32" op_5_bw="0" op_6_bw="32" op_7_bw="32" op_8_bw="0" op_9_bw="0" op_10_bw="0" op_11_bw="32" op_12_bw="32" op_13_bw="32" op_14_bw="32" op_15_bw="0" op_16_bw="0">
+<![CDATA[
+entry:1  call void (...)* @_ssdm_op_SpecInterface(i16* @tx_ibhconnTable_req_s_3, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str, [1 x i8]* @p_str)
+
+]]></Node>
+<StgValue><ssdm name="specinterface_ln0"/></StgValue>
+</operation>
+
+<operation id="29" st_id="2" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="9" bw="0" op_0_bw="0" op_1_bw="184" op_2_bw="0" op_3_bw="32" op_4_bw="32" op_5_bw="0" op_6_bw="32" op_7_bw="32" op_8_bw="0" op_9_bw="0" op_10_bw="0" op_11_bw="32" op_12_bw="32" op_13_bw="32" op_14_bw="32" op_15_bw="0" op_16_bw="0">
+<![CDATA[
+entry:2  call void (...)* @_ssdm_op_SpecInterface(i184* %qpi2connTable_req_V, [5 x i8]* @p_str5, i32 1, i32 1, [5 x i8]* @p_str6, i32 0, i32 0, [1 x i8]* @p_str3, [1 x i8]* @p_str3, [1 x i8]* @p_str3, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str3, [1 x i8]* @p_str3) nounwind
+
+]]></Node>
+<StgValue><ssdm name="specinterface_ln0"/></StgValue>
+</operation>
+
+<operation id="30" st_id="2" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="10" bw="0" op_0_bw="0" op_1_bw="32" op_2_bw="32" op_3_bw="32" op_4_bw="32" op_5_bw="0">
+<![CDATA[
+entry:3  call void (...)* @_ssdm_op_SpecPipeline(i32 1, i32 1, i32 1, i32 0, [1 x i8]* @p_str44) nounwind
+
+]]></Node>
+<StgValue><ssdm name="specpipeline_ln36"/></StgValue>
+</operation>
+
+<operation id="31" st_id="2" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="tmp" val="0"/>
+<literal name="tmp_111" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="29" bw="0" op_0_bw="0">
+<![CDATA[
+:12  br label %._crit_edge1.i
+
+]]></Node>
+<StgValue><ssdm name="br_ln58"/></StgValue>
+</operation>
+
+<operation id="32" st_id="2" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="tmp" val="0"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="31" bw="0" op_0_bw="0">
+<![CDATA[
+._crit_edge1.i:0  br label %conn_table.exit
+
+]]></Node>
+<StgValue><ssdm name="br_ln0"/></StgValue>
+</operation>
+
+<operation id="33" st_id="2" stage="1" lat="2">
+<core>RAM</core>
+<MemPortIdVec>0 </MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="tmp" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="36" bw="24" op_0_bw="9">
+<![CDATA[
+:3  %tmp_remote_qpn_V = load i24* %conn_table_remote_qp_1, align 16
+
+]]></Node>
+<StgValue><ssdm name="tmp_remote_qpn_V"/></StgValue>
+</operation>
+
+<operation id="34" st_id="2" stage="1" lat="2">
+<core>RAM</core>
+<MemPortIdVec>0 </MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="tmp" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="38" bw="128" op_0_bw="9">
+<![CDATA[
+:5  %tmp_remote_ip_addres = load i128* %conn_table_remote_ip_1, align 16
+
+]]></Node>
+<StgValue><ssdm name="tmp_remote_ip_addres"/></StgValue>
+</operation>
+
+<operation id="35" st_id="2" stage="1" lat="2">
+<core>RAM</core>
+<MemPortIdVec>0 </MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="tmp" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="40" bw="16" op_0_bw="9">
+<![CDATA[
+:7  %tmp_remote_udp_port_s = load i16* %conn_table_remote_ud_1, align 8
+
+]]></Node>
+<StgValue><ssdm name="tmp_remote_udp_port_s"/></StgValue>
+</operation>
+
+<operation id="36" st_id="2" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="tmp" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="41" bw="168" op_0_bw="168" op_1_bw="16" op_2_bw="128" op_3_bw="24">
+<![CDATA[
+:8  %tmp4 = call i168 @_ssdm_op_BitConcatenate.i168.i16.i128.i24(i16 %tmp_remote_udp_port_s, i128 %tmp_remote_ip_addres, i24 %tmp_remote_qpn_V)
+
+]]></Node>
+<StgValue><ssdm name="tmp4"/></StgValue>
+</operation>
+
+<operation id="37" st_id="2" stage="1" lat="1">
+<core>FIFO</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="tmp" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="42" bw="0" op_0_bw="0" op_1_bw="168" op_2_bw="168">
+<![CDATA[
+:9  call void @_ssdm_op_Write.ap_fifo.volatile.i168P(i168* @tx_connTable2ibh_rsp_1, i168 %tmp4)
+
+]]></Node>
+<StgValue><ssdm name="write_ln49"/></StgValue>
+</operation>
+
+<operation id="38" st_id="2" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="tmp" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="43" bw="0" op_0_bw="0">
+<![CDATA[
+:10  br label %conn_table.exit
+
+]]></Node>
+<StgValue><ssdm name="br_ln50"/></StgValue>
+</operation>
+
+<operation id="39" st_id="2" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="45" bw="0">
+<![CDATA[
+conn_table.exit:0  ret void
+
+]]></Node>
+<StgValue><ssdm name="ret_ln0"/></StgValue>
+</operation>
+</state>
+</state_list>
+
+
+<ports>
+<port id="46" name="qpi2connTable_req_V" dir="0" iftype="0">
+<core>NULL</core><StgValue><ssdm name="qpi2connTable_req_V"/></StgValue>
+</port>
+<port id="47" name="tx_ibhconnTable_req_s_3" dir="0" iftype="3">
+<core>FIFO</core><StgValue><ssdm name="tx_ibhconnTable_req_s_3"/></StgValue>
+</port>
+<port id="48" name="conn_table_remote_qp" dir="2" iftype="1">
+<core>RAM</core><StgValue><ssdm name="conn_table_remote_qp"/><MemPortTyVec>2 3 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="49" name="conn_table_remote_ip" dir="2" iftype="1">
+<core>RAM</core><StgValue><ssdm name="conn_table_remote_ip"/><MemPortTyVec>2 3 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="50" name="conn_table_remote_ud" dir="2" iftype="1">
+<core>RAM</core><StgValue><ssdm name="conn_table_remote_ud"/><MemPortTyVec>2 3 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="51" name="tx_connTable2ibh_rsp_1" dir="1" iftype="3">
+<core>FIFO</core><StgValue><ssdm name="tx_connTable2ibh_rsp_1"/></StgValue>
+</port>
+</ports>
+
+
+<dataflows>
+<dataflow id="53" from="_ssdm_op_NbReadReq.ap_fifo.i16P" to="tmp" fromId="52" toId="3">
+</dataflow>
+<dataflow id="54" from="tx_ibhconnTable_req_s_3" to="tmp" fromId="47" toId="3">
+</dataflow>
+<dataflow id="56" from="StgValue_55" to="tmp" fromId="55" toId="3">
+</dataflow>
+<dataflow id="57" from="tmp" to="br_ln45" fromId="3" toId="4">
+</dataflow>
+<dataflow id="59" from="_ssdm_op_NbReadReq.axis.i184P" to="tmp_111" fromId="58" toId="5">
+</dataflow>
+<dataflow id="60" from="qpi2connTable_req_V" to="tmp_111" fromId="46" toId="5">
+</dataflow>
+<dataflow id="61" from="StgValue_55" to="tmp_111" fromId="55" toId="5">
+</dataflow>
+<dataflow id="62" from="tmp_111" to="br_ln51" fromId="5" toId="6">
+</dataflow>
+<dataflow id="64" from="_ssdm_op_Read.axis.volatile.i184P" to="tmp_1" fromId="63" toId="7">
+</dataflow>
+<dataflow id="65" from="qpi2connTable_req_V" to="tmp_1" fromId="46" toId="7">
+</dataflow>
+<dataflow id="66" from="tmp_1" to="trunc_ln321" fromId="7" toId="8">
+</dataflow>
+<dataflow id="68" from="_ssdm_op_PartSelect.i24.i184.i32.i32" to="tmp_remote_qpn_V_1_l" fromId="67" toId="9">
+</dataflow>
+<dataflow id="69" from="tmp_1" to="tmp_remote_qpn_V_1_l" fromId="7" toId="9">
+</dataflow>
+<dataflow id="71" from="StgValue_70" to="tmp_remote_qpn_V_1_l" fromId="70" toId="9">
+</dataflow>
+<dataflow id="73" from="StgValue_72" to="tmp_remote_qpn_V_1_l" fromId="72" toId="9">
+</dataflow>
+<dataflow id="75" from="_ssdm_op_PartSelect.i128.i184.i32.i32" to="tmp_remote_ip_addres_1" fromId="74" toId="10">
+</dataflow>
+<dataflow id="76" from="tmp_1" to="tmp_remote_ip_addres_1" fromId="7" toId="10">
+</dataflow>
+<dataflow id="78" from="StgValue_77" to="tmp_remote_ip_addres_1" fromId="77" toId="10">
+</dataflow>
+<dataflow id="80" from="StgValue_79" to="tmp_remote_ip_addres_1" fromId="79" toId="10">
+</dataflow>
+<dataflow id="82" from="_ssdm_op_PartSelect.i16.i184.i32.i32" to="tmp_remote_udp_port_1" fromId="81" toId="11">
+</dataflow>
+<dataflow id="83" from="tmp_1" to="tmp_remote_udp_port_1" fromId="7" toId="11">
+</dataflow>
+<dataflow id="85" from="StgValue_84" to="tmp_remote_udp_port_1" fromId="84" toId="11">
+</dataflow>
+<dataflow id="87" from="StgValue_86" to="tmp_remote_udp_port_1" fromId="86" toId="11">
+</dataflow>
+<dataflow id="88" from="trunc_ln321" to="zext_ln544_8" fromId="8" toId="12">
+</dataflow>
+<dataflow id="89" from="conn_table_remote_qp" to="conn_table_remote_qp_2" fromId="48" toId="13">
+</dataflow>
+<dataflow id="91" from="StgValue_90" to="conn_table_remote_qp_2" fromId="90" toId="13">
+</dataflow>
+<dataflow id="92" from="zext_ln544_8" to="conn_table_remote_qp_2" fromId="12" toId="13">
+</dataflow>
+<dataflow id="93" from="tmp_remote_qpn_V_1_l" to="store_ln55" fromId="9" toId="14">
+</dataflow>
+<dataflow id="94" from="conn_table_remote_qp_2" to="store_ln55" fromId="13" toId="14">
+</dataflow>
+<dataflow id="95" from="conn_table_remote_ip" to="conn_table_remote_ip_2" fromId="49" toId="15">
+</dataflow>
+<dataflow id="96" from="StgValue_90" to="conn_table_remote_ip_2" fromId="90" toId="15">
+</dataflow>
+<dataflow id="97" from="zext_ln544_8" to="conn_table_remote_ip_2" fromId="12" toId="15">
+</dataflow>
+<dataflow id="98" from="tmp_remote_ip_addres_1" to="store_ln56" fromId="10" toId="16">
+</dataflow>
+<dataflow id="99" from="conn_table_remote_ip_2" to="store_ln56" fromId="15" toId="16">
+</dataflow>
+<dataflow id="100" from="conn_table_remote_ud" to="conn_table_remote_ud_2" fromId="50" toId="17">
+</dataflow>
+<dataflow id="101" from="StgValue_90" to="conn_table_remote_ud_2" fromId="90" toId="17">
+</dataflow>
+<dataflow id="102" from="zext_ln544_8" to="conn_table_remote_ud_2" fromId="12" toId="17">
+</dataflow>
+<dataflow id="103" from="tmp_remote_udp_port_1" to="store_ln57" fromId="11" toId="18">
+</dataflow>
+<dataflow id="104" from="conn_table_remote_ud_2" to="store_ln57" fromId="17" toId="18">
+</dataflow>
+<dataflow id="106" from="_ssdm_op_Read.ap_fifo.volatile.i16P" to="tmp_V" fromId="105" toId="19">
+</dataflow>
+<dataflow id="107" from="tx_ibhconnTable_req_s_3" to="tmp_V" fromId="47" toId="19">
+</dataflow>
+<dataflow id="108" from="tmp_V" to="zext_ln544" fromId="19" toId="20">
+</dataflow>
+<dataflow id="109" from="conn_table_remote_qp" to="conn_table_remote_qp_1" fromId="48" toId="21">
+</dataflow>
+<dataflow id="110" from="StgValue_90" to="conn_table_remote_qp_1" fromId="90" toId="21">
+</dataflow>
+<dataflow id="111" from="zext_ln544" to="conn_table_remote_qp_1" fromId="20" toId="21">
+</dataflow>
+<dataflow id="112" from="conn_table_remote_qp_1" to="tmp_remote_qpn_V" fromId="21" toId="22">
+</dataflow>
+<dataflow id="113" from="conn_table_remote_ip" to="conn_table_remote_ip_1" fromId="49" toId="23">
+</dataflow>
+<dataflow id="114" from="StgValue_90" to="conn_table_remote_ip_1" fromId="90" toId="23">
+</dataflow>
+<dataflow id="115" from="zext_ln544" to="conn_table_remote_ip_1" fromId="20" toId="23">
+</dataflow>
+<dataflow id="116" from="conn_table_remote_ip_1" to="tmp_remote_ip_addres" fromId="23" toId="24">
+</dataflow>
+<dataflow id="117" from="conn_table_remote_ud" to="conn_table_remote_ud_1" fromId="50" toId="25">
+</dataflow>
+<dataflow id="118" from="StgValue_90" to="conn_table_remote_ud_1" fromId="90" toId="25">
+</dataflow>
+<dataflow id="119" from="zext_ln544" to="conn_table_remote_ud_1" fromId="20" toId="25">
+</dataflow>
+<dataflow id="120" from="conn_table_remote_ud_1" to="tmp_remote_udp_port_s" fromId="25" toId="26">
+</dataflow>
+<dataflow id="122" from="_ssdm_op_SpecInterface" to="specinterface_ln0" fromId="121" toId="27">
+</dataflow>
+<dataflow id="123" from="tx_connTable2ibh_rsp_1" to="specinterface_ln0" fromId="51" toId="27">
+</dataflow>
+<dataflow id="125" from="ap_fifo_str" to="specinterface_ln0" fromId="124" toId="27">
+</dataflow>
+<dataflow id="127" from="StgValue_126" to="specinterface_ln0" fromId="126" toId="27">
+</dataflow>
+<dataflow id="128" from="StgValue_126" to="specinterface_ln0" fromId="126" toId="27">
+</dataflow>
+<dataflow id="130" from="p_str" to="specinterface_ln0" fromId="129" toId="27">
+</dataflow>
+<dataflow id="131" from="StgValue_126" to="specinterface_ln0" fromId="126" toId="27">
+</dataflow>
+<dataflow id="132" from="StgValue_126" to="specinterface_ln0" fromId="126" toId="27">
+</dataflow>
+<dataflow id="133" from="p_str" to="specinterface_ln0" fromId="129" toId="27">
+</dataflow>
+<dataflow id="134" from="p_str" to="specinterface_ln0" fromId="129" toId="27">
+</dataflow>
+<dataflow id="135" from="p_str" to="specinterface_ln0" fromId="129" toId="27">
+</dataflow>
+<dataflow id="137" from="StgValue_136" to="specinterface_ln0" fromId="136" toId="27">
+</dataflow>
+<dataflow id="138" from="StgValue_136" to="specinterface_ln0" fromId="136" toId="27">
+</dataflow>
+<dataflow id="139" from="StgValue_70" to="specinterface_ln0" fromId="70" toId="27">
+</dataflow>
+<dataflow id="140" from="StgValue_70" to="specinterface_ln0" fromId="70" toId="27">
+</dataflow>
+<dataflow id="141" from="p_str" to="specinterface_ln0" fromId="129" toId="27">
+</dataflow>
+<dataflow id="142" from="p_str" to="specinterface_ln0" fromId="129" toId="27">
+</dataflow>
+<dataflow id="143" from="_ssdm_op_SpecInterface" to="specinterface_ln0" fromId="121" toId="28">
+</dataflow>
+<dataflow id="144" from="tx_ibhconnTable_req_s_3" to="specinterface_ln0" fromId="47" toId="28">
+</dataflow>
+<dataflow id="145" from="ap_fifo_str" to="specinterface_ln0" fromId="124" toId="28">
+</dataflow>
+<dataflow id="146" from="StgValue_126" to="specinterface_ln0" fromId="126" toId="28">
+</dataflow>
+<dataflow id="147" from="StgValue_126" to="specinterface_ln0" fromId="126" toId="28">
+</dataflow>
+<dataflow id="148" from="p_str" to="specinterface_ln0" fromId="129" toId="28">
+</dataflow>
+<dataflow id="149" from="StgValue_126" to="specinterface_ln0" fromId="126" toId="28">
+</dataflow>
+<dataflow id="150" from="StgValue_126" to="specinterface_ln0" fromId="126" toId="28">
+</dataflow>
+<dataflow id="151" from="p_str" to="specinterface_ln0" fromId="129" toId="28">
+</dataflow>
+<dataflow id="152" from="p_str" to="specinterface_ln0" fromId="129" toId="28">
+</dataflow>
+<dataflow id="153" from="p_str" to="specinterface_ln0" fromId="129" toId="28">
+</dataflow>
+<dataflow id="154" from="StgValue_136" to="specinterface_ln0" fromId="136" toId="28">
+</dataflow>
+<dataflow id="155" from="StgValue_136" to="specinterface_ln0" fromId="136" toId="28">
+</dataflow>
+<dataflow id="156" from="StgValue_70" to="specinterface_ln0" fromId="70" toId="28">
+</dataflow>
+<dataflow id="157" from="StgValue_70" to="specinterface_ln0" fromId="70" toId="28">
+</dataflow>
+<dataflow id="158" from="p_str" to="specinterface_ln0" fromId="129" toId="28">
+</dataflow>
+<dataflow id="159" from="p_str" to="specinterface_ln0" fromId="129" toId="28">
+</dataflow>
+<dataflow id="160" from="_ssdm_op_SpecInterface" to="specinterface_ln0" fromId="121" toId="29">
+</dataflow>
+<dataflow id="161" from="qpi2connTable_req_V" to="specinterface_ln0" fromId="46" toId="29">
+</dataflow>
+<dataflow id="163" from="p_str5" to="specinterface_ln0" fromId="162" toId="29">
+</dataflow>
+<dataflow id="164" from="StgValue_55" to="specinterface_ln0" fromId="55" toId="29">
+</dataflow>
+<dataflow id="165" from="StgValue_55" to="specinterface_ln0" fromId="55" toId="29">
+</dataflow>
+<dataflow id="167" from="p_str6" to="specinterface_ln0" fromId="166" toId="29">
+</dataflow>
+<dataflow id="168" from="StgValue_126" to="specinterface_ln0" fromId="126" toId="29">
+</dataflow>
+<dataflow id="169" from="StgValue_126" to="specinterface_ln0" fromId="126" toId="29">
+</dataflow>
+<dataflow id="171" from="p_str3" to="specinterface_ln0" fromId="170" toId="29">
+</dataflow>
+<dataflow id="172" from="p_str3" to="specinterface_ln0" fromId="170" toId="29">
+</dataflow>
+<dataflow id="173" from="p_str3" to="specinterface_ln0" fromId="170" toId="29">
+</dataflow>
+<dataflow id="174" from="StgValue_126" to="specinterface_ln0" fromId="126" toId="29">
+</dataflow>
+<dataflow id="175" from="StgValue_126" to="specinterface_ln0" fromId="126" toId="29">
+</dataflow>
+<dataflow id="176" from="StgValue_126" to="specinterface_ln0" fromId="126" toId="29">
+</dataflow>
+<dataflow id="177" from="StgValue_126" to="specinterface_ln0" fromId="126" toId="29">
+</dataflow>
+<dataflow id="178" from="p_str3" to="specinterface_ln0" fromId="170" toId="29">
+</dataflow>
+<dataflow id="179" from="p_str3" to="specinterface_ln0" fromId="170" toId="29">
+</dataflow>
+<dataflow id="181" from="_ssdm_op_SpecPipeline" to="specpipeline_ln36" fromId="180" toId="30">
+</dataflow>
+<dataflow id="182" from="StgValue_55" to="specpipeline_ln36" fromId="55" toId="30">
+</dataflow>
+<dataflow id="183" from="StgValue_55" to="specpipeline_ln36" fromId="55" toId="30">
+</dataflow>
+<dataflow id="184" from="StgValue_55" to="specpipeline_ln36" fromId="55" toId="30">
+</dataflow>
+<dataflow id="185" from="StgValue_126" to="specpipeline_ln36" fromId="126" toId="30">
+</dataflow>
+<dataflow id="187" from="p_str44" to="specpipeline_ln36" fromId="186" toId="30">
+</dataflow>
+<dataflow id="188" from="conn_table_remote_qp_1" to="tmp_remote_qpn_V" fromId="21" toId="33">
+</dataflow>
+<dataflow id="189" from="conn_table_remote_ip_1" to="tmp_remote_ip_addres" fromId="23" toId="34">
+</dataflow>
+<dataflow id="190" from="conn_table_remote_ud_1" to="tmp_remote_udp_port_s" fromId="25" toId="35">
+</dataflow>
+<dataflow id="192" from="_ssdm_op_BitConcatenate.i168.i16.i128.i24" to="tmp4" fromId="191" toId="36">
+</dataflow>
+<dataflow id="193" from="tmp_remote_udp_port_s" to="tmp4" fromId="35" toId="36">
+</dataflow>
+<dataflow id="194" from="tmp_remote_ip_addres" to="tmp4" fromId="34" toId="36">
+</dataflow>
+<dataflow id="195" from="tmp_remote_qpn_V" to="tmp4" fromId="33" toId="36">
+</dataflow>
+<dataflow id="197" from="_ssdm_op_Write.ap_fifo.volatile.i168P" to="write_ln49" fromId="196" toId="37">
+</dataflow>
+<dataflow id="198" from="tx_connTable2ibh_rsp_1" to="write_ln49" fromId="51" toId="37">
+</dataflow>
+<dataflow id="199" from="tmp4" to="write_ln49" fromId="36" toId="37">
+</dataflow>
+<dataflow id="200" from="tmp" to="StgValue_1" fromId="3" toId="1">
+</dataflow>
+<dataflow id="201" from="tmp_111" to="StgValue_1" fromId="5" toId="1">
+</dataflow>
+<dataflow id="202" from="tmp" to="StgValue_2" fromId="3" toId="2">
+</dataflow>
+<dataflow id="203" from="tmp_111" to="StgValue_2" fromId="5" toId="2">
+</dataflow>
+</dataflows>
+
+
+</stg>

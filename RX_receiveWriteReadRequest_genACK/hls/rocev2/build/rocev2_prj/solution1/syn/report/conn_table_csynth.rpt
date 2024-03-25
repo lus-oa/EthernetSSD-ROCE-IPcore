@@ -1,0 +1,156 @@
+
+
+================================================================
+== Vivado HLS Report for 'conn_table'
+================================================================
+* Date:           Mon Mar  1 13:04:21 2021
+
+* Version:        2019.1 (Build 2552052 on Fri May 24 15:28:33 MDT 2019)
+* Project:        rocev2_prj
+* Solution:       solution1
+* Product family: zynquplus
+* Target device:  xczu7eg-ffvc1156-2-i
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |   8.00|     3.075|        1.00|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+----------+
+    |  Latency  |  Interval | Pipeline |
+    | min | max | min | max |   Type   |
+    +-----+-----+-----+-----+----------+
+    |    1|    1|    1|    1| function |
+    +-----+-----+-----+-----+----------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-------+--------+--------+-----+
+|       Name      | BRAM_18K| DSP48E|   FF   |   LUT  | URAM|
++-----------------+---------+-------+--------+--------+-----+
+|DSP              |        -|      -|       -|       -|    -|
+|Expression       |        -|      -|       0|      16|    -|
+|FIFO             |        -|      -|       -|       -|    -|
+|Instance         |        -|      -|       -|       -|    -|
+|Memory           |        6|      -|       0|       0|    0|
+|Multiplexer      |        -|      -|       -|      81|    -|
+|Register         |        -|      -|       4|       -|    -|
++-----------------+---------+-------+--------+--------+-----+
+|Total            |        6|      0|       4|      97|    0|
++-----------------+---------+-------+--------+--------+-----+
+|Available        |      624|   1728|  460800|  230400|   96|
++-----------------+---------+-------+--------+--------+-----+
+|Utilization (%)  |    ~0   |      0|   ~0   |   ~0   |    0|
++-----------------+---------+-------+--------+--------+-----+
+
++ Detail: 
+    * Instance: 
+    N/A
+
+    * DSP48E: 
+    N/A
+
+    * Memory: 
+    +------------------------+---------------------------------+---------+---+----+-----+------+-----+------+-------------+
+    |         Memory         |              Module             | BRAM_18K| FF| LUT| URAM| Words| Bits| Banks| W*Bits*Banks|
+    +------------------------+---------------------------------+---------+---+----+-----+------+-----+------+-------------+
+    |conn_table_remote_ip_U  |conn_table_conn_table_remote_ip  |        4|  0|   0|    0|   500|  128|     1|        64000|
+    |conn_table_remote_qp_U  |conn_table_conn_table_remote_qp  |        1|  0|   0|    0|   500|   24|     1|        12000|
+    |conn_table_remote_ud_U  |conn_table_conn_table_remote_ud  |        1|  0|   0|    0|   500|   16|     1|         8000|
+    +------------------------+---------------------------------+---------+---+----+-----+------+-----+------+-------------+
+    |Total                   |                                 |        6|  0|   0|    0|  1500|  168|     3|        84000|
+    +------------------------+---------------------------------+---------+---+----+-----+------+-----+------+-------------+
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +----------------------------------+----------+-------+---+----+------------+------------+
+    |           Variable Name          | Operation| DSP48E| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +----------------------------------+----------+-------+---+----+------------+------------+
+    |ap_block_state2_pp0_stage0_iter1  |    and   |      0|  0|   2|           1|           1|
+    |ap_condition_113                  |    and   |      0|  0|   2|           1|           1|
+    |ap_predicate_op7_read_state1      |    and   |      0|  0|   2|           1|           1|
+    |tmp_111_nbreadreq_fu_74_p3        |    and   |      0|  0|   2|           1|           0|
+    |tmp_nbreadreq_fu_66_p3            |    and   |      0|  0|   2|           1|           0|
+    |ap_block_pp0_stage0_01001         |    or    |      0|  0|   2|           1|           1|
+    |ap_block_state1_pp0_stage0_iter0  |    or    |      0|  0|   2|           1|           1|
+    |ap_enable_pp0                     |    xor   |      0|  0|   2|           1|           2|
+    +----------------------------------+----------+-------+---+----+------------+------------+
+    |Total                             |          |      0|  0|  16|           8|           7|
+    +----------------------------------+----------+-------+---+----+------------+------------+
+
+    * Multiplexer: 
+    +---------------------------------+----+-----------+-----+-----------+
+    |               Name              | LUT| Input Size| Bits| Total Bits|
+    +---------------------------------+----+-----------+-----+-----------+
+    |ap_done                          |   9|          2|    1|          2|
+    |conn_table_remote_ip_address0    |  15|          3|    9|         27|
+    |conn_table_remote_qp_address0    |  15|          3|    9|         27|
+    |conn_table_remote_ud_address0    |  15|          3|    9|         27|
+    |qpi2connTable_req_V_TDATA_blk_n  |   9|          2|    1|          2|
+    |tx_connTable2ibh_rsp_1_blk_n     |   9|          2|    1|          2|
+    |tx_ibhconnTable_req_s_3_blk_n    |   9|          2|    1|          2|
+    +---------------------------------+----+-----------+-----+-----------+
+    |Total                            |  81|         17|   31|         89|
+    +---------------------------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +-------------------------+---+----+-----+-----------+
+    |           Name          | FF| LUT| Bits| Const Bits|
+    +-------------------------+---+----+-----+-----------+
+    |ap_CS_fsm                |  1|   0|    1|          0|
+    |ap_done_reg              |  1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter1  |  1|   0|    1|          0|
+    |tmp_reg_226              |  1|   0|    1|          0|
+    +-------------------------+---+----+-----+-----------+
+    |Total                    |  4|   0|    4|          0|
+    +-------------------------+---+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++---------------------------------+-----+-----+------------+-------------------------+--------------+
+|            RTL Ports            | Dir | Bits|  Protocol  |      Source Object      |    C Type    |
++---------------------------------+-----+-----+------------+-------------------------+--------------+
+|ap_clk                           |  in |    1| ap_ctrl_hs |        conn_table       | return value |
+|ap_rst                           |  in |    1| ap_ctrl_hs |        conn_table       | return value |
+|ap_start                         |  in |    1| ap_ctrl_hs |        conn_table       | return value |
+|ap_done                          | out |    1| ap_ctrl_hs |        conn_table       | return value |
+|ap_continue                      |  in |    1| ap_ctrl_hs |        conn_table       | return value |
+|ap_idle                          | out |    1| ap_ctrl_hs |        conn_table       | return value |
+|ap_ready                         | out |    1| ap_ctrl_hs |        conn_table       | return value |
+|qpi2connTable_req_V_TVALID       |  in |    1|    axis    |   qpi2connTable_req_V   |    pointer   |
+|qpi2connTable_req_V_TDATA        |  in |  184|    axis    |   qpi2connTable_req_V   |    pointer   |
+|qpi2connTable_req_V_TREADY       | out |    1|    axis    |   qpi2connTable_req_V   |    pointer   |
+|tx_ibhconnTable_req_s_3_dout     |  in |   16|   ap_fifo  | tx_ibhconnTable_req_s_3 |    pointer   |
+|tx_ibhconnTable_req_s_3_empty_n  |  in |    1|   ap_fifo  | tx_ibhconnTable_req_s_3 |    pointer   |
+|tx_ibhconnTable_req_s_3_read     | out |    1|   ap_fifo  | tx_ibhconnTable_req_s_3 |    pointer   |
+|tx_connTable2ibh_rsp_1_din       | out |  168|   ap_fifo  |  tx_connTable2ibh_rsp_1 |    pointer   |
+|tx_connTable2ibh_rsp_1_full_n    |  in |    1|   ap_fifo  |  tx_connTable2ibh_rsp_1 |    pointer   |
+|tx_connTable2ibh_rsp_1_write     | out |    1|   ap_fifo  |  tx_connTable2ibh_rsp_1 |    pointer   |
++---------------------------------+-----+-----+------------+-------------------------+--------------+
+

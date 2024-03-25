@@ -1,0 +1,178 @@
+
+
+================================================================
+== Vivado HLS Report for 'mask_header_fields'
+================================================================
+* Date:           Mon Mar  1 13:04:25 2021
+
+* Version:        2019.1 (Build 2552052 on Fri May 24 15:28:33 MDT 2019)
+* Project:        rocev2_prj
+* Solution:       solution1
+* Product family: zynquplus
+* Target device:  xczu7eg-ffvc1156-2-i
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |   8.00|     2.452|        1.00|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+----------+
+    |  Latency  |  Interval | Pipeline |
+    | min | max | min | max |   Type   |
+    +-----+-----+-----+-----+----------+
+    |    1|    1|    1|    1| function |
+    +-----+-----+-----+-----+----------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-------+--------+--------+-----+
+|       Name      | BRAM_18K| DSP48E|   FF   |   LUT  | URAM|
++-----------------+---------+-------+--------+--------+-----+
+|DSP              |        -|      -|       -|       -|    -|
+|Expression       |        -|      -|       0|     817|    -|
+|FIFO             |        -|      -|       -|       -|    -|
+|Instance         |        -|      -|       -|       -|    -|
+|Memory           |        -|      -|       -|       -|    -|
+|Multiplexer      |        -|      -|       -|      90|    -|
+|Register         |        -|      -|    1101|       -|    -|
++-----------------+---------+-------+--------+--------+-----+
+|Total            |        0|      0|    1101|     907|    0|
++-----------------+---------+-------+--------+--------+-----+
+|Available        |      624|   1728|  460800|  230400|   96|
++-----------------+---------+-------+--------+--------+-----+
+|Utilization (%)  |        0|      0|   ~0   |   ~0   |    0|
++-----------------+---------+-------+--------+--------+-----+
+
++ Detail: 
+    * Instance: 
+    N/A
+
+    * DSP48E: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +----------------------------------+----------+-------+---+-----+------------+------------+
+    |           Variable Name          | Operation| DSP48E| FF| LUT | Bitwidth P0| Bitwidth P1|
+    +----------------------------------+----------+-------+---+-----+------------+------------+
+    |add_ln700_fu_154_p2               |     +    |      0|  0|   15|           1|           8|
+    |io_acc_block_signal_op28          |    and   |      0|  0|    2|           1|           1|
+    |io_acc_block_signal_op29          |    and   |      0|  0|    2|           1|           1|
+    |io_acc_block_signal_op5           |    and   |      0|  0|    2|           1|           1|
+    |icmp_ln879_fu_118_p2              |   icmp   |      0|  0|   11|           8|           1|
+    |ap_block_pp0_stage0_01001         |    or    |      0|  0|    2|           1|           1|
+    |ap_block_state1_pp0_stage0_iter0  |    or    |      0|  0|    2|           1|           1|
+    |ap_block_state2_pp0_stage0_iter1  |    or    |      0|  0|    2|           1|           1|
+    |or_ln1356_fu_128_p2               |    or    |      0|  0|  264|         264|         257|
+    |select_ln313_fu_160_p3            |  select  |      0|  0|    8|           1|           1|
+    |tmp_data_V_fu_146_p3              |  select  |      0|  0|  505|           1|         512|
+    |ap_enable_pp0                     |    xor   |      0|  0|    2|           1|           2|
+    +----------------------------------+----------+-------+---+-----+------------+------------+
+    |Total                             |          |      0|  0|  817|         282|         787|
+    +----------------------------------+----------+-------+---+-----+------------+------------+
+
+    * Multiplexer: 
+    +-----------------------------+----+-----------+-----+-----------+
+    |             Name            | LUT| Input Size| Bits| Total Bits|
+    +-----------------------------+----+-----------+-----+-----------+
+    |ap_done                      |   9|          2|    1|          2|
+    |tx_crcDataFifo_V_dat_blk_n   |   9|          2|    1|          2|
+    |tx_crcDataFifo_V_kee_blk_n   |   9|          2|    1|          2|
+    |tx_crcDataFifo_V_las_blk_n   |   9|          2|    1|          2|
+    |tx_ip2crcFifo_V_data_blk_n   |   9|          2|    1|          2|
+    |tx_ip2crcFifo_V_keep_blk_n   |   9|          2|    1|          2|
+    |tx_ip2crcFifo_V_last_blk_n   |   9|          2|    1|          2|
+    |tx_maskedDataFifo_V_1_blk_n  |   9|          2|    1|          2|
+    |tx_maskedDataFifo_V_2_blk_n  |   9|          2|    1|          2|
+    |tx_maskedDataFifo_V_s_blk_n  |   9|          2|    1|          2|
+    +-----------------------------+----+-----------+-----+-----------+
+    |Total                        |  90|         20|   10|         20|
+    +-----------------------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +-------------------------+-----+----+-----+-----------+
+    |           Name          |  FF | LUT| Bits| Const Bits|
+    +-------------------------+-----+----+-----+-----------+
+    |ai_wordCount_V           |    8|   0|    8|          0|
+    |ap_CS_fsm                |    1|   0|    1|          0|
+    |ap_done_reg              |    1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter1  |    1|   0|    1|          0|
+    |tmp_data_V_31_reg_178    |  512|   0|  512|          0|
+    |tmp_data_V_reg_195       |  512|   0|  512|          0|
+    |tmp_keep_V_reg_183       |   64|   0|   64|          0|
+    |tmp_last_V_reg_189       |    1|   0|    1|          0|
+    |tmp_reg_174              |    1|   0|    1|          0|
+    +-------------------------+-----+----+-----+-----------+
+    |Total                    | 1101|   0| 1101|          0|
+    +-------------------------+-----+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++------------------------------+-----+-----+------------+-----------------------+--------------+
+|           RTL Ports          | Dir | Bits|  Protocol  |     Source Object     |    C Type    |
++------------------------------+-----+-----+------------+-----------------------+--------------+
+|ap_clk                        |  in |    1| ap_ctrl_hs |   mask_header_fields  | return value |
+|ap_rst                        |  in |    1| ap_ctrl_hs |   mask_header_fields  | return value |
+|ap_start                      |  in |    1| ap_ctrl_hs |   mask_header_fields  | return value |
+|ap_done                       | out |    1| ap_ctrl_hs |   mask_header_fields  | return value |
+|ap_continue                   |  in |    1| ap_ctrl_hs |   mask_header_fields  | return value |
+|ap_idle                       | out |    1| ap_ctrl_hs |   mask_header_fields  | return value |
+|ap_ready                      | out |    1| ap_ctrl_hs |   mask_header_fields  | return value |
+|tx_ip2crcFifo_V_data_dout     |  in |  512|   ap_fifo  |  tx_ip2crcFifo_V_data |    pointer   |
+|tx_ip2crcFifo_V_data_empty_n  |  in |    1|   ap_fifo  |  tx_ip2crcFifo_V_data |    pointer   |
+|tx_ip2crcFifo_V_data_read     | out |    1|   ap_fifo  |  tx_ip2crcFifo_V_data |    pointer   |
+|tx_ip2crcFifo_V_keep_dout     |  in |   64|   ap_fifo  |  tx_ip2crcFifo_V_keep |    pointer   |
+|tx_ip2crcFifo_V_keep_empty_n  |  in |    1|   ap_fifo  |  tx_ip2crcFifo_V_keep |    pointer   |
+|tx_ip2crcFifo_V_keep_read     | out |    1|   ap_fifo  |  tx_ip2crcFifo_V_keep |    pointer   |
+|tx_ip2crcFifo_V_last_dout     |  in |    1|   ap_fifo  |  tx_ip2crcFifo_V_last |    pointer   |
+|tx_ip2crcFifo_V_last_empty_n  |  in |    1|   ap_fifo  |  tx_ip2crcFifo_V_last |    pointer   |
+|tx_ip2crcFifo_V_last_read     | out |    1|   ap_fifo  |  tx_ip2crcFifo_V_last |    pointer   |
+|tx_maskedDataFifo_V_1_din     | out |  512|   ap_fifo  | tx_maskedDataFifo_V_1 |    pointer   |
+|tx_maskedDataFifo_V_1_full_n  |  in |    1|   ap_fifo  | tx_maskedDataFifo_V_1 |    pointer   |
+|tx_maskedDataFifo_V_1_write   | out |    1|   ap_fifo  | tx_maskedDataFifo_V_1 |    pointer   |
+|tx_maskedDataFifo_V_2_din     | out |   64|   ap_fifo  | tx_maskedDataFifo_V_2 |    pointer   |
+|tx_maskedDataFifo_V_2_full_n  |  in |    1|   ap_fifo  | tx_maskedDataFifo_V_2 |    pointer   |
+|tx_maskedDataFifo_V_2_write   | out |    1|   ap_fifo  | tx_maskedDataFifo_V_2 |    pointer   |
+|tx_maskedDataFifo_V_s_din     | out |    1|   ap_fifo  | tx_maskedDataFifo_V_s |    pointer   |
+|tx_maskedDataFifo_V_s_full_n  |  in |    1|   ap_fifo  | tx_maskedDataFifo_V_s |    pointer   |
+|tx_maskedDataFifo_V_s_write   | out |    1|   ap_fifo  | tx_maskedDataFifo_V_s |    pointer   |
+|tx_crcDataFifo_V_dat_din      | out |  512|   ap_fifo  |  tx_crcDataFifo_V_dat |    pointer   |
+|tx_crcDataFifo_V_dat_full_n   |  in |    1|   ap_fifo  |  tx_crcDataFifo_V_dat |    pointer   |
+|tx_crcDataFifo_V_dat_write    | out |    1|   ap_fifo  |  tx_crcDataFifo_V_dat |    pointer   |
+|tx_crcDataFifo_V_kee_din      | out |   64|   ap_fifo  |  tx_crcDataFifo_V_kee |    pointer   |
+|tx_crcDataFifo_V_kee_full_n   |  in |    1|   ap_fifo  |  tx_crcDataFifo_V_kee |    pointer   |
+|tx_crcDataFifo_V_kee_write    | out |    1|   ap_fifo  |  tx_crcDataFifo_V_kee |    pointer   |
+|tx_crcDataFifo_V_las_din      | out |    1|   ap_fifo  |  tx_crcDataFifo_V_las |    pointer   |
+|tx_crcDataFifo_V_las_full_n   |  in |    1|   ap_fifo  |  tx_crcDataFifo_V_las |    pointer   |
+|tx_crcDataFifo_V_las_write    | out |    1|   ap_fifo  |  tx_crcDataFifo_V_las |    pointer   |
++------------------------------+-----+-----+------------+-----------------------+--------------+
+

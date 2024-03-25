@@ -1,0 +1,1478 @@
+
+
+================================================================
+== Vivado HLS Report for 'qp_interface'
+================================================================
+* Date:           Mon Mar  1 13:04:10 2021
+
+* Version:        2019.1 (Build 2552052 on Fri May 24 15:28:33 MDT 2019)
+* Project:        rocev2_prj
+* Solution:       solution1
+* Product family: zynquplus
+* Target device:  xczu7eg-ffvc1156-2-i
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |   8.00|     1.838|        1.00|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+----------+
+    |  Latency  |  Interval | Pipeline |
+    | min | max | min | max |   Type   |
+    +-----+-----+-----+-----+----------+
+    |    1|    1|    1|    1| function |
+    +-----+-----+-----+-----+----------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-------+--------+--------+-----+
+|       Name      | BRAM_18K| DSP48E|   FF   |   LUT  | URAM|
++-----------------+---------+-------+--------+--------+-----+
+|DSP              |        -|      -|       -|       -|    -|
+|Expression       |        -|      -|       0|      24|    -|
+|FIFO             |        -|      -|       -|       -|    -|
+|Instance         |        -|      -|       -|       -|    -|
+|Memory           |        -|      -|       -|       -|    -|
+|Multiplexer      |        -|      -|       -|      60|    -|
+|Register         |        -|      -|     114|       -|    -|
++-----------------+---------+-------+--------+--------+-----+
+|Total            |        0|      0|     114|      84|    0|
++-----------------+---------+-------+--------+--------+-----+
+|Available        |      624|   1728|  460800|  230400|   96|
++-----------------+---------+-------+--------+--------+-----+
+|Utilization (%)  |        0|      0|   ~0   |   ~0   |    0|
++-----------------+---------+-------+--------+--------+-----+
+
++ Detail: 
+    * Instance: 
+    N/A
+
+    * DSP48E: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +----------------------------------+----------+-------+---+----+------------+------------+
+    |           Variable Name          | Operation| DSP48E| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +----------------------------------+----------+-------+---+----+------------+------------+
+    |ap_condition_102                  |    and   |      0|  0|   2|           1|           1|
+    |ap_condition_172                  |    and   |      0|  0|   2|           1|           1|
+    |ap_predicate_op22_read_state1     |    and   |      0|  0|   2|           1|           1|
+    |ap_predicate_op31_write_state2    |    and   |      0|  0|   2|           1|           1|
+    |ap_predicate_op40_write_state2    |    and   |      0|  0|   2|           1|           1|
+    |ap_predicate_op7_read_state1      |    and   |      0|  0|   2|           1|           1|
+    |tmp_36_nbreadreq_fu_96_p3         |    and   |      0|  0|   2|           1|           0|
+    |tmp_nbreadreq_fu_110_p3           |    and   |      0|  0|   2|           1|           0|
+    |ap_block_pp0_stage0_01001         |    or    |      0|  0|   2|           1|           1|
+    |ap_block_state1_pp0_stage0_iter0  |    or    |      0|  0|   2|           1|           1|
+    |ap_block_state2_pp0_stage0_iter1  |    or    |      0|  0|   2|           1|           1|
+    |ap_enable_pp0                     |    xor   |      0|  0|   2|           1|           2|
+    +----------------------------------+----------+-------+---+----+------------+------------+
+    |Total                             |          |      0|  0|  24|          12|          11|
+    +----------------------------------+----------+-------+---+----+------------+------------+
+
+    * Multiplexer: 
+    +------------------------------+----+-----------+-----+-----------+
+    |             Name             | LUT| Input Size| Bits| Total Bits|
+    +------------------------------+----+-----------+-----+-----------+
+    |ap_done                       |   9|          2|    1|          2|
+    |contextIn_V_TDATA_blk_n       |   9|          2|    1|          2|
+    |if2msnTable_init_V_blk_n      |   9|          2|    1|          2|
+    |qpi2stateTable_upd_r_1_blk_n  |   9|          2|    1|          2|
+    |qpi2stateTable_upd_r_1_din    |  15|          3|   68|        204|
+    |stateTable2qpi_rsp_V_blk_n    |   9|          2|    1|          2|
+    +------------------------------+----+-----------+-----+-----------+
+    |Total                         |  60|         13|   73|        214|
+    +------------------------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +--------------------------+----+----+-----+-----------+
+    |           Name           | FF | LUT| Bits| Const Bits|
+    +--------------------------+----+----+-----+-----------+
+    |ap_CS_fsm                 |   1|   0|    1|          0|
+    |ap_done_reg               |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter1   |   1|   0|    1|          0|
+    |context_local_psn_V       |  24|   0|   24|          0|
+    |context_newState          |   3|   0|    3|          0|
+    |context_qp_num_V          |  24|   0|   24|          0|
+    |context_r_key_V           |  16|   0|   16|          0|
+    |context_remote_psn_V      |  24|   0|   24|          0|
+    |qp_fsmState               |   1|   0|    1|          0|
+    |qp_fsmState_load_reg_312  |   1|   0|    1|          0|
+    |tmp_36_reg_316            |   1|   0|    1|          0|
+    |tmp_qpn_V_12_reg_320      |  16|   0|   16|          0|
+    |tmp_reg_325               |   1|   0|    1|          0|
+    +--------------------------+----+----+-----+-----------+
+    |Total                     | 114|   0|  114|          0|
+    +--------------------------+----+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++-------------------------------+-----+-----+------------+------------------------+--------------+
+|           RTL Ports           | Dir | Bits|  Protocol  |      Source Object     |    C Type    |
++-------------------------------+-----+-----+------------+------------------------+--------------+
+|ap_clk                         |  in |    1| ap_ctrl_hs |      qp_interface      | return value |
+|ap_rst                         |  in |    1| ap_ctrl_hs |      qp_interface      | return value |
+|ap_start                       |  in |    1| ap_ctrl_hs |      qp_interface      | return value |
+|ap_done                        | out |    1| ap_ctrl_hs |      qp_interface      | return value |
+|ap_continue                    |  in |    1| ap_ctrl_hs |      qp_interface      | return value |
+|ap_idle                        | out |    1| ap_ctrl_hs |      qp_interface      | return value |
+|ap_ready                       | out |    1| ap_ctrl_hs |      qp_interface      | return value |
+|contextIn_V_TVALID             |  in |    1|    axis    |       contextIn_V      |    pointer   |
+|contextIn_V_TDATA              |  in |  144|    axis    |       contextIn_V      |    pointer   |
+|contextIn_V_TREADY             | out |    1|    axis    |       contextIn_V      |    pointer   |
+|stateTable2qpi_rsp_V_dout      |  in |  123|   ap_fifo  |  stateTable2qpi_rsp_V  |    pointer   |
+|stateTable2qpi_rsp_V_empty_n   |  in |    1|   ap_fifo  |  stateTable2qpi_rsp_V  |    pointer   |
+|stateTable2qpi_rsp_V_read      | out |    1|   ap_fifo  |  stateTable2qpi_rsp_V  |    pointer   |
+|qpi2stateTable_upd_r_1_din     | out |   68|   ap_fifo  | qpi2stateTable_upd_r_1 |    pointer   |
+|qpi2stateTable_upd_r_1_full_n  |  in |    1|   ap_fifo  | qpi2stateTable_upd_r_1 |    pointer   |
+|qpi2stateTable_upd_r_1_write   | out |    1|   ap_fifo  | qpi2stateTable_upd_r_1 |    pointer   |
+|if2msnTable_init_V_din         | out |   48|   ap_fifo  |   if2msnTable_init_V   |    pointer   |
+|if2msnTable_init_V_full_n      |  in |    1|   ap_fifo  |   if2msnTable_init_V   |    pointer   |
+|if2msnTable_init_V_write       | out |    1|   ap_fifo  |   if2msnTable_init_V   |    pointer   |
++-------------------------------+-----+-----+------------+------------------------+--------------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 2
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 2
+HasVarLatency: 0
+IsPipeline: 1
+IsRtlPipelined: 1
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
++ Individual pipeline summary: 
+  * Pipeline-0: initiation interval (II) = 1, depth = 2
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 2
+* Pipeline : 1
+  Pipeline-0 : II = 1, D = 2, States = { 1 2 }
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 1.83>
+ST_1 : Operation 3 [1/1] (0.00ns)   --->   "%qp_fsmState_load = load i1* @qp_fsmState, align 1" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ib_transport_protocol/ib_transport_protocol.cpp:2203]   --->   Operation 3 'load' 'qp_fsmState_load' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 4 [1/1] (0.00ns)   --->   "br i1 %qp_fsmState_load, label %2, label %0" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ib_transport_protocol/ib_transport_protocol.cpp:2203]   --->   Operation 4 'br' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 5 [1/1] (0.00ns)   --->   "%tmp_36 = call i1 @_ssdm_op_NbReadReq.axis.i144P(i144* %contextIn_V, i32 1)" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ib_transport_protocol/ib_transport_protocol.cpp:2206]   --->   Operation 5 'nbreadreq' 'tmp_36' <Predicate = (!qp_fsmState_load)> <Delay = 0.00> <Core = "AXI4Stream">   --->   Core 5 'AXI4Stream' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_1 : Operation 6 [1/1] (0.00ns)   --->   "br i1 %tmp_36, label %1, label %._crit_edge2.i" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ib_transport_protocol/ib_transport_protocol.cpp:2206]   --->   Operation 6 'br' <Predicate = (!qp_fsmState_load)> <Delay = 0.00>
+ST_1 : Operation 7 [1/1] (0.00ns)   --->   "%contextIn_V_read = call i144 @_ssdm_op_Read.axis.volatile.i144P(i144* %contextIn_V)" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ib_transport_protocol/ib_transport_protocol.cpp:2208]   --->   Operation 7 'read' 'contextIn_V_read' <Predicate = (!qp_fsmState_load & tmp_36)> <Delay = 0.00> <Core = "AXI4Stream">   --->   Core 5 'AXI4Stream' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_1 : Operation 8 [1/1] (0.00ns)   --->   "%trunc_ln109 = trunc i144 %contextIn_V_read to i3" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ib_transport_protocol/ib_transport_protocol.hpp:109->/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ib_transport_protocol/ib_transport_protocol.cpp:2208]   --->   Operation 8 'trunc' 'trunc_ln109' <Predicate = (!qp_fsmState_load & tmp_36)> <Delay = 0.00>
+ST_1 : Operation 9 [1/1] (0.00ns)   --->   "store i3 %trunc_ln109, i3* @context_newState, align 8" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ib_transport_protocol/ib_transport_protocol.hpp:109->/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ib_transport_protocol/ib_transport_protocol.cpp:2208]   --->   Operation 9 'store' <Predicate = (!qp_fsmState_load & tmp_36)> <Delay = 0.00>
+ST_1 : Operation 10 [1/1] (0.00ns)   --->   "%tmp_qp_num_V_load_ne = call i24 @_ssdm_op_PartSelect.i24.i144.i32.i32(i144 %contextIn_V_read, i32 3, i32 26)" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ib_transport_protocol/ib_transport_protocol.hpp:109->/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ib_transport_protocol/ib_transport_protocol.cpp:2208]   --->   Operation 10 'partselect' 'tmp_qp_num_V_load_ne' <Predicate = (!qp_fsmState_load & tmp_36)> <Delay = 0.00>
+ST_1 : Operation 11 [1/1] (0.00ns)   --->   "store i24 %tmp_qp_num_V_load_ne, i24* @context_qp_num_V, align 4" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ib_transport_protocol/ib_transport_protocol.hpp:109->/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ib_transport_protocol/ib_transport_protocol.cpp:2208]   --->   Operation 11 'store' <Predicate = (!qp_fsmState_load & tmp_36)> <Delay = 0.00>
+ST_1 : Operation 12 [1/1] (0.00ns)   --->   "%tmp_remote_psn_V_loa = call i24 @_ssdm_op_PartSelect.i24.i144.i32.i32(i144 %contextIn_V_read, i32 27, i32 50)" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ib_transport_protocol/ib_transport_protocol.hpp:109->/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ib_transport_protocol/ib_transport_protocol.cpp:2208]   --->   Operation 12 'partselect' 'tmp_remote_psn_V_loa' <Predicate = (!qp_fsmState_load & tmp_36)> <Delay = 0.00>
+ST_1 : Operation 13 [1/1] (0.00ns)   --->   "store i24 %tmp_remote_psn_V_loa, i24* @context_remote_psn_V, align 8" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ib_transport_protocol/ib_transport_protocol.hpp:109->/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ib_transport_protocol/ib_transport_protocol.cpp:2208]   --->   Operation 13 'store' <Predicate = (!qp_fsmState_load & tmp_36)> <Delay = 0.00>
+ST_1 : Operation 14 [1/1] (0.00ns)   --->   "%tmp_local_psn_V_load = call i24 @_ssdm_op_PartSelect.i24.i144.i32.i32(i144 %contextIn_V_read, i32 51, i32 74)" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ib_transport_protocol/ib_transport_protocol.hpp:109->/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ib_transport_protocol/ib_transport_protocol.cpp:2208]   --->   Operation 14 'partselect' 'tmp_local_psn_V_load' <Predicate = (!qp_fsmState_load & tmp_36)> <Delay = 0.00>
+ST_1 : Operation 15 [1/1] (0.00ns)   --->   "store i24 %tmp_local_psn_V_load, i24* @context_local_psn_V, align 4" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ib_transport_protocol/ib_transport_protocol.hpp:109->/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ib_transport_protocol/ib_transport_protocol.cpp:2208]   --->   Operation 15 'store' <Predicate = (!qp_fsmState_load & tmp_36)> <Delay = 0.00>
+ST_1 : Operation 16 [1/1] (0.00ns)   --->   "%tmp_r_key_V_load_new = call i16 @_ssdm_op_PartSelect.i16.i144.i32.i32(i144 %contextIn_V_read, i32 75, i32 90)" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ib_transport_protocol/ib_transport_protocol.hpp:109->/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ib_transport_protocol/ib_transport_protocol.cpp:2208]   --->   Operation 16 'partselect' 'tmp_r_key_V_load_new' <Predicate = (!qp_fsmState_load & tmp_36)> <Delay = 0.00>
+ST_1 : Operation 17 [1/1] (0.00ns)   --->   "store i16 %tmp_r_key_V_load_new, i16* @context_r_key_V, align 8" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ib_transport_protocol/ib_transport_protocol.hpp:109->/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ib_transport_protocol/ib_transport_protocol.cpp:2208]   --->   Operation 17 'store' <Predicate = (!qp_fsmState_load & tmp_36)> <Delay = 0.00>
+ST_1 : Operation 18 [1/1] (0.00ns)   --->   "%tmp_qpn_V_12 = call i16 @_ssdm_op_PartSelect.i16.i144.i32.i32(i144 %contextIn_V_read, i32 3, i32 18)" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ib_transport_protocol/state_table.hpp:56->/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ib_transport_protocol/state_table.hpp:56->/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ib_transport_protocol/ib_transport_protocol.cpp:2209]   --->   Operation 18 'partselect' 'tmp_qpn_V_12' <Predicate = (!qp_fsmState_load & tmp_36)> <Delay = 0.00>
+ST_1 : Operation 19 [1/1] (0.65ns)   --->   "store i1 true, i1* @qp_fsmState, align 1" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ib_transport_protocol/ib_transport_protocol.cpp:2210]   --->   Operation 19 'store' <Predicate = (!qp_fsmState_load & tmp_36)> <Delay = 0.65>
+ST_1 : Operation 20 [1/1] (0.00ns)   --->   "%tmp = call i1 @_ssdm_op_NbReadReq.ap_fifo.i123P(i123* @stateTable2qpi_rsp_V, i32 1)" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ib_transport_protocol/ib_transport_protocol.cpp:2214]   --->   Operation 20 'nbreadreq' 'tmp' <Predicate = (qp_fsmState_load)> <Delay = 0.00> <Core = "FIFO">   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 1.83> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 2> <FIFO>
+ST_1 : Operation 21 [1/1] (0.00ns)   --->   "br i1 %tmp, label %3, label %._crit_edge3.i" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ib_transport_protocol/ib_transport_protocol.cpp:2214]   --->   Operation 21 'br' <Predicate = (qp_fsmState_load)> <Delay = 0.00>
+ST_1 : Operation 22 [1/1] (1.83ns)   --->   "%tmp_2_0 = call i123 @_ssdm_op_Read.ap_fifo.volatile.i123P(i123* @stateTable2qpi_rsp_V)" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ib_transport_protocol/ib_transport_protocol.cpp:2216]   --->   Operation 22 'read' 'tmp_2_0' <Predicate = (qp_fsmState_load & tmp)> <Delay = 1.83> <Core = "FIFO">   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 1.83> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 2> <FIFO>
+ST_1 : Operation 23 [1/1] (0.65ns)   --->   "store i1 false, i1* @qp_fsmState, align 1" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ib_transport_protocol/ib_transport_protocol.cpp:2221]   --->   Operation 23 'store' <Predicate = (qp_fsmState_load & tmp)> <Delay = 0.65>
+
+State 2 <SV = 1> <Delay = 1.83>
+ST_2 : Operation 24 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i48* @if2msnTable_init_V, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str, [1 x i8]* @p_str)"   --->   Operation 24 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 25 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i68* @qpi2stateTable_upd_r_1, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str, [1 x i8]* @p_str)"   --->   Operation 25 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 26 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i123* @stateTable2qpi_rsp_V, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str, [1 x i8]* @p_str)"   --->   Operation 26 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 27 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i144* %contextIn_V, [5 x i8]* @p_str5, i32 1, i32 1, [5 x i8]* @p_str6, i32 0, i32 0, [1 x i8]* @p_str3, [1 x i8]* @p_str3, [1 x i8]* @p_str3, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str3, [1 x i8]* @p_str3)"   --->   Operation 27 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 28 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecPipeline(i32 1, i32 1, i32 1, i32 0, [1 x i8]* @p_str112) nounwind" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ib_transport_protocol/ib_transport_protocol.cpp:2196]   --->   Operation 28 'specpipeline' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 29 [1/1] (0.00ns)   --->   "%tmp_1 = call i68 @llvm.part.set.i68.i16(i68 undef, i16 %tmp_qpn_V_12, i32 0, i32 15)" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ib_transport_protocol/ib_transport_protocol.cpp:2209]   --->   Operation 29 'partset' 'tmp_1' <Predicate = (!qp_fsmState_load & tmp_36)> <Delay = 0.00>
+ST_2 : Operation 30 [1/1] (0.00ns)   --->   "%tmp_1_2 = call i68 @_ssdm_op_BitSet.i68.i68.i32.i1(i68 %tmp_1, i32 67, i1 false)" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ib_transport_protocol/ib_transport_protocol.cpp:2209]   --->   Operation 30 'bitset' 'tmp_1_2' <Predicate = (!qp_fsmState_load & tmp_36)> <Delay = 0.00>
+ST_2 : Operation 31 [1/1] (1.83ns)   --->   "call void @_ssdm_op_Write.ap_fifo.volatile.i68P(i68* @qpi2stateTable_upd_r_1, i68 %tmp_1_2)" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ib_transport_protocol/ib_transport_protocol.cpp:2209]   --->   Operation 31 'write' <Predicate = (!qp_fsmState_load & tmp_36)> <Delay = 1.83> <Core = "FIFO">   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 1.83> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 2> <FIFO>
+ST_2 : Operation 32 [1/1] (0.00ns)   --->   "br label %._crit_edge2.i" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ib_transport_protocol/ib_transport_protocol.cpp:2211]   --->   Operation 32 'br' <Predicate = (!qp_fsmState_load & tmp_36)> <Delay = 0.00>
+ST_2 : Operation 33 [1/1] (0.00ns)   --->   "br label %qp_interface.exit" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ib_transport_protocol/ib_transport_protocol.cpp:2212]   --->   Operation 33 'br' <Predicate = (!qp_fsmState_load)> <Delay = 0.00>
+ST_2 : Operation 34 [1/1] (0.00ns)   --->   "%context_qp_num_V_loa = load i24* @context_qp_num_V, align 4" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ib_transport_protocol/ib_transport_protocol.cpp:2218]   --->   Operation 34 'load' 'context_qp_num_V_loa' <Predicate = (qp_fsmState_load & tmp)> <Delay = 0.00>
+ST_2 : Operation 35 [1/1] (0.00ns)   --->   "%tmp_qpn_V = trunc i24 %context_qp_num_V_loa to i16" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ib_transport_protocol/ib_transport_protocol.cpp:2218]   --->   Operation 35 'trunc' 'tmp_qpn_V' <Predicate = (qp_fsmState_load & tmp)> <Delay = 0.00>
+ST_2 : Operation 36 [1/1] (0.00ns)   --->   "%tmp_newState = load i3* @context_newState, align 8" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ib_transport_protocol/ib_transport_protocol.cpp:2218]   --->   Operation 36 'load' 'tmp_newState' <Predicate = (qp_fsmState_load & tmp)> <Delay = 0.00>
+ST_2 : Operation 37 [1/1] (0.00ns)   --->   "%tmp_remote_psn_V = load i24* @context_remote_psn_V, align 8" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ib_transport_protocol/ib_transport_protocol.cpp:2218]   --->   Operation 37 'load' 'tmp_remote_psn_V' <Predicate = (qp_fsmState_load & tmp)> <Delay = 0.00>
+ST_2 : Operation 38 [1/1] (0.00ns)   --->   "%tmp_local_psn_V = load i24* @context_local_psn_V, align 4" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ib_transport_protocol/ib_transport_protocol.cpp:2218]   --->   Operation 38 'load' 'tmp_local_psn_V' <Predicate = (qp_fsmState_load & tmp)> <Delay = 0.00>
+ST_2 : Operation 39 [1/1] (0.00ns)   --->   "%tmp_3 = call i68 @_ssdm_op_BitConcatenate.i68.i1.i24.i24.i3.i16(i1 true, i24 %tmp_local_psn_V, i24 %tmp_remote_psn_V, i3 %tmp_newState, i16 %tmp_qpn_V)" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ib_transport_protocol/ib_transport_protocol.cpp:2218]   --->   Operation 39 'bitconcatenate' 'tmp_3' <Predicate = (qp_fsmState_load & tmp)> <Delay = 0.00>
+ST_2 : Operation 40 [1/1] (1.83ns)   --->   "call void @_ssdm_op_Write.ap_fifo.volatile.i68P(i68* @qpi2stateTable_upd_r_1, i68 %tmp_3)" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ib_transport_protocol/ib_transport_protocol.cpp:2218]   --->   Operation 40 'write' <Predicate = (qp_fsmState_load & tmp)> <Delay = 1.83> <Core = "FIFO">   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 1.83> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 2> <FIFO>
+ST_2 : Operation 41 [1/1] (0.00ns)   --->   "%context_r_key_V_load = load i16* @context_r_key_V, align 8" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ib_transport_protocol/ib_transport_protocol.cpp:2220]   --->   Operation 41 'load' 'context_r_key_V_load' <Predicate = (qp_fsmState_load & tmp)> <Delay = 0.00>
+ST_2 : Operation 42 [1/1] (0.00ns)   --->   "%tmp_30_i = call i32 @_ssdm_op_BitConcatenate.i32.i16.i16(i16 %context_r_key_V_load, i16 %tmp_qpn_V)" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ib_transport_protocol/ib_transport_protocol.cpp:2220]   --->   Operation 42 'bitconcatenate' 'tmp_30_i' <Predicate = (qp_fsmState_load & tmp)> <Delay = 0.00>
+ST_2 : Operation 43 [1/1] (0.00ns)   --->   "%tmp_4 = zext i32 %tmp_30_i to i48" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ib_transport_protocol/ib_transport_protocol.cpp:2220]   --->   Operation 43 'zext' 'tmp_4' <Predicate = (qp_fsmState_load & tmp)> <Delay = 0.00>
+ST_2 : Operation 44 [1/1] (1.83ns)   --->   "call void @_ssdm_op_Write.ap_fifo.volatile.i48P(i48* @if2msnTable_init_V, i48 %tmp_4)" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ib_transport_protocol/ib_transport_protocol.cpp:2220]   --->   Operation 44 'write' <Predicate = (qp_fsmState_load & tmp)> <Delay = 1.83> <Core = "FIFO">   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 1.83> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 2> <FIFO>
+ST_2 : Operation 45 [1/1] (0.00ns)   --->   "br label %._crit_edge3.i" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ib_transport_protocol/ib_transport_protocol.cpp:2222]   --->   Operation 45 'br' <Predicate = (qp_fsmState_load & tmp)> <Delay = 0.00>
+ST_2 : Operation 46 [1/1] (0.00ns)   --->   "br label %qp_interface.exit" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ib_transport_protocol/ib_transport_protocol.cpp:2223]   --->   Operation 46 'br' <Predicate = (qp_fsmState_load)> <Delay = 0.00>
+ST_2 : Operation 47 [1/1] (0.00ns)   --->   "ret void"   --->   Operation 47 'ret' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+STG Binding: 
+---------------- STG Properties BEGIN ----------------
+- Is combinational: 0
+- Is one-state seq: 0
+- Is datapath-only: 0
+- Is pipelined: 1
+- Is top level: 0
+Port [ Return ] is wired: 1; IO mode=ap_ctrl_hs:ce=0
+Port [ contextIn_V]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=0; pingpong=0; private_global=0; IO mode=axis:ce=0
+Port [ qp_fsmState]:  wired=0; compound=0; hidden=1; nouse=0; global=1; static=1; extern=0; dir=2; type=0; pingpong=0; private_global=1; linkage=7; visibility=0; IO mode=ap_ovld:ce=0
+Port [ context_newState]:  wired=0; compound=0; hidden=1; nouse=0; global=1; static=1; extern=0; dir=2; type=0; pingpong=0; private_global=1; linkage=7; visibility=0; IO mode=ap_ovld:ce=0
+Port [ context_qp_num_V]:  wired=0; compound=0; hidden=1; nouse=0; global=1; static=1; extern=0; dir=2; type=0; pingpong=0; private_global=1; linkage=7; visibility=0; IO mode=ap_ovld:ce=0
+Port [ context_remote_psn_V]:  wired=0; compound=0; hidden=1; nouse=0; global=1; static=1; extern=0; dir=2; type=0; pingpong=0; private_global=1; linkage=7; visibility=0; IO mode=ap_ovld:ce=0
+Port [ context_local_psn_V]:  wired=0; compound=0; hidden=1; nouse=0; global=1; static=1; extern=0; dir=2; type=0; pingpong=0; private_global=1; linkage=7; visibility=0; IO mode=ap_ovld:ce=0
+Port [ context_r_key_V]:  wired=0; compound=0; hidden=1; nouse=0; global=1; static=1; extern=0; dir=2; type=0; pingpong=0; private_global=1; linkage=7; visibility=0; IO mode=ap_ovld:ce=0
+Port [ qpi2stateTable_upd_r_1]:  wired=1; compound=1; hidden=0; nouse=0; global=1; static=1; extern=0; dir=1; type=3; pingpong=0; private_global=0; linkage=7; visibility=0; IO mode=ap_fifo:ce=0
+Port [ stateTable2qpi_rsp_V]:  wired=1; compound=1; hidden=0; nouse=0; global=1; static=1; extern=0; dir=0; type=3; pingpong=0; private_global=0; linkage=7; visibility=0; IO mode=ap_fifo:ce=0
+Port [ if2msnTable_init_V]:  wired=1; compound=1; hidden=0; nouse=0; global=1; static=1; extern=0; dir=1; type=3; pingpong=0; private_global=0; linkage=7; visibility=0; IO mode=ap_fifo:ce=0
+---------------- STG Properties END ------------------
+
+---------------- Datapath Model BEGIN ----------------
+
+<LifeTime>
+<method=bitvector/>
+qp_fsmState_load     (load          ) [ 011]
+br_ln2203            (br            ) [ 000]
+tmp_36               (nbreadreq     ) [ 011]
+br_ln2206            (br            ) [ 000]
+contextIn_V_read     (read          ) [ 000]
+trunc_ln109          (trunc         ) [ 000]
+store_ln109          (store         ) [ 000]
+tmp_qp_num_V_load_ne (partselect    ) [ 000]
+store_ln109          (store         ) [ 000]
+tmp_remote_psn_V_loa (partselect    ) [ 000]
+store_ln109          (store         ) [ 000]
+tmp_local_psn_V_load (partselect    ) [ 000]
+store_ln109          (store         ) [ 000]
+tmp_r_key_V_load_new (partselect    ) [ 000]
+store_ln109          (store         ) [ 000]
+tmp_qpn_V_12         (partselect    ) [ 011]
+store_ln2210         (store         ) [ 000]
+tmp                  (nbreadreq     ) [ 011]
+br_ln2214            (br            ) [ 000]
+tmp_2_0              (read          ) [ 000]
+store_ln2221         (store         ) [ 000]
+specinterface_ln0    (specinterface ) [ 000]
+specinterface_ln0    (specinterface ) [ 000]
+specinterface_ln0    (specinterface ) [ 000]
+specinterface_ln0    (specinterface ) [ 000]
+specpipeline_ln2196  (specpipeline  ) [ 000]
+tmp_1                (partset       ) [ 000]
+tmp_1_2              (bitset        ) [ 000]
+write_ln2209         (write         ) [ 000]
+br_ln2211            (br            ) [ 000]
+br_ln2212            (br            ) [ 000]
+context_qp_num_V_loa (load          ) [ 000]
+tmp_qpn_V            (trunc         ) [ 000]
+tmp_newState         (load          ) [ 000]
+tmp_remote_psn_V     (load          ) [ 000]
+tmp_local_psn_V      (load          ) [ 000]
+tmp_3                (bitconcatenate) [ 000]
+write_ln2218         (write         ) [ 000]
+context_r_key_V_load (load          ) [ 000]
+tmp_30_i             (bitconcatenate) [ 000]
+tmp_4                (zext          ) [ 000]
+write_ln2220         (write         ) [ 000]
+br_ln2222            (br            ) [ 000]
+br_ln2223            (br            ) [ 000]
+ret_ln0              (ret           ) [ 000]
+</LifeTime>
+
+<model>
+
+<comp_list>
+<comp id="0" class="1000" name="contextIn_V">
+<pin_list>
+<pin id="1" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="contextIn_V"/></StgValue>
+</bind>
+</comp>
+
+<comp id="2" class="1000" name="qp_fsmState">
+<pin_list>
+<pin id="3" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="qp_fsmState"/></StgValue>
+</bind>
+</comp>
+
+<comp id="4" class="1000" name="context_newState">
+<pin_list>
+<pin id="5" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="context_newState"/></StgValue>
+</bind>
+</comp>
+
+<comp id="6" class="1000" name="context_qp_num_V">
+<pin_list>
+<pin id="7" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="context_qp_num_V"/></StgValue>
+</bind>
+</comp>
+
+<comp id="8" class="1000" name="context_remote_psn_V">
+<pin_list>
+<pin id="9" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="context_remote_psn_V"/></StgValue>
+</bind>
+</comp>
+
+<comp id="10" class="1000" name="context_local_psn_V">
+<pin_list>
+<pin id="11" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="context_local_psn_V"/></StgValue>
+</bind>
+</comp>
+
+<comp id="12" class="1000" name="context_r_key_V">
+<pin_list>
+<pin id="13" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="context_r_key_V"/></StgValue>
+</bind>
+</comp>
+
+<comp id="14" class="1000" name="qpi2stateTable_upd_r_1">
+<pin_list>
+<pin id="15" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="qpi2stateTable_upd_r_1"/></StgValue>
+</bind>
+</comp>
+
+<comp id="16" class="1000" name="stateTable2qpi_rsp_V">
+<pin_list>
+<pin id="17" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="stateTable2qpi_rsp_V"/></StgValue>
+</bind>
+</comp>
+
+<comp id="18" class="1000" name="if2msnTable_init_V">
+<pin_list>
+<pin id="19" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="if2msnTable_init_V"/></StgValue>
+</bind>
+</comp>
+
+<comp id="20" class="1001" name="const_20">
+<pin_list>
+<pin id="21" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="_ssdm_op_NbReadReq.axis.i144P"/></StgValue>
+</bind>
+</comp>
+
+<comp id="22" class="1001" name="const_22">
+<pin_list>
+<pin id="23" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="24" class="1001" name="const_24">
+<pin_list>
+<pin id="25" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="_ssdm_op_Read.axis.volatile.i144P"/></StgValue>
+</bind>
+</comp>
+
+<comp id="26" class="1001" name="const_26">
+<pin_list>
+<pin id="27" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="_ssdm_op_PartSelect.i24.i144.i32.i32"/></StgValue>
+</bind>
+</comp>
+
+<comp id="28" class="1001" name="const_28">
+<pin_list>
+<pin id="29" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="30" class="1001" name="const_30">
+<pin_list>
+<pin id="31" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="32" class="1001" name="const_32">
+<pin_list>
+<pin id="33" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="34" class="1001" name="const_34">
+<pin_list>
+<pin id="35" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="36" class="1001" name="const_36">
+<pin_list>
+<pin id="37" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="38" class="1001" name="const_38">
+<pin_list>
+<pin id="39" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="40" class="1001" name="const_40">
+<pin_list>
+<pin id="41" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="_ssdm_op_PartSelect.i16.i144.i32.i32"/></StgValue>
+</bind>
+</comp>
+
+<comp id="42" class="1001" name="const_42">
+<pin_list>
+<pin id="43" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="44" class="1001" name="const_44">
+<pin_list>
+<pin id="45" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="46" class="1001" name="const_46">
+<pin_list>
+<pin id="47" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="48" class="1001" name="const_48">
+<pin_list>
+<pin id="49" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="50" class="1001" name="const_50">
+<pin_list>
+<pin id="51" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="_ssdm_op_NbReadReq.ap_fifo.i123P"/></StgValue>
+</bind>
+</comp>
+
+<comp id="52" class="1001" name="const_52">
+<pin_list>
+<pin id="53" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="_ssdm_op_Read.ap_fifo.volatile.i123P"/></StgValue>
+</bind>
+</comp>
+
+<comp id="54" class="1001" name="const_54">
+<pin_list>
+<pin id="55" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="56" class="1001" name="const_56">
+<pin_list>
+<pin id="57" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="_ssdm_op_SpecInterface"/></StgValue>
+</bind>
+</comp>
+
+<comp id="58" class="1001" name="const_58">
+<pin_list>
+<pin id="59" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="ap_fifo_str"/></StgValue>
+</bind>
+</comp>
+
+<comp id="60" class="1001" name="const_60">
+<pin_list>
+<pin id="61" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="62" class="1001" name="const_62">
+<pin_list>
+<pin id="63" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="p_str"/></StgValue>
+</bind>
+</comp>
+
+<comp id="64" class="1001" name="const_64">
+<pin_list>
+<pin id="65" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="66" class="1001" name="const_66">
+<pin_list>
+<pin id="67" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="68" class="1001" name="const_68">
+<pin_list>
+<pin id="69" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="p_str5"/></StgValue>
+</bind>
+</comp>
+
+<comp id="70" class="1001" name="const_70">
+<pin_list>
+<pin id="71" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="p_str6"/></StgValue>
+</bind>
+</comp>
+
+<comp id="72" class="1001" name="const_72">
+<pin_list>
+<pin id="73" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="p_str3"/></StgValue>
+</bind>
+</comp>
+
+<comp id="74" class="1001" name="const_74">
+<pin_list>
+<pin id="75" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="_ssdm_op_SpecPipeline"/></StgValue>
+</bind>
+</comp>
+
+<comp id="76" class="1001" name="const_76">
+<pin_list>
+<pin id="77" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="p_str112"/></StgValue>
+</bind>
+</comp>
+
+<comp id="78" class="1001" name="const_78">
+<pin_list>
+<pin id="79" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="llvm.part.set.i68.i16"/></StgValue>
+</bind>
+</comp>
+
+<comp id="80" class="1001" name="const_80">
+<pin_list>
+<pin id="81" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="82" class="1001" name="const_82">
+<pin_list>
+<pin id="83" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="84" class="1001" name="const_84">
+<pin_list>
+<pin id="85" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="_ssdm_op_BitSet.i68.i68.i32.i1"/></StgValue>
+</bind>
+</comp>
+
+<comp id="86" class="1001" name="const_86">
+<pin_list>
+<pin id="87" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="88" class="1001" name="const_88">
+<pin_list>
+<pin id="89" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="_ssdm_op_Write.ap_fifo.volatile.i68P"/></StgValue>
+</bind>
+</comp>
+
+<comp id="90" class="1001" name="const_90">
+<pin_list>
+<pin id="91" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="_ssdm_op_BitConcatenate.i68.i1.i24.i24.i3.i16"/></StgValue>
+</bind>
+</comp>
+
+<comp id="92" class="1001" name="const_92">
+<pin_list>
+<pin id="93" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="_ssdm_op_BitConcatenate.i32.i16.i16"/></StgValue>
+</bind>
+</comp>
+
+<comp id="94" class="1001" name="const_94">
+<pin_list>
+<pin id="95" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="_ssdm_op_Write.ap_fifo.volatile.i48P"/></StgValue>
+</bind>
+</comp>
+
+<comp id="96" class="1004" name="tmp_36_nbreadreq_fu_96">
+<pin_list>
+<pin id="97" dir="0" index="0" bw="1" slack="0"/>
+<pin id="98" dir="0" index="1" bw="144" slack="0"/>
+<pin id="99" dir="0" index="2" bw="1" slack="0"/>
+<pin id="100" dir="1" index="3" bw="1" slack="1"/>
+</pin_list>
+<bind>
+<opcode="nbreadreq(1156) " fcode="nbreadreq"/>
+<opset="tmp_36/1 "/>
+</bind>
+</comp>
+
+<comp id="104" class="1004" name="contextIn_V_read_read_fu_104">
+<pin_list>
+<pin id="105" dir="0" index="0" bw="144" slack="0"/>
+<pin id="106" dir="0" index="1" bw="144" slack="0"/>
+<pin id="107" dir="1" index="2" bw="144" slack="0"/>
+</pin_list>
+<bind>
+<opcode="read(1150) " fcode="read"/>
+<opset="contextIn_V_read/1 "/>
+</bind>
+</comp>
+
+<comp id="110" class="1004" name="tmp_nbreadreq_fu_110">
+<pin_list>
+<pin id="111" dir="0" index="0" bw="1" slack="0"/>
+<pin id="112" dir="0" index="1" bw="123" slack="0"/>
+<pin id="113" dir="0" index="2" bw="1" slack="0"/>
+<pin id="114" dir="1" index="3" bw="1" slack="1"/>
+</pin_list>
+<bind>
+<opcode="nbreadreq(1156) " fcode="nbreadreq"/>
+<opset="tmp/1 "/>
+</bind>
+</comp>
+
+<comp id="118" class="1004" name="tmp_2_0_read_fu_118">
+<pin_list>
+<pin id="119" dir="0" index="0" bw="123" slack="0"/>
+<pin id="120" dir="0" index="1" bw="123" slack="0"/>
+<pin id="121" dir="1" index="2" bw="123" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="read(1150) " fcode="read"/>
+<opset="tmp_2_0/1 "/>
+</bind>
+</comp>
+
+<comp id="124" class="1004" name="grp_write_fu_124">
+<pin_list>
+<pin id="125" dir="0" index="0" bw="0" slack="0"/>
+<pin id="126" dir="0" index="1" bw="68" slack="0"/>
+<pin id="127" dir="0" index="2" bw="68" slack="0"/>
+<pin id="128" dir="1" index="3" bw="0" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="write(1151) " fcode="write"/>
+<opset="write_ln2209/2 write_ln2218/2 "/>
+</bind>
+</comp>
+
+<comp id="131" class="1004" name="write_ln2220_write_fu_131">
+<pin_list>
+<pin id="132" dir="0" index="0" bw="0" slack="0"/>
+<pin id="133" dir="0" index="1" bw="48" slack="0"/>
+<pin id="134" dir="0" index="2" bw="32" slack="0"/>
+<pin id="135" dir="1" index="3" bw="0" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="write(1151) " fcode="write"/>
+<opset="write_ln2220/2 "/>
+</bind>
+</comp>
+
+<comp id="138" class="1004" name="qp_fsmState_load_load_fu_138">
+<pin_list>
+<pin id="139" dir="0" index="0" bw="1" slack="0"/>
+<pin id="140" dir="1" index="1" bw="1" slack="1"/>
+</pin_list>
+<bind>
+<opcode="load(27) " fcode="load"/>
+<opset="qp_fsmState_load/1 "/>
+</bind>
+</comp>
+
+<comp id="142" class="1004" name="trunc_ln109_fu_142">
+<pin_list>
+<pin id="143" dir="0" index="0" bw="144" slack="0"/>
+<pin id="144" dir="1" index="1" bw="3" slack="0"/>
+</pin_list>
+<bind>
+<opcode="trunc(33) " fcode="trunc"/>
+<opset="trunc_ln109/1 "/>
+</bind>
+</comp>
+
+<comp id="146" class="1004" name="store_ln109_store_fu_146">
+<pin_list>
+<pin id="147" dir="0" index="0" bw="3" slack="0"/>
+<pin id="148" dir="0" index="1" bw="3" slack="0"/>
+<pin id="149" dir="1" index="2" bw="0" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="store(28) " fcode="store"/>
+<opset="store_ln109/1 "/>
+</bind>
+</comp>
+
+<comp id="152" class="1004" name="tmp_qp_num_V_load_ne_fu_152">
+<pin_list>
+<pin id="153" dir="0" index="0" bw="24" slack="0"/>
+<pin id="154" dir="0" index="1" bw="144" slack="0"/>
+<pin id="155" dir="0" index="2" bw="3" slack="0"/>
+<pin id="156" dir="0" index="3" bw="6" slack="0"/>
+<pin id="157" dir="1" index="4" bw="24" slack="0"/>
+</pin_list>
+<bind>
+<opcode="partselect(1002) " fcode="partselect"/>
+<opset="tmp_qp_num_V_load_ne/1 "/>
+</bind>
+</comp>
+
+<comp id="162" class="1004" name="store_ln109_store_fu_162">
+<pin_list>
+<pin id="163" dir="0" index="0" bw="24" slack="0"/>
+<pin id="164" dir="0" index="1" bw="24" slack="0"/>
+<pin id="165" dir="1" index="2" bw="0" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="store(28) " fcode="store"/>
+<opset="store_ln109/1 "/>
+</bind>
+</comp>
+
+<comp id="168" class="1004" name="tmp_remote_psn_V_loa_fu_168">
+<pin_list>
+<pin id="169" dir="0" index="0" bw="24" slack="0"/>
+<pin id="170" dir="0" index="1" bw="144" slack="0"/>
+<pin id="171" dir="0" index="2" bw="6" slack="0"/>
+<pin id="172" dir="0" index="3" bw="7" slack="0"/>
+<pin id="173" dir="1" index="4" bw="24" slack="0"/>
+</pin_list>
+<bind>
+<opcode="partselect(1002) " fcode="partselect"/>
+<opset="tmp_remote_psn_V_loa/1 "/>
+</bind>
+</comp>
+
+<comp id="178" class="1004" name="store_ln109_store_fu_178">
+<pin_list>
+<pin id="179" dir="0" index="0" bw="24" slack="0"/>
+<pin id="180" dir="0" index="1" bw="24" slack="0"/>
+<pin id="181" dir="1" index="2" bw="0" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="store(28) " fcode="store"/>
+<opset="store_ln109/1 "/>
+</bind>
+</comp>
+
+<comp id="184" class="1004" name="tmp_local_psn_V_load_fu_184">
+<pin_list>
+<pin id="185" dir="0" index="0" bw="24" slack="0"/>
+<pin id="186" dir="0" index="1" bw="144" slack="0"/>
+<pin id="187" dir="0" index="2" bw="7" slack="0"/>
+<pin id="188" dir="0" index="3" bw="8" slack="0"/>
+<pin id="189" dir="1" index="4" bw="24" slack="0"/>
+</pin_list>
+<bind>
+<opcode="partselect(1002) " fcode="partselect"/>
+<opset="tmp_local_psn_V_load/1 "/>
+</bind>
+</comp>
+
+<comp id="194" class="1004" name="store_ln109_store_fu_194">
+<pin_list>
+<pin id="195" dir="0" index="0" bw="24" slack="0"/>
+<pin id="196" dir="0" index="1" bw="24" slack="0"/>
+<pin id="197" dir="1" index="2" bw="0" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="store(28) " fcode="store"/>
+<opset="store_ln109/1 "/>
+</bind>
+</comp>
+
+<comp id="200" class="1004" name="tmp_r_key_V_load_new_fu_200">
+<pin_list>
+<pin id="201" dir="0" index="0" bw="16" slack="0"/>
+<pin id="202" dir="0" index="1" bw="144" slack="0"/>
+<pin id="203" dir="0" index="2" bw="8" slack="0"/>
+<pin id="204" dir="0" index="3" bw="8" slack="0"/>
+<pin id="205" dir="1" index="4" bw="16" slack="0"/>
+</pin_list>
+<bind>
+<opcode="partselect(1002) " fcode="partselect"/>
+<opset="tmp_r_key_V_load_new/1 "/>
+</bind>
+</comp>
+
+<comp id="210" class="1004" name="store_ln109_store_fu_210">
+<pin_list>
+<pin id="211" dir="0" index="0" bw="16" slack="0"/>
+<pin id="212" dir="0" index="1" bw="16" slack="0"/>
+<pin id="213" dir="1" index="2" bw="0" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="store(28) " fcode="store"/>
+<opset="store_ln109/1 "/>
+</bind>
+</comp>
+
+<comp id="216" class="1004" name="tmp_qpn_V_12_fu_216">
+<pin_list>
+<pin id="217" dir="0" index="0" bw="16" slack="0"/>
+<pin id="218" dir="0" index="1" bw="144" slack="0"/>
+<pin id="219" dir="0" index="2" bw="3" slack="0"/>
+<pin id="220" dir="0" index="3" bw="6" slack="0"/>
+<pin id="221" dir="1" index="4" bw="16" slack="1"/>
+</pin_list>
+<bind>
+<opcode="partselect(1002) " fcode="partselect"/>
+<opset="tmp_qpn_V_12/1 "/>
+</bind>
+</comp>
+
+<comp id="226" class="1004" name="store_ln2210_store_fu_226">
+<pin_list>
+<pin id="227" dir="0" index="0" bw="1" slack="0"/>
+<pin id="228" dir="0" index="1" bw="1" slack="0"/>
+<pin id="229" dir="1" index="2" bw="0" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="store(28) " fcode="store"/>
+<opset="store_ln2210/1 "/>
+</bind>
+</comp>
+
+<comp id="232" class="1004" name="store_ln2221_store_fu_232">
+<pin_list>
+<pin id="233" dir="0" index="0" bw="1" slack="0"/>
+<pin id="234" dir="0" index="1" bw="1" slack="0"/>
+<pin id="235" dir="1" index="2" bw="0" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="store(28) " fcode="store"/>
+<opset="store_ln2221/1 "/>
+</bind>
+</comp>
+
+<comp id="238" class="1004" name="tmp_1_fu_238">
+<pin_list>
+<pin id="239" dir="0" index="0" bw="68" slack="0"/>
+<pin id="240" dir="0" index="1" bw="1" slack="0"/>
+<pin id="241" dir="0" index="2" bw="16" slack="1"/>
+<pin id="242" dir="0" index="3" bw="1" slack="0"/>
+<pin id="243" dir="0" index="4" bw="5" slack="0"/>
+<pin id="244" dir="1" index="5" bw="68" slack="0"/>
+</pin_list>
+<bind>
+<opcode="partset(1003) " fcode="partset"/>
+<opset="tmp_1/2 "/>
+</bind>
+</comp>
+
+<comp id="249" class="1004" name="tmp_1_2_fu_249">
+<pin_list>
+<pin id="250" dir="0" index="0" bw="68" slack="0"/>
+<pin id="251" dir="0" index="1" bw="68" slack="0"/>
+<pin id="252" dir="0" index="2" bw="8" slack="0"/>
+<pin id="253" dir="0" index="3" bw="1" slack="0"/>
+<pin id="254" dir="1" index="4" bw="68" slack="0"/>
+</pin_list>
+<bind>
+<opcode="bitset(1001) " fcode="bitset"/>
+<opset="tmp_1_2/2 "/>
+</bind>
+</comp>
+
+<comp id="260" class="1004" name="context_qp_num_V_loa_load_fu_260">
+<pin_list>
+<pin id="261" dir="0" index="0" bw="24" slack="0"/>
+<pin id="262" dir="1" index="1" bw="24" slack="0"/>
+</pin_list>
+<bind>
+<opcode="load(27) " fcode="load"/>
+<opset="context_qp_num_V_loa/2 "/>
+</bind>
+</comp>
+
+<comp id="264" class="1004" name="tmp_qpn_V_fu_264">
+<pin_list>
+<pin id="265" dir="0" index="0" bw="24" slack="0"/>
+<pin id="266" dir="1" index="1" bw="16" slack="0"/>
+</pin_list>
+<bind>
+<opcode="trunc(33) " fcode="trunc"/>
+<opset="tmp_qpn_V/2 "/>
+</bind>
+</comp>
+
+<comp id="268" class="1004" name="tmp_newState_load_fu_268">
+<pin_list>
+<pin id="269" dir="0" index="0" bw="3" slack="0"/>
+<pin id="270" dir="1" index="1" bw="3" slack="0"/>
+</pin_list>
+<bind>
+<opcode="load(27) " fcode="load"/>
+<opset="tmp_newState/2 "/>
+</bind>
+</comp>
+
+<comp id="272" class="1004" name="tmp_remote_psn_V_load_fu_272">
+<pin_list>
+<pin id="273" dir="0" index="0" bw="24" slack="0"/>
+<pin id="274" dir="1" index="1" bw="24" slack="0"/>
+</pin_list>
+<bind>
+<opcode="load(27) " fcode="load"/>
+<opset="tmp_remote_psn_V/2 "/>
+</bind>
+</comp>
+
+<comp id="276" class="1004" name="tmp_local_psn_V_load_fu_276">
+<pin_list>
+<pin id="277" dir="0" index="0" bw="24" slack="0"/>
+<pin id="278" dir="1" index="1" bw="24" slack="0"/>
+</pin_list>
+<bind>
+<opcode="load(27) " fcode="load"/>
+<opset="tmp_local_psn_V/2 "/>
+</bind>
+</comp>
+
+<comp id="280" class="1004" name="tmp_3_fu_280">
+<pin_list>
+<pin id="281" dir="0" index="0" bw="68" slack="0"/>
+<pin id="282" dir="0" index="1" bw="1" slack="0"/>
+<pin id="283" dir="0" index="2" bw="24" slack="0"/>
+<pin id="284" dir="0" index="3" bw="24" slack="0"/>
+<pin id="285" dir="0" index="4" bw="3" slack="0"/>
+<pin id="286" dir="0" index="5" bw="16" slack="0"/>
+<pin id="287" dir="1" index="6" bw="68" slack="0"/>
+</pin_list>
+<bind>
+<opcode="bitconcatenate(1004) " fcode="bitconcatenate"/>
+<opset="tmp_3/2 "/>
+</bind>
+</comp>
+
+<comp id="295" class="1004" name="context_r_key_V_load_load_fu_295">
+<pin_list>
+<pin id="296" dir="0" index="0" bw="16" slack="0"/>
+<pin id="297" dir="1" index="1" bw="16" slack="0"/>
+</pin_list>
+<bind>
+<opcode="load(27) " fcode="load"/>
+<opset="context_r_key_V_load/2 "/>
+</bind>
+</comp>
+
+<comp id="299" class="1004" name="tmp_30_i_fu_299">
+<pin_list>
+<pin id="300" dir="0" index="0" bw="32" slack="0"/>
+<pin id="301" dir="0" index="1" bw="16" slack="0"/>
+<pin id="302" dir="0" index="2" bw="16" slack="0"/>
+<pin id="303" dir="1" index="3" bw="32" slack="0"/>
+</pin_list>
+<bind>
+<opcode="bitconcatenate(1004) " fcode="bitconcatenate"/>
+<opset="tmp_30_i/2 "/>
+</bind>
+</comp>
+
+<comp id="307" class="1004" name="tmp_4_fu_307">
+<pin_list>
+<pin id="308" dir="0" index="0" bw="32" slack="0"/>
+<pin id="309" dir="1" index="1" bw="48" slack="0"/>
+</pin_list>
+<bind>
+<opcode="zext(34) " fcode="zext"/>
+<opset="tmp_4/2 "/>
+</bind>
+</comp>
+
+<comp id="312" class="1005" name="qp_fsmState_load_reg_312">
+<pin_list>
+<pin id="313" dir="0" index="0" bw="1" slack="1"/>
+<pin id="314" dir="1" index="1" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<opset="qp_fsmState_load "/>
+</bind>
+</comp>
+
+<comp id="316" class="1005" name="tmp_36_reg_316">
+<pin_list>
+<pin id="317" dir="0" index="0" bw="1" slack="1"/>
+<pin id="318" dir="1" index="1" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<opset="tmp_36 "/>
+</bind>
+</comp>
+
+<comp id="320" class="1005" name="tmp_qpn_V_12_reg_320">
+<pin_list>
+<pin id="321" dir="0" index="0" bw="16" slack="1"/>
+<pin id="322" dir="1" index="1" bw="16" slack="1"/>
+</pin_list>
+<bind>
+<opset="tmp_qpn_V_12 "/>
+</bind>
+</comp>
+
+<comp id="325" class="1005" name="tmp_reg_325">
+<pin_list>
+<pin id="326" dir="0" index="0" bw="1" slack="1"/>
+<pin id="327" dir="1" index="1" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<opset="tmp "/>
+</bind>
+</comp>
+
+</comp_list>
+
+<net_list>
+<net id="101"><net_src comp="20" pin="0"/><net_sink comp="96" pin=0"/></net>
+
+<net id="102"><net_src comp="0" pin="0"/><net_sink comp="96" pin=1"/></net>
+
+<net id="103"><net_src comp="22" pin="0"/><net_sink comp="96" pin=2"/></net>
+
+<net id="108"><net_src comp="24" pin="0"/><net_sink comp="104" pin=0"/></net>
+
+<net id="109"><net_src comp="0" pin="0"/><net_sink comp="104" pin=1"/></net>
+
+<net id="115"><net_src comp="50" pin="0"/><net_sink comp="110" pin=0"/></net>
+
+<net id="116"><net_src comp="16" pin="0"/><net_sink comp="110" pin=1"/></net>
+
+<net id="117"><net_src comp="22" pin="0"/><net_sink comp="110" pin=2"/></net>
+
+<net id="122"><net_src comp="52" pin="0"/><net_sink comp="118" pin=0"/></net>
+
+<net id="123"><net_src comp="16" pin="0"/><net_sink comp="118" pin=1"/></net>
+
+<net id="129"><net_src comp="88" pin="0"/><net_sink comp="124" pin=0"/></net>
+
+<net id="130"><net_src comp="14" pin="0"/><net_sink comp="124" pin=1"/></net>
+
+<net id="136"><net_src comp="94" pin="0"/><net_sink comp="131" pin=0"/></net>
+
+<net id="137"><net_src comp="18" pin="0"/><net_sink comp="131" pin=1"/></net>
+
+<net id="141"><net_src comp="2" pin="0"/><net_sink comp="138" pin=0"/></net>
+
+<net id="145"><net_src comp="104" pin="2"/><net_sink comp="142" pin=0"/></net>
+
+<net id="150"><net_src comp="142" pin="1"/><net_sink comp="146" pin=0"/></net>
+
+<net id="151"><net_src comp="4" pin="0"/><net_sink comp="146" pin=1"/></net>
+
+<net id="158"><net_src comp="26" pin="0"/><net_sink comp="152" pin=0"/></net>
+
+<net id="159"><net_src comp="104" pin="2"/><net_sink comp="152" pin=1"/></net>
+
+<net id="160"><net_src comp="28" pin="0"/><net_sink comp="152" pin=2"/></net>
+
+<net id="161"><net_src comp="30" pin="0"/><net_sink comp="152" pin=3"/></net>
+
+<net id="166"><net_src comp="152" pin="4"/><net_sink comp="162" pin=0"/></net>
+
+<net id="167"><net_src comp="6" pin="0"/><net_sink comp="162" pin=1"/></net>
+
+<net id="174"><net_src comp="26" pin="0"/><net_sink comp="168" pin=0"/></net>
+
+<net id="175"><net_src comp="104" pin="2"/><net_sink comp="168" pin=1"/></net>
+
+<net id="176"><net_src comp="32" pin="0"/><net_sink comp="168" pin=2"/></net>
+
+<net id="177"><net_src comp="34" pin="0"/><net_sink comp="168" pin=3"/></net>
+
+<net id="182"><net_src comp="168" pin="4"/><net_sink comp="178" pin=0"/></net>
+
+<net id="183"><net_src comp="8" pin="0"/><net_sink comp="178" pin=1"/></net>
+
+<net id="190"><net_src comp="26" pin="0"/><net_sink comp="184" pin=0"/></net>
+
+<net id="191"><net_src comp="104" pin="2"/><net_sink comp="184" pin=1"/></net>
+
+<net id="192"><net_src comp="36" pin="0"/><net_sink comp="184" pin=2"/></net>
+
+<net id="193"><net_src comp="38" pin="0"/><net_sink comp="184" pin=3"/></net>
+
+<net id="198"><net_src comp="184" pin="4"/><net_sink comp="194" pin=0"/></net>
+
+<net id="199"><net_src comp="10" pin="0"/><net_sink comp="194" pin=1"/></net>
+
+<net id="206"><net_src comp="40" pin="0"/><net_sink comp="200" pin=0"/></net>
+
+<net id="207"><net_src comp="104" pin="2"/><net_sink comp="200" pin=1"/></net>
+
+<net id="208"><net_src comp="42" pin="0"/><net_sink comp="200" pin=2"/></net>
+
+<net id="209"><net_src comp="44" pin="0"/><net_sink comp="200" pin=3"/></net>
+
+<net id="214"><net_src comp="200" pin="4"/><net_sink comp="210" pin=0"/></net>
+
+<net id="215"><net_src comp="12" pin="0"/><net_sink comp="210" pin=1"/></net>
+
+<net id="222"><net_src comp="40" pin="0"/><net_sink comp="216" pin=0"/></net>
+
+<net id="223"><net_src comp="104" pin="2"/><net_sink comp="216" pin=1"/></net>
+
+<net id="224"><net_src comp="28" pin="0"/><net_sink comp="216" pin=2"/></net>
+
+<net id="225"><net_src comp="46" pin="0"/><net_sink comp="216" pin=3"/></net>
+
+<net id="230"><net_src comp="48" pin="0"/><net_sink comp="226" pin=0"/></net>
+
+<net id="231"><net_src comp="2" pin="0"/><net_sink comp="226" pin=1"/></net>
+
+<net id="236"><net_src comp="54" pin="0"/><net_sink comp="232" pin=0"/></net>
+
+<net id="237"><net_src comp="2" pin="0"/><net_sink comp="232" pin=1"/></net>
+
+<net id="245"><net_src comp="78" pin="0"/><net_sink comp="238" pin=0"/></net>
+
+<net id="246"><net_src comp="80" pin="0"/><net_sink comp="238" pin=1"/></net>
+
+<net id="247"><net_src comp="60" pin="0"/><net_sink comp="238" pin=3"/></net>
+
+<net id="248"><net_src comp="82" pin="0"/><net_sink comp="238" pin=4"/></net>
+
+<net id="255"><net_src comp="84" pin="0"/><net_sink comp="249" pin=0"/></net>
+
+<net id="256"><net_src comp="238" pin="5"/><net_sink comp="249" pin=1"/></net>
+
+<net id="257"><net_src comp="86" pin="0"/><net_sink comp="249" pin=2"/></net>
+
+<net id="258"><net_src comp="54" pin="0"/><net_sink comp="249" pin=3"/></net>
+
+<net id="259"><net_src comp="249" pin="4"/><net_sink comp="124" pin=2"/></net>
+
+<net id="263"><net_src comp="6" pin="0"/><net_sink comp="260" pin=0"/></net>
+
+<net id="267"><net_src comp="260" pin="1"/><net_sink comp="264" pin=0"/></net>
+
+<net id="271"><net_src comp="4" pin="0"/><net_sink comp="268" pin=0"/></net>
+
+<net id="275"><net_src comp="8" pin="0"/><net_sink comp="272" pin=0"/></net>
+
+<net id="279"><net_src comp="10" pin="0"/><net_sink comp="276" pin=0"/></net>
+
+<net id="288"><net_src comp="90" pin="0"/><net_sink comp="280" pin=0"/></net>
+
+<net id="289"><net_src comp="48" pin="0"/><net_sink comp="280" pin=1"/></net>
+
+<net id="290"><net_src comp="276" pin="1"/><net_sink comp="280" pin=2"/></net>
+
+<net id="291"><net_src comp="272" pin="1"/><net_sink comp="280" pin=3"/></net>
+
+<net id="292"><net_src comp="268" pin="1"/><net_sink comp="280" pin=4"/></net>
+
+<net id="293"><net_src comp="264" pin="1"/><net_sink comp="280" pin=5"/></net>
+
+<net id="294"><net_src comp="280" pin="6"/><net_sink comp="124" pin=2"/></net>
+
+<net id="298"><net_src comp="12" pin="0"/><net_sink comp="295" pin=0"/></net>
+
+<net id="304"><net_src comp="92" pin="0"/><net_sink comp="299" pin=0"/></net>
+
+<net id="305"><net_src comp="295" pin="1"/><net_sink comp="299" pin=1"/></net>
+
+<net id="306"><net_src comp="264" pin="1"/><net_sink comp="299" pin=2"/></net>
+
+<net id="310"><net_src comp="299" pin="3"/><net_sink comp="307" pin=0"/></net>
+
+<net id="311"><net_src comp="307" pin="1"/><net_sink comp="131" pin=2"/></net>
+
+<net id="315"><net_src comp="138" pin="1"/><net_sink comp="312" pin=0"/></net>
+
+<net id="319"><net_src comp="96" pin="3"/><net_sink comp="316" pin=0"/></net>
+
+<net id="323"><net_src comp="216" pin="4"/><net_sink comp="320" pin=0"/></net>
+
+<net id="324"><net_src comp="320" pin="1"/><net_sink comp="238" pin=2"/></net>
+
+<net id="328"><net_src comp="110" pin="3"/><net_sink comp="325" pin=0"/></net>
+
+</net_list>
+
+</model> 
+---------------- Datapath Model END ------------------
+
+* FSMD analyzer results:
+  - Output states:
+	Port: contextIn_V | {}
+	Port: qp_fsmState | {1 }
+	Port: context_newState | {1 }
+	Port: context_qp_num_V | {1 }
+	Port: context_remote_psn_V | {1 }
+	Port: context_local_psn_V | {1 }
+	Port: context_r_key_V | {1 }
+	Port: qpi2stateTable_upd_r_1 | {2 }
+	Port: stateTable2qpi_rsp_V | {}
+	Port: if2msnTable_init_V | {2 }
+ - Input state : 
+	Port: qp_interface : contextIn_V | {1 }
+	Port: qp_interface : qp_fsmState | {1 }
+	Port: qp_interface : context_newState | {2 }
+	Port: qp_interface : context_qp_num_V | {2 }
+	Port: qp_interface : context_remote_psn_V | {2 }
+	Port: qp_interface : context_local_psn_V | {2 }
+	Port: qp_interface : context_r_key_V | {2 }
+	Port: qp_interface : qpi2stateTable_upd_r_1 | {}
+	Port: qp_interface : stateTable2qpi_rsp_V | {1 }
+	Port: qp_interface : if2msnTable_init_V | {}
+  - Chain level:
+	State 1
+		br_ln2203 : 1
+		store_ln109 : 1
+		store_ln109 : 1
+		store_ln109 : 1
+		store_ln109 : 1
+		store_ln109 : 1
+	State 2
+		tmp_1_2 : 1
+		write_ln2209 : 2
+		tmp_qpn_V : 1
+		tmp_3 : 2
+		write_ln2218 : 3
+		tmp_30_i : 2
+		tmp_4 : 3
+		write_ln2220 : 4
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+
+* Functional unit list:
+|----------|------------------------------|
+| Operation|        Functional Unit       |
+|----------|------------------------------|
+| nbreadreq|    tmp_36_nbreadreq_fu_96    |
+|          |     tmp_nbreadreq_fu_110     |
+|----------|------------------------------|
+|   read   | contextIn_V_read_read_fu_104 |
+|          |      tmp_2_0_read_fu_118     |
+|----------|------------------------------|
+|   write  |       grp_write_fu_124       |
+|          |   write_ln2220_write_fu_131  |
+|----------|------------------------------|
+|   trunc  |      trunc_ln109_fu_142      |
+|          |       tmp_qpn_V_fu_264       |
+|----------|------------------------------|
+|          |  tmp_qp_num_V_load_ne_fu_152 |
+|          |  tmp_remote_psn_V_loa_fu_168 |
+|partselect|  tmp_local_psn_V_load_fu_184 |
+|          |  tmp_r_key_V_load_new_fu_200 |
+|          |      tmp_qpn_V_12_fu_216     |
+|----------|------------------------------|
+|  partset |         tmp_1_fu_238         |
+|----------|------------------------------|
+|  bitset  |        tmp_1_2_fu_249        |
+|----------|------------------------------|
+|bitconcatenate|         tmp_3_fu_280         |
+|          |        tmp_30_i_fu_299       |
+|----------|------------------------------|
+|   zext   |         tmp_4_fu_307         |
+|----------|------------------------------|
+|   Total  |                              |
+|----------|------------------------------|
+
+Memories:
+N/A
+
+* Register list:
++------------------------+--------+
+|                        |   FF   |
++------------------------+--------+
+|qp_fsmState_load_reg_312|    1   |
+|     tmp_36_reg_316     |    1   |
+|  tmp_qpn_V_12_reg_320  |   16   |
+|       tmp_reg_325      |    1   |
++------------------------+--------+
+|          Total         |   19   |
++------------------------+--------+
+
+* Multiplexer (MUX) list: 
+|------------------|------|------|------|--------||---------||---------|
+|       Comp       |  Pin | Size |  BW  | S x BW ||  Delay  ||   LUT   |
+|------------------|------|------|------|--------||---------||---------|
+| grp_write_fu_124 |  p2  |   2  |  68  |   136  ||    9    |
+|------------------|------|------|------|--------||---------||---------|
+|       Total      |      |      |      |   136  ||  0.656  ||    9    |
+|------------------|------|------|------|--------||---------||---------|
+
+
+
+* Summary:
++-----------+--------+--------+--------+
+|           |  Delay |   FF   |   LUT  |
++-----------+--------+--------+--------+
+|  Function |    -   |    -   |    -   |
+|   Memory  |    -   |    -   |    -   |
+|Multiplexer|    0   |    -   |    9   |
+|  Register |    -   |   19   |    -   |
++-----------+--------+--------+--------+
+|   Total   |    0   |   19   |    9   |
++-----------+--------+--------+--------+

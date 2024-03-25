@@ -1,0 +1,153 @@
+
+
+================================================================
+== Vivado HLS Report for 'stream_merger'
+================================================================
+* Date:           Mon Mar  1 13:04:14 2021
+
+* Version:        2019.1 (Build 2552052 on Fri May 24 15:28:33 MDT 2019)
+* Project:        rocev2_prj
+* Solution:       solution1
+* Product family: zynquplus
+* Target device:  xczu7eg-ffvc1156-2-i
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |   8.00|     1.838|        1.00|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+----------+
+    |  Latency  |  Interval | Pipeline |
+    | min | max | min | max |   Type   |
+    +-----+-----+-----+-----+----------+
+    |    2|    2|    1|    1| function |
+    +-----+-----+-----+-----+----------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-------+--------+--------+-----+
+|       Name      | BRAM_18K| DSP48E|   FF   |   LUT  | URAM|
++-----------------+---------+-------+--------+--------+-----+
+|DSP              |        -|      -|       -|       -|    -|
+|Expression       |        -|      -|       0|      18|    -|
+|FIFO             |        -|      -|       -|       -|    -|
+|Instance         |        -|      -|       -|       -|    -|
+|Memory           |        -|      -|       -|       -|    -|
+|Multiplexer      |        -|      -|       -|      51|    -|
+|Register         |        -|      -|     157|       -|    -|
++-----------------+---------+-------+--------+--------+-----+
+|Total            |        0|      0|     157|      69|    0|
++-----------------+---------+-------+--------+--------+-----+
+|Available        |      624|   1728|  460800|  230400|   96|
++-----------------+---------+-------+--------+--------+-----+
+|Utilization (%)  |        0|      0|   ~0   |   ~0   |    0|
++-----------------+---------+-------+--------+--------+-----+
+
++ Detail: 
+    * Instance: 
+    N/A
+
+    * DSP48E: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +----------------------------------+----------+-------+---+----+------------+------------+
+    |           Variable Name          | Operation| DSP48E| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +----------------------------------+----------+-------+---+----+------------+------------+
+    |ap_block_state2_pp0_stage0_iter1  |    and   |      0|  0|   2|           1|           1|
+    |ap_predicate_op14_write_state3    |    and   |      0|  0|   2|           1|           1|
+    |ap_predicate_op9_read_state2      |    and   |      0|  0|   2|           1|           1|
+    |tmp_8_nbreadreq_fu_44_p3          |    and   |      0|  0|   2|           1|           0|
+    |tmp_nbreadreq_fu_30_p3            |    and   |      0|  0|   2|           1|           0|
+    |ap_block_pp0_stage0_01001         |    or    |      0|  0|   2|           1|           1|
+    |ap_block_state1_pp0_stage0_iter0  |    or    |      0|  0|   2|           1|           1|
+    |ap_block_state3_pp0_stage0_iter2  |    or    |      0|  0|   2|           1|           1|
+    |ap_enable_pp0                     |    xor   |      0|  0|   2|           1|           2|
+    +----------------------------------+----------+-------+---+----+------------+------------+
+    |Total                             |          |      0|  0|  18|           9|           8|
+    +----------------------------------+----------+-------+---+----+------------+------------+
+
+    * Multiplexer: 
+    +--------------------------------+----+-----------+-----+-----------+
+    |              Name              | LUT| Input Size| Bits| Total Bits|
+    +--------------------------------+----+-----------+-----+-----------+
+    |ap_done                         |   9|          2|    1|          2|
+    |rx_ackEventFifo_V_blk_n         |   9|          2|    1|          2|
+    |rx_ackEventFifo_V_din           |  15|          3|   50|        150|
+    |rx_exhEventMetaFifo_s_12_blk_n  |   9|          2|    1|          2|
+    |rx_ibhEventFifo_V_blk_n         |   9|          2|    1|          2|
+    +--------------------------------+----+-----------+-----+-----------+
+    |Total                           |  51|         11|   54|        158|
+    +--------------------------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +----------------------------+----+----+-----+-----------+
+    |            Name            | FF | LUT| Bits| Const Bits|
+    +----------------------------+----+----+-----+-----------+
+    |ap_CS_fsm                   |   1|   0|    1|          0|
+    |ap_done_reg                 |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter1     |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter2     |   1|   0|    1|          0|
+    |tmp56_reg_69                |  50|   0|   50|          0|
+    |tmp56_reg_69_pp0_iter1_reg  |  50|   0|   50|          0|
+    |tmp_2_reg_78                |  50|   0|   50|          0|
+    |tmp_8_reg_74                |   1|   0|    1|          0|
+    |tmp_reg_65                  |   1|   0|    1|          0|
+    |tmp_reg_65_pp0_iter1_reg    |   1|   0|    1|          0|
+    +----------------------------+----+----+-----+-----------+
+    |Total                       | 157|   0|  157|          0|
+    +----------------------------+----+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++----------------------------------+-----+-----+------------+--------------------------+--------------+
+|             RTL Ports            | Dir | Bits|  Protocol  |       Source Object      |    C Type    |
++----------------------------------+-----+-----+------------+--------------------------+--------------+
+|ap_clk                            |  in |    1| ap_ctrl_hs |       stream_merger      | return value |
+|ap_rst                            |  in |    1| ap_ctrl_hs |       stream_merger      | return value |
+|ap_start                          |  in |    1| ap_ctrl_hs |       stream_merger      | return value |
+|ap_done                           | out |    1| ap_ctrl_hs |       stream_merger      | return value |
+|ap_continue                       |  in |    1| ap_ctrl_hs |       stream_merger      | return value |
+|ap_idle                           | out |    1| ap_ctrl_hs |       stream_merger      | return value |
+|ap_ready                          | out |    1| ap_ctrl_hs |       stream_merger      | return value |
+|rx_exhEventMetaFifo_s_12_dout     |  in |   50|   ap_fifo  | rx_exhEventMetaFifo_s_12 |    pointer   |
+|rx_exhEventMetaFifo_s_12_empty_n  |  in |    1|   ap_fifo  | rx_exhEventMetaFifo_s_12 |    pointer   |
+|rx_exhEventMetaFifo_s_12_read     | out |    1|   ap_fifo  | rx_exhEventMetaFifo_s_12 |    pointer   |
+|rx_ibhEventFifo_V_dout            |  in |   50|   ap_fifo  |     rx_ibhEventFifo_V    |    pointer   |
+|rx_ibhEventFifo_V_empty_n         |  in |    1|   ap_fifo  |     rx_ibhEventFifo_V    |    pointer   |
+|rx_ibhEventFifo_V_read            | out |    1|   ap_fifo  |     rx_ibhEventFifo_V    |    pointer   |
+|rx_ackEventFifo_V_din             | out |   50|   ap_fifo  |     rx_ackEventFifo_V    |    pointer   |
+|rx_ackEventFifo_V_full_n          |  in |    1|   ap_fifo  |     rx_ackEventFifo_V    |    pointer   |
+|rx_ackEventFifo_V_write           | out |    1|   ap_fifo  |     rx_ackEventFifo_V    |    pointer   |
++----------------------------------+-----+-----+------------+--------------------------+--------------+
+

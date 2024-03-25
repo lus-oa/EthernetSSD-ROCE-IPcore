@@ -1,0 +1,52 @@
+
+****** Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
+  **** SW Build 2552052 on Fri May 24 14:47:09 MDT 2019
+  **** IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+    ** Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+
+source /opt/Xilinx/Vivado/2019.1/scripts/vivado_hls/hls.tcl -notrace
+INFO: [HLS 200-10] Running '/opt/Xilinx/Vivado/2019.1/bin/unwrapped/lnx64.o/vivado_hls'
+INFO: [HLS 200-10] For user 'embed' on host 'embed-OptiPlex-7070' (Linux_x86_64 version 5.4.0-169-generic) on Mon Mar 01 13:00:02 CST 2021
+INFO: [HLS 200-10] On os Ubuntu 20.04.6 LTS
+INFO: [HLS 200-10] In directory '/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/build'
+Sourcing Tcl script 'make.tcl'
+INFO: [HLS 200-10] Opening project '/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/build/rocev2_prj'.
+INFO: [HLS 200-10] Opening solution '/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/build/rocev2_prj/solution1'.
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 8ns.
+INFO: [HLS 200-10] Setting target device to 'xczu7eg-ffvc1156-2-i'
+INFO: [HLS 200-10] Adding design file '/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../axi_utils.cpp' to the project
+INFO: [HLS 200-10] Adding design file '/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ipv4/ipv4_utils.cpp' to the project
+INFO: [HLS 200-10] Adding design file '/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ipv4/ipv4.cpp' to the project
+INFO: [HLS 200-10] Adding design file '/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ipv6/ipv6.cpp' to the project
+INFO: [HLS 200-10] Adding design file '/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../udp/udp.cpp' to the project
+INFO: [HLS 200-10] Adding design file '/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ib_transport_protocol/ib_utils.cpp' to the project
+INFO: [HLS 200-10] Adding design file '/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ib_transport_protocol/ib_transport_protocol.cpp' to the project
+INFO: [HLS 200-10] Adding design file '/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ib_transport_protocol/read_req_table.cpp' to the project
+INFO: [HLS 200-10] Adding design file '/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ib_transport_protocol/transport_timer.cpp' to the project
+INFO: [HLS 200-10] Adding design file '/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ib_transport_protocol/retransmitter/retransmitter.cpp' to the project
+INFO: [HLS 200-10] Adding design file '/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ib_transport_protocol/state_table.cpp' to the project
+INFO: [HLS 200-10] Adding design file '/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ib_transport_protocol/conn_table.cpp' to the project
+INFO: [HLS 200-10] Adding design file '/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ib_transport_protocol/msn_table.cpp' to the project
+INFO: [HLS 200-10] Adding design file '/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/rocev2.cpp' to the project
+INFO: [HLS 200-10] Adding test bench file '/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/test_rocev2.cpp' to the project
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+   Compiling ../../../../../rocev2.cpp in debug mode
+   Compiling ../../../../../../ib_transport_protocol/ib_transport_protocol.cpp in debug mode
+   Generating csim.exe
+make[4]: warning: jobserver unavailable: using -j1.  Add '+' to parent make rule.
+make[4]: Warning: File '/dev/null' has modification time 27904 s in the future
+make[4]: warning:  Clock skew detected.  Your build may be incomplete.
+RC_ACK 1f 00 00 03 fd 7f 00 00 40 6b 6c 05 fd 7f 00 00 c0 6a 6c 05 fd 7f 00 00 88 8a 40 00 00 00 00 00 80 d3 73 00 00 00 00 00 40 6b 6c 05 fd 7f 00 00 30 6d 6c 05 fd 7f 00 00 f2 e3 45 00 00 00 00 00 000000000000000f 1
+CRC[3]: fb0ebcde
+WARNING: Hls::stream 'm_axis_tx_data128' contains leftover data, which may result in RTL simulation hanging.
+[PASSED]
+
+Test:	TX path		[PASSED]
+Endinaness test
+lowest addr: f
+highest addr: 11
+WARNING: Hls::stream 'mq_freeListFifo' contains leftover data, which may result in RTL simulation hanging.
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [Common 17-206] Exiting vivado_hls at Mon Mar  1 13:00:22 2021...

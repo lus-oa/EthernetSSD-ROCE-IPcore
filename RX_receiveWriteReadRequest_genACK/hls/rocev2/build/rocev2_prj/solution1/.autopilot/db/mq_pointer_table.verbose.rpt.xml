@@ -1,0 +1,190 @@
+<profile>
+
+<section name = "Vivado HLS Report for 'mq_pointer_table'" level="0">
+<item name = "Date">Mon Mar  1 13:04:23 2021
+</item>
+<item name = "Version">2019.1 (Build 2552052 on Fri May 24 15:28:33 MDT 2019)</item>
+<item name = "Project">rocev2_prj</item>
+<item name = "Solution">solution1</item>
+<item name = "Product family">zynquplus</item>
+<item name = "Target device">xczu7eg-ffvc1156-2-i</item>
+</section>
+
+<section name = "Performance Estimates" level="0">
+<item name = "Timing (ns)">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="4">Clock, Target, Estimated, Uncertainty</keys>
+<column name="ap_clk">8.00, 3.075, 1.00</column>
+</table>
+</item>
+</section>
+</item>
+<item name = "Latency (clock cycles)">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="6">, min, max, min, max, Type</keys>
+<column name="">2, 2, 1, 1, function</column>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="0">
+<keys size="7">Instance, Module, min, max, min, max, Type</keys>
+</table>
+</item>
+<item name = "Loop"><table name="" hasTotal="0">
+<keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
+</table>
+</item>
+</section>
+</item>
+</section>
+</item>
+</section>
+
+<section name = "Utilization Estimates" level="0">
+<item name = "Summary"><table name="" hasTotal="1">
+<keys size="6">Name, BRAM_18K, DSP48E, FF, LUT, URAM</keys>
+<column name="DSP">-, -, -, -, -</column>
+<column name="Expression">-, -, 0, 53, -</column>
+<column name="FIFO">-, -, -, -, -</column>
+<column name="Instance">-, -, -, -, -</column>
+<column name="Memory">3, -, 0, 0, 0</column>
+<column name="Multiplexer">-, -, -, 162, -</column>
+<column name="Register">-, -, 93, -, -</column>
+<specialColumn name="Available">624, 1728, 460800, 230400, 96</specialColumn>
+<specialColumn name="Utilization (%)">~0, 0, ~0, ~0, 0</specialColumn>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="1">
+<keys size="7">Instance, Module, BRAM_18K, DSP48E, FF, LUT, URAM</keys>
+</table>
+</item>
+<item name = "DSP48E"><table name="" hasTotal="0">
+<keys size="3">Instance, Module, Expression</keys>
+</table>
+</item>
+<item name = "Memory"><table name="" hasTotal="1">
+<keys size="10">Memory, Module, BRAM_18K, FF, LUT, URAM, Words, Bits, Banks, W*Bits*Banks</keys>
+<column name="ptr_table_head_V_U">conn_table_conn_table_remote_ud, 1, 0, 0, 0, 500, 16, 1, 8000</column>
+<column name="ptr_table_tail_V_U">conn_table_conn_table_remote_ud, 1, 0, 0, 0, 500, 16, 1, 8000</column>
+<column name="ptr_table_valid_U">mq_pointer_table_ptr_table_valid, 1, 0, 0, 0, 500, 1, 1, 500</column>
+</table>
+</item>
+<item name = "FIFO"><table name="" hasTotal="1">
+<keys size="8">Name, BRAM_18K, FF, LUT, URAM, Depth, Bits, Size:D*B</keys>
+</table>
+</item>
+<item name = "Expression"><table name="" hasTotal="1">
+<keys size="7">Variable Name, Operation, DSP48E, FF, LUT, Bitwidth P0, Bitwidth P1</keys>
+<column name="and_ln149_fu_283_p2">and, 0, 0, 2, 1, 1</column>
+<column name="ap_block_state2_pp0_stage0_iter1">and, 0, 0, 2, 1, 1</column>
+<column name="ap_condition_185">and, 0, 0, 2, 1, 1</column>
+<column name="ap_condition_216">and, 0, 0, 2, 1, 1</column>
+<column name="ap_condition_229">and, 0, 0, 2, 1, 1</column>
+<column name="ap_condition_369">and, 0, 0, 2, 1, 1</column>
+<column name="ap_condition_371">and, 0, 0, 2, 1, 1</column>
+<column name="ap_condition_375">and, 0, 0, 2, 1, 1</column>
+<column name="ap_predicate_op19_read_state2">and, 0, 0, 2, 1, 1</column>
+<column name="ap_predicate_op72_write_state3">and, 0, 0, 2, 1, 1</column>
+<column name="ap_predicate_op80_write_state3">and, 0, 0, 2, 1, 1</column>
+<column name="io_acc_block_signal_op19">and, 0, 0, 2, 1, 1</column>
+<column name="io_acc_block_signal_op6">and, 0, 0, 2, 1, 1</column>
+<column name="io_acc_block_signal_op72">and, 0, 0, 2, 1, 1</column>
+<column name="icmp_ln879_fu_333_p2">icmp, 0, 0, 13, 16, 16</column>
+<column name="ap_block_pp0_stage0_01001">or, 0, 0, 2, 1, 1</column>
+<column name="ap_block_state1_pp0_stage0_iter0">or, 0, 0, 2, 1, 1</column>
+<column name="ap_block_state3_pp0_stage0_iter2">or, 0, 0, 2, 1, 1</column>
+<column name="or_ln146_fu_263_p2">or, 0, 0, 2, 1, 1</column>
+<column name="ap_enable_pp0">xor, 0, 0, 2, 1, 2</column>
+<column name="xor_ln146_fu_257_p2">xor, 0, 0, 2, 1, 2</column>
+</table>
+</item>
+<item name = "Multiplexer"><table name="" hasTotal="1">
+<keys size="5">Name, LUT, Input Size, Bits, Total Bits</keys>
+<column name="ap_done">9, 2, 1, 2</column>
+<column name="mq_lockedKey_V">9, 2, 16, 32</column>
+<column name="mq_pointerReqFifo_V_1_blk_n">9, 2, 1, 2</column>
+<column name="mq_pointerReqFifo_V_s_blk_n">9, 2, 1, 2</column>
+<column name="mq_pointerRspFifo_V_1_blk_n">9, 2, 1, 2</column>
+<column name="mq_pointerRspFifo_V_2_blk_n">9, 2, 1, 2</column>
+<column name="mq_pointerRspFifo_V_s_blk_n">9, 2, 1, 2</column>
+<column name="mq_pointerUpdFifo_V_1_blk_n">9, 2, 1, 2</column>
+<column name="mq_pointerUpdFifo_V_3_blk_n">9, 2, 1, 2</column>
+<column name="mq_pointerUpdFifo_V_4_blk_n">9, 2, 1, 2</column>
+<column name="mq_pointerUpdFifo_V_s_blk_n">9, 2, 1, 2</column>
+<column name="ptr_table_head_V_address0">21, 4, 9, 36</column>
+<column name="ptr_table_tail_V_address0">21, 4, 9, 36</column>
+<column name="ptr_table_valid_address0">21, 4, 9, 36</column>
+</table>
+</item>
+<item name = "Register"><table name="" hasTotal="1">
+<keys size="5">Name, FF, LUT, Bits, Const Bits</keys>
+<column name="and_ln149_reg_385">1, 0, 1, 0</column>
+<column name="ap_CS_fsm">1, 0, 1, 0</column>
+<column name="ap_done_reg">1, 0, 1, 0</column>
+<column name="ap_enable_reg_pp0_iter1">1, 0, 1, 0</column>
+<column name="ap_enable_reg_pp0_iter2">1, 0, 1, 0</column>
+<column name="mq_isLocked">1, 0, 1, 0</column>
+<column name="mq_isLocked_load_reg_369">1, 0, 1, 0</column>
+<column name="mq_lockedKey_V">16, 0, 16, 0</column>
+<column name="mq_request_key_V">16, 0, 16, 0</column>
+<column name="mq_wait">1, 0, 1, 0</column>
+<column name="mq_wait_load_reg_373">1, 0, 1, 0</column>
+<column name="or_ln146_reg_377">1, 0, 1, 0</column>
+<column name="tmp_entry_head_V_reg_354">16, 0, 16, 0</column>
+<column name="tmp_entry_tail_V_reg_359">16, 0, 16, 0</column>
+<column name="tmp_entry_valid_reg_364">1, 0, 1, 0</column>
+<column name="tmp_key_V_reg_348">16, 0, 16, 0</column>
+<column name="tmp_reg_344">1, 0, 1, 0</column>
+<column name="tmp_reg_344_pp0_iter1_reg">1, 0, 1, 0</column>
+</table>
+</item>
+</section>
+</item>
+</section>
+
+<section name = "Interface" level="0">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="6">RTL Ports, Dir, Bits, Protocol, Source Object, C Type</keys>
+<column name="ap_clk">in, 1, ap_ctrl_hs, mq_pointer_table, return value</column>
+<column name="ap_rst">in, 1, ap_ctrl_hs, mq_pointer_table, return value</column>
+<column name="ap_start">in, 1, ap_ctrl_hs, mq_pointer_table, return value</column>
+<column name="ap_done">out, 1, ap_ctrl_hs, mq_pointer_table, return value</column>
+<column name="ap_continue">in, 1, ap_ctrl_hs, mq_pointer_table, return value</column>
+<column name="ap_idle">out, 1, ap_ctrl_hs, mq_pointer_table, return value</column>
+<column name="ap_ready">out, 1, ap_ctrl_hs, mq_pointer_table, return value</column>
+<column name="mq_pointerUpdFifo_V_s_dout">in, 16, ap_fifo, mq_pointerUpdFifo_V_s, pointer</column>
+<column name="mq_pointerUpdFifo_V_s_empty_n">in, 1, ap_fifo, mq_pointerUpdFifo_V_s, pointer</column>
+<column name="mq_pointerUpdFifo_V_s_read">out, 1, ap_fifo, mq_pointerUpdFifo_V_s, pointer</column>
+<column name="mq_pointerUpdFifo_V_1_dout">in, 16, ap_fifo, mq_pointerUpdFifo_V_1, pointer</column>
+<column name="mq_pointerUpdFifo_V_1_empty_n">in, 1, ap_fifo, mq_pointerUpdFifo_V_1, pointer</column>
+<column name="mq_pointerUpdFifo_V_1_read">out, 1, ap_fifo, mq_pointerUpdFifo_V_1, pointer</column>
+<column name="mq_pointerUpdFifo_V_3_dout">in, 16, ap_fifo, mq_pointerUpdFifo_V_3, pointer</column>
+<column name="mq_pointerUpdFifo_V_3_empty_n">in, 1, ap_fifo, mq_pointerUpdFifo_V_3, pointer</column>
+<column name="mq_pointerUpdFifo_V_3_read">out, 1, ap_fifo, mq_pointerUpdFifo_V_3, pointer</column>
+<column name="mq_pointerUpdFifo_V_4_dout">in, 1, ap_fifo, mq_pointerUpdFifo_V_4, pointer</column>
+<column name="mq_pointerUpdFifo_V_4_empty_n">in, 1, ap_fifo, mq_pointerUpdFifo_V_4, pointer</column>
+<column name="mq_pointerUpdFifo_V_4_read">out, 1, ap_fifo, mq_pointerUpdFifo_V_4, pointer</column>
+<column name="mq_pointerReqFifo_V_1_dout">in, 16, ap_fifo, mq_pointerReqFifo_V_1, pointer</column>
+<column name="mq_pointerReqFifo_V_1_empty_n">in, 1, ap_fifo, mq_pointerReqFifo_V_1, pointer</column>
+<column name="mq_pointerReqFifo_V_1_read">out, 1, ap_fifo, mq_pointerReqFifo_V_1, pointer</column>
+<column name="mq_pointerReqFifo_V_s_dout">in, 1, ap_fifo, mq_pointerReqFifo_V_s, pointer</column>
+<column name="mq_pointerReqFifo_V_s_empty_n">in, 1, ap_fifo, mq_pointerReqFifo_V_s, pointer</column>
+<column name="mq_pointerReqFifo_V_s_read">out, 1, ap_fifo, mq_pointerReqFifo_V_s, pointer</column>
+<column name="mq_pointerRspFifo_V_1_din">out, 16, ap_fifo, mq_pointerRspFifo_V_1, pointer</column>
+<column name="mq_pointerRspFifo_V_1_full_n">in, 1, ap_fifo, mq_pointerRspFifo_V_1, pointer</column>
+<column name="mq_pointerRspFifo_V_1_write">out, 1, ap_fifo, mq_pointerRspFifo_V_1, pointer</column>
+<column name="mq_pointerRspFifo_V_2_din">out, 16, ap_fifo, mq_pointerRspFifo_V_2, pointer</column>
+<column name="mq_pointerRspFifo_V_2_full_n">in, 1, ap_fifo, mq_pointerRspFifo_V_2, pointer</column>
+<column name="mq_pointerRspFifo_V_2_write">out, 1, ap_fifo, mq_pointerRspFifo_V_2, pointer</column>
+<column name="mq_pointerRspFifo_V_s_din">out, 1, ap_fifo, mq_pointerRspFifo_V_s, pointer</column>
+<column name="mq_pointerRspFifo_V_s_full_n">in, 1, ap_fifo, mq_pointerRspFifo_V_s, pointer</column>
+<column name="mq_pointerRspFifo_V_s_write">out, 1, ap_fifo, mq_pointerRspFifo_V_s, pointer</column>
+</table>
+</item>
+</section>
+</profile>

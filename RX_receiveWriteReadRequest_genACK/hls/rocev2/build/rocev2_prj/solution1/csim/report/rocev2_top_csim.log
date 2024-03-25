@@ -1,0 +1,17 @@
+INFO: [SIM 2] *************** CSIM start ***************
+INFO: [SIM 4] CSIM will launch GCC as the compiler.
+   Compiling ../../../../../rocev2.cpp in debug mode
+   Compiling ../../../../../../ib_transport_protocol/ib_transport_protocol.cpp in debug mode
+   Generating csim.exe
+RC_ACK 1f 00 00 03 fd 7f 00 00 40 6b 6c 05 fd 7f 00 00 c0 6a 6c 05 fd 7f 00 00 88 8a 40 00 00 00 00 00 80 d3 73 00 00 00 00 00 40 6b 6c 05 fd 7f 00 00 30 6d 6c 05 fd 7f 00 00 f2 e3 45 00 00 00 00 00 000000000000000f 1
+CRC[3]: fb0ebcde
+WARNING: Hls::stream 'm_axis_tx_data128' contains leftover data, which may result in RTL simulation hanging.
+[PASSED]
+
+Test:	TX path		[PASSED]
+Endinaness test
+lowest addr: f
+highest addr: 11
+WARNING: Hls::stream 'mq_freeListFifo' contains leftover data, which may result in RTL simulation hanging.
+INFO: [SIM 1] CSim done with 0 errors.
+INFO: [SIM 3] *************** CSIM finish ***************

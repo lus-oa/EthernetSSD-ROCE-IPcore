@@ -1,0 +1,2360 @@
+
+
+================================================================
+== Vivado HLS Report for 'ipv4_drop_optional_i'
+================================================================
+* Date:           Mon Mar  1 13:04:08 2021
+
+* Version:        2019.1 (Build 2552052 on Fri May 24 15:28:33 MDT 2019)
+* Project:        rocev2_prj
+* Solution:       solution1
+* Product family: zynquplus
+* Target device:  xczu7eg-ffvc1156-2-i
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |   8.00|     2.777|        1.00|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+----------+
+    |  Latency  |  Interval | Pipeline |
+    | min | max | min | max |   Type   |
+    +-----+-----+-----+-----+----------+
+    |    1|    1|    1|    1| function |
+    +-----+-----+-----+-----+----------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-------+--------+--------+-----+
+|       Name      | BRAM_18K| DSP48E|   FF   |   LUT  | URAM|
++-----------------+---------+-------+--------+--------+-----+
+|DSP              |        -|      -|       -|       -|    -|
+|Expression       |        -|      -|       0|      82|    -|
+|FIFO             |        -|      -|       -|       -|    -|
+|Instance         |        -|      -|       -|       -|    -|
+|Memory           |        -|      -|       -|       -|    -|
+|Multiplexer      |        -|      -|       -|     207|    -|
+|Register         |        -|      -|    1963|       -|    -|
++-----------------+---------+-------+--------+--------+-----+
+|Total            |        0|      0|    1963|     289|    0|
++-----------------+---------+-------+--------+--------+-----+
+|Available        |      624|   1728|  460800|  230400|   96|
++-----------------+---------+-------+--------+--------+-----+
+|Utilization (%)  |        0|      0|   ~0   |   ~0   |    0|
++-----------------+---------+-------+--------+--------+-----+
+
++ Detail: 
+    * Instance: 
+    N/A
+
+    * DSP48E: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +----------------------------------+----------+-------+---+----+------------+------------+
+    |           Variable Name          | Operation| DSP48E| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +----------------------------------+----------+-------+---+----+------------+------------+
+    |add_ln701_fu_288_p2               |     +    |      0|  0|  12|           4|           3|
+    |ap_condition_346                  |    and   |      0|  0|   2|           1|           1|
+    |ap_condition_521                  |    and   |      0|  0|   2|           1|           1|
+    |ap_predicate_op102_write_state2   |    and   |      0|  0|   2|           1|           1|
+    |ap_predicate_op114_write_state2   |    and   |      0|  0|   2|           1|           1|
+    |ap_predicate_op121_write_state2   |    and   |      0|  0|   2|           1|           1|
+    |ap_predicate_op13_read_state1     |    and   |      0|  0|   2|           1|           1|
+    |ap_predicate_op27_read_state1     |    and   |      0|  0|   2|           1|           1|
+    |ap_predicate_op41_read_state1     |    and   |      0|  0|   2|           1|           1|
+    |ap_predicate_op48_read_state1     |    and   |      0|  0|   2|           1|           1|
+    |ap_predicate_op65_read_state1     |    and   |      0|  0|   2|           1|           1|
+    |ap_predicate_op69_read_state1     |    and   |      0|  0|   2|           1|           1|
+    |grp_nbreadreq_fu_108_p5           |    and   |      0|  0|   2|           1|           1|
+    |io_acc_block_signal_op102         |    and   |      0|  0|   2|           1|           1|
+    |tmp_nbreadreq_fu_130_p3           |    and   |      0|  0|   2|           1|           0|
+    |icmp_ln879_7_fu_330_p2            |   icmp   |      0|  0|   9|           4|           3|
+    |icmp_ln879_8_fu_306_p2            |   icmp   |      0|  0|   9|           4|           1|
+    |icmp_ln879_fu_300_p2              |   icmp   |      0|  0|   9|           4|           1|
+    |ap_block_pp0_stage0_01001         |    or    |      0|  0|   2|           1|           1|
+    |ap_block_state1_pp0_stage0_iter0  |    or    |      0|  0|   2|           1|           1|
+    |ap_block_state2_pp0_stage0_iter1  |    or    |      0|  0|   2|           1|           1|
+    |select_ln239_fu_340_p3            |  select  |      0|  0|   3|           1|           3|
+    |ap_enable_pp0                     |    xor   |      0|  0|   2|           1|           2|
+    |tmp_last_V_33_fu_428_p2           |    xor   |      0|  0|   2|           1|           2|
+    |tmp_last_V_35_fu_406_p2           |    xor   |      0|  0|   2|           1|           2|
+    +----------------------------------+----------+-------+---+----+------------+------------+
+    |Total                             |          |      0|  0|  82|          37|          33|
+    +----------------------------------+----------+-------+---+----+------------+------------+
+
+    * Multiplexer: 
+    +-------------------------------+----+-----------+-----+-----------+
+    |              Name             | LUT| Input Size| Bits| Total Bits|
+    +-------------------------------+----+-----------+-----+-----------+
+    |ap_done                        |   9|          2|    1|          2|
+    |doh_state                      |  33|          6|    3|         18|
+    |length_V                       |   9|          2|    4|          8|
+    |rx_ip2udpFifo_V_data_blk_n     |   9|          2|    1|          2|
+    |rx_ip2udpFifo_V_data_din       |  33|          6|  512|       3072|
+    |rx_ip2udpFifo_V_keep_blk_n     |   9|          2|    1|          2|
+    |rx_ip2udpFifo_V_keep_din       |  33|          6|   64|        384|
+    |rx_ip2udpFifo_V_last_blk_n     |   9|          2|    1|          2|
+    |rx_ip2udpFifo_V_last_din       |  27|          5|    1|          5|
+    |rx_process2dropFifo_1_5_blk_n  |   9|          2|    1|          2|
+    |rx_process2dropFifo_2_4_blk_n  |   9|          2|    1|          2|
+    |rx_process2dropFifo_s_6_blk_n  |   9|          2|    1|          2|
+    |rx_process2dropLengt_1_blk_n   |   9|          2|    1|          2|
+    +-------------------------------+----+-----------+-----+-----------+
+    |Total                          | 207|         41|  592|       3503|
+    +-------------------------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +-------------------------+-----+----+-----+-----------+
+    |           Name          |  FF | LUT| Bits| Const Bits|
+    +-------------------------+-----+----+-----+-----------+
+    |ap_CS_fsm                |    1|   0|    1|          0|
+    |ap_done_reg              |    1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter1  |    1|   0|    1|          0|
+    |doh_state                |    3|   0|    3|          0|
+    |doh_state_load_reg_434   |    3|   0|    3|          0|
+    |length_V                 |    4|   0|    4|          0|
+    |p_Val2_42_reg_444        |   64|   0|   64|          0|
+    |p_Val2_s_reg_438         |  512|   0|  512|          0|
+    |prevWord_data_V          |  512|   0|  512|          0|
+    |prevWord_keep_V          |   64|   0|   64|          0|
+    |tmp_74_reg_496           |    1|   0|    1|          0|
+    |tmp_75_reg_473           |    1|   0|    1|          0|
+    |tmp_76_reg_450           |    1|   0|    1|          0|
+    |tmp_78_reg_491           |    1|   0|    1|          0|
+    |tmp_79_reg_468           |    1|   0|    1|          0|
+    |tmp_data_V_46_reg_500    |  512|   0|  512|          0|
+    |tmp_keep_V_43_reg_505    |   64|   0|   64|          0|
+    |tmp_last_V_reg_510       |    1|   0|    1|          0|
+    |trunc_ln647_13_reg_486   |    4|   0|    4|          0|
+    |trunc_ln647_14_reg_458   |  160|   0|  160|          0|
+    |trunc_ln647_15_reg_463   |   20|   0|   20|          0|
+    |trunc_ln647_reg_481      |   32|   0|   32|          0|
+    +-------------------------+-----+----+-----+-----------+
+    |Total                    | 1963|   0| 1963|          0|
+    +-------------------------+-----+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++---------------------------------+-----+-----+------------+-------------------------+--------------+
+|            RTL Ports            | Dir | Bits|  Protocol  |      Source Object      |    C Type    |
++---------------------------------+-----+-----+------------+-------------------------+--------------+
+|ap_clk                           |  in |    1| ap_ctrl_hs |   ipv4_drop_optional_i  | return value |
+|ap_rst                           |  in |    1| ap_ctrl_hs |   ipv4_drop_optional_i  | return value |
+|ap_start                         |  in |    1| ap_ctrl_hs |   ipv4_drop_optional_i  | return value |
+|ap_done                          | out |    1| ap_ctrl_hs |   ipv4_drop_optional_i  | return value |
+|ap_continue                      |  in |    1| ap_ctrl_hs |   ipv4_drop_optional_i  | return value |
+|ap_idle                          | out |    1| ap_ctrl_hs |   ipv4_drop_optional_i  | return value |
+|ap_ready                         | out |    1| ap_ctrl_hs |   ipv4_drop_optional_i  | return value |
+|rx_process2dropFifo_1_5_dout     |  in |  512|   ap_fifo  | rx_process2dropFifo_1_5 |    pointer   |
+|rx_process2dropFifo_1_5_empty_n  |  in |    1|   ap_fifo  | rx_process2dropFifo_1_5 |    pointer   |
+|rx_process2dropFifo_1_5_read     | out |    1|   ap_fifo  | rx_process2dropFifo_1_5 |    pointer   |
+|rx_process2dropFifo_2_4_dout     |  in |   64|   ap_fifo  | rx_process2dropFifo_2_4 |    pointer   |
+|rx_process2dropFifo_2_4_empty_n  |  in |    1|   ap_fifo  | rx_process2dropFifo_2_4 |    pointer   |
+|rx_process2dropFifo_2_4_read     | out |    1|   ap_fifo  | rx_process2dropFifo_2_4 |    pointer   |
+|rx_process2dropFifo_s_6_dout     |  in |    1|   ap_fifo  | rx_process2dropFifo_s_6 |    pointer   |
+|rx_process2dropFifo_s_6_empty_n  |  in |    1|   ap_fifo  | rx_process2dropFifo_s_6 |    pointer   |
+|rx_process2dropFifo_s_6_read     | out |    1|   ap_fifo  | rx_process2dropFifo_s_6 |    pointer   |
+|rx_process2dropLengt_1_dout      |  in |    4|   ap_fifo  |  rx_process2dropLengt_1 |    pointer   |
+|rx_process2dropLengt_1_empty_n   |  in |    1|   ap_fifo  |  rx_process2dropLengt_1 |    pointer   |
+|rx_process2dropLengt_1_read      | out |    1|   ap_fifo  |  rx_process2dropLengt_1 |    pointer   |
+|rx_ip2udpFifo_V_data_din         | out |  512|   ap_fifo  |   rx_ip2udpFifo_V_data  |    pointer   |
+|rx_ip2udpFifo_V_data_full_n      |  in |    1|   ap_fifo  |   rx_ip2udpFifo_V_data  |    pointer   |
+|rx_ip2udpFifo_V_data_write       | out |    1|   ap_fifo  |   rx_ip2udpFifo_V_data  |    pointer   |
+|rx_ip2udpFifo_V_keep_din         | out |   64|   ap_fifo  |   rx_ip2udpFifo_V_keep  |    pointer   |
+|rx_ip2udpFifo_V_keep_full_n      |  in |    1|   ap_fifo  |   rx_ip2udpFifo_V_keep  |    pointer   |
+|rx_ip2udpFifo_V_keep_write       | out |    1|   ap_fifo  |   rx_ip2udpFifo_V_keep  |    pointer   |
+|rx_ip2udpFifo_V_last_din         | out |    1|   ap_fifo  |   rx_ip2udpFifo_V_last  |    pointer   |
+|rx_ip2udpFifo_V_last_full_n      |  in |    1|   ap_fifo  |   rx_ip2udpFifo_V_last  |    pointer   |
+|rx_ip2udpFifo_V_last_write       | out |    1|   ap_fifo  |   rx_ip2udpFifo_V_last  |    pointer   |
++---------------------------------+-----+-----+------------+-------------------------+--------------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 2
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 2
+HasVarLatency: 0
+IsPipeline: 1
+IsRtlPipelined: 1
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
++ Individual pipeline summary: 
+  * Pipeline-0: initiation interval (II) = 1, depth = 2
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 2
+* Pipeline : 1
+  Pipeline-0 : II = 1, D = 2, States = { 1 2 }
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 2.77>
+ST_1 : Operation 3 [1/1] (0.00ns)   --->   "%doh_state_load = load i3* @doh_state, align 1" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ipv4/ipv4.hpp:211]   --->   Operation 3 'load' 'doh_state_load' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 4 [1/1] (0.00ns)   --->   "%length_V_load = load i4* @length_V, align 1" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ipv4/ipv4.hpp:251]   --->   Operation 4 'load' 'length_V_load' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 5 [1/1] (0.00ns)   --->   "%p_Val2_s = load i512* @prevWord_data_V, align 16" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ipv4/ipv4.hpp:276]   --->   Operation 5 'load' 'p_Val2_s' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 6 [1/1] (0.00ns)   --->   "%p_Val2_42 = load i64* @prevWord_keep_V, align 8" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ipv4/ipv4.hpp:277]   --->   Operation 6 'load' 'p_Val2_42' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 7 [1/1] (0.75ns)   --->   "switch i3 %doh_state_load, label %"ipv4_drop_optional_ip_header<512>.exit" [
+    i3 0, label %0
+    i3 1, label %3
+    i3 2, label %9
+    i3 3, label %12
+    i3 -3, label %18
+    i3 -4, label %24
+    i3 -2, label %25
+  ]" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ipv4/ipv4.hpp:211]   --->   Operation 7 'switch' <Predicate = true> <Delay = 0.75>
+ST_1 : Operation 8 [1/1] (0.73ns)   --->   "store i3 0, i3* @doh_state, align 1" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ipv4/ipv4.hpp:330]   --->   Operation 8 'store' <Predicate = (doh_state_load == 6)> <Delay = 0.73>
+ST_1 : Operation 9 [1/1] (0.00ns)   --->   "br label %"ipv4_drop_optional_ip_header<512>.exit"" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ipv4/ipv4.hpp:331]   --->   Operation 9 'br' <Predicate = (doh_state_load == 6)> <Delay = 0.00>
+ST_1 : Operation 10 [1/1] (0.73ns)   --->   "store i3 0, i3* @doh_state, align 1" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ipv4/ipv4.hpp:321]   --->   Operation 10 'store' <Predicate = (doh_state_load == 4)> <Delay = 0.73>
+ST_1 : Operation 11 [1/1] (0.00ns)   --->   "br label %"ipv4_drop_optional_ip_header<512>.exit"" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ipv4/ipv4.hpp:322]   --->   Operation 11 'br' <Predicate = (doh_state_load == 4)> <Delay = 0.00>
+ST_1 : Operation 12 [1/1] (0.00ns)   --->   "%tmp_76 = call i1 @_ssdm_op_NbReadReq.ap_fifo.i512P.i64P.i1P(i512* @rx_process2dropFifo_1_5, i64* @rx_process2dropFifo_2_4, i1* @rx_process2dropFifo_s_6, i32 1) nounwind" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ipv4/ipv4.hpp:294]   --->   Operation 12 'nbreadreq' 'tmp_76' <Predicate = (doh_state_load == 5)> <Delay = 0.00> <Core = "FIFO_SRL">   --->   Core 36 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.83> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 512> <Depth = 0> <FIFO>
+ST_1 : Operation 13 [1/1] (1.83ns)   --->   "%empty_442 = call { i512, i64, i1 } @_ssdm_op_Read.ap_fifo.volatile.i512P.i64P.i1P(i512* @rx_process2dropFifo_1_5, i64* @rx_process2dropFifo_2_4, i1* @rx_process2dropFifo_s_6) nounwind" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ipv4/ipv4.hpp:296]   --->   Operation 13 'read' 'empty_442' <Predicate = (doh_state_load == 5 & tmp_76)> <Delay = 1.83> <Core = "FIFO_SRL">   --->   Core 36 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.83> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 512> <Depth = 0> <FIFO>
+ST_1 : Operation 14 [1/1] (0.00ns)   --->   "%tmp_data_V_53 = extractvalue { i512, i64, i1 } %empty_442, 0" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ipv4/ipv4.hpp:296]   --->   Operation 14 'extractvalue' 'tmp_data_V_53' <Predicate = (doh_state_load == 5 & tmp_76)> <Delay = 0.00>
+ST_1 : Operation 15 [1/1] (0.00ns)   --->   "%tmp_keep_V_50 = extractvalue { i512, i64, i1 } %empty_442, 1" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ipv4/ipv4.hpp:296]   --->   Operation 15 'extractvalue' 'tmp_keep_V_50' <Predicate = (doh_state_load == 5 & tmp_76)> <Delay = 0.00>
+ST_1 : Operation 16 [1/1] (0.00ns)   --->   "%tmp_last_V_38 = extractvalue { i512, i64, i1 } %empty_442, 2" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ipv4/ipv4.hpp:296]   --->   Operation 16 'extractvalue' 'tmp_last_V_38' <Predicate = (doh_state_load == 5 & tmp_76)> <Delay = 0.00>
+ST_1 : Operation 17 [1/1] (0.00ns)   --->   "%trunc_ln647_14 = trunc i512 %tmp_data_V_53 to i160" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ipv4/ipv4.hpp:299]   --->   Operation 17 'trunc' 'trunc_ln647_14' <Predicate = (doh_state_load == 5 & tmp_76)> <Delay = 0.00>
+ST_1 : Operation 18 [1/1] (0.00ns)   --->   "%trunc_ln647_15 = trunc i64 %tmp_keep_V_50 to i20" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ipv4/ipv4.hpp:300]   --->   Operation 18 'trunc' 'trunc_ln647_15' <Predicate = (doh_state_load == 5 & tmp_76)> <Delay = 0.00>
+ST_1 : Operation 19 [1/1] (0.00ns)   --->   "%tmp_79 = call i1 @_ssdm_op_BitSelect.i1.i64.i32(i64 %tmp_keep_V_50, i32 20)" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ipv4/ipv4.hpp:301]   --->   Operation 19 'bitselect' 'tmp_79' <Predicate = (doh_state_load == 5 & tmp_76)> <Delay = 0.00>
+ST_1 : Operation 20 [1/1] (0.69ns)   --->   "store i512 %tmp_data_V_53, i512* @prevWord_data_V, align 64" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../axi_utils.hpp:50->/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ipv4/ipv4.hpp:303]   --->   Operation 20 'store' <Predicate = (doh_state_load == 5 & tmp_76)> <Delay = 0.69>
+ST_1 : Operation 21 [1/1] (0.69ns)   --->   "store i64 %tmp_keep_V_50, i64* @prevWord_keep_V, align 64" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../axi_utils.hpp:50->/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ipv4/ipv4.hpp:303]   --->   Operation 21 'store' <Predicate = (doh_state_load == 5 & tmp_76)> <Delay = 0.69>
+ST_1 : Operation 22 [1/1] (0.73ns)   --->   "store i3 0, i3* @doh_state, align 1" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ipv4/ipv4.hpp:306]   --->   Operation 22 'store' <Predicate = (doh_state_load == 5 & tmp_76 & !tmp_79)> <Delay = 0.73>
+ST_1 : Operation 23 [1/1] (0.00ns)   --->   "br i1 %tmp_last_V_38, label %22, label %._crit_edge144.i" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ipv4/ipv4.hpp:308]   --->   Operation 23 'br' <Predicate = (doh_state_load == 5 & tmp_76 & tmp_79)> <Delay = 0.00>
+ST_1 : Operation 24 [1/1] (0.73ns)   --->   "store i3 -2, i3* @doh_state, align 1" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ipv4/ipv4.hpp:310]   --->   Operation 24 'store' <Predicate = (doh_state_load == 5 & tmp_76 & tmp_79 & tmp_last_V_38)> <Delay = 0.73>
+ST_1 : Operation 25 [1/1] (0.00ns)   --->   "br label %"ipv4_drop_optional_ip_header<512>.exit"" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ipv4/ipv4.hpp:313]   --->   Operation 25 'br' <Predicate = (doh_state_load == 5)> <Delay = 0.00>
+ST_1 : Operation 26 [1/1] (0.00ns)   --->   "%tmp_75 = call i1 @_ssdm_op_NbReadReq.ap_fifo.i512P.i64P.i1P(i512* @rx_process2dropFifo_1_5, i64* @rx_process2dropFifo_2_4, i1* @rx_process2dropFifo_s_6, i32 1) nounwind" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ipv4/ipv4.hpp:273]   --->   Operation 26 'nbreadreq' 'tmp_75' <Predicate = (doh_state_load == 3)> <Delay = 0.00> <Core = "FIFO_SRL">   --->   Core 36 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.83> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 512> <Depth = 0> <FIFO>
+ST_1 : Operation 27 [1/1] (1.83ns)   --->   "%empty_441 = call { i512, i64, i1 } @_ssdm_op_Read.ap_fifo.volatile.i512P.i64P.i1P(i512* @rx_process2dropFifo_1_5, i64* @rx_process2dropFifo_2_4, i1* @rx_process2dropFifo_s_6) nounwind" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ipv4/ipv4.hpp:275]   --->   Operation 27 'read' 'empty_441' <Predicate = (doh_state_load == 3 & tmp_75)> <Delay = 1.83> <Core = "FIFO_SRL">   --->   Core 36 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.83> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 512> <Depth = 0> <FIFO>
+ST_1 : Operation 28 [1/1] (0.00ns)   --->   "%tmp_data_V_52 = extractvalue { i512, i64, i1 } %empty_441, 0" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ipv4/ipv4.hpp:275]   --->   Operation 28 'extractvalue' 'tmp_data_V_52' <Predicate = (doh_state_load == 3 & tmp_75)> <Delay = 0.00>
+ST_1 : Operation 29 [1/1] (0.00ns)   --->   "%tmp_keep_V_49 = extractvalue { i512, i64, i1 } %empty_441, 1" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ipv4/ipv4.hpp:275]   --->   Operation 29 'extractvalue' 'tmp_keep_V_49' <Predicate = (doh_state_load == 3 & tmp_75)> <Delay = 0.00>
+ST_1 : Operation 30 [1/1] (0.00ns)   --->   "%tmp_last_V_37 = extractvalue { i512, i64, i1 } %empty_441, 2" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ipv4/ipv4.hpp:275]   --->   Operation 30 'extractvalue' 'tmp_last_V_37' <Predicate = (doh_state_load == 3 & tmp_75)> <Delay = 0.00>
+ST_1 : Operation 31 [1/1] (0.00ns)   --->   "%trunc_ln647 = trunc i512 %tmp_data_V_52 to i32" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ipv4/ipv4.hpp:278]   --->   Operation 31 'trunc' 'trunc_ln647' <Predicate = (doh_state_load == 3 & tmp_75)> <Delay = 0.00>
+ST_1 : Operation 32 [1/1] (0.00ns)   --->   "%trunc_ln647_13 = trunc i64 %tmp_keep_V_49 to i4" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ipv4/ipv4.hpp:279]   --->   Operation 32 'trunc' 'trunc_ln647_13' <Predicate = (doh_state_load == 3 & tmp_75)> <Delay = 0.00>
+ST_1 : Operation 33 [1/1] (0.00ns)   --->   "%tmp_78 = call i1 @_ssdm_op_BitSelect.i1.i64.i32(i64 %tmp_keep_V_49, i32 4)" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ipv4/ipv4.hpp:280]   --->   Operation 33 'bitselect' 'tmp_78' <Predicate = (doh_state_load == 3 & tmp_75)> <Delay = 0.00>
+ST_1 : Operation 34 [1/1] (0.69ns)   --->   "store i512 %tmp_data_V_52, i512* @prevWord_data_V, align 64" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../axi_utils.hpp:50->/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ipv4/ipv4.hpp:282]   --->   Operation 34 'store' <Predicate = (doh_state_load == 3 & tmp_75)> <Delay = 0.69>
+ST_1 : Operation 35 [1/1] (0.69ns)   --->   "store i64 %tmp_keep_V_49, i64* @prevWord_keep_V, align 64" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../axi_utils.hpp:50->/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ipv4/ipv4.hpp:282]   --->   Operation 35 'store' <Predicate = (doh_state_load == 3 & tmp_75)> <Delay = 0.69>
+ST_1 : Operation 36 [1/1] (0.73ns)   --->   "store i3 0, i3* @doh_state, align 1" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ipv4/ipv4.hpp:285]   --->   Operation 36 'store' <Predicate = (doh_state_load == 3 & tmp_75 & !tmp_78)> <Delay = 0.73>
+ST_1 : Operation 37 [1/1] (0.00ns)   --->   "br i1 %tmp_last_V_37, label %16, label %._crit_edge142.i" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ipv4/ipv4.hpp:287]   --->   Operation 37 'br' <Predicate = (doh_state_load == 3 & tmp_75 & tmp_78)> <Delay = 0.00>
+ST_1 : Operation 38 [1/1] (0.73ns)   --->   "store i3 -4, i3* @doh_state, align 1" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ipv4/ipv4.hpp:289]   --->   Operation 38 'store' <Predicate = (doh_state_load == 3 & tmp_75 & tmp_78 & tmp_last_V_37)> <Delay = 0.73>
+ST_1 : Operation 39 [1/1] (0.00ns)   --->   "br label %"ipv4_drop_optional_ip_header<512>.exit"" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ipv4/ipv4.hpp:292]   --->   Operation 39 'br' <Predicate = (doh_state_load == 3)> <Delay = 0.00>
+ST_1 : Operation 40 [1/1] (0.00ns)   --->   "%tmp_74 = call i1 @_ssdm_op_NbReadReq.ap_fifo.i512P.i64P.i1P(i512* @rx_process2dropFifo_1_5, i64* @rx_process2dropFifo_2_4, i1* @rx_process2dropFifo_s_6, i32 1) nounwind" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ipv4/ipv4.hpp:262]   --->   Operation 40 'nbreadreq' 'tmp_74' <Predicate = (doh_state_load == 2)> <Delay = 0.00> <Core = "FIFO_SRL">   --->   Core 36 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.83> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 512> <Depth = 0> <FIFO>
+ST_1 : Operation 41 [1/1] (1.83ns)   --->   "%empty_440 = call { i512, i64, i1 } @_ssdm_op_Read.ap_fifo.volatile.i512P.i64P.i1P(i512* @rx_process2dropFifo_1_5, i64* @rx_process2dropFifo_2_4, i1* @rx_process2dropFifo_s_6) nounwind" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ipv4/ipv4.hpp:264]   --->   Operation 41 'read' 'empty_440' <Predicate = (doh_state_load == 2 & tmp_74)> <Delay = 1.83> <Core = "FIFO_SRL">   --->   Core 36 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.83> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 512> <Depth = 0> <FIFO>
+ST_1 : Operation 42 [1/1] (0.00ns)   --->   "%tmp_data_V_46 = extractvalue { i512, i64, i1 } %empty_440, 0" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ipv4/ipv4.hpp:264]   --->   Operation 42 'extractvalue' 'tmp_data_V_46' <Predicate = (doh_state_load == 2 & tmp_74)> <Delay = 0.00>
+ST_1 : Operation 43 [1/1] (0.00ns)   --->   "%tmp_keep_V_43 = extractvalue { i512, i64, i1 } %empty_440, 1" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ipv4/ipv4.hpp:264]   --->   Operation 43 'extractvalue' 'tmp_keep_V_43' <Predicate = (doh_state_load == 2 & tmp_74)> <Delay = 0.00>
+ST_1 : Operation 44 [1/1] (0.00ns)   --->   "%tmp_last_V = extractvalue { i512, i64, i1 } %empty_440, 2" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ipv4/ipv4.hpp:264]   --->   Operation 44 'extractvalue' 'tmp_last_V' <Predicate = (doh_state_load == 2 & tmp_74)> <Delay = 0.00>
+ST_1 : Operation 45 [1/1] (0.73ns)   --->   "store i3 0, i3* @doh_state, align 1" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ipv4/ipv4.hpp:268]   --->   Operation 45 'store' <Predicate = (doh_state_load == 2 & tmp_74 & tmp_last_V)> <Delay = 0.73>
+ST_1 : Operation 46 [1/1] (0.00ns)   --->   "br label %"ipv4_drop_optional_ip_header<512>.exit"" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ipv4/ipv4.hpp:271]   --->   Operation 46 'br' <Predicate = (doh_state_load == 2)> <Delay = 0.00>
+ST_1 : Operation 47 [1/1] (0.00ns)   --->   "%tmp_73 = call i1 @_ssdm_op_NbReadReq.ap_fifo.i512P.i64P.i1P(i512* @rx_process2dropFifo_1_5, i64* @rx_process2dropFifo_2_4, i1* @rx_process2dropFifo_s_6, i32 1) nounwind" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ipv4/ipv4.hpp:248]   --->   Operation 47 'nbreadreq' 'tmp_73' <Predicate = (doh_state_load == 1)> <Delay = 0.00> <Core = "FIFO_SRL">   --->   Core 36 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.83> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 512> <Depth = 0> <FIFO>
+ST_1 : Operation 48 [1/1] (1.83ns)   --->   "%empty_439 = call { i512, i64, i1 } @_ssdm_op_Read.ap_fifo.volatile.i512P.i64P.i1P(i512* @rx_process2dropFifo_1_5, i64* @rx_process2dropFifo_2_4, i1* @rx_process2dropFifo_s_6) nounwind" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ipv4/ipv4.hpp:250]   --->   Operation 48 'read' 'empty_439' <Predicate = (doh_state_load == 1 & tmp_73)> <Delay = 1.83> <Core = "FIFO_SRL">   --->   Core 36 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.83> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 512> <Depth = 0> <FIFO>
+ST_1 : Operation 49 [1/1] (0.00ns)   --->   "%tmp_data_V_44 = extractvalue { i512, i64, i1 } %empty_439, 0" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ipv4/ipv4.hpp:250]   --->   Operation 49 'extractvalue' 'tmp_data_V_44' <Predicate = (doh_state_load == 1 & tmp_73)> <Delay = 0.00>
+ST_1 : Operation 50 [1/1] (0.00ns)   --->   "%tmp_keep_V_41 = extractvalue { i512, i64, i1 } %empty_439, 1" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ipv4/ipv4.hpp:250]   --->   Operation 50 'extractvalue' 'tmp_keep_V_41' <Predicate = (doh_state_load == 1 & tmp_73)> <Delay = 0.00>
+ST_1 : Operation 51 [1/1] (0.69ns)   --->   "store i512 %tmp_data_V_44, i512* @prevWord_data_V, align 64" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../axi_utils.hpp:50->/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ipv4/ipv4.hpp:250]   --->   Operation 51 'store' <Predicate = (doh_state_load == 1 & tmp_73)> <Delay = 0.69>
+ST_1 : Operation 52 [1/1] (0.69ns)   --->   "store i64 %tmp_keep_V_41, i64* @prevWord_keep_V, align 64" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../axi_utils.hpp:50->/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ipv4/ipv4.hpp:250]   --->   Operation 52 'store' <Predicate = (doh_state_load == 1 & tmp_73)> <Delay = 0.69>
+ST_1 : Operation 53 [1/1] (0.79ns)   --->   "%add_ln701 = add i4 %length_V_load, -2" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ipv4/ipv4.hpp:251]   --->   Operation 53 'add' 'add_ln701' <Predicate = (doh_state_load == 1 & tmp_73)> <Delay = 0.79> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 0.79> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 54 [1/1] (0.65ns)   --->   "store i4 %add_ln701, i4* @length_V, align 1" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ipv4/ipv4.hpp:251]   --->   Operation 54 'store' <Predicate = (doh_state_load == 1 & tmp_73)> <Delay = 0.65>
+ST_1 : Operation 55 [1/1] (0.72ns)   --->   "%icmp_ln879 = icmp eq i4 %add_ln701, 1" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ipv4/ipv4.hpp:252]   --->   Operation 55 'icmp' 'icmp_ln879' <Predicate = (doh_state_load == 1 & tmp_73)> <Delay = 0.72> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 0.72> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 56 [1/1] (0.00ns)   --->   "br i1 %icmp_ln879, label %5, label %6" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ipv4/ipv4.hpp:252]   --->   Operation 56 'br' <Predicate = (doh_state_load == 1 & tmp_73)> <Delay = 0.00>
+ST_1 : Operation 57 [1/1] (0.72ns)   --->   "%icmp_ln879_8 = icmp eq i4 %add_ln701, 0" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ipv4/ipv4.hpp:255]   --->   Operation 57 'icmp' 'icmp_ln879_8' <Predicate = (doh_state_load == 1 & tmp_73 & !icmp_ln879)> <Delay = 0.72> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 0.72> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 58 [1/1] (0.00ns)   --->   "br i1 %icmp_ln879_8, label %7, label %._crit_edge138.i" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ipv4/ipv4.hpp:255]   --->   Operation 58 'br' <Predicate = (doh_state_load == 1 & tmp_73 & !icmp_ln879)> <Delay = 0.00>
+ST_1 : Operation 59 [1/1] (0.73ns)   --->   "store i3 2, i3* @doh_state, align 1" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ipv4/ipv4.hpp:257]   --->   Operation 59 'store' <Predicate = (doh_state_load == 1 & tmp_73 & !icmp_ln879 & icmp_ln879_8)> <Delay = 0.73>
+ST_1 : Operation 60 [1/1] (0.73ns)   --->   "store i3 3, i3* @doh_state, align 1" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ipv4/ipv4.hpp:254]   --->   Operation 60 'store' <Predicate = (doh_state_load == 1 & tmp_73 & icmp_ln879)> <Delay = 0.73>
+ST_1 : Operation 61 [1/1] (0.00ns)   --->   "br label %"ipv4_drop_optional_ip_header<512>.exit"" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ipv4/ipv4.hpp:260]   --->   Operation 61 'br' <Predicate = (doh_state_load == 1)> <Delay = 0.00>
+ST_1 : Operation 62 [1/1] (0.00ns)   --->   "%tmp = call i1 @_ssdm_op_NbReadReq.ap_fifo.i4P(i4* @rx_process2dropLengt_1, i32 1) nounwind" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ipv4/ipv4.hpp:214]   --->   Operation 62 'nbreadreq' 'tmp' <Predicate = (doh_state_load == 0)> <Delay = 0.00> <Core = "FIFO">   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 1.83> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 2> <FIFO>
+ST_1 : Operation 63 [1/1] (0.00ns)   --->   "br i1 %tmp, label %1, label %._crit_edge133.i" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ipv4/ipv4.hpp:214]   --->   Operation 63 'br' <Predicate = (doh_state_load == 0)> <Delay = 0.00>
+ST_1 : Operation 64 [1/1] (0.00ns)   --->   "%tmp_77 = call i1 @_ssdm_op_NbReadReq.ap_fifo.i512P.i64P.i1P(i512* @rx_process2dropFifo_1_5, i64* @rx_process2dropFifo_2_4, i1* @rx_process2dropFifo_s_6, i32 1) nounwind" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ipv4/ipv4.hpp:214]   --->   Operation 64 'nbreadreq' 'tmp_77' <Predicate = (doh_state_load == 0 & tmp)> <Delay = 0.00> <Core = "FIFO_SRL">   --->   Core 36 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.83> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 512> <Depth = 0> <FIFO>
+ST_1 : Operation 65 [1/1] (1.83ns)   --->   "%tmp_V = call i4 @_ssdm_op_Read.ap_fifo.volatile.i4P(i4* @rx_process2dropLengt_1) nounwind" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ipv4/ipv4.hpp:216]   --->   Operation 65 'read' 'tmp_V' <Predicate = (doh_state_load == 0 & tmp & tmp_77)> <Delay = 1.83> <Core = "FIFO">   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 1.83> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 2> <FIFO>
+ST_1 : Operation 66 [1/1] (0.65ns)   --->   "store i4 %tmp_V, i4* @length_V, align 1" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ipv4/ipv4.hpp:216]   --->   Operation 66 'store' <Predicate = (doh_state_load == 0 & tmp & tmp_77)> <Delay = 0.65>
+ST_1 : Operation 67 [1/1] (0.72ns)   --->   "%icmp_ln879_7 = icmp eq i4 %tmp_V, 5" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ipv4/ipv4.hpp:235]   --->   Operation 67 'icmp' 'icmp_ln879_7' <Predicate = (doh_state_load == 0 & tmp & tmp_77)> <Delay = 0.72> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 0.72> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 68 [1/1] (0.00ns)   --->   "br i1 %icmp_ln879_7, label %._crit_edge136.i, label %._crit_edge135.i" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ipv4/ipv4.hpp:235]   --->   Operation 68 'br' <Predicate = (doh_state_load == 0 & tmp & tmp_77)> <Delay = 0.00>
+ST_1 : Operation 69 [1/1] (1.83ns)   --->   "%empty = call { i512, i64, i1 } @_ssdm_op_Read.ap_fifo.volatile.i512P.i64P.i1P(i512* @rx_process2dropFifo_1_5, i64* @rx_process2dropFifo_2_4, i1* @rx_process2dropFifo_s_6) nounwind" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ipv4/ipv4.hpp:237]   --->   Operation 69 'read' 'empty' <Predicate = (doh_state_load == 0 & tmp & tmp_77 & icmp_ln879_7)> <Delay = 1.83> <Core = "FIFO_SRL">   --->   Core 36 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.83> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 512> <Depth = 0> <FIFO>
+ST_1 : Operation 70 [1/1] (0.00ns)   --->   "%tmp_data_V_51 = extractvalue { i512, i64, i1 } %empty, 0" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ipv4/ipv4.hpp:237]   --->   Operation 70 'extractvalue' 'tmp_data_V_51' <Predicate = (doh_state_load == 0 & tmp & tmp_77 & icmp_ln879_7)> <Delay = 0.00>
+ST_1 : Operation 71 [1/1] (0.00ns)   --->   "%tmp_keep_V_48 = extractvalue { i512, i64, i1 } %empty, 1" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ipv4/ipv4.hpp:237]   --->   Operation 71 'extractvalue' 'tmp_keep_V_48' <Predicate = (doh_state_load == 0 & tmp & tmp_77 & icmp_ln879_7)> <Delay = 0.00>
+ST_1 : Operation 72 [1/1] (0.00ns) (grouped into LUT with out node select_ln239)   --->   "%tmp_last_V_36 = extractvalue { i512, i64, i1 } %empty, 2" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ipv4/ipv4.hpp:237]   --->   Operation 72 'extractvalue' 'tmp_last_V_36' <Predicate = (doh_state_load == 0 & tmp & tmp_77 & icmp_ln879_7)> <Delay = 0.00>
+ST_1 : Operation 73 [1/1] (0.69ns)   --->   "store i512 %tmp_data_V_51, i512* @prevWord_data_V, align 64" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../axi_utils.hpp:50->/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ipv4/ipv4.hpp:237]   --->   Operation 73 'store' <Predicate = (doh_state_load == 0 & tmp & tmp_77 & icmp_ln879_7)> <Delay = 0.69>
+ST_1 : Operation 74 [1/1] (0.69ns)   --->   "store i64 %tmp_keep_V_48, i64* @prevWord_keep_V, align 64" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../axi_utils.hpp:50->/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ipv4/ipv4.hpp:237]   --->   Operation 74 'store' <Predicate = (doh_state_load == 0 & tmp & tmp_77 & icmp_ln879_7)> <Delay = 0.69>
+ST_1 : Operation 75 [1/1] (0.20ns) (out node of the LUT)   --->   "%select_ln239 = select i1 %tmp_last_V_36, i3 -2, i3 -3" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ipv4/ipv4.hpp:239]   --->   Operation 75 'select' 'select_ln239' <Predicate = (doh_state_load == 0 & tmp & tmp_77 & icmp_ln879_7)> <Delay = 0.20> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.20> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_1 : Operation 76 [1/1] (0.73ns)   --->   "store i3 %select_ln239, i3* @doh_state, align 1" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ipv4/ipv4.hpp:238]   --->   Operation 76 'store' <Predicate = (doh_state_load == 0 & tmp & tmp_77 & icmp_ln879_7)> <Delay = 0.73>
+ST_1 : Operation 77 [1/1] (0.00ns)   --->   "br label %"ipv4_drop_optional_ip_header<512>.exit"" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ipv4/ipv4.hpp:246]   --->   Operation 77 'br' <Predicate = (doh_state_load == 0)> <Delay = 0.00>
+
+State 2 <SV = 1> <Delay = 2.12>
+ST_2 : Operation 78 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i512* @rx_ip2udpFifo_V_data, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str, [1 x i8]* @p_str)"   --->   Operation 78 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 79 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i64* @rx_ip2udpFifo_V_keep, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str, [1 x i8]* @p_str)"   --->   Operation 79 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 80 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i1* @rx_ip2udpFifo_V_last, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str, [1 x i8]* @p_str)"   --->   Operation 80 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 81 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i512* @rx_process2dropFifo_1_5, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str, [1 x i8]* @p_str)"   --->   Operation 81 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 82 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i64* @rx_process2dropFifo_2_4, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str, [1 x i8]* @p_str)"   --->   Operation 82 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 83 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i1* @rx_process2dropFifo_s_6, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str, [1 x i8]* @p_str)"   --->   Operation 83 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 84 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i4* @rx_process2dropLengt_1, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str, [1 x i8]* @p_str)"   --->   Operation 84 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 85 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecPipeline(i32 1, i32 1, i32 1, i32 0, [1 x i8]* @p_str213) nounwind" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ipv4/ipv4.hpp:201]   --->   Operation 85 'specpipeline' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 86 [1/1] (0.00ns)   --->   "%p_Result_106_i = call i352 @_ssdm_op_PartSelect.i352.i512.i32.i32(i512 %p_Val2_s, i32 160, i32 511) nounwind" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ipv4/ipv4.hpp:324]   --->   Operation 86 'partselect' 'p_Result_106_i' <Predicate = (doh_state_load == 6)> <Delay = 0.00>
+ST_2 : Operation 87 [1/1] (0.00ns)   --->   "%p_Result_107_i = call i44 @_ssdm_op_PartSelect.i44.i64.i32.i32(i64 %p_Val2_42, i32 20, i32 63) nounwind" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ipv4/ipv4.hpp:325]   --->   Operation 87 'partselect' 'p_Result_107_i' <Predicate = (doh_state_load == 6)> <Delay = 0.00>
+ST_2 : Operation 88 [1/1] (0.00ns)   --->   "%p_Result_56 = call i512 @_ssdm_op_BitConcatenate.i512.i160.i352(i160 0, i352 %p_Result_106_i) nounwind" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ipv4/ipv4.hpp:326]   --->   Operation 88 'bitconcatenate' 'p_Result_56' <Predicate = (doh_state_load == 6)> <Delay = 0.00>
+ST_2 : Operation 89 [1/1] (0.00ns)   --->   "%p_Result_57 = call i64 @_ssdm_op_BitConcatenate.i64.i20.i44(i20 0, i44 %p_Result_107_i) nounwind" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ipv4/ipv4.hpp:327]   --->   Operation 89 'bitconcatenate' 'p_Result_57' <Predicate = (doh_state_load == 6)> <Delay = 0.00>
+ST_2 : Operation 90 [1/1] (1.83ns)   --->   "call void @_ssdm_op_Write.ap_fifo.volatile.i512P.i64P.i1P(i512* @rx_ip2udpFifo_V_data, i64* @rx_ip2udpFifo_V_keep, i1* @rx_ip2udpFifo_V_last, i512 %p_Result_56, i64 %p_Result_57, i1 true) nounwind" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ipv4/ipv4.hpp:329]   --->   Operation 90 'write' <Predicate = (doh_state_load == 6)> <Delay = 1.83> <Core = "FIFO_SRL">   --->   Core 36 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.83> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 512> <Depth = 0> <FIFO>
+ST_2 : Operation 91 [1/1] (0.00ns)   --->   "%p_Result_i_443 = call i480 @_ssdm_op_PartSelect.i480.i512.i32.i32(i512 %p_Val2_s, i32 32, i32 511) nounwind" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ipv4/ipv4.hpp:315]   --->   Operation 91 'partselect' 'p_Result_i_443' <Predicate = (doh_state_load == 4)> <Delay = 0.00>
+ST_2 : Operation 92 [1/1] (0.00ns)   --->   "%p_Result_103_i = call i60 @_ssdm_op_PartSelect.i60.i64.i32.i32(i64 %p_Val2_42, i32 4, i32 63) nounwind" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ipv4/ipv4.hpp:316]   --->   Operation 92 'partselect' 'p_Result_103_i' <Predicate = (doh_state_load == 4)> <Delay = 0.00>
+ST_2 : Operation 93 [1/1] (0.00ns)   --->   "%p_Result_54 = call i512 @_ssdm_op_BitConcatenate.i512.i32.i480(i32 0, i480 %p_Result_i_443) nounwind" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ipv4/ipv4.hpp:317]   --->   Operation 93 'bitconcatenate' 'p_Result_54' <Predicate = (doh_state_load == 4)> <Delay = 0.00>
+ST_2 : Operation 94 [1/1] (0.00ns)   --->   "%p_Result_55 = call i64 @_ssdm_op_BitConcatenate.i64.i4.i60(i4 0, i60 %p_Result_103_i) nounwind" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ipv4/ipv4.hpp:318]   --->   Operation 94 'bitconcatenate' 'p_Result_55' <Predicate = (doh_state_load == 4)> <Delay = 0.00>
+ST_2 : Operation 95 [1/1] (1.83ns)   --->   "call void @_ssdm_op_Write.ap_fifo.volatile.i512P.i64P.i1P(i512* @rx_ip2udpFifo_V_data, i64* @rx_ip2udpFifo_V_keep, i1* @rx_ip2udpFifo_V_last, i512 %p_Result_54, i64 %p_Result_55, i1 true) nounwind" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ipv4/ipv4.hpp:320]   --->   Operation 95 'write' <Predicate = (doh_state_load == 4)> <Delay = 1.83> <Core = "FIFO_SRL">   --->   Core 36 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.83> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 512> <Depth = 0> <FIFO>
+ST_2 : Operation 96 [1/1] (0.00ns)   --->   "br i1 %tmp_76, label %19, label %._crit_edge143.i" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ipv4/ipv4.hpp:294]   --->   Operation 96 'br' <Predicate = (doh_state_load == 5)> <Delay = 0.00>
+ST_2 : Operation 97 [1/1] (0.00ns)   --->   "%p_Result_115_i = call i352 @_ssdm_op_PartSelect.i352.i512.i32.i32(i512 %p_Val2_s, i32 160, i32 511) nounwind" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ipv4/ipv4.hpp:297]   --->   Operation 97 'partselect' 'p_Result_115_i' <Predicate = (doh_state_load == 5 & tmp_76)> <Delay = 0.00>
+ST_2 : Operation 98 [1/1] (0.00ns)   --->   "%p_Result_116_i = call i44 @_ssdm_op_PartSelect.i44.i64.i32.i32(i64 %p_Val2_42, i32 20, i32 63) nounwind" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ipv4/ipv4.hpp:298]   --->   Operation 98 'partselect' 'p_Result_116_i' <Predicate = (doh_state_load == 5 & tmp_76)> <Delay = 0.00>
+ST_2 : Operation 99 [1/1] (0.00ns)   --->   "%p_Result_52 = call i512 @_ssdm_op_BitConcatenate.i512.i160.i352(i160 %trunc_ln647_14, i352 %p_Result_115_i) nounwind" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ipv4/ipv4.hpp:299]   --->   Operation 99 'bitconcatenate' 'p_Result_52' <Predicate = (doh_state_load == 5 & tmp_76)> <Delay = 0.00>
+ST_2 : Operation 100 [1/1] (0.00ns)   --->   "%p_Result_53 = call i64 @_ssdm_op_BitConcatenate.i64.i20.i44(i20 %trunc_ln647_15, i44 %p_Result_116_i) nounwind" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ipv4/ipv4.hpp:300]   --->   Operation 100 'bitconcatenate' 'p_Result_53' <Predicate = (doh_state_load == 5 & tmp_76)> <Delay = 0.00>
+ST_2 : Operation 101 [1/1] (0.28ns)   --->   "%tmp_last_V_35 = xor i1 %tmp_79, true" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ipv4/ipv4.hpp:301]   --->   Operation 101 'xor' 'tmp_last_V_35' <Predicate = (doh_state_load == 5 & tmp_76)> <Delay = 0.28> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.28> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 102 [1/1] (1.83ns)   --->   "call void @_ssdm_op_Write.ap_fifo.volatile.i512P.i64P.i1P(i512* @rx_ip2udpFifo_V_data, i64* @rx_ip2udpFifo_V_keep, i1* @rx_ip2udpFifo_V_last, i512 %p_Result_52, i64 %p_Result_53, i1 %tmp_last_V_35) nounwind" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ipv4/ipv4.hpp:302]   --->   Operation 102 'write' <Predicate = (doh_state_load == 5 & tmp_76)> <Delay = 1.83> <Core = "FIFO_SRL">   --->   Core 36 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.83> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 512> <Depth = 0> <FIFO>
+ST_2 : Operation 103 [1/1] (0.00ns)   --->   "br i1 %tmp_79, label %21, label %20" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ipv4/ipv4.hpp:304]   --->   Operation 103 'br' <Predicate = (doh_state_load == 5 & tmp_76)> <Delay = 0.00>
+ST_2 : Operation 104 [1/1] (0.00ns)   --->   "br label %23" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ipv4/ipv4.hpp:307]   --->   Operation 104 'br' <Predicate = (doh_state_load == 5 & tmp_76 & !tmp_79)> <Delay = 0.00>
+ST_2 : Operation 105 [1/1] (0.00ns)   --->   "br label %._crit_edge144.i" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ipv4/ipv4.hpp:311]   --->   Operation 105 'br' <Predicate = (doh_state_load == 5 & tmp_76 & tmp_79 & tmp_last_V_38)> <Delay = 0.00>
+ST_2 : Operation 106 [1/1] (0.00ns)   --->   "br label %23"   --->   Operation 106 'br' <Predicate = (doh_state_load == 5 & tmp_76 & tmp_79)> <Delay = 0.00>
+ST_2 : Operation 107 [1/1] (0.00ns)   --->   "br label %._crit_edge143.i" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ipv4/ipv4.hpp:312]   --->   Operation 107 'br' <Predicate = (doh_state_load == 5 & tmp_76)> <Delay = 0.00>
+ST_2 : Operation 108 [1/1] (0.00ns)   --->   "br i1 %tmp_75, label %13, label %._crit_edge141.i" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ipv4/ipv4.hpp:273]   --->   Operation 108 'br' <Predicate = (doh_state_load == 3)> <Delay = 0.00>
+ST_2 : Operation 109 [1/1] (0.00ns)   --->   "%p_Result_i = call i480 @_ssdm_op_PartSelect.i480.i512.i32.i32(i512 %p_Val2_s, i32 32, i32 511) nounwind" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ipv4/ipv4.hpp:276]   --->   Operation 109 'partselect' 'p_Result_i' <Predicate = (doh_state_load == 3 & tmp_75)> <Delay = 0.00>
+ST_2 : Operation 110 [1/1] (0.00ns)   --->   "%p_Result_110_i = call i60 @_ssdm_op_PartSelect.i60.i64.i32.i32(i64 %p_Val2_42, i32 4, i32 63) nounwind" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ipv4/ipv4.hpp:277]   --->   Operation 110 'partselect' 'p_Result_110_i' <Predicate = (doh_state_load == 3 & tmp_75)> <Delay = 0.00>
+ST_2 : Operation 111 [1/1] (0.00ns)   --->   "%p_Result_s = call i512 @_ssdm_op_BitConcatenate.i512.i32.i480(i32 %trunc_ln647, i480 %p_Result_i) nounwind" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ipv4/ipv4.hpp:278]   --->   Operation 111 'bitconcatenate' 'p_Result_s' <Predicate = (doh_state_load == 3 & tmp_75)> <Delay = 0.00>
+ST_2 : Operation 112 [1/1] (0.00ns)   --->   "%p_Result_51 = call i64 @_ssdm_op_BitConcatenate.i64.i4.i60(i4 %trunc_ln647_13, i60 %p_Result_110_i) nounwind" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ipv4/ipv4.hpp:279]   --->   Operation 112 'bitconcatenate' 'p_Result_51' <Predicate = (doh_state_load == 3 & tmp_75)> <Delay = 0.00>
+ST_2 : Operation 113 [1/1] (0.28ns)   --->   "%tmp_last_V_33 = xor i1 %tmp_78, true" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ipv4/ipv4.hpp:280]   --->   Operation 113 'xor' 'tmp_last_V_33' <Predicate = (doh_state_load == 3 & tmp_75)> <Delay = 0.28> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.28> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 114 [1/1] (1.83ns)   --->   "call void @_ssdm_op_Write.ap_fifo.volatile.i512P.i64P.i1P(i512* @rx_ip2udpFifo_V_data, i64* @rx_ip2udpFifo_V_keep, i1* @rx_ip2udpFifo_V_last, i512 %p_Result_s, i64 %p_Result_51, i1 %tmp_last_V_33) nounwind" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ipv4/ipv4.hpp:281]   --->   Operation 114 'write' <Predicate = (doh_state_load == 3 & tmp_75)> <Delay = 1.83> <Core = "FIFO_SRL">   --->   Core 36 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.83> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 512> <Depth = 0> <FIFO>
+ST_2 : Operation 115 [1/1] (0.00ns)   --->   "br i1 %tmp_78, label %15, label %14" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ipv4/ipv4.hpp:283]   --->   Operation 115 'br' <Predicate = (doh_state_load == 3 & tmp_75)> <Delay = 0.00>
+ST_2 : Operation 116 [1/1] (0.00ns)   --->   "br label %17" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ipv4/ipv4.hpp:286]   --->   Operation 116 'br' <Predicate = (doh_state_load == 3 & tmp_75 & !tmp_78)> <Delay = 0.00>
+ST_2 : Operation 117 [1/1] (0.00ns)   --->   "br label %._crit_edge142.i" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ipv4/ipv4.hpp:290]   --->   Operation 117 'br' <Predicate = (doh_state_load == 3 & tmp_75 & tmp_78 & tmp_last_V_37)> <Delay = 0.00>
+ST_2 : Operation 118 [1/1] (0.00ns)   --->   "br label %17"   --->   Operation 118 'br' <Predicate = (doh_state_load == 3 & tmp_75 & tmp_78)> <Delay = 0.00>
+ST_2 : Operation 119 [1/1] (0.00ns)   --->   "br label %._crit_edge141.i" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ipv4/ipv4.hpp:291]   --->   Operation 119 'br' <Predicate = (doh_state_load == 3 & tmp_75)> <Delay = 0.00>
+ST_2 : Operation 120 [1/1] (0.00ns)   --->   "br i1 %tmp_74, label %10, label %._crit_edge139.i" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ipv4/ipv4.hpp:262]   --->   Operation 120 'br' <Predicate = (doh_state_load == 2)> <Delay = 0.00>
+ST_2 : Operation 121 [1/1] (1.83ns)   --->   "call void @_ssdm_op_Write.ap_fifo.volatile.i512P.i64P.i1P(i512* @rx_ip2udpFifo_V_data, i64* @rx_ip2udpFifo_V_keep, i1* @rx_ip2udpFifo_V_last, i512 %tmp_data_V_46, i64 %tmp_keep_V_43, i1 %tmp_last_V) nounwind" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ipv4/ipv4.hpp:265]   --->   Operation 121 'write' <Predicate = (doh_state_load == 2 & tmp_74)> <Delay = 1.83> <Core = "FIFO_SRL">   --->   Core 36 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.83> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 512> <Depth = 0> <FIFO>
+ST_2 : Operation 122 [1/1] (0.00ns)   --->   "br i1 %tmp_last_V, label %11, label %._crit_edge140.i" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ipv4/ipv4.hpp:266]   --->   Operation 122 'br' <Predicate = (doh_state_load == 2 & tmp_74)> <Delay = 0.00>
+ST_2 : Operation 123 [1/1] (0.00ns)   --->   "br label %._crit_edge140.i" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ipv4/ipv4.hpp:269]   --->   Operation 123 'br' <Predicate = (doh_state_load == 2 & tmp_74 & tmp_last_V)> <Delay = 0.00>
+ST_2 : Operation 124 [1/1] (0.00ns)   --->   "br label %._crit_edge139.i" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ipv4/ipv4.hpp:270]   --->   Operation 124 'br' <Predicate = (doh_state_load == 2 & tmp_74)> <Delay = 0.00>
+ST_2 : Operation 125 [1/1] (0.00ns)   --->   "br i1 %tmp_73, label %4, label %._crit_edge137.i" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ipv4/ipv4.hpp:248]   --->   Operation 125 'br' <Predicate = (doh_state_load == 1)> <Delay = 0.00>
+ST_2 : Operation 126 [1/1] (0.00ns)   --->   "br label %._crit_edge138.i" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ipv4/ipv4.hpp:258]   --->   Operation 126 'br' <Predicate = (doh_state_load == 1 & tmp_73 & !icmp_ln879 & icmp_ln879_8)> <Delay = 0.00>
+ST_2 : Operation 127 [1/1] (0.00ns)   --->   "br label %8"   --->   Operation 127 'br' <Predicate = (doh_state_load == 1 & tmp_73 & !icmp_ln879)> <Delay = 0.00>
+ST_2 : Operation 128 [1/1] (0.00ns)   --->   "br label %8" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ipv4/ipv4.hpp:255]   --->   Operation 128 'br' <Predicate = (doh_state_load == 1 & tmp_73 & icmp_ln879)> <Delay = 0.00>
+ST_2 : Operation 129 [1/1] (0.00ns)   --->   "br label %._crit_edge137.i" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ipv4/ipv4.hpp:259]   --->   Operation 129 'br' <Predicate = (doh_state_load == 1 & tmp_73)> <Delay = 0.00>
+ST_2 : Operation 130 [1/1] (0.00ns)   --->   "br i1 %tmp_77, label %2, label %._crit_edge133.i" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ipv4/ipv4.hpp:214]   --->   Operation 130 'br' <Predicate = (doh_state_load == 0 & tmp)> <Delay = 0.00>
+ST_2 : Operation 131 [1/1] (0.00ns)   --->   "br label %._crit_edge135.i" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ipv4/ipv4.hpp:243]   --->   Operation 131 'br' <Predicate = (doh_state_load == 0 & tmp & tmp_77 & icmp_ln879_7)> <Delay = 0.00>
+ST_2 : Operation 132 [1/1] (0.00ns)   --->   "br label %._crit_edge133.i" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ipv4/ipv4.hpp:245]   --->   Operation 132 'br' <Predicate = (doh_state_load == 0 & tmp & tmp_77)> <Delay = 0.00>
+ST_2 : Operation 133 [1/1] (0.00ns)   --->   "ret void"   --->   Operation 133 'ret' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+STG Binding: 
+---------------- STG Properties BEGIN ----------------
+- Is combinational: 0
+- Is one-state seq: 0
+- Is datapath-only: 0
+- Is pipelined: 1
+- Is top level: 0
+Port [ Return ] is wired: 1; IO mode=ap_ctrl_hs:ce=0
+Port [ doh_state]:  wired=0; compound=0; hidden=1; nouse=0; global=1; static=1; extern=0; dir=2; type=0; pingpong=0; private_global=1; linkage=7; visibility=0; IO mode=ap_ovld:ce=0
+Port [ length_V]:  wired=0; compound=0; hidden=1; nouse=0; global=1; static=1; extern=0; dir=2; type=0; pingpong=0; private_global=1; linkage=7; visibility=0; IO mode=ap_ovld:ce=0
+Port [ prevWord_data_V]:  wired=0; compound=0; hidden=1; nouse=0; global=1; static=1; extern=0; dir=2; type=0; pingpong=0; private_global=1; linkage=7; visibility=0; IO mode=ap_ovld:ce=0
+Port [ prevWord_keep_V]:  wired=0; compound=0; hidden=1; nouse=0; global=1; static=1; extern=0; dir=2; type=0; pingpong=0; private_global=1; linkage=7; visibility=0; IO mode=ap_ovld:ce=0
+Port [ rx_process2dropLengt_1]:  wired=1; compound=1; hidden=0; nouse=0; global=1; static=1; extern=0; dir=0; type=3; pingpong=0; private_global=0; linkage=7; visibility=0; IO mode=ap_fifo:ce=0
+Port [ rx_process2dropFifo_1_5]:  wired=1; compound=1; hidden=0; nouse=0; global=1; static=1; extern=0; dir=0; type=3; pingpong=0; private_global=0; linkage=7; visibility=0; IO mode=ap_fifo:ce=0
+Port [ rx_process2dropFifo_2_4]:  wired=1; compound=1; hidden=0; nouse=0; global=1; static=1; extern=0; dir=0; type=3; pingpong=0; private_global=0; linkage=7; visibility=0; IO mode=ap_fifo:ce=0
+Port [ rx_process2dropFifo_s_6]:  wired=1; compound=1; hidden=0; nouse=0; global=1; static=1; extern=0; dir=0; type=3; pingpong=0; private_global=0; linkage=7; visibility=0; IO mode=ap_fifo:ce=0
+Port [ rx_ip2udpFifo_V_data]:  wired=1; compound=1; hidden=0; nouse=0; global=1; static=1; extern=0; dir=1; type=3; pingpong=0; private_global=0; linkage=7; visibility=0; IO mode=ap_fifo:ce=0
+Port [ rx_ip2udpFifo_V_keep]:  wired=1; compound=1; hidden=0; nouse=0; global=1; static=1; extern=0; dir=1; type=3; pingpong=0; private_global=0; linkage=7; visibility=0; IO mode=ap_fifo:ce=0
+Port [ rx_ip2udpFifo_V_last]:  wired=1; compound=1; hidden=0; nouse=0; global=1; static=1; extern=0; dir=1; type=3; pingpong=0; private_global=0; linkage=7; visibility=0; IO mode=ap_fifo:ce=0
+---------------- STG Properties END ------------------
+
+---------------- Datapath Model BEGIN ----------------
+
+<LifeTime>
+<method=bitvector/>
+doh_state_load     (load          ) [ 011]
+length_V_load      (load          ) [ 000]
+p_Val2_s           (load          ) [ 011]
+p_Val2_42          (load          ) [ 011]
+switch_ln211       (switch        ) [ 000]
+store_ln330        (store         ) [ 000]
+br_ln331           (br            ) [ 000]
+store_ln321        (store         ) [ 000]
+br_ln322           (br            ) [ 000]
+tmp_76             (nbreadreq     ) [ 011]
+empty_442          (read          ) [ 000]
+tmp_data_V_53      (extractvalue  ) [ 000]
+tmp_keep_V_50      (extractvalue  ) [ 000]
+tmp_last_V_38      (extractvalue  ) [ 011]
+trunc_ln647_14     (trunc         ) [ 011]
+trunc_ln647_15     (trunc         ) [ 011]
+tmp_79             (bitselect     ) [ 011]
+store_ln50         (store         ) [ 000]
+store_ln50         (store         ) [ 000]
+store_ln306        (store         ) [ 000]
+br_ln308           (br            ) [ 000]
+store_ln310        (store         ) [ 000]
+br_ln313           (br            ) [ 000]
+tmp_75             (nbreadreq     ) [ 011]
+empty_441          (read          ) [ 000]
+tmp_data_V_52      (extractvalue  ) [ 000]
+tmp_keep_V_49      (extractvalue  ) [ 000]
+tmp_last_V_37      (extractvalue  ) [ 011]
+trunc_ln647        (trunc         ) [ 011]
+trunc_ln647_13     (trunc         ) [ 011]
+tmp_78             (bitselect     ) [ 011]
+store_ln50         (store         ) [ 000]
+store_ln50         (store         ) [ 000]
+store_ln285        (store         ) [ 000]
+br_ln287           (br            ) [ 000]
+store_ln289        (store         ) [ 000]
+br_ln292           (br            ) [ 000]
+tmp_74             (nbreadreq     ) [ 011]
+empty_440          (read          ) [ 000]
+tmp_data_V_46      (extractvalue  ) [ 011]
+tmp_keep_V_43      (extractvalue  ) [ 011]
+tmp_last_V         (extractvalue  ) [ 011]
+store_ln268        (store         ) [ 000]
+br_ln271           (br            ) [ 000]
+tmp_73             (nbreadreq     ) [ 011]
+empty_439          (read          ) [ 000]
+tmp_data_V_44      (extractvalue  ) [ 000]
+tmp_keep_V_41      (extractvalue  ) [ 000]
+store_ln50         (store         ) [ 000]
+store_ln50         (store         ) [ 000]
+add_ln701          (add           ) [ 000]
+store_ln251        (store         ) [ 000]
+icmp_ln879         (icmp          ) [ 011]
+br_ln252           (br            ) [ 000]
+icmp_ln879_8       (icmp          ) [ 011]
+br_ln255           (br            ) [ 000]
+store_ln257        (store         ) [ 000]
+store_ln254        (store         ) [ 000]
+br_ln260           (br            ) [ 000]
+tmp                (nbreadreq     ) [ 011]
+br_ln214           (br            ) [ 000]
+tmp_77             (nbreadreq     ) [ 011]
+tmp_V              (read          ) [ 000]
+store_ln216        (store         ) [ 000]
+icmp_ln879_7       (icmp          ) [ 011]
+br_ln235           (br            ) [ 000]
+empty              (read          ) [ 000]
+tmp_data_V_51      (extractvalue  ) [ 000]
+tmp_keep_V_48      (extractvalue  ) [ 000]
+tmp_last_V_36      (extractvalue  ) [ 000]
+store_ln50         (store         ) [ 000]
+store_ln50         (store         ) [ 000]
+select_ln239       (select        ) [ 000]
+store_ln238        (store         ) [ 000]
+br_ln246           (br            ) [ 000]
+specinterface_ln0  (specinterface ) [ 000]
+specinterface_ln0  (specinterface ) [ 000]
+specinterface_ln0  (specinterface ) [ 000]
+specinterface_ln0  (specinterface ) [ 000]
+specinterface_ln0  (specinterface ) [ 000]
+specinterface_ln0  (specinterface ) [ 000]
+specinterface_ln0  (specinterface ) [ 000]
+specpipeline_ln201 (specpipeline  ) [ 000]
+p_Result_106_i     (partselect    ) [ 000]
+p_Result_107_i     (partselect    ) [ 000]
+p_Result_56        (bitconcatenate) [ 000]
+p_Result_57        (bitconcatenate) [ 000]
+write_ln329        (write         ) [ 000]
+p_Result_i_443     (partselect    ) [ 000]
+p_Result_103_i     (partselect    ) [ 000]
+p_Result_54        (bitconcatenate) [ 000]
+p_Result_55        (bitconcatenate) [ 000]
+write_ln320        (write         ) [ 000]
+br_ln294           (br            ) [ 000]
+p_Result_115_i     (partselect    ) [ 000]
+p_Result_116_i     (partselect    ) [ 000]
+p_Result_52        (bitconcatenate) [ 000]
+p_Result_53        (bitconcatenate) [ 000]
+tmp_last_V_35      (xor           ) [ 000]
+write_ln302        (write         ) [ 000]
+br_ln304           (br            ) [ 000]
+br_ln307           (br            ) [ 000]
+br_ln311           (br            ) [ 000]
+br_ln0             (br            ) [ 000]
+br_ln312           (br            ) [ 000]
+br_ln273           (br            ) [ 000]
+p_Result_i         (partselect    ) [ 000]
+p_Result_110_i     (partselect    ) [ 000]
+p_Result_s         (bitconcatenate) [ 000]
+p_Result_51        (bitconcatenate) [ 000]
+tmp_last_V_33      (xor           ) [ 000]
+write_ln281        (write         ) [ 000]
+br_ln283           (br            ) [ 000]
+br_ln286           (br            ) [ 000]
+br_ln290           (br            ) [ 000]
+br_ln0             (br            ) [ 000]
+br_ln291           (br            ) [ 000]
+br_ln262           (br            ) [ 000]
+write_ln265        (write         ) [ 000]
+br_ln266           (br            ) [ 000]
+br_ln269           (br            ) [ 000]
+br_ln270           (br            ) [ 000]
+br_ln248           (br            ) [ 000]
+br_ln258           (br            ) [ 000]
+br_ln0             (br            ) [ 000]
+br_ln255           (br            ) [ 000]
+br_ln259           (br            ) [ 000]
+br_ln214           (br            ) [ 000]
+br_ln243           (br            ) [ 000]
+br_ln245           (br            ) [ 000]
+ret_ln0            (ret           ) [ 000]
+</LifeTime>
+
+<model>
+
+<comp_list>
+<comp id="0" class="1000" name="doh_state">
+<pin_list>
+<pin id="1" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="doh_state"/></StgValue>
+</bind>
+</comp>
+
+<comp id="2" class="1000" name="length_V">
+<pin_list>
+<pin id="3" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="length_V"/></StgValue>
+</bind>
+</comp>
+
+<comp id="4" class="1000" name="prevWord_data_V">
+<pin_list>
+<pin id="5" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="prevWord_data_V"/></StgValue>
+</bind>
+</comp>
+
+<comp id="6" class="1000" name="prevWord_keep_V">
+<pin_list>
+<pin id="7" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="prevWord_keep_V"/></StgValue>
+</bind>
+</comp>
+
+<comp id="8" class="1000" name="rx_process2dropLengt_1">
+<pin_list>
+<pin id="9" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="rx_process2dropLengt_1"/></StgValue>
+</bind>
+</comp>
+
+<comp id="10" class="1000" name="rx_process2dropFifo_1_5">
+<pin_list>
+<pin id="11" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="rx_process2dropFifo_1_5"/></StgValue>
+</bind>
+</comp>
+
+<comp id="12" class="1000" name="rx_process2dropFifo_2_4">
+<pin_list>
+<pin id="13" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="rx_process2dropFifo_2_4"/></StgValue>
+</bind>
+</comp>
+
+<comp id="14" class="1000" name="rx_process2dropFifo_s_6">
+<pin_list>
+<pin id="15" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="rx_process2dropFifo_s_6"/></StgValue>
+</bind>
+</comp>
+
+<comp id="16" class="1000" name="rx_ip2udpFifo_V_data">
+<pin_list>
+<pin id="17" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="rx_ip2udpFifo_V_data"/></StgValue>
+</bind>
+</comp>
+
+<comp id="18" class="1000" name="rx_ip2udpFifo_V_keep">
+<pin_list>
+<pin id="19" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="rx_ip2udpFifo_V_keep"/></StgValue>
+</bind>
+</comp>
+
+<comp id="20" class="1000" name="rx_ip2udpFifo_V_last">
+<pin_list>
+<pin id="21" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="rx_ip2udpFifo_V_last"/></StgValue>
+</bind>
+</comp>
+
+<comp id="22" class="1001" name="const_22">
+<pin_list>
+<pin id="23" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="24" class="1001" name="const_24">
+<pin_list>
+<pin id="25" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="26" class="1001" name="const_26">
+<pin_list>
+<pin id="27" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="28" class="1001" name="const_28">
+<pin_list>
+<pin id="29" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="30" class="1001" name="const_30">
+<pin_list>
+<pin id="31" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="32" class="1001" name="const_32">
+<pin_list>
+<pin id="33" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="34" class="1001" name="const_34">
+<pin_list>
+<pin id="35" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="36" class="1001" name="const_36">
+<pin_list>
+<pin id="37" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="_ssdm_op_NbReadReq.ap_fifo.i512P.i64P.i1P"/></StgValue>
+</bind>
+</comp>
+
+<comp id="38" class="1001" name="const_38">
+<pin_list>
+<pin id="39" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="40" class="1001" name="const_40">
+<pin_list>
+<pin id="41" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="_ssdm_op_Read.ap_fifo.volatile.i512P.i64P.i1P"/></StgValue>
+</bind>
+</comp>
+
+<comp id="42" class="1001" name="const_42">
+<pin_list>
+<pin id="43" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="_ssdm_op_BitSelect.i1.i64.i32"/></StgValue>
+</bind>
+</comp>
+
+<comp id="44" class="1001" name="const_44">
+<pin_list>
+<pin id="45" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="46" class="1001" name="const_46">
+<pin_list>
+<pin id="47" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="48" class="1001" name="const_48">
+<pin_list>
+<pin id="49" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="50" class="1001" name="const_50">
+<pin_list>
+<pin id="51" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="52" class="1001" name="const_52">
+<pin_list>
+<pin id="53" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="54" class="1001" name="const_54">
+<pin_list>
+<pin id="55" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="_ssdm_op_NbReadReq.ap_fifo.i4P"/></StgValue>
+</bind>
+</comp>
+
+<comp id="56" class="1001" name="const_56">
+<pin_list>
+<pin id="57" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="_ssdm_op_Read.ap_fifo.volatile.i4P"/></StgValue>
+</bind>
+</comp>
+
+<comp id="58" class="1001" name="const_58">
+<pin_list>
+<pin id="59" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="60" class="1001" name="const_60">
+<pin_list>
+<pin id="61" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="_ssdm_op_SpecInterface"/></StgValue>
+</bind>
+</comp>
+
+<comp id="62" class="1001" name="const_62">
+<pin_list>
+<pin id="63" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="ap_fifo_str"/></StgValue>
+</bind>
+</comp>
+
+<comp id="64" class="1001" name="const_64">
+<pin_list>
+<pin id="65" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="66" class="1001" name="const_66">
+<pin_list>
+<pin id="67" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="p_str"/></StgValue>
+</bind>
+</comp>
+
+<comp id="68" class="1001" name="const_68">
+<pin_list>
+<pin id="69" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="70" class="1001" name="const_70">
+<pin_list>
+<pin id="71" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="72" class="1001" name="const_72">
+<pin_list>
+<pin id="73" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="_ssdm_op_SpecPipeline"/></StgValue>
+</bind>
+</comp>
+
+<comp id="74" class="1001" name="const_74">
+<pin_list>
+<pin id="75" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="p_str213"/></StgValue>
+</bind>
+</comp>
+
+<comp id="76" class="1001" name="const_76">
+<pin_list>
+<pin id="77" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="_ssdm_op_PartSelect.i352.i512.i32.i32"/></StgValue>
+</bind>
+</comp>
+
+<comp id="78" class="1001" name="const_78">
+<pin_list>
+<pin id="79" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="80" class="1001" name="const_80">
+<pin_list>
+<pin id="81" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="82" class="1001" name="const_82">
+<pin_list>
+<pin id="83" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="_ssdm_op_PartSelect.i44.i64.i32.i32"/></StgValue>
+</bind>
+</comp>
+
+<comp id="84" class="1001" name="const_84">
+<pin_list>
+<pin id="85" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="86" class="1001" name="const_86">
+<pin_list>
+<pin id="87" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="_ssdm_op_BitConcatenate.i512.i160.i352"/></StgValue>
+</bind>
+</comp>
+
+<comp id="88" class="1001" name="const_88">
+<pin_list>
+<pin id="89" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="90" class="1001" name="const_90">
+<pin_list>
+<pin id="91" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="_ssdm_op_BitConcatenate.i64.i20.i44"/></StgValue>
+</bind>
+</comp>
+
+<comp id="92" class="1001" name="const_92">
+<pin_list>
+<pin id="93" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="94" class="1001" name="const_94">
+<pin_list>
+<pin id="95" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="_ssdm_op_Write.ap_fifo.volatile.i512P.i64P.i1P"/></StgValue>
+</bind>
+</comp>
+
+<comp id="96" class="1001" name="const_96">
+<pin_list>
+<pin id="97" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="98" class="1001" name="const_98">
+<pin_list>
+<pin id="99" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="_ssdm_op_PartSelect.i480.i512.i32.i32"/></StgValue>
+</bind>
+</comp>
+
+<comp id="100" class="1001" name="const_100">
+<pin_list>
+<pin id="101" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="102" class="1001" name="const_102">
+<pin_list>
+<pin id="103" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="_ssdm_op_PartSelect.i60.i64.i32.i32"/></StgValue>
+</bind>
+</comp>
+
+<comp id="104" class="1001" name="const_104">
+<pin_list>
+<pin id="105" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="_ssdm_op_BitConcatenate.i512.i32.i480"/></StgValue>
+</bind>
+</comp>
+
+<comp id="106" class="1001" name="const_106">
+<pin_list>
+<pin id="107" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="_ssdm_op_BitConcatenate.i64.i4.i60"/></StgValue>
+</bind>
+</comp>
+
+<comp id="108" class="1004" name="grp_nbreadreq_fu_108">
+<pin_list>
+<pin id="109" dir="0" index="0" bw="1" slack="0"/>
+<pin id="110" dir="0" index="1" bw="512" slack="0"/>
+<pin id="111" dir="0" index="2" bw="64" slack="0"/>
+<pin id="112" dir="0" index="3" bw="1" slack="0"/>
+<pin id="113" dir="0" index="4" bw="1" slack="0"/>
+<pin id="114" dir="1" index="5" bw="1" slack="1"/>
+</pin_list>
+<bind>
+<opcode="nbreadreq(1156) " fcode="nbreadreq"/>
+<opset="tmp_76/1 tmp_75/1 tmp_74/1 tmp_73/1 tmp_77/1 "/>
+</bind>
+</comp>
+
+<comp id="120" class="1004" name="grp_read_fu_120">
+<pin_list>
+<pin id="121" dir="0" index="0" bw="577" slack="0"/>
+<pin id="122" dir="0" index="1" bw="512" slack="0"/>
+<pin id="123" dir="0" index="2" bw="64" slack="0"/>
+<pin id="124" dir="0" index="3" bw="1" slack="0"/>
+<pin id="125" dir="1" index="4" bw="577" slack="0"/>
+</pin_list>
+<bind>
+<opcode="read(1150) " fcode="read"/>
+<opset="empty_442/1 empty_441/1 empty_440/1 empty_439/1 empty/1 "/>
+</bind>
+</comp>
+
+<comp id="130" class="1004" name="tmp_nbreadreq_fu_130">
+<pin_list>
+<pin id="131" dir="0" index="0" bw="1" slack="0"/>
+<pin id="132" dir="0" index="1" bw="4" slack="0"/>
+<pin id="133" dir="0" index="2" bw="1" slack="0"/>
+<pin id="134" dir="1" index="3" bw="1" slack="1"/>
+</pin_list>
+<bind>
+<opcode="nbreadreq(1156) " fcode="nbreadreq"/>
+<opset="tmp/1 "/>
+</bind>
+</comp>
+
+<comp id="138" class="1004" name="tmp_V_read_fu_138">
+<pin_list>
+<pin id="139" dir="0" index="0" bw="4" slack="0"/>
+<pin id="140" dir="0" index="1" bw="4" slack="0"/>
+<pin id="141" dir="1" index="2" bw="4" slack="0"/>
+</pin_list>
+<bind>
+<opcode="read(1150) " fcode="read"/>
+<opset="tmp_V/1 "/>
+</bind>
+</comp>
+
+<comp id="144" class="1004" name="grp_write_fu_144">
+<pin_list>
+<pin id="145" dir="0" index="0" bw="0" slack="0"/>
+<pin id="146" dir="0" index="1" bw="512" slack="0"/>
+<pin id="147" dir="0" index="2" bw="64" slack="0"/>
+<pin id="148" dir="0" index="3" bw="1" slack="0"/>
+<pin id="149" dir="0" index="4" bw="512" slack="0"/>
+<pin id="150" dir="0" index="5" bw="64" slack="0"/>
+<pin id="151" dir="0" index="6" bw="1" slack="0"/>
+<pin id="152" dir="1" index="7" bw="0" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="write(1151) " fcode="write"/>
+<opset="write_ln329/2 write_ln320/2 write_ln302/2 write_ln281/2 write_ln265/2 "/>
+</bind>
+</comp>
+
+<comp id="158" class="1004" name="grp_store_fu_158">
+<pin_list>
+<pin id="159" dir="0" index="0" bw="1" slack="0"/>
+<pin id="160" dir="0" index="1" bw="3" slack="0"/>
+<pin id="161" dir="1" index="2" bw="0" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="store(28) " fcode="store"/>
+<opset="store_ln330/1 store_ln321/1 store_ln306/1 store_ln285/1 store_ln268/1 "/>
+</bind>
+</comp>
+
+<comp id="164" class="1004" name="grp_fu_164">
+<pin_list>
+<pin id="165" dir="0" index="0" bw="577" slack="0"/>
+<pin id="166" dir="1" index="1" bw="512" slack="0"/>
+</pin_list>
+<bind>
+<opcode="extractvalue(56) " fcode="extractvalue"/>
+<opset="tmp_data_V_53/1 tmp_data_V_52/1 tmp_data_V_46/1 tmp_data_V_44/1 tmp_data_V_51/1 "/>
+</bind>
+</comp>
+
+<comp id="168" class="1004" name="grp_fu_168">
+<pin_list>
+<pin id="169" dir="0" index="0" bw="577" slack="0"/>
+<pin id="170" dir="1" index="1" bw="64" slack="0"/>
+</pin_list>
+<bind>
+<opcode="extractvalue(56) " fcode="extractvalue"/>
+<opset="tmp_keep_V_50/1 tmp_keep_V_49/1 tmp_keep_V_43/1 tmp_keep_V_41/1 tmp_keep_V_48/1 "/>
+</bind>
+</comp>
+
+<comp id="172" class="1004" name="grp_fu_172">
+<pin_list>
+<pin id="173" dir="0" index="0" bw="577" slack="0"/>
+<pin id="174" dir="1" index="1" bw="1" slack="1"/>
+</pin_list>
+<bind>
+<opcode="extractvalue(56) " fcode="extractvalue"/>
+<opset="tmp_last_V_38/1 tmp_last_V_37/1 "/>
+</bind>
+</comp>
+
+<comp id="176" class="1004" name="tmp_last_V_fu_176">
+<pin_list>
+<pin id="177" dir="0" index="0" bw="577" slack="0"/>
+<pin id="178" dir="1" index="1" bw="1" slack="1"/>
+</pin_list>
+<bind>
+<opcode="extractvalue(56) " fcode="extractvalue"/>
+<opset="tmp_last_V/1 "/>
+</bind>
+</comp>
+
+<comp id="180" class="1004" name="grp_store_fu_180">
+<pin_list>
+<pin id="181" dir="0" index="0" bw="512" slack="0"/>
+<pin id="182" dir="0" index="1" bw="512" slack="0"/>
+<pin id="183" dir="1" index="2" bw="0" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="store(28) " fcode="store"/>
+<opset="store_ln50/1 store_ln50/1 store_ln50/1 store_ln50/1 "/>
+</bind>
+</comp>
+
+<comp id="186" class="1004" name="grp_store_fu_186">
+<pin_list>
+<pin id="187" dir="0" index="0" bw="64" slack="0"/>
+<pin id="188" dir="0" index="1" bw="64" slack="0"/>
+<pin id="189" dir="1" index="2" bw="0" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="store(28) " fcode="store"/>
+<opset="store_ln50/1 store_ln50/1 store_ln50/1 store_ln50/1 "/>
+</bind>
+</comp>
+
+<comp id="192" class="1004" name="grp_fu_192">
+<pin_list>
+<pin id="193" dir="0" index="0" bw="352" slack="0"/>
+<pin id="194" dir="0" index="1" bw="512" slack="1"/>
+<pin id="195" dir="0" index="2" bw="9" slack="0"/>
+<pin id="196" dir="0" index="3" bw="10" slack="0"/>
+<pin id="197" dir="1" index="4" bw="352" slack="0"/>
+</pin_list>
+<bind>
+<opcode="partselect(1002) " fcode="partselect"/>
+<opset="p_Result_106_i/2 p_Result_115_i/2 "/>
+</bind>
+</comp>
+
+<comp id="201" class="1004" name="grp_fu_201">
+<pin_list>
+<pin id="202" dir="0" index="0" bw="44" slack="0"/>
+<pin id="203" dir="0" index="1" bw="64" slack="1"/>
+<pin id="204" dir="0" index="2" bw="6" slack="0"/>
+<pin id="205" dir="0" index="3" bw="7" slack="0"/>
+<pin id="206" dir="1" index="4" bw="44" slack="0"/>
+</pin_list>
+<bind>
+<opcode="partselect(1002) " fcode="partselect"/>
+<opset="p_Result_107_i/2 p_Result_116_i/2 "/>
+</bind>
+</comp>
+
+<comp id="210" class="1004" name="grp_fu_210">
+<pin_list>
+<pin id="211" dir="0" index="0" bw="480" slack="0"/>
+<pin id="212" dir="0" index="1" bw="512" slack="1"/>
+<pin id="213" dir="0" index="2" bw="7" slack="0"/>
+<pin id="214" dir="0" index="3" bw="10" slack="0"/>
+<pin id="215" dir="1" index="4" bw="480" slack="0"/>
+</pin_list>
+<bind>
+<opcode="partselect(1002) " fcode="partselect"/>
+<opset="p_Result_i_443/2 p_Result_i/2 "/>
+</bind>
+</comp>
+
+<comp id="219" class="1004" name="grp_fu_219">
+<pin_list>
+<pin id="220" dir="0" index="0" bw="60" slack="0"/>
+<pin id="221" dir="0" index="1" bw="64" slack="1"/>
+<pin id="222" dir="0" index="2" bw="4" slack="0"/>
+<pin id="223" dir="0" index="3" bw="7" slack="0"/>
+<pin id="224" dir="1" index="4" bw="60" slack="0"/>
+</pin_list>
+<bind>
+<opcode="partselect(1002) " fcode="partselect"/>
+<opset="p_Result_103_i/2 p_Result_110_i/2 "/>
+</bind>
+</comp>
+
+<comp id="228" class="1004" name="doh_state_load_load_fu_228">
+<pin_list>
+<pin id="229" dir="0" index="0" bw="3" slack="0"/>
+<pin id="230" dir="1" index="1" bw="3" slack="1"/>
+</pin_list>
+<bind>
+<opcode="load(27) " fcode="load"/>
+<opset="doh_state_load/1 "/>
+</bind>
+</comp>
+
+<comp id="232" class="1004" name="length_V_load_load_fu_232">
+<pin_list>
+<pin id="233" dir="0" index="0" bw="4" slack="0"/>
+<pin id="234" dir="1" index="1" bw="4" slack="0"/>
+</pin_list>
+<bind>
+<opcode="load(27) " fcode="load"/>
+<opset="length_V_load/1 "/>
+</bind>
+</comp>
+
+<comp id="236" class="1004" name="p_Val2_s_load_fu_236">
+<pin_list>
+<pin id="237" dir="0" index="0" bw="512" slack="0"/>
+<pin id="238" dir="1" index="1" bw="512" slack="1"/>
+</pin_list>
+<bind>
+<opcode="load(27) " fcode="load"/>
+<opset="p_Val2_s/1 "/>
+</bind>
+</comp>
+
+<comp id="240" class="1004" name="p_Val2_42_load_fu_240">
+<pin_list>
+<pin id="241" dir="0" index="0" bw="64" slack="0"/>
+<pin id="242" dir="1" index="1" bw="64" slack="1"/>
+</pin_list>
+<bind>
+<opcode="load(27) " fcode="load"/>
+<opset="p_Val2_42/1 "/>
+</bind>
+</comp>
+
+<comp id="244" class="1004" name="trunc_ln647_14_fu_244">
+<pin_list>
+<pin id="245" dir="0" index="0" bw="512" slack="0"/>
+<pin id="246" dir="1" index="1" bw="160" slack="1"/>
+</pin_list>
+<bind>
+<opcode="trunc(33) " fcode="trunc"/>
+<opset="trunc_ln647_14/1 "/>
+</bind>
+</comp>
+
+<comp id="248" class="1004" name="trunc_ln647_15_fu_248">
+<pin_list>
+<pin id="249" dir="0" index="0" bw="64" slack="0"/>
+<pin id="250" dir="1" index="1" bw="20" slack="1"/>
+</pin_list>
+<bind>
+<opcode="trunc(33) " fcode="trunc"/>
+<opset="trunc_ln647_15/1 "/>
+</bind>
+</comp>
+
+<comp id="252" class="1004" name="tmp_79_fu_252">
+<pin_list>
+<pin id="253" dir="0" index="0" bw="1" slack="0"/>
+<pin id="254" dir="0" index="1" bw="64" slack="0"/>
+<pin id="255" dir="0" index="2" bw="6" slack="0"/>
+<pin id="256" dir="1" index="3" bw="1" slack="1"/>
+</pin_list>
+<bind>
+<opcode="bitselect(1000) " fcode="bitselect"/>
+<opset="tmp_79/1 "/>
+</bind>
+</comp>
+
+<comp id="260" class="1004" name="store_ln310_store_fu_260">
+<pin_list>
+<pin id="261" dir="0" index="0" bw="2" slack="0"/>
+<pin id="262" dir="0" index="1" bw="3" slack="0"/>
+<pin id="263" dir="1" index="2" bw="0" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="store(28) " fcode="store"/>
+<opset="store_ln310/1 "/>
+</bind>
+</comp>
+
+<comp id="266" class="1004" name="trunc_ln647_fu_266">
+<pin_list>
+<pin id="267" dir="0" index="0" bw="512" slack="0"/>
+<pin id="268" dir="1" index="1" bw="32" slack="1"/>
+</pin_list>
+<bind>
+<opcode="trunc(33) " fcode="trunc"/>
+<opset="trunc_ln647/1 "/>
+</bind>
+</comp>
+
+<comp id="270" class="1004" name="trunc_ln647_13_fu_270">
+<pin_list>
+<pin id="271" dir="0" index="0" bw="64" slack="0"/>
+<pin id="272" dir="1" index="1" bw="4" slack="1"/>
+</pin_list>
+<bind>
+<opcode="trunc(33) " fcode="trunc"/>
+<opset="trunc_ln647_13/1 "/>
+</bind>
+</comp>
+
+<comp id="274" class="1004" name="tmp_78_fu_274">
+<pin_list>
+<pin id="275" dir="0" index="0" bw="1" slack="0"/>
+<pin id="276" dir="0" index="1" bw="64" slack="0"/>
+<pin id="277" dir="0" index="2" bw="4" slack="0"/>
+<pin id="278" dir="1" index="3" bw="1" slack="1"/>
+</pin_list>
+<bind>
+<opcode="bitselect(1000) " fcode="bitselect"/>
+<opset="tmp_78/1 "/>
+</bind>
+</comp>
+
+<comp id="282" class="1004" name="store_ln289_store_fu_282">
+<pin_list>
+<pin id="283" dir="0" index="0" bw="3" slack="0"/>
+<pin id="284" dir="0" index="1" bw="3" slack="0"/>
+<pin id="285" dir="1" index="2" bw="0" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="store(28) " fcode="store"/>
+<opset="store_ln289/1 "/>
+</bind>
+</comp>
+
+<comp id="288" class="1004" name="add_ln701_fu_288">
+<pin_list>
+<pin id="289" dir="0" index="0" bw="4" slack="0"/>
+<pin id="290" dir="0" index="1" bw="2" slack="0"/>
+<pin id="291" dir="1" index="2" bw="4" slack="0"/>
+</pin_list>
+<bind>
+<opcode="add(8) " fcode="add"/>
+<opset="add_ln701/1 "/>
+</bind>
+</comp>
+
+<comp id="294" class="1004" name="store_ln251_store_fu_294">
+<pin_list>
+<pin id="295" dir="0" index="0" bw="4" slack="0"/>
+<pin id="296" dir="0" index="1" bw="4" slack="0"/>
+<pin id="297" dir="1" index="2" bw="0" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="store(28) " fcode="store"/>
+<opset="store_ln251/1 "/>
+</bind>
+</comp>
+
+<comp id="300" class="1004" name="icmp_ln879_fu_300">
+<pin_list>
+<pin id="301" dir="0" index="0" bw="4" slack="0"/>
+<pin id="302" dir="0" index="1" bw="4" slack="0"/>
+<pin id="303" dir="1" index="2" bw="1" slack="1"/>
+</pin_list>
+<bind>
+<opcode="icmp(45) " fcode="icmp"/>
+<opset="icmp_ln879/1 "/>
+</bind>
+</comp>
+
+<comp id="306" class="1004" name="icmp_ln879_8_fu_306">
+<pin_list>
+<pin id="307" dir="0" index="0" bw="4" slack="0"/>
+<pin id="308" dir="0" index="1" bw="4" slack="0"/>
+<pin id="309" dir="1" index="2" bw="1" slack="1"/>
+</pin_list>
+<bind>
+<opcode="icmp(45) " fcode="icmp"/>
+<opset="icmp_ln879_8/1 "/>
+</bind>
+</comp>
+
+<comp id="312" class="1004" name="store_ln257_store_fu_312">
+<pin_list>
+<pin id="313" dir="0" index="0" bw="3" slack="0"/>
+<pin id="314" dir="0" index="1" bw="3" slack="0"/>
+<pin id="315" dir="1" index="2" bw="0" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="store(28) " fcode="store"/>
+<opset="store_ln257/1 "/>
+</bind>
+</comp>
+
+<comp id="318" class="1004" name="store_ln254_store_fu_318">
+<pin_list>
+<pin id="319" dir="0" index="0" bw="3" slack="0"/>
+<pin id="320" dir="0" index="1" bw="3" slack="0"/>
+<pin id="321" dir="1" index="2" bw="0" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="store(28) " fcode="store"/>
+<opset="store_ln254/1 "/>
+</bind>
+</comp>
+
+<comp id="324" class="1004" name="store_ln216_store_fu_324">
+<pin_list>
+<pin id="325" dir="0" index="0" bw="4" slack="0"/>
+<pin id="326" dir="0" index="1" bw="4" slack="0"/>
+<pin id="327" dir="1" index="2" bw="0" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="store(28) " fcode="store"/>
+<opset="store_ln216/1 "/>
+</bind>
+</comp>
+
+<comp id="330" class="1004" name="icmp_ln879_7_fu_330">
+<pin_list>
+<pin id="331" dir="0" index="0" bw="4" slack="0"/>
+<pin id="332" dir="0" index="1" bw="4" slack="0"/>
+<pin id="333" dir="1" index="2" bw="1" slack="1"/>
+</pin_list>
+<bind>
+<opcode="icmp(45) " fcode="icmp"/>
+<opset="icmp_ln879_7/1 "/>
+</bind>
+</comp>
+
+<comp id="336" class="1004" name="tmp_last_V_36_fu_336">
+<pin_list>
+<pin id="337" dir="0" index="0" bw="577" slack="0"/>
+<pin id="338" dir="1" index="1" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<opcode="extractvalue(56) " fcode="extractvalue"/>
+<opset="tmp_last_V_36/1 "/>
+</bind>
+</comp>
+
+<comp id="340" class="1004" name="select_ln239_fu_340">
+<pin_list>
+<pin id="341" dir="0" index="0" bw="1" slack="0"/>
+<pin id="342" dir="0" index="1" bw="3" slack="0"/>
+<pin id="343" dir="0" index="2" bw="3" slack="0"/>
+<pin id="344" dir="1" index="3" bw="3" slack="0"/>
+</pin_list>
+<bind>
+<opcode="select(49) " fcode="select"/>
+<opset="select_ln239/1 "/>
+</bind>
+</comp>
+
+<comp id="348" class="1004" name="store_ln238_store_fu_348">
+<pin_list>
+<pin id="349" dir="0" index="0" bw="3" slack="0"/>
+<pin id="350" dir="0" index="1" bw="3" slack="0"/>
+<pin id="351" dir="1" index="2" bw="0" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="store(28) " fcode="store"/>
+<opset="store_ln238/1 "/>
+</bind>
+</comp>
+
+<comp id="354" class="1004" name="p_Result_56_fu_354">
+<pin_list>
+<pin id="355" dir="0" index="0" bw="512" slack="0"/>
+<pin id="356" dir="0" index="1" bw="1" slack="0"/>
+<pin id="357" dir="0" index="2" bw="352" slack="0"/>
+<pin id="358" dir="1" index="3" bw="512" slack="0"/>
+</pin_list>
+<bind>
+<opcode="bitconcatenate(1004) " fcode="bitconcatenate"/>
+<opset="p_Result_56/2 "/>
+</bind>
+</comp>
+
+<comp id="363" class="1004" name="p_Result_57_fu_363">
+<pin_list>
+<pin id="364" dir="0" index="0" bw="64" slack="0"/>
+<pin id="365" dir="0" index="1" bw="1" slack="0"/>
+<pin id="366" dir="0" index="2" bw="44" slack="0"/>
+<pin id="367" dir="1" index="3" bw="64" slack="0"/>
+</pin_list>
+<bind>
+<opcode="bitconcatenate(1004) " fcode="bitconcatenate"/>
+<opset="p_Result_57/2 "/>
+</bind>
+</comp>
+
+<comp id="372" class="1004" name="p_Result_54_fu_372">
+<pin_list>
+<pin id="373" dir="0" index="0" bw="512" slack="0"/>
+<pin id="374" dir="0" index="1" bw="1" slack="0"/>
+<pin id="375" dir="0" index="2" bw="480" slack="0"/>
+<pin id="376" dir="1" index="3" bw="512" slack="0"/>
+</pin_list>
+<bind>
+<opcode="bitconcatenate(1004) " fcode="bitconcatenate"/>
+<opset="p_Result_54/2 "/>
+</bind>
+</comp>
+
+<comp id="381" class="1004" name="p_Result_55_fu_381">
+<pin_list>
+<pin id="382" dir="0" index="0" bw="64" slack="0"/>
+<pin id="383" dir="0" index="1" bw="1" slack="0"/>
+<pin id="384" dir="0" index="2" bw="60" slack="0"/>
+<pin id="385" dir="1" index="3" bw="64" slack="0"/>
+</pin_list>
+<bind>
+<opcode="bitconcatenate(1004) " fcode="bitconcatenate"/>
+<opset="p_Result_55/2 "/>
+</bind>
+</comp>
+
+<comp id="390" class="1004" name="p_Result_52_fu_390">
+<pin_list>
+<pin id="391" dir="0" index="0" bw="512" slack="0"/>
+<pin id="392" dir="0" index="1" bw="160" slack="1"/>
+<pin id="393" dir="0" index="2" bw="352" slack="0"/>
+<pin id="394" dir="1" index="3" bw="512" slack="0"/>
+</pin_list>
+<bind>
+<opcode="bitconcatenate(1004) " fcode="bitconcatenate"/>
+<opset="p_Result_52/2 "/>
+</bind>
+</comp>
+
+<comp id="398" class="1004" name="p_Result_53_fu_398">
+<pin_list>
+<pin id="399" dir="0" index="0" bw="64" slack="0"/>
+<pin id="400" dir="0" index="1" bw="20" slack="1"/>
+<pin id="401" dir="0" index="2" bw="44" slack="0"/>
+<pin id="402" dir="1" index="3" bw="64" slack="0"/>
+</pin_list>
+<bind>
+<opcode="bitconcatenate(1004) " fcode="bitconcatenate"/>
+<opset="p_Result_53/2 "/>
+</bind>
+</comp>
+
+<comp id="406" class="1004" name="tmp_last_V_35_fu_406">
+<pin_list>
+<pin id="407" dir="0" index="0" bw="1" slack="1"/>
+<pin id="408" dir="0" index="1" bw="1" slack="0"/>
+<pin id="409" dir="1" index="2" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<opcode="xor(25) " fcode="xor"/>
+<opset="tmp_last_V_35/2 "/>
+</bind>
+</comp>
+
+<comp id="412" class="1004" name="p_Result_s_fu_412">
+<pin_list>
+<pin id="413" dir="0" index="0" bw="512" slack="0"/>
+<pin id="414" dir="0" index="1" bw="32" slack="1"/>
+<pin id="415" dir="0" index="2" bw="480" slack="0"/>
+<pin id="416" dir="1" index="3" bw="512" slack="0"/>
+</pin_list>
+<bind>
+<opcode="bitconcatenate(1004) " fcode="bitconcatenate"/>
+<opset="p_Result_s/2 "/>
+</bind>
+</comp>
+
+<comp id="420" class="1004" name="p_Result_51_fu_420">
+<pin_list>
+<pin id="421" dir="0" index="0" bw="64" slack="0"/>
+<pin id="422" dir="0" index="1" bw="4" slack="1"/>
+<pin id="423" dir="0" index="2" bw="60" slack="0"/>
+<pin id="424" dir="1" index="3" bw="64" slack="0"/>
+</pin_list>
+<bind>
+<opcode="bitconcatenate(1004) " fcode="bitconcatenate"/>
+<opset="p_Result_51/2 "/>
+</bind>
+</comp>
+
+<comp id="428" class="1004" name="tmp_last_V_33_fu_428">
+<pin_list>
+<pin id="429" dir="0" index="0" bw="1" slack="1"/>
+<pin id="430" dir="0" index="1" bw="1" slack="0"/>
+<pin id="431" dir="1" index="2" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<opcode="xor(25) " fcode="xor"/>
+<opset="tmp_last_V_33/2 "/>
+</bind>
+</comp>
+
+<comp id="434" class="1005" name="doh_state_load_reg_434">
+<pin_list>
+<pin id="435" dir="0" index="0" bw="3" slack="1"/>
+<pin id="436" dir="1" index="1" bw="3" slack="2147483647"/>
+</pin_list>
+<bind>
+<opset="doh_state_load "/>
+</bind>
+</comp>
+
+<comp id="438" class="1005" name="p_Val2_s_reg_438">
+<pin_list>
+<pin id="439" dir="0" index="0" bw="512" slack="1"/>
+<pin id="440" dir="1" index="1" bw="512" slack="1"/>
+</pin_list>
+<bind>
+<opset="p_Val2_s "/>
+</bind>
+</comp>
+
+<comp id="444" class="1005" name="p_Val2_42_reg_444">
+<pin_list>
+<pin id="445" dir="0" index="0" bw="64" slack="1"/>
+<pin id="446" dir="1" index="1" bw="64" slack="1"/>
+</pin_list>
+<bind>
+<opset="p_Val2_42 "/>
+</bind>
+</comp>
+
+<comp id="450" class="1005" name="tmp_76_reg_450">
+<pin_list>
+<pin id="451" dir="0" index="0" bw="1" slack="1"/>
+<pin id="452" dir="1" index="1" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<opset="tmp_76 "/>
+</bind>
+</comp>
+
+<comp id="454" class="1005" name="tmp_last_V_38_reg_454">
+<pin_list>
+<pin id="455" dir="0" index="0" bw="1" slack="1"/>
+<pin id="456" dir="1" index="1" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<opset="tmp_last_V_38 "/>
+</bind>
+</comp>
+
+<comp id="458" class="1005" name="trunc_ln647_14_reg_458">
+<pin_list>
+<pin id="459" dir="0" index="0" bw="160" slack="1"/>
+<pin id="460" dir="1" index="1" bw="160" slack="1"/>
+</pin_list>
+<bind>
+<opset="trunc_ln647_14 "/>
+</bind>
+</comp>
+
+<comp id="463" class="1005" name="trunc_ln647_15_reg_463">
+<pin_list>
+<pin id="464" dir="0" index="0" bw="20" slack="1"/>
+<pin id="465" dir="1" index="1" bw="20" slack="1"/>
+</pin_list>
+<bind>
+<opset="trunc_ln647_15 "/>
+</bind>
+</comp>
+
+<comp id="468" class="1005" name="tmp_79_reg_468">
+<pin_list>
+<pin id="469" dir="0" index="0" bw="1" slack="1"/>
+<pin id="470" dir="1" index="1" bw="1" slack="1"/>
+</pin_list>
+<bind>
+<opset="tmp_79 "/>
+</bind>
+</comp>
+
+<comp id="473" class="1005" name="tmp_75_reg_473">
+<pin_list>
+<pin id="474" dir="0" index="0" bw="1" slack="1"/>
+<pin id="475" dir="1" index="1" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<opset="tmp_75 "/>
+</bind>
+</comp>
+
+<comp id="477" class="1005" name="tmp_last_V_37_reg_477">
+<pin_list>
+<pin id="478" dir="0" index="0" bw="1" slack="1"/>
+<pin id="479" dir="1" index="1" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<opset="tmp_last_V_37 "/>
+</bind>
+</comp>
+
+<comp id="481" class="1005" name="trunc_ln647_reg_481">
+<pin_list>
+<pin id="482" dir="0" index="0" bw="32" slack="1"/>
+<pin id="483" dir="1" index="1" bw="32" slack="1"/>
+</pin_list>
+<bind>
+<opset="trunc_ln647 "/>
+</bind>
+</comp>
+
+<comp id="486" class="1005" name="trunc_ln647_13_reg_486">
+<pin_list>
+<pin id="487" dir="0" index="0" bw="4" slack="1"/>
+<pin id="488" dir="1" index="1" bw="4" slack="1"/>
+</pin_list>
+<bind>
+<opset="trunc_ln647_13 "/>
+</bind>
+</comp>
+
+<comp id="491" class="1005" name="tmp_78_reg_491">
+<pin_list>
+<pin id="492" dir="0" index="0" bw="1" slack="1"/>
+<pin id="493" dir="1" index="1" bw="1" slack="1"/>
+</pin_list>
+<bind>
+<opset="tmp_78 "/>
+</bind>
+</comp>
+
+<comp id="496" class="1005" name="tmp_74_reg_496">
+<pin_list>
+<pin id="497" dir="0" index="0" bw="1" slack="1"/>
+<pin id="498" dir="1" index="1" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<opset="tmp_74 "/>
+</bind>
+</comp>
+
+<comp id="500" class="1005" name="tmp_data_V_46_reg_500">
+<pin_list>
+<pin id="501" dir="0" index="0" bw="512" slack="1"/>
+<pin id="502" dir="1" index="1" bw="512" slack="1"/>
+</pin_list>
+<bind>
+<opset="tmp_data_V_46 "/>
+</bind>
+</comp>
+
+<comp id="505" class="1005" name="tmp_keep_V_43_reg_505">
+<pin_list>
+<pin id="506" dir="0" index="0" bw="64" slack="1"/>
+<pin id="507" dir="1" index="1" bw="64" slack="1"/>
+</pin_list>
+<bind>
+<opset="tmp_keep_V_43 "/>
+</bind>
+</comp>
+
+<comp id="510" class="1005" name="tmp_last_V_reg_510">
+<pin_list>
+<pin id="511" dir="0" index="0" bw="1" slack="1"/>
+<pin id="512" dir="1" index="1" bw="1" slack="1"/>
+</pin_list>
+<bind>
+<opset="tmp_last_V "/>
+</bind>
+</comp>
+
+<comp id="515" class="1005" name="tmp_73_reg_515">
+<pin_list>
+<pin id="516" dir="0" index="0" bw="1" slack="1"/>
+<pin id="517" dir="1" index="1" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<opset="tmp_73 "/>
+</bind>
+</comp>
+
+<comp id="519" class="1005" name="icmp_ln879_reg_519">
+<pin_list>
+<pin id="520" dir="0" index="0" bw="1" slack="1"/>
+<pin id="521" dir="1" index="1" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<opset="icmp_ln879 "/>
+</bind>
+</comp>
+
+<comp id="523" class="1005" name="icmp_ln879_8_reg_523">
+<pin_list>
+<pin id="524" dir="0" index="0" bw="1" slack="1"/>
+<pin id="525" dir="1" index="1" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<opset="icmp_ln879_8 "/>
+</bind>
+</comp>
+
+<comp id="527" class="1005" name="tmp_reg_527">
+<pin_list>
+<pin id="528" dir="0" index="0" bw="1" slack="1"/>
+<pin id="529" dir="1" index="1" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<opset="tmp "/>
+</bind>
+</comp>
+
+<comp id="531" class="1005" name="tmp_77_reg_531">
+<pin_list>
+<pin id="532" dir="0" index="0" bw="1" slack="1"/>
+<pin id="533" dir="1" index="1" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<opset="tmp_77 "/>
+</bind>
+</comp>
+
+<comp id="535" class="1005" name="icmp_ln879_7_reg_535">
+<pin_list>
+<pin id="536" dir="0" index="0" bw="1" slack="1"/>
+<pin id="537" dir="1" index="1" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<opset="icmp_ln879_7 "/>
+</bind>
+</comp>
+
+</comp_list>
+
+<net_list>
+<net id="115"><net_src comp="36" pin="0"/><net_sink comp="108" pin=0"/></net>
+
+<net id="116"><net_src comp="10" pin="0"/><net_sink comp="108" pin=1"/></net>
+
+<net id="117"><net_src comp="12" pin="0"/><net_sink comp="108" pin=2"/></net>
+
+<net id="118"><net_src comp="14" pin="0"/><net_sink comp="108" pin=3"/></net>
+
+<net id="119"><net_src comp="38" pin="0"/><net_sink comp="108" pin=4"/></net>
+
+<net id="126"><net_src comp="40" pin="0"/><net_sink comp="120" pin=0"/></net>
+
+<net id="127"><net_src comp="10" pin="0"/><net_sink comp="120" pin=1"/></net>
+
+<net id="128"><net_src comp="12" pin="0"/><net_sink comp="120" pin=2"/></net>
+
+<net id="129"><net_src comp="14" pin="0"/><net_sink comp="120" pin=3"/></net>
+
+<net id="135"><net_src comp="54" pin="0"/><net_sink comp="130" pin=0"/></net>
+
+<net id="136"><net_src comp="8" pin="0"/><net_sink comp="130" pin=1"/></net>
+
+<net id="137"><net_src comp="38" pin="0"/><net_sink comp="130" pin=2"/></net>
+
+<net id="142"><net_src comp="56" pin="0"/><net_sink comp="138" pin=0"/></net>
+
+<net id="143"><net_src comp="8" pin="0"/><net_sink comp="138" pin=1"/></net>
+
+<net id="153"><net_src comp="94" pin="0"/><net_sink comp="144" pin=0"/></net>
+
+<net id="154"><net_src comp="16" pin="0"/><net_sink comp="144" pin=1"/></net>
+
+<net id="155"><net_src comp="18" pin="0"/><net_sink comp="144" pin=2"/></net>
+
+<net id="156"><net_src comp="20" pin="0"/><net_sink comp="144" pin=3"/></net>
+
+<net id="157"><net_src comp="96" pin="0"/><net_sink comp="144" pin=6"/></net>
+
+<net id="162"><net_src comp="22" pin="0"/><net_sink comp="158" pin=0"/></net>
+
+<net id="163"><net_src comp="0" pin="0"/><net_sink comp="158" pin=1"/></net>
+
+<net id="167"><net_src comp="120" pin="4"/><net_sink comp="164" pin=0"/></net>
+
+<net id="171"><net_src comp="120" pin="4"/><net_sink comp="168" pin=0"/></net>
+
+<net id="175"><net_src comp="120" pin="4"/><net_sink comp="172" pin=0"/></net>
+
+<net id="179"><net_src comp="120" pin="4"/><net_sink comp="176" pin=0"/></net>
+
+<net id="184"><net_src comp="164" pin="1"/><net_sink comp="180" pin=0"/></net>
+
+<net id="185"><net_src comp="4" pin="0"/><net_sink comp="180" pin=1"/></net>
+
+<net id="190"><net_src comp="168" pin="1"/><net_sink comp="186" pin=0"/></net>
+
+<net id="191"><net_src comp="6" pin="0"/><net_sink comp="186" pin=1"/></net>
+
+<net id="198"><net_src comp="76" pin="0"/><net_sink comp="192" pin=0"/></net>
+
+<net id="199"><net_src comp="78" pin="0"/><net_sink comp="192" pin=2"/></net>
+
+<net id="200"><net_src comp="80" pin="0"/><net_sink comp="192" pin=3"/></net>
+
+<net id="207"><net_src comp="82" pin="0"/><net_sink comp="201" pin=0"/></net>
+
+<net id="208"><net_src comp="44" pin="0"/><net_sink comp="201" pin=2"/></net>
+
+<net id="209"><net_src comp="84" pin="0"/><net_sink comp="201" pin=3"/></net>
+
+<net id="216"><net_src comp="98" pin="0"/><net_sink comp="210" pin=0"/></net>
+
+<net id="217"><net_src comp="100" pin="0"/><net_sink comp="210" pin=2"/></net>
+
+<net id="218"><net_src comp="80" pin="0"/><net_sink comp="210" pin=3"/></net>
+
+<net id="225"><net_src comp="102" pin="0"/><net_sink comp="219" pin=0"/></net>
+
+<net id="226"><net_src comp="46" pin="0"/><net_sink comp="219" pin=2"/></net>
+
+<net id="227"><net_src comp="84" pin="0"/><net_sink comp="219" pin=3"/></net>
+
+<net id="231"><net_src comp="0" pin="0"/><net_sink comp="228" pin=0"/></net>
+
+<net id="235"><net_src comp="2" pin="0"/><net_sink comp="232" pin=0"/></net>
+
+<net id="239"><net_src comp="4" pin="0"/><net_sink comp="236" pin=0"/></net>
+
+<net id="243"><net_src comp="6" pin="0"/><net_sink comp="240" pin=0"/></net>
+
+<net id="247"><net_src comp="164" pin="1"/><net_sink comp="244" pin=0"/></net>
+
+<net id="251"><net_src comp="168" pin="1"/><net_sink comp="248" pin=0"/></net>
+
+<net id="257"><net_src comp="42" pin="0"/><net_sink comp="252" pin=0"/></net>
+
+<net id="258"><net_src comp="168" pin="1"/><net_sink comp="252" pin=1"/></net>
+
+<net id="259"><net_src comp="44" pin="0"/><net_sink comp="252" pin=2"/></net>
+
+<net id="264"><net_src comp="34" pin="0"/><net_sink comp="260" pin=0"/></net>
+
+<net id="265"><net_src comp="0" pin="0"/><net_sink comp="260" pin=1"/></net>
+
+<net id="269"><net_src comp="164" pin="1"/><net_sink comp="266" pin=0"/></net>
+
+<net id="273"><net_src comp="168" pin="1"/><net_sink comp="270" pin=0"/></net>
+
+<net id="279"><net_src comp="42" pin="0"/><net_sink comp="274" pin=0"/></net>
+
+<net id="280"><net_src comp="168" pin="1"/><net_sink comp="274" pin=1"/></net>
+
+<net id="281"><net_src comp="46" pin="0"/><net_sink comp="274" pin=2"/></net>
+
+<net id="286"><net_src comp="32" pin="0"/><net_sink comp="282" pin=0"/></net>
+
+<net id="287"><net_src comp="0" pin="0"/><net_sink comp="282" pin=1"/></net>
+
+<net id="292"><net_src comp="232" pin="1"/><net_sink comp="288" pin=0"/></net>
+
+<net id="293"><net_src comp="48" pin="0"/><net_sink comp="288" pin=1"/></net>
+
+<net id="298"><net_src comp="288" pin="2"/><net_sink comp="294" pin=0"/></net>
+
+<net id="299"><net_src comp="2" pin="0"/><net_sink comp="294" pin=1"/></net>
+
+<net id="304"><net_src comp="288" pin="2"/><net_sink comp="300" pin=0"/></net>
+
+<net id="305"><net_src comp="50" pin="0"/><net_sink comp="300" pin=1"/></net>
+
+<net id="310"><net_src comp="288" pin="2"/><net_sink comp="306" pin=0"/></net>
+
+<net id="311"><net_src comp="52" pin="0"/><net_sink comp="306" pin=1"/></net>
+
+<net id="316"><net_src comp="26" pin="0"/><net_sink comp="312" pin=0"/></net>
+
+<net id="317"><net_src comp="0" pin="0"/><net_sink comp="312" pin=1"/></net>
+
+<net id="322"><net_src comp="28" pin="0"/><net_sink comp="318" pin=0"/></net>
+
+<net id="323"><net_src comp="0" pin="0"/><net_sink comp="318" pin=1"/></net>
+
+<net id="328"><net_src comp="138" pin="2"/><net_sink comp="324" pin=0"/></net>
+
+<net id="329"><net_src comp="2" pin="0"/><net_sink comp="324" pin=1"/></net>
+
+<net id="334"><net_src comp="138" pin="2"/><net_sink comp="330" pin=0"/></net>
+
+<net id="335"><net_src comp="58" pin="0"/><net_sink comp="330" pin=1"/></net>
+
+<net id="339"><net_src comp="120" pin="4"/><net_sink comp="336" pin=0"/></net>
+
+<net id="345"><net_src comp="336" pin="1"/><net_sink comp="340" pin=0"/></net>
+
+<net id="346"><net_src comp="34" pin="0"/><net_sink comp="340" pin=1"/></net>
+
+<net id="347"><net_src comp="30" pin="0"/><net_sink comp="340" pin=2"/></net>
+
+<net id="352"><net_src comp="340" pin="3"/><net_sink comp="348" pin=0"/></net>
+
+<net id="353"><net_src comp="0" pin="0"/><net_sink comp="348" pin=1"/></net>
+
+<net id="359"><net_src comp="86" pin="0"/><net_sink comp="354" pin=0"/></net>
+
+<net id="360"><net_src comp="88" pin="0"/><net_sink comp="354" pin=1"/></net>
+
+<net id="361"><net_src comp="192" pin="4"/><net_sink comp="354" pin=2"/></net>
+
+<net id="362"><net_src comp="354" pin="3"/><net_sink comp="144" pin=4"/></net>
+
+<net id="368"><net_src comp="90" pin="0"/><net_sink comp="363" pin=0"/></net>
+
+<net id="369"><net_src comp="92" pin="0"/><net_sink comp="363" pin=1"/></net>
+
+<net id="370"><net_src comp="201" pin="4"/><net_sink comp="363" pin=2"/></net>
+
+<net id="371"><net_src comp="363" pin="3"/><net_sink comp="144" pin=5"/></net>
+
+<net id="377"><net_src comp="104" pin="0"/><net_sink comp="372" pin=0"/></net>
+
+<net id="378"><net_src comp="64" pin="0"/><net_sink comp="372" pin=1"/></net>
+
+<net id="379"><net_src comp="210" pin="4"/><net_sink comp="372" pin=2"/></net>
+
+<net id="380"><net_src comp="372" pin="3"/><net_sink comp="144" pin=4"/></net>
+
+<net id="386"><net_src comp="106" pin="0"/><net_sink comp="381" pin=0"/></net>
+
+<net id="387"><net_src comp="52" pin="0"/><net_sink comp="381" pin=1"/></net>
+
+<net id="388"><net_src comp="219" pin="4"/><net_sink comp="381" pin=2"/></net>
+
+<net id="389"><net_src comp="381" pin="3"/><net_sink comp="144" pin=5"/></net>
+
+<net id="395"><net_src comp="86" pin="0"/><net_sink comp="390" pin=0"/></net>
+
+<net id="396"><net_src comp="192" pin="4"/><net_sink comp="390" pin=2"/></net>
+
+<net id="397"><net_src comp="390" pin="3"/><net_sink comp="144" pin=4"/></net>
+
+<net id="403"><net_src comp="90" pin="0"/><net_sink comp="398" pin=0"/></net>
+
+<net id="404"><net_src comp="201" pin="4"/><net_sink comp="398" pin=2"/></net>
+
+<net id="405"><net_src comp="398" pin="3"/><net_sink comp="144" pin=5"/></net>
+
+<net id="410"><net_src comp="96" pin="0"/><net_sink comp="406" pin=1"/></net>
+
+<net id="411"><net_src comp="406" pin="2"/><net_sink comp="144" pin=6"/></net>
+
+<net id="417"><net_src comp="104" pin="0"/><net_sink comp="412" pin=0"/></net>
+
+<net id="418"><net_src comp="210" pin="4"/><net_sink comp="412" pin=2"/></net>
+
+<net id="419"><net_src comp="412" pin="3"/><net_sink comp="144" pin=4"/></net>
+
+<net id="425"><net_src comp="106" pin="0"/><net_sink comp="420" pin=0"/></net>
+
+<net id="426"><net_src comp="219" pin="4"/><net_sink comp="420" pin=2"/></net>
+
+<net id="427"><net_src comp="420" pin="3"/><net_sink comp="144" pin=5"/></net>
+
+<net id="432"><net_src comp="96" pin="0"/><net_sink comp="428" pin=1"/></net>
+
+<net id="433"><net_src comp="428" pin="2"/><net_sink comp="144" pin=6"/></net>
+
+<net id="437"><net_src comp="228" pin="1"/><net_sink comp="434" pin=0"/></net>
+
+<net id="441"><net_src comp="236" pin="1"/><net_sink comp="438" pin=0"/></net>
+
+<net id="442"><net_src comp="438" pin="1"/><net_sink comp="192" pin=1"/></net>
+
+<net id="443"><net_src comp="438" pin="1"/><net_sink comp="210" pin=1"/></net>
+
+<net id="447"><net_src comp="240" pin="1"/><net_sink comp="444" pin=0"/></net>
+
+<net id="448"><net_src comp="444" pin="1"/><net_sink comp="201" pin=1"/></net>
+
+<net id="449"><net_src comp="444" pin="1"/><net_sink comp="219" pin=1"/></net>
+
+<net id="453"><net_src comp="108" pin="5"/><net_sink comp="450" pin=0"/></net>
+
+<net id="457"><net_src comp="172" pin="1"/><net_sink comp="454" pin=0"/></net>
+
+<net id="461"><net_src comp="244" pin="1"/><net_sink comp="458" pin=0"/></net>
+
+<net id="462"><net_src comp="458" pin="1"/><net_sink comp="390" pin=1"/></net>
+
+<net id="466"><net_src comp="248" pin="1"/><net_sink comp="463" pin=0"/></net>
+
+<net id="467"><net_src comp="463" pin="1"/><net_sink comp="398" pin=1"/></net>
+
+<net id="471"><net_src comp="252" pin="3"/><net_sink comp="468" pin=0"/></net>
+
+<net id="472"><net_src comp="468" pin="1"/><net_sink comp="406" pin=0"/></net>
+
+<net id="476"><net_src comp="108" pin="5"/><net_sink comp="473" pin=0"/></net>
+
+<net id="480"><net_src comp="172" pin="1"/><net_sink comp="477" pin=0"/></net>
+
+<net id="484"><net_src comp="266" pin="1"/><net_sink comp="481" pin=0"/></net>
+
+<net id="485"><net_src comp="481" pin="1"/><net_sink comp="412" pin=1"/></net>
+
+<net id="489"><net_src comp="270" pin="1"/><net_sink comp="486" pin=0"/></net>
+
+<net id="490"><net_src comp="486" pin="1"/><net_sink comp="420" pin=1"/></net>
+
+<net id="494"><net_src comp="274" pin="3"/><net_sink comp="491" pin=0"/></net>
+
+<net id="495"><net_src comp="491" pin="1"/><net_sink comp="428" pin=0"/></net>
+
+<net id="499"><net_src comp="108" pin="5"/><net_sink comp="496" pin=0"/></net>
+
+<net id="503"><net_src comp="164" pin="1"/><net_sink comp="500" pin=0"/></net>
+
+<net id="504"><net_src comp="500" pin="1"/><net_sink comp="144" pin=4"/></net>
+
+<net id="508"><net_src comp="168" pin="1"/><net_sink comp="505" pin=0"/></net>
+
+<net id="509"><net_src comp="505" pin="1"/><net_sink comp="144" pin=5"/></net>
+
+<net id="513"><net_src comp="176" pin="1"/><net_sink comp="510" pin=0"/></net>
+
+<net id="514"><net_src comp="510" pin="1"/><net_sink comp="144" pin=6"/></net>
+
+<net id="518"><net_src comp="108" pin="5"/><net_sink comp="515" pin=0"/></net>
+
+<net id="522"><net_src comp="300" pin="2"/><net_sink comp="519" pin=0"/></net>
+
+<net id="526"><net_src comp="306" pin="2"/><net_sink comp="523" pin=0"/></net>
+
+<net id="530"><net_src comp="130" pin="3"/><net_sink comp="527" pin=0"/></net>
+
+<net id="534"><net_src comp="108" pin="5"/><net_sink comp="531" pin=0"/></net>
+
+<net id="538"><net_src comp="330" pin="2"/><net_sink comp="535" pin=0"/></net>
+
+</net_list>
+
+</model> 
+---------------- Datapath Model END ------------------
+
+* FSMD analyzer results:
+  - Output states:
+	Port: doh_state | {1 }
+	Port: length_V | {1 }
+	Port: prevWord_data_V | {1 }
+	Port: prevWord_keep_V | {1 }
+	Port: rx_process2dropLengt_1 | {}
+	Port: rx_process2dropFifo_1_5 | {}
+	Port: rx_process2dropFifo_2_4 | {}
+	Port: rx_process2dropFifo_s_6 | {}
+	Port: rx_ip2udpFifo_V_data | {2 }
+	Port: rx_ip2udpFifo_V_keep | {2 }
+	Port: rx_ip2udpFifo_V_last | {2 }
+ - Input state : 
+	Port: ipv4_drop_optional_i : doh_state | {1 }
+	Port: ipv4_drop_optional_i : length_V | {1 }
+	Port: ipv4_drop_optional_i : prevWord_data_V | {1 }
+	Port: ipv4_drop_optional_i : prevWord_keep_V | {1 }
+	Port: ipv4_drop_optional_i : rx_process2dropLengt_1 | {1 }
+	Port: ipv4_drop_optional_i : rx_process2dropFifo_1_5 | {1 }
+	Port: ipv4_drop_optional_i : rx_process2dropFifo_2_4 | {1 }
+	Port: ipv4_drop_optional_i : rx_process2dropFifo_s_6 | {1 }
+	Port: ipv4_drop_optional_i : rx_ip2udpFifo_V_data | {}
+	Port: ipv4_drop_optional_i : rx_ip2udpFifo_V_keep | {}
+	Port: ipv4_drop_optional_i : rx_ip2udpFifo_V_last | {}
+  - Chain level:
+	State 1
+		switch_ln211 : 1
+		trunc_ln647_14 : 1
+		trunc_ln647_15 : 1
+		tmp_79 : 1
+		store_ln50 : 1
+		store_ln50 : 1
+		br_ln308 : 1
+		trunc_ln647 : 1
+		trunc_ln647_13 : 1
+		tmp_78 : 1
+		store_ln50 : 1
+		store_ln50 : 1
+		br_ln287 : 1
+		store_ln50 : 1
+		store_ln50 : 1
+		add_ln701 : 1
+		store_ln251 : 2
+		icmp_ln879 : 2
+		br_ln252 : 3
+		icmp_ln879_8 : 2
+		br_ln255 : 3
+		br_ln235 : 1
+		store_ln50 : 1
+		store_ln50 : 1
+		select_ln239 : 1
+		store_ln238 : 2
+	State 2
+		p_Result_56 : 1
+		p_Result_57 : 1
+		write_ln329 : 2
+		p_Result_54 : 1
+		p_Result_55 : 1
+		write_ln320 : 2
+		p_Result_52 : 1
+		p_Result_53 : 1
+		write_ln302 : 2
+		p_Result_s : 1
+		p_Result_51 : 1
+		write_ln281 : 2
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+
+* Functional unit list:
+|----------|-----------------------|---------|---------|
+| Operation|    Functional Unit    |    FF   |   LUT   |
+|----------|-----------------------|---------|---------|
+|          |   icmp_ln879_fu_300   |    0    |    9    |
+|   icmp   |  icmp_ln879_8_fu_306  |    0    |    9    |
+|          |  icmp_ln879_7_fu_330  |    0    |    9    |
+|----------|-----------------------|---------|---------|
+|    add   |    add_ln701_fu_288   |    0    |    12   |
+|----------|-----------------------|---------|---------|
+|    xor   |  tmp_last_V_35_fu_406 |    0    |    2    |
+|          |  tmp_last_V_33_fu_428 |    0    |    2    |
+|----------|-----------------------|---------|---------|
+|  select  |  select_ln239_fu_340  |    0    |    3    |
+|----------|-----------------------|---------|---------|
+| nbreadreq|  grp_nbreadreq_fu_108 |    0    |    0    |
+|          |  tmp_nbreadreq_fu_130 |    0    |    0    |
+|----------|-----------------------|---------|---------|
+|   read   |    grp_read_fu_120    |    0    |    0    |
+|          |   tmp_V_read_fu_138   |    0    |    0    |
+|----------|-----------------------|---------|---------|
+|   write  |    grp_write_fu_144   |    0    |    0    |
+|----------|-----------------------|---------|---------|
+|          |       grp_fu_164      |    0    |    0    |
+|          |       grp_fu_168      |    0    |    0    |
+|extractvalue|       grp_fu_172      |    0    |    0    |
+|          |   tmp_last_V_fu_176   |    0    |    0    |
+|          |  tmp_last_V_36_fu_336 |    0    |    0    |
+|----------|-----------------------|---------|---------|
+|          |       grp_fu_192      |    0    |    0    |
+|partselect|       grp_fu_201      |    0    |    0    |
+|          |       grp_fu_210      |    0    |    0    |
+|          |       grp_fu_219      |    0    |    0    |
+|----------|-----------------------|---------|---------|
+|          | trunc_ln647_14_fu_244 |    0    |    0    |
+|   trunc  | trunc_ln647_15_fu_248 |    0    |    0    |
+|          |   trunc_ln647_fu_266  |    0    |    0    |
+|          | trunc_ln647_13_fu_270 |    0    |    0    |
+|----------|-----------------------|---------|---------|
+| bitselect|     tmp_79_fu_252     |    0    |    0    |
+|          |     tmp_78_fu_274     |    0    |    0    |
+|----------|-----------------------|---------|---------|
+|          |   p_Result_56_fu_354  |    0    |    0    |
+|          |   p_Result_57_fu_363  |    0    |    0    |
+|          |   p_Result_54_fu_372  |    0    |    0    |
+|bitconcatenate|   p_Result_55_fu_381  |    0    |    0    |
+|          |   p_Result_52_fu_390  |    0    |    0    |
+|          |   p_Result_53_fu_398  |    0    |    0    |
+|          |   p_Result_s_fu_412   |    0    |    0    |
+|          |   p_Result_51_fu_420  |    0    |    0    |
+|----------|-----------------------|---------|---------|
+|   Total  |                       |    0    |    46   |
+|----------|-----------------------|---------|---------|
+
+Memories:
+N/A
+
+* Register list:
++----------------------+--------+
+|                      |   FF   |
++----------------------+--------+
+|doh_state_load_reg_434|    3   |
+| icmp_ln879_7_reg_535 |    1   |
+| icmp_ln879_8_reg_523 |    1   |
+|  icmp_ln879_reg_519  |    1   |
+|   p_Val2_42_reg_444  |   64   |
+|   p_Val2_s_reg_438   |   512  |
+|    tmp_73_reg_515    |    1   |
+|    tmp_74_reg_496    |    1   |
+|    tmp_75_reg_473    |    1   |
+|    tmp_76_reg_450    |    1   |
+|    tmp_77_reg_531    |    1   |
+|    tmp_78_reg_491    |    1   |
+|    tmp_79_reg_468    |    1   |
+| tmp_data_V_46_reg_500|   512  |
+| tmp_keep_V_43_reg_505|   64   |
+| tmp_last_V_37_reg_477|    1   |
+| tmp_last_V_38_reg_454|    1   |
+|  tmp_last_V_reg_510  |    1   |
+|      tmp_reg_527     |    1   |
+|trunc_ln647_13_reg_486|    4   |
+|trunc_ln647_14_reg_458|   160  |
+|trunc_ln647_15_reg_463|   20   |
+|  trunc_ln647_reg_481 |   32   |
++----------------------+--------+
+|         Total        |  1385  |
++----------------------+--------+
+
+* Multiplexer (MUX) list: 
+|------------------|------|------|------|--------||---------||---------|
+|       Comp       |  Pin | Size |  BW  | S x BW ||  Delay  ||   LUT   |
+|------------------|------|------|------|--------||---------||---------|
+| grp_write_fu_144 |  p4  |   5  |  512 |  2560  ||    27   |
+| grp_write_fu_144 |  p5  |   5  |  64  |   320  ||    27   |
+| grp_write_fu_144 |  p6  |   4  |   1  |    4   ||    21   |
+|------------------|------|------|------|--------||---------||---------|
+|       Total      |      |      |      |  2884  ||  2.118  ||    75   |
+|------------------|------|------|------|--------||---------||---------|
+
+
+
+* Summary:
++-----------+--------+--------+--------+
+|           |  Delay |   FF   |   LUT  |
++-----------+--------+--------+--------+
+|  Function |    -   |    0   |   46   |
+|   Memory  |    -   |    -   |    -   |
+|Multiplexer|    2   |    -   |   75   |
+|  Register |    -   |  1385  |    -   |
++-----------+--------+--------+--------+
+|   Total   |    2   |  1385  |   121  |
++-----------+--------+--------+--------+

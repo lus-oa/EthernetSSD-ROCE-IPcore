@@ -1,0 +1,496 @@
+
+
+================================================================
+== Vivado HLS Report for 'stream_merger'
+================================================================
+* Date:           Mon Mar  1 13:03:34 2021
+
+* Version:        2019.1 (Build 2552052 on Fri May 24 15:28:33 MDT 2019)
+* Project:        rocev2_prj
+* Solution:       solution1
+* Product family: zynquplus
+* Target device:  xczu7eg-ffvc1156-2-i
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |   8.00|     1.838|        1.00|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+----------+
+    |  Latency  |  Interval | Pipeline |
+    | min | max | min | max |   Type   |
+    +-----+-----+-----+-----+----------+
+    |    2|    2|    1|    1| function |
+    +-----+-----+-----+-----+----------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 2
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 2
+HasVarLatency: 0
+IsPipeline: 1
+IsRtlPipelined: 1
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
++ Individual pipeline summary: 
+  * Pipeline-0: initiation interval (II) = 1, depth = 3
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 3
+* Pipeline : 1
+  Pipeline-0 : II = 1, D = 3, States = { 1 2 3 }
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 3 
+3 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 1.83>
+ST_1 : Operation 4 [1/1] (0.00ns)   --->   "%tmp = call i1 @_ssdm_op_NbReadReq.ap_fifo.i50P(i50* @rx_exhEventMetaFifo_s_12, i32 1) nounwind" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ib_transport_protocol/../axi_utils.hpp:629]   --->   Operation 4 'nbreadreq' 'tmp' <Predicate = true> <Delay = 0.00> <Core = "FIFO">   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 1.83> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 50> <Depth = 2> <FIFO>
+ST_1 : Operation 5 [1/1] (0.00ns)   --->   "br i1 %tmp, label %0, label %1" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ib_transport_protocol/../axi_utils.hpp:629]   --->   Operation 5 'br' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 6 [1/1] (1.83ns)   --->   "%tmp56 = call i50 @_ssdm_op_Read.ap_fifo.volatile.i50P(i50* @rx_exhEventMetaFifo_s_12) nounwind" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ib_transport_protocol/../axi_utils.hpp:631]   --->   Operation 6 'read' 'tmp56' <Predicate = (tmp)> <Delay = 1.83> <Core = "FIFO">   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 1.83> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 50> <Depth = 2> <FIFO>
+
+State 2 <SV = 1> <Delay = 1.83>
+ST_2 : Operation 7 [1/1] (0.00ns)   --->   "%tmp_8 = call i1 @_ssdm_op_NbReadReq.ap_fifo.i50P(i50* @rx_ibhEventFifo_V, i32 1) nounwind" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ib_transport_protocol/../axi_utils.hpp:633]   --->   Operation 7 'nbreadreq' 'tmp_8' <Predicate = (!tmp)> <Delay = 0.00> <Core = "FIFO">   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 1.83> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 50> <Depth = 2> <FIFO>
+ST_2 : Operation 8 [1/1] (0.00ns)   --->   "br i1 %tmp_8, label %2, label %._crit_edge.i" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ib_transport_protocol/../axi_utils.hpp:633]   --->   Operation 8 'br' <Predicate = (!tmp)> <Delay = 0.00>
+ST_2 : Operation 9 [1/1] (1.83ns)   --->   "%tmp_2 = call i50 @_ssdm_op_Read.ap_fifo.volatile.i50P(i50* @rx_ibhEventFifo_V) nounwind" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ib_transport_protocol/../axi_utils.hpp:635]   --->   Operation 9 'read' 'tmp_2' <Predicate = (!tmp & tmp_8)> <Delay = 1.83> <Core = "FIFO">   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 1.83> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 50> <Depth = 2> <FIFO>
+
+State 3 <SV = 2> <Delay = 1.83>
+ST_3 : Operation 10 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i50* @rx_ackEventFifo_V, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str, [1 x i8]* @p_str)"   --->   Operation 10 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 11 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i50* @rx_exhEventMetaFifo_s_12, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str, [1 x i8]* @p_str)"   --->   Operation 11 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 12 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i50* @rx_ibhEventFifo_V, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str, [1 x i8]* @p_str)"   --->   Operation 12 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 13 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecPipeline(i32 1, i32 1, i32 1, i32 0, [1 x i8]* @p_str112) nounwind" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ib_transport_protocol/../axi_utils.hpp:626]   --->   Operation 13 'specpipeline' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 14 [1/1] (1.83ns)   --->   "call void @_ssdm_op_Write.ap_fifo.volatile.i50P(i50* @rx_ackEventFifo_V, i50 %tmp_2) nounwind" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ib_transport_protocol/../axi_utils.hpp:635]   --->   Operation 14 'write' <Predicate = (!tmp & tmp_8)> <Delay = 1.83> <Core = "FIFO">   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 1.83> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 50> <Depth = 2> <FIFO>
+ST_3 : Operation 15 [1/1] (0.00ns)   --->   "br label %._crit_edge.i" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ib_transport_protocol/../axi_utils.hpp:636]   --->   Operation 15 'br' <Predicate = (!tmp & tmp_8)> <Delay = 0.00>
+ST_3 : Operation 16 [1/1] (0.00ns)   --->   "br label %"stream_merger<ackEvent>.exit""   --->   Operation 16 'br' <Predicate = (!tmp)> <Delay = 0.00>
+ST_3 : Operation 17 [1/1] (1.83ns)   --->   "call void @_ssdm_op_Write.ap_fifo.volatile.i50P(i50* @rx_ackEventFifo_V, i50 %tmp56) nounwind" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ib_transport_protocol/../axi_utils.hpp:631]   --->   Operation 17 'write' <Predicate = (tmp)> <Delay = 1.83> <Core = "FIFO">   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 1.83> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 50> <Depth = 2> <FIFO>
+ST_3 : Operation 18 [1/1] (0.00ns)   --->   "br label %"stream_merger<ackEvent>.exit"" [/home/embed/Desktop/xkjiang/Github_Version/EthernetSSD-System-main/RX_receiveWriteReadRequest_genACK/hls/rocev2/../ib_transport_protocol/../axi_utils.hpp:632]   --->   Operation 18 'br' <Predicate = (tmp)> <Delay = 0.00>
+ST_3 : Operation 19 [1/1] (0.00ns)   --->   "ret void"   --->   Operation 19 'ret' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+STG Binding: 
+---------------- STG Properties BEGIN ----------------
+- Is combinational: 0
+- Is one-state seq: 0
+- Is datapath-only: 0
+- Is pipelined: 1
+- Is top level: 0
+Port [ Return ] is wired: 1; IO mode=ap_ctrl_hs:ce=0
+Port [ rx_exhEventMetaFifo_s_12]:  wired=1; compound=1; hidden=0; nouse=0; global=1; static=1; extern=0; dir=0; type=3; pingpong=0; private_global=0; linkage=7; visibility=0; IO mode=ap_fifo:ce=0
+Port [ rx_ackEventFifo_V]:  wired=1; compound=1; hidden=0; nouse=0; global=1; static=1; extern=0; dir=1; type=3; pingpong=0; private_global=0; linkage=7; visibility=0; IO mode=ap_fifo:ce=0
+Port [ rx_ibhEventFifo_V]:  wired=1; compound=1; hidden=0; nouse=0; global=1; static=1; extern=0; dir=0; type=3; pingpong=0; private_global=0; linkage=7; visibility=0; IO mode=ap_fifo:ce=0
+---------------- STG Properties END ------------------
+
+---------------- Datapath Model BEGIN ----------------
+
+<LifeTime>
+<method=bitvector/>
+tmp                (nbreadreq    ) [ 0111]
+br_ln629           (br           ) [ 0000]
+tmp56              (read         ) [ 0111]
+tmp_8              (nbreadreq    ) [ 0111]
+br_ln633           (br           ) [ 0000]
+tmp_2              (read         ) [ 0101]
+specinterface_ln0  (specinterface) [ 0000]
+specinterface_ln0  (specinterface) [ 0000]
+specinterface_ln0  (specinterface) [ 0000]
+specpipeline_ln626 (specpipeline ) [ 0000]
+write_ln635        (write        ) [ 0000]
+br_ln636           (br           ) [ 0000]
+br_ln0             (br           ) [ 0000]
+write_ln631        (write        ) [ 0000]
+br_ln632           (br           ) [ 0000]
+ret_ln0            (ret          ) [ 0000]
+</LifeTime>
+
+<model>
+
+<comp_list>
+<comp id="0" class="1000" name="rx_exhEventMetaFifo_s_12">
+<pin_list>
+<pin id="1" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="rx_exhEventMetaFifo_s_12"/></StgValue>
+</bind>
+</comp>
+
+<comp id="2" class="1000" name="rx_ackEventFifo_V">
+<pin_list>
+<pin id="3" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="rx_ackEventFifo_V"/></StgValue>
+</bind>
+</comp>
+
+<comp id="4" class="1000" name="rx_ibhEventFifo_V">
+<pin_list>
+<pin id="5" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="rx_ibhEventFifo_V"/></StgValue>
+</bind>
+</comp>
+
+<comp id="6" class="1001" name="const_6">
+<pin_list>
+<pin id="7" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="_ssdm_op_NbReadReq.ap_fifo.i50P"/></StgValue>
+</bind>
+</comp>
+
+<comp id="8" class="1001" name="const_8">
+<pin_list>
+<pin id="9" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="10" class="1001" name="const_10">
+<pin_list>
+<pin id="11" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="_ssdm_op_Read.ap_fifo.volatile.i50P"/></StgValue>
+</bind>
+</comp>
+
+<comp id="12" class="1001" name="const_12">
+<pin_list>
+<pin id="13" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="_ssdm_op_SpecInterface"/></StgValue>
+</bind>
+</comp>
+
+<comp id="14" class="1001" name="const_14">
+<pin_list>
+<pin id="15" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="ap_fifo_str"/></StgValue>
+</bind>
+</comp>
+
+<comp id="16" class="1001" name="const_16">
+<pin_list>
+<pin id="17" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="18" class="1001" name="const_18">
+<pin_list>
+<pin id="19" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="p_str"/></StgValue>
+</bind>
+</comp>
+
+<comp id="20" class="1001" name="const_20">
+<pin_list>
+<pin id="21" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="22" class="1001" name="const_22">
+<pin_list>
+<pin id="23" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="24" class="1001" name="const_24">
+<pin_list>
+<pin id="25" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="_ssdm_op_SpecPipeline"/></StgValue>
+</bind>
+</comp>
+
+<comp id="26" class="1001" name="const_26">
+<pin_list>
+<pin id="27" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="p_str112"/></StgValue>
+</bind>
+</comp>
+
+<comp id="28" class="1001" name="const_28">
+<pin_list>
+<pin id="29" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="_ssdm_op_Write.ap_fifo.volatile.i50P"/></StgValue>
+</bind>
+</comp>
+
+<comp id="30" class="1004" name="tmp_nbreadreq_fu_30">
+<pin_list>
+<pin id="31" dir="0" index="0" bw="1" slack="0"/>
+<pin id="32" dir="0" index="1" bw="50" slack="0"/>
+<pin id="33" dir="0" index="2" bw="1" slack="0"/>
+<pin id="34" dir="1" index="3" bw="1" slack="1"/>
+</pin_list>
+<bind>
+<opcode="nbreadreq(1156) " fcode="nbreadreq"/>
+<opset="tmp/1 "/>
+</bind>
+</comp>
+
+<comp id="38" class="1004" name="tmp56_read_fu_38">
+<pin_list>
+<pin id="39" dir="0" index="0" bw="50" slack="0"/>
+<pin id="40" dir="0" index="1" bw="50" slack="0"/>
+<pin id="41" dir="1" index="2" bw="50" slack="2"/>
+</pin_list>
+<bind>
+<opcode="read(1150) " fcode="read"/>
+<opset="tmp56/1 "/>
+</bind>
+</comp>
+
+<comp id="44" class="1004" name="tmp_8_nbreadreq_fu_44">
+<pin_list>
+<pin id="45" dir="0" index="0" bw="1" slack="0"/>
+<pin id="46" dir="0" index="1" bw="50" slack="0"/>
+<pin id="47" dir="0" index="2" bw="1" slack="0"/>
+<pin id="48" dir="1" index="3" bw="1" slack="1"/>
+</pin_list>
+<bind>
+<opcode="nbreadreq(1156) " fcode="nbreadreq"/>
+<opset="tmp_8/2 "/>
+</bind>
+</comp>
+
+<comp id="52" class="1004" name="tmp_2_read_fu_52">
+<pin_list>
+<pin id="53" dir="0" index="0" bw="50" slack="0"/>
+<pin id="54" dir="0" index="1" bw="50" slack="0"/>
+<pin id="55" dir="1" index="2" bw="50" slack="1"/>
+</pin_list>
+<bind>
+<opcode="read(1150) " fcode="read"/>
+<opset="tmp_2/2 "/>
+</bind>
+</comp>
+
+<comp id="58" class="1004" name="grp_write_fu_58">
+<pin_list>
+<pin id="59" dir="0" index="0" bw="0" slack="0"/>
+<pin id="60" dir="0" index="1" bw="50" slack="0"/>
+<pin id="61" dir="0" index="2" bw="50" slack="1"/>
+<pin id="62" dir="1" index="3" bw="0" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="write(1151) " fcode="write"/>
+<opset="write_ln635/3 write_ln631/3 "/>
+</bind>
+</comp>
+
+<comp id="65" class="1005" name="tmp_reg_65">
+<pin_list>
+<pin id="66" dir="0" index="0" bw="1" slack="1"/>
+<pin id="67" dir="1" index="1" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<opset="tmp "/>
+</bind>
+</comp>
+
+<comp id="69" class="1005" name="tmp56_reg_69">
+<pin_list>
+<pin id="70" dir="0" index="0" bw="50" slack="2"/>
+<pin id="71" dir="1" index="1" bw="50" slack="2"/>
+</pin_list>
+<bind>
+<opset="tmp56 "/>
+</bind>
+</comp>
+
+<comp id="74" class="1005" name="tmp_8_reg_74">
+<pin_list>
+<pin id="75" dir="0" index="0" bw="1" slack="1"/>
+<pin id="76" dir="1" index="1" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<opset="tmp_8 "/>
+</bind>
+</comp>
+
+<comp id="78" class="1005" name="tmp_2_reg_78">
+<pin_list>
+<pin id="79" dir="0" index="0" bw="50" slack="1"/>
+<pin id="80" dir="1" index="1" bw="50" slack="1"/>
+</pin_list>
+<bind>
+<opset="tmp_2 "/>
+</bind>
+</comp>
+
+</comp_list>
+
+<net_list>
+<net id="35"><net_src comp="6" pin="0"/><net_sink comp="30" pin=0"/></net>
+
+<net id="36"><net_src comp="0" pin="0"/><net_sink comp="30" pin=1"/></net>
+
+<net id="37"><net_src comp="8" pin="0"/><net_sink comp="30" pin=2"/></net>
+
+<net id="42"><net_src comp="10" pin="0"/><net_sink comp="38" pin=0"/></net>
+
+<net id="43"><net_src comp="0" pin="0"/><net_sink comp="38" pin=1"/></net>
+
+<net id="49"><net_src comp="6" pin="0"/><net_sink comp="44" pin=0"/></net>
+
+<net id="50"><net_src comp="4" pin="0"/><net_sink comp="44" pin=1"/></net>
+
+<net id="51"><net_src comp="8" pin="0"/><net_sink comp="44" pin=2"/></net>
+
+<net id="56"><net_src comp="10" pin="0"/><net_sink comp="52" pin=0"/></net>
+
+<net id="57"><net_src comp="4" pin="0"/><net_sink comp="52" pin=1"/></net>
+
+<net id="63"><net_src comp="28" pin="0"/><net_sink comp="58" pin=0"/></net>
+
+<net id="64"><net_src comp="2" pin="0"/><net_sink comp="58" pin=1"/></net>
+
+<net id="68"><net_src comp="30" pin="3"/><net_sink comp="65" pin=0"/></net>
+
+<net id="72"><net_src comp="38" pin="2"/><net_sink comp="69" pin=0"/></net>
+
+<net id="73"><net_src comp="69" pin="1"/><net_sink comp="58" pin=2"/></net>
+
+<net id="77"><net_src comp="44" pin="3"/><net_sink comp="74" pin=0"/></net>
+
+<net id="81"><net_src comp="52" pin="2"/><net_sink comp="78" pin=0"/></net>
+
+<net id="82"><net_src comp="78" pin="1"/><net_sink comp="58" pin=2"/></net>
+
+</net_list>
+
+</model> 
+---------------- Datapath Model END ------------------
+
+* FSMD analyzer results:
+  - Output states:
+	Port: rx_ackEventFifo_V | {3 }
+ - Input state : 
+	Port: stream_merger : rx_exhEventMetaFifo_s_12 | {1 }
+	Port: stream_merger : rx_ibhEventFifo_V | {2 }
+  - Chain level:
+	State 1
+	State 2
+	State 3
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+
+* Functional unit list:
+|----------|-----------------------|
+| Operation|    Functional Unit    |
+|----------|-----------------------|
+| nbreadreq|  tmp_nbreadreq_fu_30  |
+|          | tmp_8_nbreadreq_fu_44 |
+|----------|-----------------------|
+|   read   |    tmp56_read_fu_38   |
+|          |    tmp_2_read_fu_52   |
+|----------|-----------------------|
+|   write  |    grp_write_fu_58    |
+|----------|-----------------------|
+|   Total  |                       |
+|----------|-----------------------|
+
+Memories:
+N/A
+
+* Register list:
++------------+--------+
+|            |   FF   |
++------------+--------+
+|tmp56_reg_69|   50   |
+|tmp_2_reg_78|   50   |
+|tmp_8_reg_74|    1   |
+| tmp_reg_65 |    1   |
++------------+--------+
+|    Total   |   102  |
++------------+--------+
+
+* Multiplexer (MUX) list: 
+|-----------------|------|------|------|--------||---------||---------|
+|       Comp      |  Pin | Size |  BW  | S x BW ||  Delay  ||   LUT   |
+|-----------------|------|------|------|--------||---------||---------|
+| grp_write_fu_58 |  p2  |   2  |  50  |   100  ||    9    |
+|-----------------|------|------|------|--------||---------||---------|
+|      Total      |      |      |      |   100  ||  0.656  ||    9    |
+|-----------------|------|------|------|--------||---------||---------|
+
+
+
+* Summary:
++-----------+--------+--------+--------+
+|           |  Delay |   FF   |   LUT  |
++-----------+--------+--------+--------+
+|  Function |    -   |    -   |    -   |
+|   Memory  |    -   |    -   |    -   |
+|Multiplexer|    0   |    -   |    9   |
+|  Register |    -   |   102  |    -   |
++-----------+--------+--------+--------+
+|   Total   |    0   |   102  |    9   |
++-----------+--------+--------+--------+

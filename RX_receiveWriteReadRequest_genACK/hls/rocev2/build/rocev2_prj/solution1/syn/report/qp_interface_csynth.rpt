@@ -1,0 +1,163 @@
+
+
+================================================================
+== Vivado HLS Report for 'qp_interface'
+================================================================
+* Date:           Mon Mar  1 13:04:10 2021
+
+* Version:        2019.1 (Build 2552052 on Fri May 24 15:28:33 MDT 2019)
+* Project:        rocev2_prj
+* Solution:       solution1
+* Product family: zynquplus
+* Target device:  xczu7eg-ffvc1156-2-i
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |   8.00|     1.838|        1.00|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+----------+
+    |  Latency  |  Interval | Pipeline |
+    | min | max | min | max |   Type   |
+    +-----+-----+-----+-----+----------+
+    |    1|    1|    1|    1| function |
+    +-----+-----+-----+-----+----------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-------+--------+--------+-----+
+|       Name      | BRAM_18K| DSP48E|   FF   |   LUT  | URAM|
++-----------------+---------+-------+--------+--------+-----+
+|DSP              |        -|      -|       -|       -|    -|
+|Expression       |        -|      -|       0|      24|    -|
+|FIFO             |        -|      -|       -|       -|    -|
+|Instance         |        -|      -|       -|       -|    -|
+|Memory           |        -|      -|       -|       -|    -|
+|Multiplexer      |        -|      -|       -|      60|    -|
+|Register         |        -|      -|     114|       -|    -|
++-----------------+---------+-------+--------+--------+-----+
+|Total            |        0|      0|     114|      84|    0|
++-----------------+---------+-------+--------+--------+-----+
+|Available        |      624|   1728|  460800|  230400|   96|
++-----------------+---------+-------+--------+--------+-----+
+|Utilization (%)  |        0|      0|   ~0   |   ~0   |    0|
++-----------------+---------+-------+--------+--------+-----+
+
++ Detail: 
+    * Instance: 
+    N/A
+
+    * DSP48E: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +----------------------------------+----------+-------+---+----+------------+------------+
+    |           Variable Name          | Operation| DSP48E| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +----------------------------------+----------+-------+---+----+------------+------------+
+    |ap_condition_102                  |    and   |      0|  0|   2|           1|           1|
+    |ap_condition_172                  |    and   |      0|  0|   2|           1|           1|
+    |ap_predicate_op22_read_state1     |    and   |      0|  0|   2|           1|           1|
+    |ap_predicate_op31_write_state2    |    and   |      0|  0|   2|           1|           1|
+    |ap_predicate_op40_write_state2    |    and   |      0|  0|   2|           1|           1|
+    |ap_predicate_op7_read_state1      |    and   |      0|  0|   2|           1|           1|
+    |tmp_36_nbreadreq_fu_96_p3         |    and   |      0|  0|   2|           1|           0|
+    |tmp_nbreadreq_fu_110_p3           |    and   |      0|  0|   2|           1|           0|
+    |ap_block_pp0_stage0_01001         |    or    |      0|  0|   2|           1|           1|
+    |ap_block_state1_pp0_stage0_iter0  |    or    |      0|  0|   2|           1|           1|
+    |ap_block_state2_pp0_stage0_iter1  |    or    |      0|  0|   2|           1|           1|
+    |ap_enable_pp0                     |    xor   |      0|  0|   2|           1|           2|
+    +----------------------------------+----------+-------+---+----+------------+------------+
+    |Total                             |          |      0|  0|  24|          12|          11|
+    +----------------------------------+----------+-------+---+----+------------+------------+
+
+    * Multiplexer: 
+    +------------------------------+----+-----------+-----+-----------+
+    |             Name             | LUT| Input Size| Bits| Total Bits|
+    +------------------------------+----+-----------+-----+-----------+
+    |ap_done                       |   9|          2|    1|          2|
+    |contextIn_V_TDATA_blk_n       |   9|          2|    1|          2|
+    |if2msnTable_init_V_blk_n      |   9|          2|    1|          2|
+    |qpi2stateTable_upd_r_1_blk_n  |   9|          2|    1|          2|
+    |qpi2stateTable_upd_r_1_din    |  15|          3|   68|        204|
+    |stateTable2qpi_rsp_V_blk_n    |   9|          2|    1|          2|
+    +------------------------------+----+-----------+-----+-----------+
+    |Total                         |  60|         13|   73|        214|
+    +------------------------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +--------------------------+----+----+-----+-----------+
+    |           Name           | FF | LUT| Bits| Const Bits|
+    +--------------------------+----+----+-----+-----------+
+    |ap_CS_fsm                 |   1|   0|    1|          0|
+    |ap_done_reg               |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter1   |   1|   0|    1|          0|
+    |context_local_psn_V       |  24|   0|   24|          0|
+    |context_newState          |   3|   0|    3|          0|
+    |context_qp_num_V          |  24|   0|   24|          0|
+    |context_r_key_V           |  16|   0|   16|          0|
+    |context_remote_psn_V      |  24|   0|   24|          0|
+    |qp_fsmState               |   1|   0|    1|          0|
+    |qp_fsmState_load_reg_312  |   1|   0|    1|          0|
+    |tmp_36_reg_316            |   1|   0|    1|          0|
+    |tmp_qpn_V_12_reg_320      |  16|   0|   16|          0|
+    |tmp_reg_325               |   1|   0|    1|          0|
+    +--------------------------+----+----+-----+-----------+
+    |Total                     | 114|   0|  114|          0|
+    +--------------------------+----+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++-------------------------------+-----+-----+------------+------------------------+--------------+
+|           RTL Ports           | Dir | Bits|  Protocol  |      Source Object     |    C Type    |
++-------------------------------+-----+-----+------------+------------------------+--------------+
+|ap_clk                         |  in |    1| ap_ctrl_hs |      qp_interface      | return value |
+|ap_rst                         |  in |    1| ap_ctrl_hs |      qp_interface      | return value |
+|ap_start                       |  in |    1| ap_ctrl_hs |      qp_interface      | return value |
+|ap_done                        | out |    1| ap_ctrl_hs |      qp_interface      | return value |
+|ap_continue                    |  in |    1| ap_ctrl_hs |      qp_interface      | return value |
+|ap_idle                        | out |    1| ap_ctrl_hs |      qp_interface      | return value |
+|ap_ready                       | out |    1| ap_ctrl_hs |      qp_interface      | return value |
+|contextIn_V_TVALID             |  in |    1|    axis    |       contextIn_V      |    pointer   |
+|contextIn_V_TDATA              |  in |  144|    axis    |       contextIn_V      |    pointer   |
+|contextIn_V_TREADY             | out |    1|    axis    |       contextIn_V      |    pointer   |
+|stateTable2qpi_rsp_V_dout      |  in |  123|   ap_fifo  |  stateTable2qpi_rsp_V  |    pointer   |
+|stateTable2qpi_rsp_V_empty_n   |  in |    1|   ap_fifo  |  stateTable2qpi_rsp_V  |    pointer   |
+|stateTable2qpi_rsp_V_read      | out |    1|   ap_fifo  |  stateTable2qpi_rsp_V  |    pointer   |
+|qpi2stateTable_upd_r_1_din     | out |   68|   ap_fifo  | qpi2stateTable_upd_r_1 |    pointer   |
+|qpi2stateTable_upd_r_1_full_n  |  in |    1|   ap_fifo  | qpi2stateTable_upd_r_1 |    pointer   |
+|qpi2stateTable_upd_r_1_write   | out |    1|   ap_fifo  | qpi2stateTable_upd_r_1 |    pointer   |
+|if2msnTable_init_V_din         | out |   48|   ap_fifo  |   if2msnTable_init_V   |    pointer   |
+|if2msnTable_init_V_full_n      |  in |    1|   ap_fifo  |   if2msnTable_init_V   |    pointer   |
+|if2msnTable_init_V_write       | out |    1|   ap_fifo  |   if2msnTable_init_V   |    pointer   |
++-------------------------------+-----+-----+------------+------------------------+--------------+
+

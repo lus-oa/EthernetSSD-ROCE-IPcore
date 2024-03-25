@@ -1,0 +1,97 @@
+<profile>
+
+<section name = "Vivado HLS Report for 'rocev2_top'" level="0">
+<item name = "Date">Mon Mar  1 13:04:06 2021
+</item>
+<item name = "Version">2019.1 (Build 2552052 on Fri May 24 15:28:33 MDT 2019)</item>
+<item name = "Project">rocev2_prj</item>
+<item name = "Solution">solution1</item>
+<item name = "Product family">zynquplus</item>
+<item name = "Target device">xczu7eg-ffvc1156-2-i</item>
+</section>
+
+<section name = "Performance Estimates" level="0">
+<item name = "Timing (ns)">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="4">Clock, Target, Estimated, Uncertainty</keys>
+<column name="ap_clk">8.00, 41.577, 1.00</column>
+</table>
+</item>
+</section>
+</item>
+<item name = "Latency (clock cycles)">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="6">, min, max, min, max, Type</keys>
+<column name="">35, 35, 6, 6, dataflow</column>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="0">
+<keys size="7">Instance, Module, min, max, min, max, Type</keys>
+<column name="grp_compute_crc32_fu_1382">compute_crc32, 6, 6, 6, 6, function</column>
+<column name="grp_insert_icrc_512_s_fu_1404">insert_icrc_512_s, 2, 2, 1, 1, function</column>
+<column name="grp_append_payload_512_s_fu_1426">append_payload_512_s, 1, 1, 1, 1, function</column>
+<column name="grp_rx_process_exh_512_s_fu_1472">rx_process_exh_512_s, 1, 1, 1, 1, function</column>
+<column name="grp_rx_exh_fsm_512_s_fu_1512">rx_exh_fsm_512_s, 2, 2, 1, 1, function</column>
+<column name="grp_prepend_ibh_header_fu_1566">prepend_ibh_header, 1, 1, 1, 1, function</column>
+<column name="grp_process_ipv4_512_s_fu_1590">process_ipv4_512_s, 1, 1, 1, 1, function</column>
+<column name="grp_merge_rx_pkgs_512_s_fu_1620">merge_rx_pkgs_512_s, 2, 2, 1, 1, function</column>
+<column name="grp_mask_header_fields_fu_1658">mask_header_fields, 1, 1, 1, 1, function</column>
+<column name="grp_ipv4_generate_ipv421_fu_1682">ipv4_generate_ipv421, 1, 1, 1, 1, function</column>
+<column name="grp_ipv4_drop_optional_i_fu_1709">ipv4_drop_optional_i, 1, 1, 1, 1, function</column>
+<column name="grp_compute_ipv4_checksu_fu_1735">compute_ipv4_checksu, 1, 1, 1, 1, function</column>
+<column name="grp_tx_pkg_arbiter_512_s_fu_1753">tx_pkg_arbiter_512_s, 1, 1, 1, 1, function</column>
+<column name="grp_rx_process_ibh_512_s_fu_1801">rx_process_ibh_512_s, 1, 1, 1, 1, function</column>
+<column name="grp_generate_exh_512_s_fu_1829">generate_exh_512_s, 1, 1, 1, 1, function</column>
+<column name="grp_ipv4_lshiftWordByOct_fu_1877">ipv4_lshiftWordByOct, 1, 1, 1, 1, function</column>
+<column name="grp_lshiftWordByOctet_fu_1901">lshiftWordByOctet, 1, 1, 1, 1, function</column>
+<column name="grp_generate_udp_512_s_fu_1925">generate_udp_512_s, 1, 1, 1, 1, function</column>
+<column name="grp_lshiftWordByOctet_2_fu_1955">lshiftWordByOctet_2, 1, 1, 1, 1, function</column>
+<column name="grp_udp_lshiftWordByOcte_fu_1979">udp_lshiftWordByOcte, 1, 1, 1, 1, function</column>
+<column name="grp_process_udp_512_2150_fu_2003">process_udp_512_2150, 2, 2, 1, 1, function</column>
+<column name="grp_lshiftWordByOctet_1_fu_2029">lshiftWordByOctet_1, 1, 1, 1, 1, function</column>
+<column name="grp_local_req_handler_fu_2053">local_req_handler, 1, 1, 1, 1, function</column>
+<column name="grp_rx_exh_payload_512_s_fu_2091">rx_exh_payload_512_s, 1, 1, 1, 1, function</column>
+<column name="grp_handle_read_requests_fu_2131">handle_read_requests, 1, 1, 1, 1, function</column>
+<column name="grp_rx_ibh_fsm_fu_2151">rx_ibh_fsm, 1, 1, 1, 1, function</column>
+<column name="grp_extract_icrc_512_s_fu_2195">extract_icrc_512_s, 1, 1, 1, 1, function</column>
+<column name="grp_meta_merger_fu_2219">meta_merger, 3, 3, 1, 1, function</column>
+<column name="grp_rshiftWordByOctet_fu_2257">rshiftWordByOctet, 1, 1, 1, 1, function</column>
+<column name="grp_udp_rshiftWordByOcte_fu_2285">udp_rshiftWordByOcte, 1, 1, 1, 1, function</column>
+<column name="grp_rshiftWordByOctet_2_fu_2309">rshiftWordByOctet_2, 1, 1, 1, 1, function</column>
+<column name="grp_rshiftWordByOctet_1_fu_2333">rshiftWordByOctet_1, 1, 1, 1, 1, function</column>
+<column name="grp_state_table_fu_2357">state_table, 3, 3, 1, 1, function</column>
+<column name="grp_drop_ooo_ibh_512_s_fu_2385">drop_ooo_ibh_512_s, 1, 1, 1, 1, function</column>
+<column name="grp_generate_ibh_512_s_fu_2405">generate_ibh_512_s, 1, 1, 1, 1, function</column>
+<column name="grp_mem_cmd_merger_512_s_fu_2439">mem_cmd_merger_512_s, 3, 3, 1, 1, function</column>
+<column name="grp_mq_process_requests_fu_2457">mq_process_requests, 1, 1, 1, 1, function</column>
+<column name="grp_msn_table_fu_2531">msn_table, 3, 3, 1, 1, function</column>
+<column name="grp_ipUdpMetaHandler_fu_2553">ipUdpMetaHandler, 1, 1, 1, 1, function</column>
+<column name="grp_mq_pointer_table_fu_2573">mq_pointer_table, 2, 2, 1, 1, function</column>
+<column name="grp_tx_ipUdpMetaMerger_fu_2609">tx_ipUdpMetaMerger, 1, 1, 1, 1, function</column>
+<column name="grp_mq_meta_table_fu_2627">mq_meta_table, 1, 1, 1, 1, function</column>
+<column name="grp_stream_merger_fu_2661">stream_merger, 2, 2, 1, 1, function</column>
+<column name="grp_split_tx_meta_fu_2671">split_tx_meta, 1, 1, 1, 1, function</column>
+<column name="grp_merge_rx_meta_fu_2695">merge_rx_meta, 1, 1, 1, 1, function</column>
+<column name="grp_conn_table_fu_2713">conn_table, 1, 1, 1, 1, function</column>
+<column name="grp_mq_freelist_handler_fu_2729">mq_freelist_handler, 1, 1, 1, 1, function</column>
+<column name="grp_qp_interface_fu_2739">qp_interface, 1, 1, 1, 1, function</column>
+<column name="grp_read_req_table_fu_2763">read_req_table, 1, 1, 1, 1, function</column>
+<column name="call_ln770_rocev2_top_entry3_fu_2775">rocev2_top_entry3, 0, 0, 0, 0, none</column>
+<column name="call_ln527_rocev2_top_entry2153_fu_2782">rocev2_top_entry2153, 0, 0, 0, 0, none</column>
+<column name="call_ln0_Block_proc_fu_2788">Block_proc, 0, 0, 0, 0, none</column>
+</table>
+</item>
+<item name = "Loop"><table name="" hasTotal="0">
+<keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
+</table>
+</item>
+</section>
+</item>
+</section>
+</item>
+</section>
+</profile>

@@ -1,0 +1,204 @@
+
+
+================================================================
+== Vivado HLS Report for 'generate_ibh_512_s'
+================================================================
+* Date:           Mon Mar  1 13:04:19 2021
+
+* Version:        2019.1 (Build 2552052 on Fri May 24 15:28:33 MDT 2019)
+* Project:        rocev2_prj
+* Solution:       solution1
+* Product family: zynquplus
+* Target device:  xczu7eg-ffvc1156-2-i
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |   8.00|     3.447|        1.00|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+----------+
+    |  Latency  |  Interval | Pipeline |
+    | min | max | min | max |   Type   |
+    +-----+-----+-----+-----+----------+
+    |    1|    1|    1|    1| function |
+    +-----+-----+-----+-----+----------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-------+--------+--------+-----+
+|       Name      | BRAM_18K| DSP48E|   FF   |   LUT  | URAM|
++-----------------+---------+-------+--------+--------+-----+
+|DSP              |        -|      -|       -|       -|    -|
+|Expression       |        -|      -|       0|     109|    -|
+|FIFO             |        -|      -|       -|       -|    -|
+|Instance         |        -|      -|       -|       -|    -|
+|Memory           |        -|      -|       -|       -|    -|
+|Multiplexer      |        -|      -|       -|     159|    -|
+|Register         |        -|      -|     397|       -|    -|
++-----------------+---------+-------+--------+--------+-----+
+|Total            |        0|      0|     397|     268|    0|
++-----------------+---------+-------+--------+--------+-----+
+|Available        |      624|   1728|  460800|  230400|   96|
++-----------------+---------+-------+--------+--------+-----+
+|Utilization (%)  |        0|      0|   ~0   |   ~0   |    0|
++-----------------+---------+-------+--------+--------+-----+
+
++ Detail: 
+    * Instance: 
+    N/A
+
+    * DSP48E: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +----------------------------------+----------+-------+---+----+------------+------------+
+    |           Variable Name          | Operation| DSP48E| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +----------------------------------+----------+-------+---+----+------------+------------+
+    |nextPsn_V_fu_588_p2               |     +    |      0|  0|  31|          24|          24|
+    |p_Val2_s_fu_473_p2                |     +    |      0|  0|  31|           2|          24|
+    |ap_condition_154                  |    and   |      0|  0|   2|           1|           1|
+    |ap_condition_212                  |    and   |      0|  0|   2|           1|           1|
+    |ap_condition_217                  |    and   |      0|  0|   2|           1|           1|
+    |ap_condition_230                  |    and   |      0|  0|   2|           1|           1|
+    |ap_condition_272                  |    and   |      0|  0|   2|           1|           1|
+    |ap_condition_69                   |    and   |      0|  0|   2|           1|           1|
+    |ap_predicate_op38_read_state1     |    and   |      0|  0|   2|           1|           1|
+    |ap_predicate_op77_write_state2    |    and   |      0|  0|   2|           1|           1|
+    |ap_predicate_op80_write_state2    |    and   |      0|  0|   2|           1|           1|
+    |ap_predicate_op89_write_state2    |    and   |      0|  0|   2|           1|           1|
+    |ap_predicate_op92_write_state2    |    and   |      0|  0|   2|           1|           1|
+    |io_acc_block_signal_op10          |    and   |      0|  0|   2|           1|           1|
+    |tmp_16_nbreadreq_fu_150_p3        |    and   |      0|  0|   2|           1|           0|
+    |tmp_nbreadreq_fu_180_p3           |    and   |      0|  0|   2|           1|           0|
+    |icmp_ln1172_fu_407_p2             |   icmp   |      0|  0|  11|           5|           5|
+    |ap_block_pp0_stage0_01001         |    or    |      0|  0|   2|           1|           1|
+    |ap_block_state1_pp0_stage0_iter0  |    or    |      0|  0|   2|           1|           1|
+    |ap_block_state2_pp0_stage0_iter1  |    or    |      0|  0|   2|           1|           1|
+    |ap_enable_pp0                     |    xor   |      0|  0|   2|           1|           2|
+    +----------------------------------+----------+-------+---+----+------------+------------+
+    |Total                             |          |      0|  0| 109|          49|          70|
+    +----------------------------------+----------+-------+---+----+------------+------------+
+
+    * Multiplexer: 
+    +-------------------------------------------+----+-----------+-----+-----------+
+    |                    Name                   | LUT| Input Size| Bits| Total Bits|
+    +-------------------------------------------+----+-----------+-----+-----------+
+    |ap_done                                    |   9|          2|    1|          2|
+    |ap_phi_reg_pp0_iter1_tmp_header_V_reg_208  |  15|          3|   96|        288|
+    |header_header_V                            |  15|          3|   96|        288|
+    |stateTable2txIbh_rsp_1_blk_n               |   9|          2|    1|          2|
+    |txIbh2stateTable_upd_1_blk_n               |   9|          2|    1|          2|
+    |txIbh2stateTable_upd_1_din                 |  15|          3|   41|        123|
+    |tx_dstQpFifo_V_V_blk_n                     |   9|          2|    1|          2|
+    |tx_ibhHeaderFifo_V_blk_n                   |   9|          2|    1|          2|
+    |tx_ibhHeaderFifo_V_din                     |  15|          3|  113|        339|
+    |tx_ibhMetaFifo_V_des_blk_n                 |   9|          2|    1|          2|
+    |tx_ibhMetaFifo_V_num_blk_n                 |   9|          2|    1|          2|
+    |tx_ibhMetaFifo_V_op_s_blk_n                |   9|          2|    1|          2|
+    |tx_ibhMetaFifo_V_par_blk_n                 |   9|          2|    1|          2|
+    |tx_ibhMetaFifo_V_psn_blk_n                 |   9|          2|    1|          2|
+    |tx_ibhMetaFifo_V_val_blk_n                 |   9|          2|    1|          2|
+    +-------------------------------------------+----+-----------+-----+-----------+
+    |Total                                      | 159|         34|  357|       1060|
+    +-------------------------------------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +-------------------------------------------+----+----+-----+-----------+
+    |                    Name                   | FF | LUT| Bits| Const Bits|
+    +-------------------------------------------+----+----+-----+-----------+
+    |ap_CS_fsm                                  |   1|   0|    1|          0|
+    |ap_done_reg                                |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter1                    |   1|   0|    1|          0|
+    |ap_phi_reg_pp0_iter1_tmp_header_V_reg_208  |  96|   0|   96|          0|
+    |gi_state_1                                 |   1|   0|    1|          0|
+    |gi_state_1_load_reg_617                    |   1|   0|    1|          0|
+    |header_header_V                            |  96|   0|   96|          0|
+    |icmp_ln1172_reg_653                        |   1|   0|    1|          0|
+    |meta_dest_qp_V_3                           |  24|   0|   24|          0|
+    |meta_numPkg_V_1                            |  22|   0|   22|          0|
+    |meta_op_code_7                             |   5|   0|    5|          0|
+    |p_Result_89_reg_639                        |  96|   0|   96|          0|
+    |p_Val2_56_reg_648                          |  24|   0|   24|          0|
+    |tmp_15_reg_621                             |   1|   0|    1|          0|
+    |tmp_16_reg_625                             |   1|   0|    1|          0|
+    |tmp_dest_qp_V_reg_629                      |  24|   0|   24|          0|
+    |tmp_reg_644                                |   1|   0|    1|          0|
+    |tmp_validPSN_reg_635                       |   1|   0|    1|          0|
+    +-------------------------------------------+----+----+-----+-----------+
+    |Total                                      | 397|   0|  397|          0|
+    +-------------------------------------------+----+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++--------------------------------+-----+-----+------------+------------------------+--------------+
+|            RTL Ports           | Dir | Bits|  Protocol  |      Source Object     |    C Type    |
++--------------------------------+-----+-----+------------+------------------------+--------------+
+|ap_clk                          |  in |    1| ap_ctrl_hs |    generate_ibh<512>   | return value |
+|ap_rst                          |  in |    1| ap_ctrl_hs |    generate_ibh<512>   | return value |
+|ap_start                        |  in |    1| ap_ctrl_hs |    generate_ibh<512>   | return value |
+|ap_done                         | out |    1| ap_ctrl_hs |    generate_ibh<512>   | return value |
+|ap_continue                     |  in |    1| ap_ctrl_hs |    generate_ibh<512>   | return value |
+|ap_idle                         | out |    1| ap_ctrl_hs |    generate_ibh<512>   | return value |
+|ap_ready                        | out |    1| ap_ctrl_hs |    generate_ibh<512>   | return value |
+|tx_ibhMetaFifo_V_op_s_dout      |  in |    5|   ap_fifo  |  tx_ibhMetaFifo_V_op_s |    pointer   |
+|tx_ibhMetaFifo_V_op_s_empty_n   |  in |    1|   ap_fifo  |  tx_ibhMetaFifo_V_op_s |    pointer   |
+|tx_ibhMetaFifo_V_op_s_read      | out |    1|   ap_fifo  |  tx_ibhMetaFifo_V_op_s |    pointer   |
+|tx_ibhMetaFifo_V_par_dout       |  in |   16|   ap_fifo  |  tx_ibhMetaFifo_V_par  |    pointer   |
+|tx_ibhMetaFifo_V_par_empty_n    |  in |    1|   ap_fifo  |  tx_ibhMetaFifo_V_par  |    pointer   |
+|tx_ibhMetaFifo_V_par_read       | out |    1|   ap_fifo  |  tx_ibhMetaFifo_V_par  |    pointer   |
+|tx_ibhMetaFifo_V_des_dout       |  in |   24|   ap_fifo  |  tx_ibhMetaFifo_V_des  |    pointer   |
+|tx_ibhMetaFifo_V_des_empty_n    |  in |    1|   ap_fifo  |  tx_ibhMetaFifo_V_des  |    pointer   |
+|tx_ibhMetaFifo_V_des_read       | out |    1|   ap_fifo  |  tx_ibhMetaFifo_V_des  |    pointer   |
+|tx_ibhMetaFifo_V_psn_dout       |  in |   24|   ap_fifo  |  tx_ibhMetaFifo_V_psn  |    pointer   |
+|tx_ibhMetaFifo_V_psn_empty_n    |  in |    1|   ap_fifo  |  tx_ibhMetaFifo_V_psn  |    pointer   |
+|tx_ibhMetaFifo_V_psn_read       | out |    1|   ap_fifo  |  tx_ibhMetaFifo_V_psn  |    pointer   |
+|tx_ibhMetaFifo_V_val_dout       |  in |    1|   ap_fifo  |  tx_ibhMetaFifo_V_val  |    pointer   |
+|tx_ibhMetaFifo_V_val_empty_n    |  in |    1|   ap_fifo  |  tx_ibhMetaFifo_V_val  |    pointer   |
+|tx_ibhMetaFifo_V_val_read       | out |    1|   ap_fifo  |  tx_ibhMetaFifo_V_val  |    pointer   |
+|tx_ibhMetaFifo_V_num_dout       |  in |   22|   ap_fifo  |  tx_ibhMetaFifo_V_num  |    pointer   |
+|tx_ibhMetaFifo_V_num_empty_n    |  in |    1|   ap_fifo  |  tx_ibhMetaFifo_V_num  |    pointer   |
+|tx_ibhMetaFifo_V_num_read       | out |    1|   ap_fifo  |  tx_ibhMetaFifo_V_num  |    pointer   |
+|tx_dstQpFifo_V_V_dout           |  in |   24|   ap_fifo  |    tx_dstQpFifo_V_V    |    pointer   |
+|tx_dstQpFifo_V_V_empty_n        |  in |    1|   ap_fifo  |    tx_dstQpFifo_V_V    |    pointer   |
+|tx_dstQpFifo_V_V_read           | out |    1|   ap_fifo  |    tx_dstQpFifo_V_V    |    pointer   |
+|stateTable2txIbh_rsp_1_dout     |  in |  123|   ap_fifo  | stateTable2txIbh_rsp_1 |    pointer   |
+|stateTable2txIbh_rsp_1_empty_n  |  in |    1|   ap_fifo  | stateTable2txIbh_rsp_1 |    pointer   |
+|stateTable2txIbh_rsp_1_read     | out |    1|   ap_fifo  | stateTable2txIbh_rsp_1 |    pointer   |
+|txIbh2stateTable_upd_1_din      | out |   41|   ap_fifo  | txIbh2stateTable_upd_1 |    pointer   |
+|txIbh2stateTable_upd_1_full_n   |  in |    1|   ap_fifo  | txIbh2stateTable_upd_1 |    pointer   |
+|txIbh2stateTable_upd_1_write    | out |    1|   ap_fifo  | txIbh2stateTable_upd_1 |    pointer   |
+|tx_ibhHeaderFifo_V_din          | out |  113|   ap_fifo  |   tx_ibhHeaderFifo_V   |    pointer   |
+|tx_ibhHeaderFifo_V_full_n       |  in |    1|   ap_fifo  |   tx_ibhHeaderFifo_V   |    pointer   |
+|tx_ibhHeaderFifo_V_write        | out |    1|   ap_fifo  |   tx_ibhHeaderFifo_V   |    pointer   |
++--------------------------------+-----+-----+------------+------------------------+--------------+
+

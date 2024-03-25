@@ -1,0 +1,20 @@
+/*********************************************/
+if(!rx_udp2shiftFifo.empty())  {
+net_axis<WIDTH> currWord;
+rx_udp2shiftFifo.read(currWord);
+std::cout<<"currWord= ";
+print(std::cout,currWord);
+std::cout<<std::endl;
+}
+/*********************************************/	
+
+
+/**************************************/
+std::cout<<"我还是进来了哈哈哈哈"<<std::endl;
+/**************************************/
+
+qpContext context;
+	s_axis_qp_interface.read(context);
+	std::cout << "interface=" << context.newState<<std::endl;
+	std::cout << typeid(context.newState).name() << std::endl;
+	std::cout << sizeof(context)<<std::endl;
